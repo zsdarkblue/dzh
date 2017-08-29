@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>贵金属资讯</title>
+    <!--<link href="resources/basestyle.css" rel="stylesheet" type="text/css" />-->
+    <!--<link href="resources/ver1.0.css" rel="stylesheet" type="text/css" />-->
+    <link rel="stylesheet" href="../../dijit/themes/black_table/document.css"/>
+    <link rel="stylesheet" href="resources/ver1.0.css"/>
+    <link rel="stylesheet" href="resources/limit.css"/>   <!--导入 自己定义的样式文件-->
+    <script type="text/javascript">
+        server59Evn={
+            qq:"800063855",
+            tel:"021-20219999"
+        }
+        dojoConfig =  {
+            async:true, parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            //noscale:true,
+            deps:[
+            ],
+            requestProvider: "dojo/request/registry",
+            callback: function() {
+                require(["bond/gjsscreen/src","dojo/request/registry","dojo/request/proxy" ],function(main,request,proxy){
+                            request.register(/^http:\/\/reader2.gw.com.cn/, proxy);
+                            main();
+                        }
+                );
+            }
+        }
+                //dojopr();
+            </script>
+</head>
+<body class="claro">
+<div id="main" data-dojo-type="dijit/layout/ContentPane" style="height: 100%;">
+    <div data-dojo-type="bond/gjsscreen/view/gjsFinNews" style="height: 100%">
+
+    </div>
+</div>
+</body>
+</html>

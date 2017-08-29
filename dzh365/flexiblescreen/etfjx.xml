@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<dzh:layout>
+  <dzh:title>ETF精选</dzh:title>
+  <dzh:hbox>
+    <dzh:vbox width="100%">
+      <plugin id="1" type="dzhinternal/stklistvw" width="85%" layout="VIEWLIST?MARKET2=sgysp4/涉股衍生品/ETF" mode="1"/>
+      <plugin id="61" type="dzhinternal/stkbrowser" width="20%" layout="browse?'file://#DZH2#/ui/fnd/FundHuaan.dzh.ui'"/>
+    </dzh:vbox>
+  </dzh:hbox>  
+</dzh:layout>

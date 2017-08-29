@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GB2312"?> <list version="1.0">
+  <items>
+  	<item desc="债券">  	
+		<mask>SH{type=3},SH{type=12}，SH{type=15}，SZ{type=3},SZ{type=12}，SZ{type=15}</mask>			
+			<skv>分时走势</skv>
+			<skv>技术分析</skv>
+			<skv>深度资料</skv>
+			<skv>基本资料</skv>
+			<skv>一致预期</skv>
+			<skv>主题诊断</skv>
+			<skv>成交明细</skv>
+			<skv>逐笔成交</skv>
+			<skv>成交明细</skv>
+			<skv>分价表</skv>
+			<skv>成交统计</skv>
+			<skv>队列矩阵</skv>
+			<skv>盘口矩阵</skv>
+  	</item>
+  	<item desc="上海市场">  	
+		<mask>SH{type=1},SZ{type=1}</mask>			
+			<skv>分时走势</skv>
+			<skv>技术分析</skv>
+			<skv>基本资料</skv>
+			<skv>深度资料</skv>
+			<skv>一致预期</skv>
+			<skv>主题诊断</skv>
+			<skv>成交明细</skv>
+			<skv>逐笔成交</skv>
+			<skv>成交明细</skv>
+			<skv>分价表</skv>
+			<skv>成交统计</skv>
+			<skv>队列矩阵</skv>
+			<skv>盘口矩阵</skv>
+  	</item>
+  	<item desc="其他">  	
+			<mask>**</mask>
+			<skv>分时走势</skv>
+			<skv>技术分析</skv>
+			<skv>基本资料</skv>
+			<skv>成交明细</skv>
+			<skv>逐笔成交</skv>
+			<skv>分价表</skv>
+			<skv>成交统计</skv>
+			<skv>深度资料</skv>
+  	</item>
+  </items>
+</list>

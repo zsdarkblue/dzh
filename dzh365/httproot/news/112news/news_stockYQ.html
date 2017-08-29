@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新闻列表-大智慧通讯社</title>
+<link href="resources/style/index.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript">
+		console.log(new Date().getTime(), "解析第一行JS代码");
+		document.addEventListener("DOMContentLoaded", function(){ //检测可用区域的宽度，写样式。
+			var doc = document,
+				bodyH = doc.body.clientHeight,
+				style = doc.createElement("style"),
+				rules = ".list_pages_box{height:" + (bodyH - 26) + "px;}";
+			style.type='text/css';
+			style.rel='stylesheet';
+			style.appendChild( doc.createTextNode(rules) );
+			doc.head.appendChild(style);
+		});
+
+		var dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,	
+			callback: function() {
+				console.log(new Date().getTime(), "开始执行dojoConfig的callback函数，该函数中首先加载项目的js文件");
+				require(["news/112news/src"], function(main){ main(); });
+			}
+		}
+	</script>
+
+
+<script type="text/javascript" src="resources/js/jquery.js"></script>
+<script type="text/javascript" src="resources/js/websocket.js"></script>
+<script type="text/javascript" src="resources/js/lib/autocomplete/jquery.autocomplete.js"></script>
+
+<script  type="text/javascript" language="javascript">
+	$(document).ready(function(){
+		
+		var _url='/gweb/fuzzySearch?core=solr_stock_base_info&q=(stock_code:*6* OR stock_name:*6*) AND plate:1 AND type:101 AND NOT market:STAS00&fields=stock_code,stock_name,organ_id&orderFields=stock_code&orderTypes=asc&start_num=0&row_num=10';
+		$("#obj_name").autocomplete(_url, {
+			minChars: 1,
+			delay: 100,
+			cacheLength: 500,
+			max: 100,
+			width: 176,
+			scrollHeight: 300,
+			websocket: true,
+			websocketOption : "news",
+			matchCase: true,
+			matchContains: true,
+			callformatdelay:false,
+			ajaxfun:'getjsonstock',
+			websocketType: "jg",
+			
+			createUrlFun:function(str){
+				//console.log(str);
+				//return '/gweb/fuzzySearch?core=solr_stock_base_info&q=(stock_code:*6* OR stock_name:*6*) AND plate:1 AND type:101 AND NOT market:STAS00&fields=stock_code,stock_name,organ_id&orderFields=stock_code&orderTypes=asc&start_num=0&row_num=10';
+				return '/gweb/fuzzySearch?core=solr_stock_base_info&q=(stock_code:*'+str+'* OR stock_name:*'+str+'* OR stock_jp:*'+str.toUpperCase()+'*) AND plate:1 AND type:101 AND NOT market:STAS00&fields=stock_code,stock_name,organ_id&orderFields=stock_code&orderTypes=asc&start_num=0&row_num=10';
+			},
+			formatItem: function(row, i, max, id) {	
+				return "<a id=stock_" + i + " txt="+row[0]+">" +row[0]+"&nbsp;&nbsp;&nbsp;&nbsp;"+ row[1] + "</a>";
+
+			}
+		}).result(function(event, row) {
+				//console.log(row);
+				var stock_code = row[0];
+				var stock_name = row[1];
+				$('#obj_name').val(stock_name);
+				$('#obj_value').val(stock_code);
+			});
+	});
+
+</script>
+</head>
+
+<body>
+<div class="top_stock_listpage" id="nav-bar-wrap">
+	<div class="top_stock_list" style="padding-left:40px">
+		<a id="down" class="stock_down_icon"></a>
+		<a id="block" class="stock_down_block">自选股</a>
+	</div>
+	<ul class="stock_list" id="blockname"></ul>
+	<ul class="top_stock_list top_ul">
+		<li><a id="xw" href="./news_stockXW.html?stock=true" class="stock_noton">新闻</a></li>
+		<li><a id="wb" class="stock_onthisw">微博/论坛</a></li>
+	</ul>
+	<div class="top_stock_list top_search">
+		<input id="refresh" type="submit" value=""/>
+		<input id="search" type="submit" value=""/>
+		<input id="obj_name" type="text" value=""/>
+		<input id="obj_value" type="hidden"/>
+	</div>
+</div>
+<ul id="YQ_title" class="yq_title_list" >
+	<li class="yq_gs_title yq_padding">公司</li>
+	<li class="yq_nr_title">内容</li>
+	<li class="yq_zz_title yq_padding2">作者</li>
+	<li class="yq_ly_title yq_padding">来源</li>
+	<li class="yq_sj_title yq_padding">时间</li>
+</ul>
+
+<div id="content" class="list_pages_box">
+    <div id="YQ_news_list" class="yg_content_list"></div>
+    <div class="clear"></div>
+</div>
+<div id="blocknone" class="none">您还未添加自选股，请添加自选股。</div>
+
+<div id="iframe_title" class="iframe_title">
+	<i class="iframe_close"></i>
+</div>
+<iframe id="news_iframe" name="news_iframe" class="iframe"></iframe>
+
+</body>
+</html>

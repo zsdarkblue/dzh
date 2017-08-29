@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大小单资金流向图</title>
+<link rel="stylesheet" href="./css/chartPublic.css"/>
+</head>
+<body>
+	<div id="container"></div>
+	
+	<script src="../../../../jquery/custom/jquery-1.7.2.min.js"></script>
+	<script src="../../../../jquery/custom/highcharts4/highcharts.js"></script>
+	
+	<script type="text/javascript">
+		$(function () {
+		     $('#container').highcharts({
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false
+		        },
+		        title: {
+		            text: ''
+		        },
+		        tooltip: {
+		    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: false, //true 是否显示图示
+		                    color: '#000000',
+		                    connectorColor: '#000000',
+		                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+		                }
+		            }
+		        },
+		        series: [{
+		            type: 'pie',
+		            name: 'Browser share',
+		            data: [
+		                
+		                ['大单',       26.8],
+		                ['中单',       12.8],
+		                ['小单',    28.5],
+		                {
+		                    name: '超大单',
+		                    y: 31.9,
+		                    sliced: true,
+		                    selected: true
+		                }
+		            ]
+		        }]
+		    });
+
+		});
+	</script>
+
+</body>
+</html>

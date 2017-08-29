@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<title>人物-政府机构人物</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../../dijit/themes/white/document.css"/>
+	<link rel="stylesheet" href="resources/custom.css"/>   <!--导入 自己定义的样式文件-->
+	
+	<style type="text/css">
+	.btn2{
+		min-width: none !important;
+	}
+	</style>
+	<script type="text/javascript">
+	dojoConfig = {
+			async:true, parseOnLoad:false, 
+			requestProvider: "dojo/request/registry",
+		//	paths:{'stock':'../stock'}, 
+			baseUrl : "../../dojo",
+			noscale:true,
+			locale:'zh-cn',
+//>>excludeStart("Tag", 1)
+			dojopr:false,//控制不执行预加载，发布须移除		
+//>>excludeEnd("Tag")
+			//>>excludeStart("Tag",1)
+			deps:["dijit/dijit-all"],
+			//>>excludeEnd("Tag")
+			callback: function() {
+				require(['stock/zfrw/src',"dojo/request", "dojo/request/script","dojo/on"],
+						function(main, request, script,on){
+							//request.register(/^http:\/\/10.15.107.157/, script);
+							main();
+						}
+					);
+			}
+		}
+		
+		//>>excludeStart("Tag", 1)
+		delete dojoConfig.baseUrl;
+				//if(0)
+		//>>excludeEnd("Tag")
+				//dojopr();
+		//>>excludeStart("Tag", 1)
+	</script>
+	<script src="../../dojo/dojo.js"></script>
+</head>
+<body class="claro">
+	<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height: 100%;">
+ 		<div data-dojo-type="stock/zfrw/view/top_zyjgrw" data-dojo-props="region:'top'"></div>
+
+		<div data-dojo-type="stock/zfrw/view/list_jg" data-dojo-props="region:'center',gutters:false"class="right">
+			
+	 	</div>
+	 	<!-- <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props=" design:'headline',region:'center',gutters:false" >
+			
+	 	</div> -->
+	</div>
+</body>
+</html>

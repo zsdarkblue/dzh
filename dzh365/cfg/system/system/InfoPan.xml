@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<!-- 填写示例: id从0开始递增,不能重复(有效值小于384), 分配好以后就不能改变了
+	<plugin>
+		<id>0</id>
+		<name>财务数据</name>
+		<shortname>财务</shortname>
+		<shortname1>财</shortname1>
+		<desc>财务数据</desc>
+		<type>dzhinternal/pluginfinance</type>
+		<mode></mode>
+		<layout></layout>
+		<action></action>
+		<default></default>
+		<menuselect>0</menuselect> // 是否出现在InfoPan的右键菜单列表中
+	</plugin> -->
+
+	<plugin>
+		<id>1</id>
+		<name>盘口变化</name>
+		<shortname>盘口</shortname>
+		<shortname1>盘</shortname1>
+		<desc>盘口变化</desc>
+        	<type>dzhinternal/pluginqxpk</type>
+        	<title>盘口变化</title>
+        	<mode></mode>
+	        <layout></layout>
+	        <action></action>
+	        <default></default>
+	        <handler></handler>
+		<menuselect>0</menuselect>
+	</plugin>
+
+	<plugin>
+		<id>2</id>
+		<name>买卖力道</name>
+		<shortname>力道</shortname>
+		<shortname1>力</shortname1>
+		<desc>买卖力道</desc>
+        	<type>dzhinternal/plugincharting</type>
+        	<mode></mode>
+	        <layout>DataType=1;Template=买卖力道;ShowCross=1</layout>
+	        <action></action>
+	        <default></default>
+	        <handler></handler>
+		<menuselect>0</menuselect>
+	</plugin>
+
+	<plugin>
+		<id>3</id>
+		<name>成分股</name>
+		<shortname>成分</shortname>
+		<shortname1>成</shortname1>
+		<desc>成分股</desc>
+		<title>成分股</title>
+        	<type>dzhinternal/pluginstkblock</type>
+        	<mode></mode>
+	        <layout></layout>
+	        <action></action>
+	        <default></default>
+	        <handler></handler>
+		<menuselect>0</menuselect>
+	</plugin>
+
+
+	<plugin>
+		<id>4</id>
+		<name>申购赎回</name>
+		<shortname>申赎</shortname>
+		<shortname1>申</shortname1>
+		<desc>申购赎回</desc>
+		<title>申购赎回</title>
+        	<type>dzhinternal/pluginpr</type>
+        	<mode></mode>
+	        <layout></layout>
+	        <action></action>
+	        <default></default>
+	        <handler></handler>
+		<menuselect>0</menuselect>
+	</plugin>
+
+	<plugin>
+		<id>5</id>
+		<name>申赎动向</name>
+		<shortname>申赎</shortname>
+		<shortname1>申</shortname1>
+		<desc>申赎动向</desc>
+        	<type>dzhinternal/plugincharting</type>
+        	<mode></mode>
+	        <layout>DataType=1;Template=K,IOPV+ETF申购+ETF赎回+累积申赎净量;ShowCross=1</layout>
+	        <action></action>
+	        <default></default>
+	        <handler></handler>
+		<menuselect>0</menuselect>
+	</plugin>
+	<plugin>
+		<id>8</id>
+		<name>交易状态</name>
+		<shortname>交易</shortname>
+		<shortname1>交</shortname1>
+		<desc>交易状态</desc>
+        	<type>dzhinternal/pluginstkinfo</type>
+        	<mode>module=jyzt;showtitle=false;</mode>
+	        <layout></layout>
+	        <action></action>
+	        <default></default>
+	        <handler></handler>
+		<menuselect>0</menuselect>
+	</plugin>	
+	<plugin>
+		<id>11</id>
+		<name>当前额度</name>
+		<shortname>额度</shortname>
+		<shortname1>额</shortname1>
+		<desc>当前额度</desc>
+        	<type>dzhinternal/pluginstkinfo</type>
+        	<mode>module=dqed;showtitle=false;</mode>
+	        <layout></layout>
+	        <action></action>
+	        <default></default>
+	        <handler></handler>
+		<menuselect>0</menuselect>
+	</plugin>
+</layout>

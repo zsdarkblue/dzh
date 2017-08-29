@@ -1,0 +1,1 @@
+require.config({paths:{jquery:"../../../../jquery/custom/jquery-1.7.2.min",jquery_ui:"../../../../jquery/custom/jquery-ui-1.10.4.custom.min",highcharts:"../../../../jquery/custom/highcharts4/highcharts-all",_base:"../../../../jquery/amd/core/_base"},shim:{jquery_ui:["jquery"],jquery_multiselect:["jquery_ui"],highcharts:["jquery"]}});

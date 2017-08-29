@@ -1,0 +1,18 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+			{name:"市场分类",id:undefined},
+			{name:"上证A股",id:"100088"},
+			{name:"上证B股",id:"100089"},
+			{name:"深证A股",id:"100090"},
+			{name:"深证B股",id:"100091"},
+			{name:"全部A股",id:"100092"},
+			{name:"全部B股",id:"100093"},
+			{name:"上证AB股",id:"100094"},
+			{name:"深证AB股",id:"100095"},
+			{name:"中小企业板",id:"100097"},
+			{name:"三板",id:"100098"},
+			{name:"创业板",id:"102689"}
+			]
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>盈利预测柱状图</title>
+<link rel="stylesheet" href="./css/chartPublic.css"/>
+</head>
+<body>
+	<div id="container"></div>
+	
+	<script src="../../../../jquery/amd/require.js" ></script>
+	<script src="./cfg.js"></script>
+	<script type="text/javascript">
+	require(['highcharts'],function(){
+		$(function () {
+			var urlSearch = decodeURI(location.search);
+			var searchRequest = new Object();
+			if(urlSearch.indexOf("?") != -1){
+				var searchStr = urlSearch.substr(1);
+				var searchStrs = searchStr.split("&");
+				for(var i=0,l=searchStrs.length; i<l; i++){
+					searchRequest[searchStrs[i].split("=")[0]]= (searchStrs[i].split("=")[1]);
+				}
+			
+			} 
+			var xAxisValue = eval(searchRequest["xAxisValue"]),
+			    yAxisSeries = eval(searchRequest["yData"]),
+			    mgsyseriesData = eval(searchRequest["mgsyseriesData"]),
+			    yAxisTitle = searchRequest["yAxisTitle"],
+			    myNum = yAxisSeries.length +1,
+				cnt = xAxisValue.length,j = cnt-1,
+				last_year = parseInt(xAxisValue[cnt-1].substr(0,4)),
+				mgsyseriesData_s = [],yAxisSeries_s = [];
+
+			for(var i=last_year,n=last_year-cnt;i>n;i--){
+				mgsyseriesData_s[j] = [i,mgsyseriesData[j]];
+				yAxisSeries_s[j] = [i,yAxisSeries[j]];
+				j--;
+			}		
+			yqData = yAxisSeries_s[yAxisSeries_s.length-1]; 
+			yAxisSeries_s[yAxisSeries_s.length-1]={color:"#F78A8A",y:yqData[1],x:yqData[0]};
+
+		    new Highcharts.Chart({
+		        chart: {
+					renderTo:'container',
+		            zoomType: 'xy'
+		        },
+				exporting:{
+					enabled:false
+				},
+		        title: {
+		            text: ''
+		        },
+		        legend:{
+		        	itemStyle:{
+						fontWeight:'normal'//这个就是不要加粗
+					},
+					margin:5
+		        },
+		        xAxis: {
+		            //categories: xAxisValue,
+		            //categories: [1,2,3,4,5,6],
+		            labels:{
+		            	formatter:function () { 
+	        				if(this.value == last_year)
+	        					return this.value+'预测';
+                            return this.value;
+                        },
+		            	y:25
+		            }
+		        },
+		        yAxis: [{//净利润
+		        	labels:{
+		        		//format:'{value}亿元',
+		        		formatter:function(){
+		        			return this.value.toFixed(1)+'亿元';
+		        		},
+		        		style: {
+		                    color: '#6B6B6B'
+		                }
+		        	},
+		        	//tickInterval:y_max,
+		        	tickPixelInterval:30,
+		        	//min:0,
+		            title: { 
+		            	text: ''
+		                /*text: "   净 利 润",
+		                style:{
+		                	color: '#6B6B6B',
+                			width:'10em'
+            			},
+            			align:'high',
+            			offset:100,
+               			rotation:0*/
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#6B6B6B'
+		            }]
+		        },{ // 每股收益
+		        	//tickInterval:m_max,
+		        	tickPixelInterval:30,
+		        	//min:0,
+		            title: {
+		            	text: ''
+		                /*text: '   每 股 收 益',
+		                style: {
+		                    color: '#6B6B6B',
+		                    width:'10em'
+		                },
+		                align:'high',
+		                offset:100,
+		                rotation:0*/
+		            },
+		            labels: {
+		                //format: '{value} 元',
+		                formatter: function() {
+                        	return this.value.toFixed(1)+'元';
+                    	},
+		                style: {
+		                    color: '#6B6B6B'
+		                }
+		            },
+		            opposite: true
+		        }],
+		         tooltip: {
+		            shared: true,
+		            style:{
+		            	//display:'none' //通过样式表控制不显示tooltip数据提示框
+		            }
+		            
+		        },
+/*		         legend: {
+		            layout: 'vertical',
+		            align: 'left',
+		            x: 80,
+		            verticalAlign: 'top',
+		            y: 20,
+		            floating: true,
+		            backgroundColor: '#FFFFFF'
+		        },  */
+		        credits: {
+		            enabled: false
+		        },
+		        series: [{
+		            name: '净利润(左)',
+		            color: '#95CEFF',
+		            type: 'column',
+		            data: yAxisSeries_s,
+		            tooltip: {
+		                valueSuffix: '亿元'
+		            }
+		        },{
+		            name: '每股收益(右)',
+		            color: '#FCF12E',
+		            type: 'spline',
+		            yAxis: 1,
+		            data: mgsyseriesData_s,
+		            tooltip: {
+		                valueSuffix: ' 元'
+		            }
+		
+		        }]
+		    });
+		    
+		   
+		});
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新闻列表-大智慧通讯社</title>
+<link href="resources/style/index.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript">
+		console.log(new Date().getTime(), "解析第一行JS代码");
+		document.addEventListener("DOMContentLoaded", function(){ //检测可用区域的宽度，写样式。
+			var doc = document,
+				bodyH = doc.body.clientHeight,
+				style = doc.createElement("style"),
+				rules = ".list_pages_box{height:" + (bodyH - 26) + "px;}";
+			style.type='text/css';
+			style.rel='stylesheet';
+			style.appendChild( doc.createTextNode(rules) );
+			doc.head.appendChild(style);
+		});
+
+		var dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,	
+			callback: function() {
+				console.log(new Date().getTime(), "开始执行dojoConfig的callback函数，该函数中首先加载项目的js文件");
+				require(["news/112news/src"], function(main){ main(); });
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+<div class="top_nav_listpage" id="nav-bar-wrap" style="display:block;">
+	<div id="nav-bar"></div>
+    <div class="clear"></div>
+</div>
+
+
+<div class="list_pages_box">
+    <div class="list_pages_con list_pages_con_left f_left" id="xin_wen_list_wrap"></div>
+    <div class="list_pages_con f_right list_pages_con_right" id="content">
+    	<div id="detail-pane-wrap" class="list_text_box font_14 font_gray_3">
+			<h2 id="xin_wen_title" class="text_title font_gray_6 font_16">&nbsp;</h2>
+			<div class="text_msg font_12">
+				<p class="font_center font_gray_9"><span id="xin_wen_info" class="">&nbsp;</span>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;字号:<a href="#" class="font_gray_9" data-font-size="16">&nbsp;&nbsp;大</a><a href="#" class="font_gray_9" data-font-size="14">&nbsp;&nbsp;中</a><a href="#" class="font_gray_9" data-font-size="12">&nbsp;&nbsp;小</a></span></p>
+           
+			</div>
+		  
+			<div id="xin_wen_detail" class="text_con padding_t10"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<iframe name="news_iframe" style="display:none;"><!-- 用于a:visited --></iframe>
+</body>
+</html>

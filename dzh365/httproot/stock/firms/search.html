@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+	<link rel="stylesheet" href="../../dijit/themes/white_detail/document.css"/>
+    <link rel="stylesheet" href="resources/css/custom.css"/>
+    <script>
+        dojoConfig = {
+            async:true,
+            parseOnLoad:false,
+            noscale:true,
+            baseUrl:'../../dojo',
+                        callback:function () {
+                require(['stock/rwml/src'], function (main) {
+                    document.body.innerHTML = '<div data-dojo-type="stock/firms/view/' + location.pathname.match(/([^\/]+)\.html/)[1] + '"></div>';
+                    main();
+                });
+            }
+        };
+            </script>
+</head>
+<body class="claro">
+</body>
+</html>

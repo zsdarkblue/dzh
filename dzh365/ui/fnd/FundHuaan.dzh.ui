@@ -1,0 +1,23 @@
+# coding=gb2312
+
+# 该文件由大智慧数据浏览器生成，请不要手工编辑
+
+# 版本号 V8.5(20121220)
+
+import sys, dzh
+
+browser.zoom_type = 0L
+browser.view_ext = (1280L, 85L)
+browser.title = '\xbb\xaa\xb0\xb2\xbb\xf9\xbd\xf0\xb9\xe3\xb8\xe6'
+
+browser.uuid = 'f87e2223-50a6-4c21-bad1-391115c671e7'
+
+browser.extrnal_style = 'res:T_CSS_BLACK'
+browser.event = {'load': '\x01FLASH\xb2\xa5\xb7\xc5\xc6\xf7 - \xc9\xe8\xd6\xc3URL\x00\xc9\xe8\xd6\xc3 (FLASH\xb2\xa5\xb7\xc5\xc6\xf7:fp) \xb5\xc4URL\xce\xaa (\xd7\xd6\xb7\xfb\xb4\xae:url)\x00$(fp).url = $(url)\x00\x00\x00\x00\x00FLASH\xb2\xa5\xb7\xc5\xc6\xf7\x00\x01\x00\x00\x00browser.adflash\x00\xd7\xd6\xb7\xfb\xb4\xae\x00\x01\x00\x00\x00\x00\x00\x00\x00ad.swf\x00\x00\x00'}
+
+browser.children = [
+	dzh.flashplayer(name='adflash', x=0L, y=0L, width=1280L, height=85L, shadow=False, contextmenu_dataset={})]
+
+vars = {'obj': ['\xd7\xd6\xb7\xfb\xb4\xae', None]}
+
+browser.styleTable = {}

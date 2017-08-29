@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gb2312"?>
+<list>
+<column>
+<col><value>index</value><width>30</width><name>序号</name></col>
+<col><value>label</value><width>70</width><name>代码</name></col>
+<col><value>name</value><width>100</width><name>名称</name></col>
+<col><value>now</value><width>65</width><name>最新</name></col>
+<col><value>nowvol</value><width>70</width><name>现手</name></col>
+<col><value>buyprice1</value><width>70</width><name>买一价</name></col>
+<col><value>buyvol1</value><width>70</width><name>买一量</name></col>
+<col><value>sellprice1</value><width>70</width><name>卖一价</name></col>
+<col><value>sellvol1</value><width>75</width><name>卖一量</name></col>
+<col><value>volume</value><width>70</width><name>总手</name></col>
+<col><value>undn</value><width>70</width><name>涨跌</name></col>
+<col><value>updnratio</value><width>70</width><name>涨幅</name></col>
+<col><value>openinterest</value><width>78</width><name>持仓量</name></col>
+<col><value>oiinc</value><width>70</width><name>增仓</name></col>
+<col><value>oiincday</value><width>82</width><name>日增仓</name></col>
+<col><value>open</value><width>70</width><name>今开</name></col>
+<col><value>high</value><width>70</width><name>最高</name></col>
+<col><value>low</value><width>70</width><name>最低</name></col>
+<col><value>settle</value><width>70</width><name>结算价</name></col>
+<col><value>presettle</value><width>93</width><name>昨结算价</name></col>
+<col><value>lastclose</value><width>70</width><name>昨收</name></col>
+<col><value>preopeninterest</value><width>70</width><name>昨持仓量</name></col>
+<col><value>outvol</value><width>70</width><name>外盘</name></col>
+<col><value>invol</value><width>70</width><name>内盘</name></col>
+</column>
+	<script  param="path">
+rjBD414o6uU2hf5KRJaXGCpxe7B5ZI4+SEYQAIFWPw+RJZgCMzvwXQDGAJzQ3Hd5zCn5dHEKaj4zh8lQE7A/e9uzX6ubYsk6UfUiD/X3PKlzSa7kORnGEa/GULfLK3XtG8b4WOazFjBfS85g3WSj8eZ5jnWCpQbvRs0AXW+O95kqjA/6xrr/XKH2SWp++XydxX1HtkN/cvm2FjtjON95Z2MAF2ZX6ejo/5SlD6iaYCmKd5IdpCs4g6xw0bb6IooWHAm+vTu0MS1l2f+McGYN92zL2j4PVulUCo/KPGDg4+EjyYIldZS+ZbFwHE1LbvXYixs/YuUEfzgoBxQNlyp12cnAtaioHW36G6dOkGMqIZ5Wd6jVUb+7kqc20zOOVbdIOC+PhZdBw4xEoHYl0G4waW/f0UIrj4NCexRlphVZ707tt71zQBmAYmr2VkbSXVaxBFo+//l2UIo+m8rjuJXNyc928fxmrM+3ua97P/cPPOXnCaReKk3vazbB3JMztfUJ+msVJtwGwSNFS6H+ULf8Hfl04ffUxzOM1thq57g0h4HrVa3rvZnvR/unT0Io2iyqOBOOZwkDI5fnBls7EPwerbpomvgRzEARYk4o8wTQEjvhBo+VfbWXiqLO41emEK3vcwUg6je4I222vJW7TV8e/Yj6yRPcfKMfDeXmyKO+yDpheykPDMVjsHFJMhUnsIxgTiqyfRIbJV+GmVoMPF/KBLD6w2Gr0ka2furPb6Xl1zdi68mnZJFg5mD5TLA6v+WeMaNNA2B8sjk8y16StB3c+yd7Lhw7uHgc5gvDihQkx86OhVZAQLFEclD9WMpsyXpZlViaLzbnGfJlRQHS36Mw4/pATpTFvZq0fhexEO2rVq9Qg/LYUCCX5DnXZRdUqCwR5tvtu7E1Yg19kkC+pNzQcGcLumiREodZGlYqxwH9bT4/PfOzMbYFAHxEnd7LabAVS9Awx4HgNAsXhlhitiSWhLG1W4lsvoISBDkvt6fooLCnJ601R1RXUzZUWK58xRuSC5i95yYe66RiawTWhXOOlwse17b9nRHcUqbOWCNv9rC2uYNa9yKnIvxaszCF3cYpVpFbgl7hVgPfobIW+JcxcdZxkMHkonU1wt8HOiCc30czAb/bAOUkYE8lEPrH54gpDYjBrQ/phN0mMwmM6cqimwpr8VXBItYWFjMZafbJYZpck+C+lKPlU+uDHas7QNfpJKIbD4HP1nOVaYg0AgoewKY1TwxrLCZt8uZngAMkHx+r4u6XHjCDiiuIYXYmV6VAmPGczNlQ4Um/rRTWd+KzAZ/1N0CkE5nGuLFsacIzX2C6LP4k6MLzW32nIpUsHscm9Dn/G6IFFBbjHC5jEODJrAxIRSWaDwpnRMXvp01pi4BalikhQK588IjswZLMY2w6jlJwuvlKpU7cCC6NB9w8MA2iI3TdBJhgygs7v6SezwHhhWTkF/6M8byEj7zxwSxRKoSd2LqEiEwfU7qFSpehvmQphlc5wbJ4UBZc8aIr+hC7eZ+tBLEgV2rCQj4mSNnYY9jtYS1BlOFl5bAilbceY5Oxhd9EVVvGmB9y2I9yunE7iOX03+Uv0H1R7XszArHzqF7a6l/wuMlb5jHFkSCoBHIyrBaIONX1zCPmafqwX14ri/mkDA6w/ulHRQHmGXN7l+7qTDbMzzczAI4wjkWbj7lICVpltLeYjyfZkO8159eCpxtFkvc3eBKd2P87YPVmCMYCPZJZmRq4Cvl8lf9wvFEOGP31KIPIiDlclkcQSnE8RqH3RmxaXYxjrY0dazMPATYyGtUEijuZmpoojcWAoqb/8KHNctlTjZKS7kUBQJn+Ot+Q3azFVA486Bw7KwSS2IGmf19jDJ/KCx/vG54elsBc+mgSQRTr5iP6zYvShTc0uo84+3U1NO0wTr/8PJ6OBVQuayfQ8NcZazdMT80+H1ArttAMPgXGOS98ZwRPPi7+efB762o5UyCnHRHuve2yKlyUWqrq/z/9pQv+flUnfvBUbuXQ13ZXGVu4ftrwlgb/2wnGiscEtlkHNzIf4yeIOO5P4xKxxO41DK4V/W1BaeNp9YWrTgBC6IWYMFWVZafpr07G/KvxP+eo0m0atoeEqbmQNhQUdywNNyERlUIcBR8B+XKd9xu5tCC+KmeVpCv/uLMh8oITtS+ouPCLnDwT5GWs1fRTmyo/xyPRdHzm9VvTF0umWlQeC6ptnLbJxtIDiZan/nMBG8j0tBNfRELRkQXiMIpiB74RvHUK57bNKfiKMPNBJrniVX8IiMM74Lo=
+	</script>
+  </list>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col><value>index</value><width>30</width></col><col><value>label</value><width>70</width></col><col><value>name</value><width>78</width></col><col fixed="1"><value>now</value><width>70</width></col><col><value>updnratio</value><width>70</width></col><col><value>exchange</value><width>70</width></col><col><value>allvalue</value><width>74</width></col><col><value>floatvalue</value><width>80</width></col><col><value>prop</value><width>83</width></col><col><value>pnratio</value><width>70</width></col><col><value>tickcount</value><width>84</width></col><col><value>volpertick</value><width>70</width></col><col><value>buysellsym</value><width>86</width></col><col><value>buyprice1</value><width>70</width></col><col><value>buyvol1</value><width>70</width></col><col><value>sellprice1</value><width>70</width></col><col><value>sellvol1</value><width>70</width></col><col><value>buyprice2</value><width>70</width></col><col><value>buyvol2</value><width>79</width></col><col><value>sellprice2</value><width>78</width></col><col><value>sellvol2</value><width>82</width></col></column>
+</list>

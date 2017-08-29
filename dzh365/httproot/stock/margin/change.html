@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/call.css"/>
+</head>
+<body>
+
+
+<header>
+    <div class="marginCenter">
+        <ul id="headerSecondUl" class="pull-left" data-bind="onChangeViewClick" class="pull-left">
+            <li data-view="stockInfo" data-value="gw.sh.func.StockHolderZCRequest" class="active">股东净增持排名</li>
+            <li data-view="stockInfo" data-value="gw.sh.func.StockHolderJCRequest">股东净减持排名</li>
+            <li data-view="newestInfo" data-value="gw.sh.func.StockHolderZJCOrderRequest">最新增减持变动</li>
+        </ul>
+    </div>
+</header>
+
+<div id="container" class="flex-auto no-resize">
+    <div id="containerBorder">
+        <div id="conditionDiv">
+            <div class="stockInfo">
+                <ul class="btns-list" data-bind="onDateClick">
+                    <li class="active" data-value="1">一个月</li>
+                    <li data-value="2">一季度</li>
+                    <li data-value="3">半年</li>
+                    <li data-value="4">一年</li>
+                    <li data-value="5" class="tip-container">
+                        <i class="fa fa-calendar"></i>
+                        <span>自定义</span>
+
+                        <div class="tip">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="beginDate">起始</label>
+                                    <input type="datetime" id="beginDate"><i class="fa fa-calendar"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="endDate">截止</label>
+                                    <input type="datetime" id="endDate"><i class="fa fa-calendar"></i>
+                                </div>
+                                <div class="buttons">
+                                    <button class="btn btn-gray" data-bind="onSearchBtnClick">查 询</button>
+                                    <button class="btn btn-gray" data-bind="onSearchCancelClick">取 消</button>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <ul class="radio-list" data-bind="onChangeRTypeClick">
+                    <li>
+                        <div data-value="1" class="check-box checkedBox"><i data-value="1"></i></div>
+                        <span data-value="1">大股东及高管</span>
+                    </li>
+                    <li>
+                        <div data-value="2" class="check-box"><i data-value="2"></i></div>
+                        <span data-value="2">高管</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="newestInfo hide">
+                <form action="">
+                    <div class="form-group">
+                        <input type="datetime" id="searchBeginDate"><i class="fa fa-calendar"></i>
+                        <span>至</span>
+                        <input type="datetime" id="searchEndDate"><i class="fa fa-calendar"></i>
+                    </div>
+
+                    <ul class="radio-list" data-bind="onChangeRTypeClick">
+                        <li>
+                            <div data-value="1" class="check-box checkedBox"><i data-value="1"></i></div>
+                            <span data-value="1">大股东及高管</span>
+                        </li>
+                        <li>
+                            <div data-value="2" class="check-box"><i data-value="2"></i></div>
+                            <span data-value="2">高管</span>
+                        </li>
+                    </ul>
+
+                    <div class="form-group">
+                        <label for="zjtype">增减类型:</label>
+                        <select name="" id="zjtype" data-bind="onRangeChange">
+                            <option value="0" selected>全部</option>
+                            <option value="1">增持</option>
+                            <option value="2">减持</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group floatRight">
+                        <input id="searchTxt" type="search" placeholder="请输入证券代码或简称"><i class="fa fa-search"></i>
+                        <button class="btn btn-gray" data-bind="onNewestSearchClick">查 询</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div id="tableContainer">
+
+            <div data-view="stockInfo" class="table-contain">
+                <div class="tbl-header">
+                    <table>
+                        <colgroup>
+                            <col width="59">
+                            <col width="104">
+                            <col width="92">
+                            <col width="110">
+                            <col width="110">
+                            <col width="55">
+                            <col width="110">
+                            <col width="109">
+                            <col width="85">
+                            <col width="54">
+                            <col width="109">
+                            <col width="109">
+                            <col width="85">
+                            <col class="has-scroll" width="6">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th rowspan="2">排名</th>
+                            <th rowspan="2">股票代码</th>
+                            <th rowspan="2">股票简称</th>
+                            <th colspan="2" class="addMode">净增持</th>
+                            <th colspan="4" class="addMode">增持</th>
+                            <th colspan="5" class="addMode">减持</th>
+                            <th colspan="2" class="minusMode hide">净减持</th>
+                            <th colspan="4" class="minusMode hide">减持</th>
+                            <th colspan="5" class="minusMode hide">增持</th>
+                        </tr>
+                        <tr>
+                            <th>金额(万元)</th>
+                            <th>股数(万股)</th>
+                            <th>次数</th>
+                            <th>金额(万元)</th>
+                            <th>股数(万股)</th>
+                            <th>均价(元)</th>
+                            <th>次数</th>
+                            <th>金额(万元)</th>
+                            <th>股数(万股)</th>
+                            <th>均价(元)</th>
+                            <th class="has-scroll"></th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="tbl-container scroll">
+                    <table>
+                        <colgroup>
+                            <col width="59">
+                            <col width="104">
+                            <col width="92">
+                            <col width="110">
+                            <col width="110">
+                            <col width="55">
+                            <col width="110">
+                            <col width="109">
+                            <col width="85">
+                            <col width="54">
+                            <col width="109">
+                            <col width="109">
+                            <col width="85">
+                        </colgroup>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+            <div data-view="newestInfo" class="table-contain hide">
+                <div class="tbl-header">
+                    <table>
+                        <colgroup>
+                            <col width="74">
+                            <col width="63">
+                            <col width="70">
+                            <col width=155">
+                            <col width="78">
+                            <col width="70">
+                            <col width="80">
+                            <col width="70">
+                            <col width="80">
+                            <col width="60">
+                            <col width="90">
+                            <col width="72">
+                            <col class="has-scroll" width="6">
+                        </colgroup>
+                        <thead>
+                        <tr data-bind="onTHeadClick">
+                            <th class="order desc" data-type="1">日期<i class="arrow"></i></th>
+                            <th data-type="2">股票代码</th>
+                            <th data-type="3">股票简称</th>
+                            <th data-type="4">股东名称</th>
+                            <th data-type="5">变动股数<span>(万股)</span></th>
+                            <th data-type="6">均价(元)</th>
+                            <th data-type="7">变动金额<span>(万元)</span></th>
+                            <th data-type="9">占流通股比(‰)</th>
+                            <th data-type="10">变动后(万股)</th>
+                            <th data-type="11">关联高管</th>
+                            <th data-type="12">职务</th>
+                            <th data-type="14">与高管关系</th>
+                            <th class="has-scroll"></th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-container scroll">
+                    <table>
+                        <colgroup>
+                            <col width="74">
+                            <col width="63">
+                            <col width="70">
+                            <col width=155">
+                            <col width="78">
+                            <col width="70">
+                            <col width="80">
+                            <col width="70">
+                            <col width="80">
+                            <col width="60">
+                            <col width="90">
+                            <col width="78">
+                        </colgroup>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="pageBottom">
+            <p class="tip">若仅公布股东在区间段内的增减持，则按区间截止日进行统计。</p>
+
+            <div id="pagerParent">
+                <div class="pager" v-on="click:onClick">
+                    <a v-attr="data-index:index-1">上一页</a>
+                    <a v-class="active:index==1" v-text="1"></a>
+                    <i v-if="count>size&&index>size/2+1">...</i>
+                    <a v-class="active:index==$value" v-repeat="items" v-text="$value"></a>
+                    <i v-if="count>size&&index<count-size/2">...</i>
+                    <a v-class="active:index==count" v-if="count>1" v-text="count"></a>
+                    <a v-attr="data-index:index+1">下一页</a>
+                    <input v-attr="min:1,max:count" v-model="input" v-on="change:onChange" type="number">
+                    <a v-attr="data-index:input">GO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="stockDetailDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        增持明细
+        <i></i>
+    </div>
+    <div class="dialog-body">
+        <div class="container">
+            <h3>
+                <span class="sign">&gt;</span>
+                <span class="title"></span>
+                <span class="info">股东持股明细</span>
+            </h3>
+
+            <div class="table-container">
+                <div class="thead-container">
+                    <table class="stockTpl">
+                        <colgroup>
+                            <col width="75">
+                            <col width="220">
+                            <col width="63">
+                            <col width="45">
+                            <col width="80">
+                            <col width="80">
+                            <col width="70">
+                            <col width="70">
+                            <col width="60">
+                            <col width="140">
+                            <col width="70">
+                            <col width="16">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>公告日期</th>
+                            <th>股东名称</th>
+                            <th>股东类型</th>
+                            <th>方向</th>
+                            <th>起始日期</th>
+                            <th>截止日期</th>
+                            <th>股数(万股)</th>
+                            <th>金额(万元)</th>
+                            <th>均价(元)</th>
+                            <th>关联高管职务</th>
+                            <th>与高管关系</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbody-container">
+                    <table class="stockTpl">
+                        <colgroup>
+                            <col width="75">
+                            <col width="220">
+                            <col width="63">
+                            <col width="45">
+                            <col width="80">
+                            <col width="80">
+                            <col width="70">
+                            <col width="70">
+                            <col width="60">
+                            <col width="140">
+                            <col width="70">
+                        </colgroup>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="GB2312"?> <list version="1.0">
+  <itemmasks>
+  	<itemmask desc="期指，5档期货">
+  		<matchitem>10</matchitem>
+		<mask>SF{type=8}</mask>
+  	</itemmask>
+	  	<itemmask desc="君泰">
+  		<matchitem>30</matchitem>
+		<mask>JT</mask>
+  	</itemmask>
+  	<itemmask desc="舟山">
+  		<matchitem>39</matchitem>
+		<mask>ZS</mask>
+	</itemmask>
+	<itemmask desc="中期保证金">
+  		<matchitem>47</matchitem>
+		<mask>EC</mask>
+  	</itemmask>
+
+	<itemmask desc="股指期权">
+  		<matchitem>45</matchitem>
+		<mask>IO,OP,HO</mask>
+  	</itemmask>
+	<itemmask desc="亚太化工，滨海现货">
+  		<matchitem>40</matchitem>
+		<mask>YC,BC</mask>
+  	</itemmask>
+
+	<itemmask desc="昆明KP">
+  		<matchitem>35</matchitem>
+		<mask>KP</mask>
+  	</itemmask>
+  	<itemmask desc="YT 江苏大圆银">
+  		<matchitem>36</matchitem>
+		<mask>YT</mask>
+  	</itemmask>
+  	<itemmask desc="黄金">
+  		<matchitem>29</matchitem>
+		<mask>SG</mask>
+  	</itemmask>
+  	<itemmask desc="香港期货">
+  		<matchitem>28</matchitem>
+		<mask>HF</mask>
+  	</itemmask>
+  	<itemmask desc="渤海">
+  		<matchitem>22</matchitem>
+		<mask>BO</mask>
+	</itemmask>
+	<itemmask desc="国债预发行">
+		<matchitem>44</matchitem>
+		<mask>WI</mask>
+	</itemmask>
+	<itemmask desc="暂停上市">
+  		<matchitem>31</matchitem>
+		<mask>00{{marketlabel=SH}{submarkettype=100}},00{{marketlabel=SZ}{submarkettype=100}}</mask>
+  	</itemmask>
+	<itemmask desc="已退市">
+  		<matchitem>32</matchitem>
+		<mask>00{{marketlabel=SH}{submarkettype=99},00{{marketlabel=SZ}{submarkettype=99}}</mask>
+  	</itemmask>
+	<itemmask desc="服务器债券">
+  		<matchitem>24</matchitem>
+		<mask>00{{marketlabel=IB}{type=17}},00{{marketlabel=IB}{type=15}}</mask>
+  	</itemmask>
+	<itemmask desc="服务器债券">
+  		<matchitem>25</matchitem>
+		<mask>00{{marketlabel=IB}}</mask>
+  	</itemmask>
+	<itemmask desc="国际酒业">
+  		<matchitem>23</matchitem>
+		<mask>SJ</mask>
+  	</itemmask>
+  	<itemmask desc="外盘一档">
+  		<matchitem>20</matchitem>
+		<mask>00</mask>
+  	</itemmask>
+  	<itemmask desc="上深可转债">
+  		<matchitem>17</matchitem>
+		<mask>SH{type=12},SZ{type=12}</mask>
+  	</itemmask>
+  	<itemmask desc="上深非可转债">
+  		<matchitem>18</matchitem>
+		<mask>SH{type=3},SZ{type=3}</mask>
+  	</itemmask>
+  	<itemmask desc="全球指数">
+  		<matchitem>14</matchitem>
+		<mask>DA,DJ,FR,FT,SP,IX,HI{type=0}</mask>
+  	</itemmask>
+  	<itemmask desc="外盘股票">
+  		<matchitem>13</matchitem>
+		<mask>NS,NY</mask>
+  	</itemmask>
+
+  	<itemmask desc="m_prevTickItemMask分笔成交再现">
+  		<matchitem>0</matchitem>
+  		<mask></mask>
+  	</itemmask>  	
+  	<itemmask desc="板块指数">
+  		<matchitem>7</matchitem>
+  		<mask>$$,B$</mask>
+  	</itemmask>
+  	<itemmask desc="指数">
+  		<matchitem>6</matchitem>
+  		<mask>**{type=0}</mask>
+  	</itemmask>
+  	<itemmask desc="债券">
+  		<matchitem>3</matchitem>
+  		<mask>**{type=3}</mask>
+  	</itemmask>
+  	<itemmask desc="可转债">
+  		<matchitem>3</matchitem>
+  		<mask>**{type=12}</mask>
+  	</itemmask>
+	<itemmask desc="R003等">
+  		<matchitem>4</matchitem>
+  		<mask>SH{type=15},SZ{type=15}</mask>
+  	</itemmask>
+  	<itemmask desc="权证,期权">
+  		<matchitem>11</matchitem>
+  		<mask>**{type=5}, **{type=14}</mask>
+  	</itemmask>
+		<itemmask desc="非货币基金">
+  	    <matchitem>37</matchitem>
+  	    <mask>OF{{type=2}{subn=股票基金},OF{{type=2}{subn=债券基金},OF{{type=2}{subn=混合型基金},OF{{type=2}{subn=QDII基金},OF{{type=2}{subn=保本型基金},OF{{type=2}{subn=货币净值基金}</mask>
+  	</itemmask>
+  	    <itemmask desc="货币基金">
+  		<matchitem>38</matchitem>
+  		<mask>OF{{type=2}{subn=货币基金},OF{{type=2}{subn=短期理财基金}</mask>
+  	</itemmask>
+  	<itemmask desc="ETF,LOF">
+  		<matchitem>5</matchitem>
+  		<mask>**{type=10}, **{type=11}</mask>
+  	</itemmask>
+  	<itemmask desc="外汇">
+  		<matchitem>9</matchitem>
+  		<mask>**{type=6},A1,A2,A3</mask>
+  	</itemmask>
+  	<itemmask desc="期货1">
+  		<matchitem>34</matchitem>
+  		<mask>CM,CB,NX,CX,SM,IC,IP,SC,DC,DO,EO,ZC,HF</mask>
+  	</itemmask>
+  	<itemmask desc="期货">
+  		<matchitem>8</matchitem>
+  		<mask>**{type=7}</mask>
+  	</itemmask>
+  	<itemmask desc="现货">
+  		<matchitem>12</matchitem>
+  		<mask>**{type=16}</mask>
+  	</itemmask>
+  	<itemmask desc="港股">
+  		<matchitem>48</matchitem>
+  		<mask>HK</mask>
+  	</itemmask>	
+  	<itemmask desc="其他">
+  		<matchitem>1</matchitem>
+  		<mask>**</mask>
+  	</itemmask>
+  </itemmasks>
+</list>

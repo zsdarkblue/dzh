@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>新股中心 版本号：c2.02.10</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../../dijit/themes/white/document.css" />
+	<link rel="stylesheet" href="./resources/custom.css" />
+
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		dojoConfig = {
+			async:true, parseOnLoad:false, 	
+			requestProvider: "dojo/request/registry",
+			baseUrl : "../../dojo",		
+		//	paths:{'stock':'../stock'}, 
+			noscale:true,	
+			//_baseW:900,_baseH:550,
+			//locale:'en', //放开测试国际化
+						
+			callback: function() {
+				require(['stock/xgzx/src'],
+					function(main){						
+						main();
+					}
+				);
+			}
+		}
+				//dojopr();
+	</script>
+</head>
+<body class="claro"">
+	<!--
+	<div class="navMenu hbox">
+		<div style="line-height: 25px;position: absolute;right:20px;font-size:18px;color: #5A5656; ">新股中心 快捷键：IPO</div>
+	</div>
+	-->
+	<div id="labelParentDiv">
+		<div id="xgsglabel" class="labelDiv">新股申购</div>
+		<div id="xgrlabel" class="labelDiv">新股日历</div>     
+		<div id="xghblable" class="labelDiv">新股回报</div>
+		<div id="shqylabel" class="labelDiv">上会企业</div>
+		<div id="xgxwlabel" class="labelDiv">新股新闻</div> 
+<!--		<div id="xgyqlabel" class="labelDiv">新股舆情</div>  -->
+		
+		<div id="sbqylabel" class="labelDiv">申报企业</div>   
+		<div id="fdbalable" class="labelDiv">辅导备案</div>   
+		<div id="xgxwInputParent" style="position: fixed;top: 4px;right:15px;display: none;">
+			<div data-dojo-type="dijit/form/TextBox" id="xgxwKeyboardInput" data-dojo-props="maxHeight:260" placeholder="请输入新闻关键字" style="width:120px;font-size: 12px;" ></div>
+			<button id="xgxwcx" class="backgroundE4C7">查询</button>
+		</div>
+		<div id="xgzxztbb" data-url="DZH://REPORT?ReportModule.dll&amp;MODULE='101'&amp;MODULEREPLACED='ssddvsd'&amp;PARAM='loadStat 1013 1013'" style="position: fixed;top: 8px;right:15px;display: none;">相关专题报表</div>
+		
+	</div>
+
+	<div id="tabParentDiv" style="display:none;">
+		<div id="xgsgTabParentDiv"  class="display_none;">
+			<div id="xgsgoptionParentDiv">	
+				<div id="xgsgscxzParentDiv" class="display_inlineBlock position_fixed left10">
+					<div id="xgsgScxzQBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle checked"></div>
+						<span class="sctjChild_label">全部</span>
+					</div>
+					<div id="xgsgScxzHSZBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">沪市主板</span>
+					</div>
+					<div id="xgsgScxzZXparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">中小板</span>
+					</div>
+					<div id="xgsgScxzCYparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">创业板</span>
+					</div>
+				</div>
+		
+				<div data-dojo-type="dojox/form/KeyboardSpirit" id="xgsgKeyboardInput" data-dojo-props="maxHeight:260" class="" placeholder="请输入股票代码或简称" style="width:130px;position: fixed;right:70px;font-size: 12px;" ></div>
+				<input type="button" id="xgsgMainchaxuan" class="position_fixed backgroundE4C7" value="查询" />
+			</div>
+			<div id="xgsgGridParentDiv"  class="GridParentDiv">
+				<div id="xgsgGridDiv"></div>
+				<div id="xgsgroller" style="width:100%;height: 17px;margin-top: -17px;overflow-x: scroll;overflow-y: hidden;position: relative;z-index: 999;display: none">
+					<div id="xgsgbrollerchild" style="height:1px"></div>
+				</div>
+			</div>
+			
+			<div id="xgsgPagerParentDiv" class="position_absolute">
+				<div id="xgsgpagerDiv"></div>
+			</div>
+			
+		</div>
+		<div id="xgrlTabParentDiv">
+			<div id="xgrloptionParentDiv">
+				<div id="wsxParentDiv" class="display_inlineBlock">
+					<div id="xgrlQBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle checked"></div>
+						<span class="sctjChild_label">全部</span>
+					</div>
+					<div id="xgrlWSparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">网上</span>
+					</div>
+					<div id="xgrlWXparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">网下</span>
+					</div>
+				</div>
+				
+				<div id="qhwrParentDiv" class="display_inlineBlock position_fixed">
+					<div id="xgrlqwr" class="xgrlqhwr cursorP display_inlineBlock">前五日</div>
+					<div id="xgrlhwr" class="xgrlqhwr cursorP display_inlineBlock">后五日</div>
+				</div>	
+				
+			</div>
+<!--			<div data-dojo-type="dijit/layout/LayoutContainer" id="xgrlLayoutContainer">   -->
+<!--			<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true" id="xgrlBorderContainer" style="hieght:100%">    -->
+				<div id="xgrlGridParentDiv">
+					<div id="xgrlGridDiv"></div>
+				</div>
+<!--				<div id="xgrltjgridH"><div id="toggleNodeImage" class="ToggleSplitterIconClosed"></div></div>  -->
+<!--				<div id="xgrlfxygParentDiv">
+					<div id="xgrlfxygDiv" class="landi"><span class="xbiaoti">发行预告</span></div>
+					<div>无即将发行的新股</div>
+				</div>    -->
+				<div id="xgrlssygContantPane" style="display: none;">
+					<div id="xgrlssygDiv" class="landi"><span class="xbiaoti">上市预告</span></div>
+					<div id="xgrlssygGridParent"></div>
+				</div>
+<!--			</div>   -->
+<!--			</div>    -->
+		</div>
+		<div id="xghbTabParentDiv">
+			<div id="xghboptionParentDiv">
+				<div id="hbParentDiv" class="display_inlineBlock">
+					<div id="sghb" class="olabelDiv selected display_inlineBlock">申购回报</div>
+					<div id="xgshhhb" class="olabelDiv display_inlineBlock">新股上市后回报</div>
+				</div>
+				
+				<div id="xghbscxzParentDiv" class="display_inlineBlock position_fixed right200">
+					<div id="xghbScxzQBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle checked"></div>
+						<span class="sctjChild_label">全部</span>
+					</div>
+					<div id="xghbScxzHSZBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">沪市主板</span>
+					</div>
+					<div id="xghbScxzZXparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">中小板</span>
+					</div>
+					<div id="xghbScxzCYparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">创业板</span>
+					</div>
+				</div>
+				
+				<div data-dojo-type="dojox/form/KeyboardSpirit" id="xghbKeyboardInput" data-dojo-props="maxHeight:260" class="" placeholder="请输入股票代码或简称" style="width:130px;position: fixed;right:70px;font-size: 12px;" ></div>
+
+				<input type="button" id="xghbMainchaxuan" class="position_fixed backgroundE4C7" value="查询" />
+			</div>
+			<div id="xghbGridParentDiv" class="GridParentDiv">
+				<div id="xghbGridDiv"></div>
+				
+				<div id="xghbroller" style="width:100%;height: 17px;margin-top: -17px;overflow-x: scroll;overflow-y: hidden;position: relative;z-index: 999;display: none">
+					<div id="xghbrollerchild" style="height:1px"></div>
+				</div>
+			</div>
+			<div id="xghbPagerParentDiv" class="position_absolute">
+				<div id="xghbpagerDiv"></div>
+			</div>
+		</div>
+		<div id="xgxwTabParentDiv">
+			<div id="xgxwGridParentDiv">
+				<div id="xgxwTitleList"></div>
+				<div id="xgxwcontent">
+					<div id="xgxwContentTitle">新闻标题</div>
+					<div id="contentTimeSource">
+						<div id="xgxwContentTime">新闻时间</div>
+						<div id="xgxwContentSource"><span>来源：</span><span id="xgxwSourceSapn"></span></div>
+						<div id="xgxwContentzihao"><span>字号：</span><span id="xgxwdazihao" class="xgxwzh">大</span><span id="xgxwzhongzihao" class="xgxwzh">中</span><span id="xgxwxiaozihao" class="xgxwzh">小</span></div>
+					</div>
+					
+					<div id="xgxwContetText">新闻内容</div>
+					<div id="xgxwContetimgLoadingDiv" style="height:100%;width:54%;position: absolute;top:0px;display: none;">
+						<img id="xgxwContetLoadingimg" style="height:40px;width:40px;margin-top: 45%;margin-left:48%;" src="./resources/image/loading.gif"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="xgyqTabParentDiv">
+			<div id="xgyqGridParentDiv">
+				<div id="xgyqGridDiv"></div>
+			</div>
+		</div>
+		<div id="shqyTabParentDiv">
+			<div id="shqyoptionParentDiv">
+				<div id="ztxzParentDiv" class="display_inlineBlock">
+					<div id="ztqb" class="olabelDiv selected display_inlineBlock">全部</div>
+<!--					<div id="ztyfx" class="olabelDiv display_inlineBlock">已发行</div>   -->
+					<div id="ztghwfx" class="olabelDiv display_inlineBlock">过会未发行</div>
+					<div id="ztwgh" class="olabelDiv display_inlineBlock">未过会</div>
+					<div id="ztzhbj" class="olabelDiv display_inlineBlock">暂缓</div>
+<!--					<div id="ztzhtj" class="olabelDiv display_inlineBlock">暂缓提交</div> -->
+					<div id="ztyqsh" class="olabelDiv display_inlineBlock">延期/取消</div>
+<!--					<div id="ztqxsh" class="olabelDiv display_inlineBlock">取消审核</div>  -->
+					<div id="ztcxshjg" class="olabelDiv display_inlineBlock">撤销审核</div>
+				</div>
+					
+				<div id="shqyscxzParentDiv" class="display_inlineBlock position_fixed right250">
+					<div id="shqyScxzQBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle checked"></div>
+						<span class="sctjChild_label">全部</span>
+					</div>
+					<div id="shqyScxzHSZBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">沪市主板</span>
+					</div>
+					<div id="shqyScxzZXparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">中小板</span>
+					</div>
+					<div id="shqyScxzCYparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">创业板</span>
+					</div>
+				</div>
+				
+				<div data-dojo-type="dijit/form/TextBox" id="shqyKeyboardInput" data-dojo-props="maxHeight:260" class="" placeholder="请输入公司名称、保荐机构" style="width:160px;position: fixed;right:70px;font-size: 12px;" ></div>
+				<input type="button" id="shqyMainchaxuan" class="position_fixed backgroundE4C7" value="查询" />
+			</div>
+			<div id="shqyGridParentDiv" class="GridParentDiv">
+				<div id="shqyGridDiv"></div>
+			</div>
+			<div id="shqyPagerParentDiv" class="position_absolute">
+				<div id="shqypagerDiv"></div>
+			</div>
+			<div data-dojo-type="dijit/Dialog" id="fxqgd" data-dojo-id="fxqgd"  title="发行前股东">
+				<div data-dojo-type="dijit/layout/ContentPane" id="fxqgdContentPane" style="width:660px;height:270px" class="tabPane" >
+                    <div id="fxqgdGriddiv"></div>
+                </div>
+			</div>
+			<div data-dojo-type="dijit/Dialog" id="zjtx" data-dojo-id="fxqgd" title="募集资金投向">
+				<div data-dojo-type="dijit/layout/ContentPane" id="zjtxContentPane" style="width:560px;height:170px"  class="tabPane" >
+                    <div id="zjtxGriddiv"></div>
+                </div>
+			</div>
+		</div>
+		<div id="sbqyTabParentDiv">
+			<div id="sbqyoptionParentDiv">
+				<div id="sbztParentDiv" class="display_inlineBlock">
+					<div id="sbztqb" class="olabelDiv selected display_inlineBlock">全部</div>
+					<div id="sbsl" class="olabelDiv display_inlineBlock">受理</div>
+					<div id="sbfk" class="olabelDiv display_inlineBlock">反馈</div>
+					<div id="sbyybl" class="olabelDiv display_inlineBlock">已预披露</div>   
+					<div id="sbbyhz" class="olabelDiv display_inlineBlock">不予核准</div>  
+					<div id="sbzhzsc" class="olabelDiv display_inlineBlock">中止审查</div>
+					<div id="sbzzsc" class="olabelDiv display_inlineBlock">终止审查</div>
+				</div>
+				
+				<div id="sbqyscxzParentDiv" class="display_inlineBlock position_fixed right250">
+					<div id="sbqyScxzQBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle checked"></div>
+						<span class="sctjChild_label">全部</span>
+					</div>
+					<div id="sbqyScxzHSZBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">沪市主板</span>
+					</div>
+					<div id="sbqyScxzZXparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">中小板</span>
+					</div>
+					<div id="sbqyScxzCYparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">创业板</span>
+					</div>
+				</div>
+				
+				<div data-dojo-type="dijit/form/TextBox" id="sbqyKeyboardInput" data-dojo-props="maxHeight:260" class="" placeholder="请输入公司名称、保荐机构" style="width:160px;position: fixed;right:70px;font-size: 12px;" ></div>
+		
+				<input type="button" id="sbqyMainchaxuan" class="position_fixed backgroundE4C7" value="查询" />
+			</div>
+			<div id="sbqyGridParentDiv" class="GridParentDiv">
+				<div id="sbqyGridDiv"></div>
+			</div>	
+			<div id="sbqyPagerParentDiv" class="position_absolute">
+				<div id="sbqypagerDiv"></div>
+			</div>
+			<div data-dojo-type="dijit/Dialog" id="sbqysblc" data-dojo-id="sbqysblc" title="申报历程">
+				<div data-dojo-type="dijit/layout/ContentPane" id="sblcContentPane" style="width:560px;height:170px"  class="tabPane" >
+                    <div id="sblcGriddiv"></div>
+                </div>
+			</div>
+		</div>
+		<div id="fdbaTabParentDiv">
+			<div id="fdbaoptionParentDiv">
+				<div id="baztParentDiv" class="display_inlineBlock">
+					<div id="baztqb" class="olabelDiv selected display_inlineBlock">全部</div>
+					<div id="baztysb" class="olabelDiv display_inlineBlock">已申报</div>
+					<div id="baztwsb" class="olabelDiv display_inlineBlock">未申报</div>
+					<div id="baztzzba" class="olabelDiv display_inlineBlock">终止备案</div>
+				</div>
+			
+<!--				<div id="fdbaScxzParentDiv" class="display_inlineBlock position_fixed right250">
+					<div id="fdbaScxzQBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle checked"></div>
+						<span class="sctjChild_label">全部</span>
+					</div>
+					<div id="fdbaScxzHSZBparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">沪市主板</span>
+					</div>
+					<div id="fdbaScxzZXparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">中小板</span>
+					</div>
+					<div id="fdbaScxzCYparent" class="scRadioFrist display_inlineBlock" data-details="bt">
+						<div class="iradio_circle"></div>
+						<span class="sctjChild_label">创业板</span>
+					</div>
+				</div>
+-->				
+				<div data-dojo-type="dijit/form/TextBox" id="fdbaKeyboardInput" data-dojo-props="maxHeight:260" class="" placeholder="请输入公司名称、辅导机构" style="width:160px;position: fixed;right:70px;font-size: 12px;" ></div>
+							
+				<input type="button" id="fdbaMainchaxuan" class="position_fixed backgroundE4C7" value="查询" />
+			</div>
+			<div id="fdbaGridParentDiv"  class="GridParentDiv">	
+				<div id="fdbaGridDiv"></div>
+			</div>
+			<div id="fdbaPagerParentDiv" class="position_absolute">
+				<div id="fdbapagerDiv"></div>
+			</div>
+		</div>
+	
+		<div data-dojo-type="dojox/layout/FloatingPane" id="dFloatingPane"
+	   	 data-dojo-props="resizable:true,dockable:false,closable:true,closeAction:'hide',maxable:false,draggable:true,"
+	   	dockTo="1",
+	   	style="position:absolute;top:30px;left:10%;width:89%;height:100%;visibility:hidden;z-index:9999;">
+	        <div class="vbox dFloatingPane_con dFloatingPane_grid">
+		 	       <div class="dFloatingPane_con_title">发行上市情况</div>
+		 	       <div style="height:118px;">
+		 	         <div id="faxing" ></div>
+		 	       </div>	 	   
+		 	       <div class="dFloatingPane_con_title">公司沿革</div>
+		 	       <div id="cHistory" data-dojo-type="dijit/layout/ContentPane" class="dFloatingPane_con_title_con">
+		 	       </div>
+		 	       <div class="dFloatingPane_con_title">主营业务</div>
+		 	       <div id="maiBusi" data-dojo-type="dijit/layout/ContentPane" class="dFloatingPane_con_title_con"></div>
+		 	       <div class="dFloatingPane_con_title">所属板块</div>
+		 	       <div id="ssbk" data-dojo-type="dijit/layout/ContentPane" class="dFloatingPane_con_title_con"></div>
+		 	       <div class="dFloatingPane_con_title">近三年财务数据</div>
+		 	       <div  style="height:237px;" >
+		 	         <div id="caiwushuju" ></div>
+		 	       </div>
+		 	       <div class="dFloatingPane_con_title">募集资金用途</div>
+		 	        <div id="mheight" style="height:58px">
+		 	         <div id="mujizijin" ></div>
+		 	         </div>
+		 	       <div class="dFloatingPane_con_title">机构定价预测</div>
+		 	       <div id="jheight" style="height:58px;" >
+		 	         <div id="jigoudingjia" ></div>
+		 	       </div>
+		 	</div>      	  
+		</div>
+		
+		<div id="imgLoadingDiv" style="height:100%;width:100%;position: absolute;top: 0px;display: none;">
+			<img id="Loadingimg" style="height:40px;width:40px;position:absolute;top:50%;left:48%;" src="./resources/image/loading.gif"/>
+		</div>
+	</div>
+</body>
+</html>

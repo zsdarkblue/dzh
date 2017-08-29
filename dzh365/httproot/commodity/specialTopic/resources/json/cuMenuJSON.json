@@ -1,0 +1,18 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+		{id:'center',name:'主页',type:'level0',value:'www.center.com','checked':true},
+		{id:'hq',name:'行情',type:'level0',value:'dzh://VIEWLIST?MARKET2=Sp_tree/品种报价/有色金属/铜','checked':true},
+		{id:'zx',name:'资讯',type:'level0',value:"dzh://browse?'dzhd://DZH2/news/nSection.dzh.ui?className=铜资讯&sword='",'checked':true},
+		{id:'rr',name:'研究报告',type:'level0',value:"dzh://browse?'dzhd://DZH2/news/nSection.dzh.ui?className=铜研报&sword='",'checked':true},
+		{id:'ccfx',name:'持仓分析',type:'level0',value:'www.ccfx.com','checked':true},
+		{id:'cftc',name:'CFTC分析',type:'level0',value:"dzh://browse?'dzhd://DZH2/cmdty/PositionComRank.dzh.ui'",'checked':true},
+		{id:'jjfx',name:'季节分析',type:'level0',value:"dzh://browse?'dzhd://DZH2/cmdty/SeasonalAnalysis.dzh.ui?ctrl1=0&ctrl2=1&ctrl3=1",'checked':true},
+		{id:'ccrv',name:'远期曲线',type:'level0',value:"dzh://browse?'dzhd://DZH2/cmdty/futurelines.dzh.ui?arrHourse1=20&arrType1=2&arrHourse2=20&arrType2=3'",'checked':true},
+		{id:'pda',name:'价差分析',type:'level0',value:'www.pda.com','checked':true},
+		{id:'pqmt',name:'价差矩阵',type:'level0',value:"dzh://browse?'dzhd://DZH2/cmdty/pqmt.dzh.ui?product1=SCcu&product2=SCau'",'checked':true},
+		{id:'tljsq',name:'套利计算器',type:'level0',value:'www.tljsq.com','checked':true},
+		{id:'tlcb',name:'套利成本',type:'level0',value:'www.tlcb.com','checked':true}
+	]
+}

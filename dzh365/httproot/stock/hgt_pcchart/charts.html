@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>沪港通额度</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/rstyle.css">
+</head>
+<body class="w30 fr">
+	<section class="chart-items">
+		<div class="chart-hd bg-pink">港股通每日余额<!--<a href="#" class="history-btn">历史走势</a>--></div>
+		<div class="chart-bd">
+			<div class="chart-info clearfix">
+				<div class="info-items">当日余额：<span class="ft-red"><strong class="" id="hk_cur_limit"></strong>亿</span></div>
+				<div class="info-items">额度上限：<strong class="" id="hk_init_limit"></strong>亿</div>
+				<div class="info-items">累计余额：<span class="ft-red"><strong class="" id="hk_remain_limit"></strong>亿</span></div>
+				<div class="info-items">额度上限：<strong class="" id="hk_total_limit"></strong>亿</div>
+			</div>
+			<div class="chart-main" id="chartContainer01" style="width: 100%; height:85%;margin: 0 auto"></div>
+		</div>
+	</section>
+	<section class="chart-items">
+		<div class="chart-hd bg-blue">沪股通每日余额<!--<a href="#" class="history-btn">历史走势</a>--></div>
+		<div class="chart-bd">
+			<div class="chart-info clearfix">
+				<div class="info-items">当日余额：<span class="ft-red"><strong class="" id="sh_cur_limit"></strong>亿</span></div>
+				<div class="info-items">额度上限：<strong class="" id="sh_init_limit"></strong>亿</div>
+				<div class="info-items">累计余额：<span class="ft-red"><strong class="" id="sh_remain_limit"></strong>亿</span></div>
+				<div class="info-items">额度上限：<strong class="" id="sh_total_limit"></strong>亿</div>
+			</div>
+			<div class="chart-main" id="chartContainer02" style="width: 100%; height: 85%; margin: 0 auto"></div>
+		</div>
+	</section>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/highstock.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/inflate.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+
+   /*
+        $(function () {
+		//chart-items的标题垂直居中
+		function alignMid(){
+			$(".chart-hd").css("line-height",$(".chart-hd").height()+'px');
+			$(".history-btn").css("margin-top",($(".chart-hd").height()-19)/2);
+		}
+		alignMid();
+		$(window).resize(alignMid);
+		
+		//获取json的data数据
+    	$.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+        	// Create the chart01
+        	$('#chartContainer01').highcharts('StockChart', {	            
+	            chart: {
+					backgroundColor: '#000',
+					type: 'line'
+				},
+				colors: ['#4271A9'],
+	            title: {
+					text: null
+				},
+				credits: {
+		            enabled: false
+		        },
+				navigator: {
+		            enabled: false
+		        },
+				scrollbar: {
+		            enabled: false
+		        },
+				xAxis: {
+					gridLineWidth: 0,
+					labels: {
+						style:{
+							fontSize:'12px',
+							color:'#AFB0AA'
+						},
+						y:20,
+						step: 2
+						//设置X轴各分类名称的样式
+						// formatter: function() {
+						// 	var vDate=new Date(this.value);
+						// 	return vDate.getFullYear()+"-"+(vDate.getMonth()+1)+"-"+vDate.getDate();
+						// }
+		            },
+					lineColor: '#363636',
+					lineWidth: 2
+				},
+				yAxis: {
+					title: {
+						text: null
+					},
+					gridLineWidth: 0,					
+					labels: {
+						style:{
+							fontSize:'12px',
+							color:'#AFB0AA'
+						}
+		            },
+		            lineColor: '#363636',
+					lineWidth: 2,
+					plotLines: [{   
+                        value: 710,  //这里的值目前是写死的，需要开发获取json传来的data数组中y的最大值
+                        color: '#e60012',  
+                        dashStyle: 'shortdash',  
+                        width: 1,  
+                        label: {  
+                            text: '余额：710' ,  //text内容可替换
+                            style:{
+                            	color: '#e60012'
+                            },
+                            y:-8
+                        }
+                    }],
+					opposite:false
+				},
+				legend: {
+					enabled: false	
+				},
+				rangeSelector : {
+	                enabled: false
+	            },
+	            series : [{
+	                name : '每日余额', //提示条处显示纵坐标标题，比如：‘每日余额’
+	                data : data             
+	            }]
+        	});
+
+        	// Create the chart02
+        	$('#chartContainer02').highcharts('StockChart', {	            
+	            chart: {
+					backgroundColor: '#000',
+					type: 'line'
+				},
+				colors: ['#4271A9'],
+	            title: {
+					text: null
+				},
+				credits: {
+		            enabled: false
+		        },
+				navigator: {
+		            enabled: false
+		        },
+				scrollbar: {
+		            enabled: false
+		        },
+				xAxis: {
+					gridLineWidth: 0,
+					labels: {
+						style:{
+							fontSize:'12px',
+							color:'#AFB0AA'
+						},
+						y:20,
+						step: 2
+						//设置X轴各分类名称的样式
+						// formatter: function() {
+						// 	var vDate=new Date(this.value);
+						// 	return vDate.getFullYear()+"-"+(vDate.getMonth()+1)+"-"+vDate.getDate();
+						// }
+		            },
+					lineColor: '#363636',
+					lineWidth: 2
+				},
+				yAxis: {
+					title: {
+						text: null
+					},
+					gridLineWidth: 0,					
+					labels: {
+						style:{
+							fontSize:'12px',
+							color:'#AFB0AA'
+						}
+		            },
+		            lineColor: '#363636',
+					lineWidth: 2,
+					plotLines: [{   
+                        value: 710,  //这里的值目前是写死的，需要开发获取json传来的data数组中y的最大值
+                        color: '#e60012',  
+                        dashStyle: 'shortdash',  
+                        width: 1,  
+                        label: {  
+                            text: '余额：710' ,  //text内容可替换
+                            style:{
+                            	color: '#e60012'
+                            },
+                            y:-8
+                        }
+                    }],
+					opposite:false
+				},
+				legend: {
+					enabled: false	
+				},
+				rangeSelector : {
+	                enabled: false
+	            },
+	            series : [{
+	                name : '每日余额', //提示条处显示纵坐标标题，比如：‘每日余额’
+	                data : data             
+	            }]
+        	});
+    	});
+	});
+	*/
+	</script>
+</body>
+</html>
+
+
+<script>
+function convertToYi(original) {
+    return (parseFloat(original) / 100000000).toFixed(2);
+}
+
+function getTimeStamp(hourMinuteString) {
+    var now = new Date();
+    var nowYear = now.getFullYear();
+    var nowMonth = now.getMonth() + 1;
+    var nowDay = now.getDate();
+    return Date.parse(nowYear + "/" + nowMonth + "/" + nowDay + " " + hourMinuteString);
+}
+
+/*
+var now = new Date();
+var nowYear = now.getFullYear();
+var nowMonth = now.getMonth() + 1;
+var nowDay = now.getDate();
+var breakFromString_sh = nowYear + "/" + nowMonth + "/" + nowDay + " 11:30";
+var breakToString_sh = nowYear + "/" + nowMonth + "/" + nowDay + " 13:00";
+var beginString_sh = nowYear + "/" + nowMonth + "/" + nowDay + " 09:30";
+var endString_sh = nowYear + "/" + nowMonth + "/" + nowDay + " 15:00";
+var breakFromTimestamp_sh = Date.parse(breakFromString_sh);
+var breakToTimestamp_sh = Date.parse(breakToString_sh);
+var beginTimestamp_sh = Date.parse(beginString_sh);
+var endTimestamp_sh = Date.parse(endString_sh);
+*/
+
+function draw_sh(data, initLimit, maxValue, minValue) {
+    initLimit = parseFloat(initLimit);
+    maxValue = parseFloat(maxValue);
+    minValue = parseFloat(minValue);
+    //alert(minValue);
+    /*
+     y_celling = Math.ceil(initLimit / 10) * 10;
+     if (y_celling - initLimit < 5) {
+     y_celling += 5;
+     }
+     */
+    var y_celling;
+    var y_floor;
+    if (initLimit > maxValue) {
+        y_celling = Math.ceil(initLimit) + 1;
+    } else {
+        y_celling = Math.ceil(maxValue) + 1;
+    }
+    if (initLimit < minValue) {
+        y_floor = Math.floor(initLimit) - 1;
+    } else {
+        y_floor = Math.floor(minValue) - 1;
+    }
+    //alert(y_floor);
+
+    $('#chartContainer02').highcharts('StockChart', {
+        chart: {
+            backgroundColor: '#000',
+            type: 'line'
+        },
+
+        plotOptions: {
+            series: {
+                animation: false
+            }
+        },
+
+        colors: ['#4271A9'],
+        title: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+        navigator: {
+            enabled: false
+        },
+        scrollbar: {
+            enabled: false
+        },
+        xAxis: {
+            min: getTimeStamp("09:30"),
+            max: getTimeStamp("15:30"),
+            gridLineWidth: 0,
+            labels: {
+                style: {
+                    fontSize: '12px',
+                    color: '#AFB0AA'
+                },
+                y: 20,
+                step: 2,
+                //设置X轴各分类名称的样式
+                formatter: function() {
+                    var vDate=new Date(this.value);
+                    var hour = vDate.getHours();
+                    var minute = vDate.getMinutes();
+                    if (minute < 10) {
+                        minute = "0" + minute;
+                    }
+                    return hour + ":" + minute;
+                }
+            },
+            lineColor: '#363636',
+            lineWidth: 2,
+            breaks: [{
+                from: getTimeStamp("11:30"),
+                to: getTimeStamp("13:00")
+                //repeat: 24 * 36e5
+            }],
+            tickPositions: [
+                getTimeStamp("09:30"),
+                getTimeStamp("10:00"),
+                getTimeStamp("10:30"),
+                getTimeStamp("11:00"),
+                getTimeStamp("11:30"),
+                getTimeStamp("13:30"),
+                getTimeStamp("14:00"),
+                getTimeStamp("14:30"),
+                getTimeStamp("15:00")
+            ]
+        },
+        yAxis: {
+            max: y_celling,
+            min: y_floor,
+            title: {
+                text: null
+            },
+            gridLineWidth: 0,
+            labels: {
+                style: {
+                    fontSize: '12px',
+                    color: '#AFB0AA'
+                }
+            },
+            lineColor: '#363636',
+            lineWidth: 2,
+            plotLines: [
+                {
+                    value: initLimit,  //这里的值目前是写死的，需要开发获取json传来的data数组中y的最大值
+                    color: '#e60012',
+                    dashStyle: 'shortdash',
+                    width: 1,
+                    label: {
+                        text: '额度：' + initLimit.toFixed(0) + "亿",  //text内容可替换
+                        style: {
+                            color: '#e60012'
+                        },
+                        y: -8
+                    }
+                }
+            ],
+            opposite: false
+        },
+        legend: {
+            enabled: false
+        },
+        rangeSelector: {
+            enabled: false
+        },
+        series: [
+            {
+                name: '余额', //提示条处显示纵坐标标题，比如：‘每日余额’
+                data: data
+            }
+        ],
+        tooltip: {
+            formatter: function() {
+                var vDate=new Date(this.x);
+                var hour = vDate.getHours();
+                var minute = vDate.getMinutes();
+                if (minute < 10) {
+                    minute = "0" + minute;
+                }
+
+                return hour + ":" + minute + " <b>" + this.y + "亿</b>";
+            }
+        }
+    });
+}
+
+function draw_hk(data, initLimit, maxValue, minValue) {
+    initLimit = parseFloat(initLimit);
+    maxValue = parseFloat(maxValue);
+    minValue = parseFloat(minValue);
+    /*
+     y_celling = Math.ceil(initLimit / 10) * 10;
+     if (y_celling - initLimit < 5) {
+     y_celling += 5;
+     }
+     */
+    var y_celling;
+    var y_floor;
+    if (initLimit > maxValue) {
+        y_celling = Math.ceil(initLimit) + 1;
+    } else {
+        y_celling = Math.ceil(maxValue) + 1;
+    }
+    if (initLimit < minValue) {
+        y_floor = Math.floor(initLimit) - 1;
+    } else {
+        y_floor = Math.floor(minValue) - 1;
+    }
+
+
+
+
+    $('#chartContainer01').highcharts('StockChart', {
+        chart: {
+            backgroundColor: '#000',
+            type: 'line'
+        },
+
+        plotOptions: {
+            series: {
+                animation: false
+            }
+        },
+
+        colors: ['#4271A9'],
+        title: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+        navigator: {
+            enabled: false
+        },
+        scrollbar: {
+            enabled: false
+        },
+        xAxis: {
+            min: getTimeStamp("09:30"),
+            max: getTimeStamp("16:00"),
+            gridLineWidth: 0,
+            labels: {
+                style: {
+                    fontSize: '12px',
+                    color: '#AFB0AA'
+                },
+                y: 20,
+                step: 2,
+                //设置X轴各分类名称的样式
+                formatter: function() {
+                    var vDate=new Date(this.value);
+                    var hour = vDate.getHours();
+                    var minute = vDate.getMinutes();
+                    if (minute < 10) {
+                        minute = "0" + minute;
+                    }
+                    return hour + ":" + minute;
+                }
+            },
+            lineColor: '#363636',
+            lineWidth: 2,
+            breaks: [{
+                from: getTimeStamp("12:00"),
+                to: getTimeStamp("13:00")
+                //repeat: 24 * 36e5
+            }],
+            tickPositions: [
+                getTimeStamp("09:30"),
+                getTimeStamp("10:00"),
+                getTimeStamp("10:30"),
+                getTimeStamp("11:00"),
+                getTimeStamp("11:30"),
+                getTimeStamp("12:00"),
+                getTimeStamp("13:30"),
+                getTimeStamp("14:00"),
+                getTimeStamp("14:30"),
+                getTimeStamp("15:00"),
+                getTimeStamp("15:30"),
+                getTimeStamp("16:00")
+            ]
+        },
+        yAxis: {
+            max: y_celling,
+            min: y_floor,
+            title: {
+                text: null
+            },
+            gridLineWidth: 0,
+            labels: {
+                style: {
+                    fontSize: '12px',
+                    color: '#AFB0AA'
+                }
+            },
+            lineColor: '#363636',
+            lineWidth: 2,
+            plotLines: [
+                {
+                    value: initLimit,  //这里的值目前是写死的，需要开发获取json传来的data数组中y的最大值
+                    color: '#e60012',
+                    dashStyle: 'shortdash',
+                    width: 1,
+                    label: {
+                        text: '额度：' + initLimit.toFixed(0) + "亿",  //text内容可替换
+                        style: {
+                            color: '#e60012'
+                        },
+                        y: -8
+                    }
+                }
+            ],
+            opposite: false
+        },
+        legend: {
+            enabled: false
+        },
+        rangeSelector: {
+            enabled: false
+        },
+        series: [
+            {
+                name: '余额', //提示条处显示纵坐标标题，比如：‘每日余额’
+                data: data
+            }
+        ],
+        tooltip: {
+            formatter: function() {
+                var vDate=new Date(this.x);
+                var hour = vDate.getHours();
+                var minute = vDate.getMinutes();
+                if (minute < 10) {
+                    minute = "0" + minute;
+                }
+
+                return hour + ":" + minute + " <b>" + this.y + "亿</b>";
+            }
+        }
+    });
+}
+
+function render_sh(json) {
+    //console.log(json);
+    if (json.res_seq == "1") {
+        var data = json.result.datas[0][1].datas;
+        var dataLength = data.length;
+        var current = data[dataLength - 1];
+        var sh_cur_limit = current[4];
+        var sh_init_limit = current[3];
+        var sh_remain_limit = current[5];
+        var sh_total_limit = current[6];
+        document.getElementById("sh_cur_limit").innerHTML = convertToYi(sh_cur_limit);
+        document.getElementById("sh_init_limit").innerHTML = convertToYi(sh_init_limit);
+        document.getElementById("sh_remain_limit").innerHTML = convertToYi(sh_remain_limit);
+        document.getElementById("sh_total_limit").innerHTML = convertToYi(sh_total_limit);
+        //alert(data[0]);
+        //alert(current);
+        var dataForDraw = [];
+        var maxValue = convertToYi(data[0][4]);
+        var minValue = convertToYi(data[0][4]);
+        for (var i = 0; i < dataLength; i++) {
+            if (i % 2 == 1 ) {
+                continue;
+            }
+            var dataForDrawElement = [];
+            var dataElement;
+            dataElement = data[i];
+            var originalTime = dataElement[0];
+            var formatedTime = originalTime.substr(0, 4) + "/" + originalTime.substr(4, 2) + "/" + originalTime.substr(6, 2) + " "
+                    + originalTime.substr(8, 2) + ":" + originalTime.substr(10, 2);
+            var timestamp = Date.parse(formatedTime);
+            var currentValue = parseFloat(convertToYi(dataElement[4]));
+            dataForDrawElement[0] = timestamp;
+            dataForDrawElement[1] = currentValue;
+            dataForDraw.push(dataForDrawElement);
+            if (currentValue > maxValue) {
+                maxValue = currentValue;
+            }
+            if (currentValue < minValue) {
+                minValue = currentValue;
+            }
+        }
+        //alert(dataForDraw);
+        draw_sh(dataForDraw, convertToYi(sh_init_limit), maxValue, minValue);
+    }
+}
+
+
+
+function render_hk(json) {
+    //console.log(json);
+    if (json.res_seq == "1") {
+        var data = json.result.datas[0][1].datas;
+        var dataLength = data.length;
+        var current = data[dataLength - 1];
+        var hk_cur_limit = current[4];
+        var hk_init_limit = current[3];
+        var hk_remain_limit = current[5];
+        var hk_total_limit = current[6];
+        document.getElementById("hk_cur_limit").innerHTML = convertToYi(hk_cur_limit);
+        document.getElementById("hk_init_limit").innerHTML = convertToYi(hk_init_limit);
+        document.getElementById("hk_remain_limit").innerHTML = convertToYi(hk_remain_limit);
+        document.getElementById("hk_total_limit").innerHTML = convertToYi(hk_total_limit);
+        //alert(data[0]);
+        //alert(current);
+        var dataForDraw = [];
+        var maxValue = convertToYi(data[0][4]);
+        var minValue = convertToYi(data[0][4]);
+        for (var i = 0; i < dataLength; i++) {
+            if (i % 2 == 1 ) {
+                continue;
+            }
+            var dataForDrawElement = [];
+            var dataElement;
+            dataElement = data[i];
+            var originalTime = dataElement[0];
+            var formatedTime = originalTime.substr(0, 4) + "/" + originalTime.substr(4, 2) + "/" + originalTime.substr(6, 2) + " "
+                    + originalTime.substr(8, 2) + ":" + originalTime.substr(10, 2);
+            var timestamp = Date.parse(formatedTime);
+            var currentValue = parseFloat(convertToYi(dataElement[4]));
+            dataForDrawElement[0] = timestamp;
+            dataForDrawElement[1] = currentValue;
+            dataForDraw.push(dataForDrawElement);
+            if (currentValue > maxValue) {
+                maxValue = currentValue;
+            }
+            if (currentValue < minValue) {
+                minValue = currentValue;
+            }
+        }
+        draw_hk(dataForDraw, convertToYi(hk_init_limit), maxValue, minValue);
+    }
+}
+
+//var WS_SERVER = "ws://10.15.43.69:30718/dataproxy";
+var WS_SERVER = "ws://127.0.0.1:30718/dataproxy";
+var WS_TIMEOUT = "3";
+ws.init('/json/subscribe?/did?did=100242&where=obj=HKCSCSHQ&response_times=1', render_sh);
+ws.init('/json/subscribe?/did?did=100242&where=obj=HKHSI&response_times=1', render_hk);
+
+setInterval(function () {
+    //alert("reload");
+    window.location.reload();
+},  1000 * 60 * 2);
+</script>

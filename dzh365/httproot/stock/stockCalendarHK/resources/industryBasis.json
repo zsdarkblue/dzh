@@ -1,0 +1,9 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+			{name:"分类基准",id:""},
+			{name:"GICS行业",id:"109929"},
+			{name:"恒生行业",id:"100062"}
+			]
+}

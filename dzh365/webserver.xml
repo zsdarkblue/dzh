@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <logfile>webserver.log</logfile>
+    <httproot>httproot</httproot>
+    <!--proxytype:={"","HTTP","SOCK4","SOCK5"}-->
+    <proxytype></proxytype>
+    <proxyhost></proxyhost>
+    <proxyport></proxyport>
+    <!--authtype:={"","BASIC","DIGEST","NTLM","ANY"}-->
+    <authtype></authtype>
+    <authuser></authuser>
+    <authpass>
+        <![CDATA[]]>
+</authpass>
+    <dataproxyconfig>
+        <server_address>127.0.0.1</server_address>
+        <server_port>30767</server_port>
+    </dataproxyconfig>
+    <!--asremoteserver:={"","true"-->
+    <asremoteserver></asremoteserver>
+    <httpport>30719</httpport>
+    <wsport>30718</wsport>
+</config>

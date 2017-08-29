@@ -1,0 +1,23 @@
+# coding=gb2312
+
+# 该文件由大智慧数据浏览器生成，请不要手工编辑
+
+# 版本号 V8.5(20121220)
+
+import sys, dzh
+
+browser.zoom_type = 0L
+browser.view_ext = (1280L, 85L)
+browser.title = '\xbb\xf9\xbd\xf0\xd2\xb3\xc3\xe6'
+
+browser.uuid = '04641b2b-a973-4837-bc0d-183bb716492b'
+
+browser.extrnal_style = 'res:T_CSS_BLACK'
+browser.event = {'load': '\x01\xb1\xea\xc7\xa9 - \xc9\xe8\xd6\xc3\xb1\xea\xc7\xa9\xb5\xc4\xc1\xb4\xbd\xd3\x00\xc9\xe8\xd6\xc3 (\xb1\xea\xc7\xa9:Label) \xb5\xc4\xc1\xb4\xbd\xd3\xce\xaa (\xd7\xd6\xb7\xfb\xb4\xae:Value)\xa3\xac\xd4\xda (\xc4\xbf\xb1\xea\xb4\xb0\xbf\xda:target) \xd6\xd0\xb4\xf2\xbf\xaa\xb8\xc3\xc1\xb4\xbd\xd3\x00$(Label).link = $(Value); $(Label).target = $(target)\x00\x00\x00\x00\x00\xb1\xea\xc7\xa9\x00\x01\x00\x00\x00browser.bottomlab\x00\xd7\xd6\xb7\xfb\xb4\xae\x00\x01\x00\x00\x00\x00\x00\x00\x00http://www.gtfund.com/index.html\x00\xc4\xbf\xb1\xea\xb4\xb0\xbf\xda\x00\x01\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00'}
+
+browser.children = [
+	dzh.label(name='bottomlab', styleTable={'\xb1\xea\xc7\xa9.\xc1\xb4\xbd\xd3.\xc4\xac\xc8\xcf': dzh.style(color=3894248191L), '\xb1\xea\xc7\xa9.\xc1\xb4\xbd\xd3': dzh.style(border_left_style=2004L,border_left_width=1L,border_left_color=255L,border_top_style=2004L,border_top_width=1L,border_top_color=255L,border_right_style=2004L,border_right_width=1L,border_right_color=255L,border_bottom_style=2004L,border_bottom_width=1L,border_bottom_color=255L)}, x=0L, y=0L, width=1280L, height=85L, shadow=False, contextmenu_dataset={}, img_url='banner.png', align=9L, ishtmllabel=False, wrap=True)]
+
+vars = {'obj': ['\xd7\xd6\xb7\xfb\xb4\xae', None]}
+
+browser.styleTable = {}

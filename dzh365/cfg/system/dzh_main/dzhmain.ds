@@ -1,0 +1,2 @@
+system::CreateChildProcess(GetExeName()+' main=$');
+

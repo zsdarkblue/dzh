@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>港股日历  版本号:1.00</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../../dijit/themes/white_normal/document.css"/>
+	<link rel="stylesheet" href="resources/calendar.css"/>
+	<script type="text/javascript">
+		dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			paths:{'stock':'../stock'}, 
+			baseUrl : "../../dojo",
+			noscale:true,
+			locale:'zh-cn',
+			deps:[
+			],
+			callback: function() {
+				require(['stock/stockCalendarHK/src',"dojo/on"],function(main,on){
+						main();
+						on(document.body, "click", function(evt){
+							if(dojo.query(evt.target).closest(".slick-row").children().length){
+								dojo.query(".selected").forEach(function(node){
+									dojo.removeClass(node,"selected")	
+								});
+								
+								dojo.query(evt.target).closest(".slick-row").children().forEach(function(node){
+									dojo.addClass(node,"selected")
+								});
+								
+							}
+						})
+					}
+				);
+			}
+		}
+	</script>
+</head>
+<body class="claro" id="bodyId" >
+	 	<div data-dojo-type="stock/stockCalendarHK/view/Calendar"></div>
+</body>
+</html>

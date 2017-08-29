@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<Config>
+  <menu code="HELPFIND" disp="帮助主题(&amp;T)" />
+  <menu code="FUNCREF" disp="技术指标参考(&amp;R)" />
+  <menu code="HOTKEYREF" disp="快捷键参考(&amp;H)" />
+  <menu code="SEPARATOR" />
+  <menu code="AUTOUPDATE" disp="自动升级(&amp;U)" />
+  <menu code="SEPARATOR" />
+  <menu code="HTQ" disp="技术支持网站(&amp;N)" />
+  <menu code="APPABOUT" disp="关于大智慧(&amp;A)..." />
+</Config>

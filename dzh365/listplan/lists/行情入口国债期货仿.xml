@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="gb2312"?>
+<list>
+  <column>
+<col><value>index</value><width>45</width><name>序号</name></col><col><value>label</value><width>70</width><name>代码</name></col><col><value>name</value><width>85</width><name>名称</name></col><col fixed="1"><value>now</value><width>70</width><name>最新</name></col><col><value>updnratio</value><width>70</width><name>涨幅</name></col><col><value>volume</value><width>80</width><name>总手</name></col><col><value>nowvol</value><width>80</width><name>现手</name></col><col sorted="-1" subsorted="0"><value>amount</value><width>80</width><name>总额</name></col><col><value>lastclose</value><width>80</width><name>昨收</name></col><col><value>open</value><width>80</width><name>今开</name></col><col><value>high</value><width>80</width><name>最高</name></col><col><value>low</value><width>80</width><name>最低</name></col><col><value>buyprice</value><width>80</width><name>委买价</name></col><col><value>sellprice</value><width>80</width><name>委卖价</name></col><col><value>updnspeed</value><width>80</width><name>涨速</name></col><col><value>hilowratio</value><width>80</width><name>振幅</name></col><col><value>volratio</value><width>80</width><name>量比</name></col><col><value>wantratio</value><width>80</width><name>委比</name></col><col><value>wantdiff</value><width>80</width><name>委差</name></col>
+   </column>
+<onload script="hq_gzqhf();" curdir="116"/>
+  </list>

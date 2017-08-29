@@ -1,0 +1,85 @@
+<div data-dojo-attach-point="containerNode" data-dojo-type="dijit/layout/ContentPane" style="width:950px;height:400px;"
+     class="vbox">
+
+    <div class="hbox" style="height:90%;  border-bottom: 1px solid rgb(180, 170, 170);border-left: 1px solid rgb(180, 170, 170);">
+        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar'"
+             style="width:100%;height:100%;">
+
+            <!--左部获取交易对手-->
+            <div data-dojo-type="dijit/layout/ContentPane"
+                 data-dojo-props="splitter:true, region:'center'">
+                <div class="spacer" id="rateCounterpartyTabContainer" data-dojo-type="dijit/layout/TabContainer"
+                     data-dojo-props='tabPosition:"left-h"'>
+
+                    <div id="rateCounterpartyTab1" class="spacer" data-dojo-type="dijit/layout/ContentPane"
+                         style="padding: 2px 2px;"
+                         title="条件查找"
+                         data-dojo-props="selected:true">
+                        <div class="vbox" style="height:100%;">
+                            <div class="hbox">
+                                <div>
+                                    <div class="hbox">
+                                        <div class="spacer">
+                                            <label style="padding-right:5px;" for="rateCounterpartyAddName">姓名</label>
+                                            <input id="rateCounterpartyAddName" data-dojo-type="dijit/form/TextBox"/>
+                                        </div>
+
+                                        <div class="spacer">
+                                            <label style="padding-left:5px;" for="rateCounterpartyAddAccount">帐号</label>
+                                            <input id="rateCounterpartyAddAccount" data-dojo-type="dijit/form/TextBox"/>
+                                        </div>
+                                    </div>
+                                    <div class="hbox" style="margin-top: 2px;">
+                                        <div class="spacer hbox">
+                                            <label style="padding-right:12px;" for="rateCounterpartyAddComp">公司</label>
+                                            <input class="spacer" id="rateCounterpartyAddComp"
+                                                   data-dojo-type="dijit/form/TextBox"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="spacer vbox">
+                                    <div class="spacer"></div>
+                                    <div data-dojo-type="dijit/form/Button" id='rateCounterpartyAddSearch'
+                                         style="padding-left:2px; ">查找
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width:2px;"></div>
+                            <div class="spacer myGrid"  data-dojo-type="dijit/layout/ContentPane">
+                                <div id="rateCounterpartyTable1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="rateCounterpartyTab2" class="spacer" data-dojo-type="dijit/layout/ContentPane"
+                         title="从IM联系人添加">
+                        <div class="vbox" style="height:100%;">
+                            <div class="spacer myGrid" data-dojo-type="dijit/layout/ContentPane">
+                                <div id="rateCounterpartyTable2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--右部已选择交易对手表格-->
+            <div data-dojo-type="dijit/layout/ContentPane"
+                 data-dojo-props="splitter:true,region:'right'" style="width:400px; border:1px solid gray;">
+                <div class="myGrid" style="width:100%;height:100%;">
+                    <div id="rateCounterpartyTable"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--下部操作-->
+    <div class="hbox" style="padding-top: 5px;">
+        <div class="spacer"></div>
+        <div data-dojo-type="dijit/form/Button" id='rateCounterpartyOk'>确定</div>
+        <div class="line_block_space"></div>
+        <div data-dojo-type="dijit/form/Button" onclick="dijit.byId('rateCounterpartyDialog').onCancel()">取消</div>
+    </div>
+</div>

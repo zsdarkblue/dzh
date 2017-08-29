@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>负面新闻 badNew_0.02</title>
+    <link rel="stylesheet" href="resources/all.css"/>
+<!-- 	<style type="text/css">.slick-header {visibility: hidden; height:0; overflow:hidden;}</style>  -->
+</head>
+<body>
+
+<header>
+    <div class="btn-split">
+        <a class="btn" data-bind="onExportBtnClick"><i class="fa fa-d009"></i>导出数据</a>
+        <a class="btn" data-bind="onSubscribeBtnClick" id="subscribeBtn"><i class="fa fa-rss"></i>订阅</a>
+        <a class="btn" data-bind="onAdvSearchBtnClick"><i class="fa fa-d006"></i>高级检索</a>
+        <a class="btn" data-bind="onChangeViewBtnClick"><i class="fa fa-d004"></i>切换视图</a>
+    </div>
+
+</header>
+<div class="flex-row">
+    <aside class="flex-none">
+        <ul id="navTree" class="ztree"></ul>
+    </aside>
+    <div class="flex-splitter"><i></i></div>
+    
+    <div class="flex-auto flex-column">
+        
+        <form class="flex-none" onsubmit="return false">
+			<div class="form-group">
+				<select id="searchSelect" data-bind="onSearchSelectChange" data-option>
+					<option value="1" selected>证券</option>
+					<option value="2">标题</option>
+					<option value="3">机构</option>
+				</select>
+				<div id="searchStock">
+					<input class="text" type="search" placeholder="请输入证券代码或简称"><i class="fa fa-search"></i>
+					<a style="display:none;" class="btn btn-normal" data-bind="onSearchBtnClick">检 索</a>
+				</div>
+				<div id="searchKey" style="display:none;">
+					<input class="text" type="text" placeholder="请输入标题关键字"><i class="fa fa-search"></i>
+					<a style="display:none;" class="btn btn-normal" data-bind="onSearchBtn1Click">检 索</a>
+				</div>
+				<div id="searchOrg" style="display:none;">
+					<input class="text" type="text" placeholder="请输入机构名称"><i class="fa fa-search"></i>
+					<a style="display:none;" class="btn btn-normal" data-bind="onSearchBtn2Click">检 索</a>
+				</div>
+			</div>
+			<input type="hidden" id="searchType" value="1" />
+		</form>
+		<div class="flex-none flex-order-1">
+            <div class="pager pull-right">
+                <a class="btn btn-normal" data-bind="onFirstBtnClick">首页</a>
+                <a class="btn btn-normal" data-bind="onPrevBtnClick">上一页</a>
+                <input style="display: none;" type="number" min="1" max="1" value="1" data-bind="onPagerChange">
+                <label style="display: none;">/ 1</label>
+                <a class="btn btn-normal" data-bind="onNextBtnClick">下一页</a>
+                <a style="display: none;" class="btn btn-normal" data-bind="onLastBtnClick">尾页</a>
+            </div>
+        </div>
+        <div class="flex-auto flex-order-0">
+            <div class="grid"></div>
+        </div>
+        <div class="flex-splitter flex-splitter-bottom flex-order-1 flex-splitter-hide" style="display: none;"><i></i></div>
+        <div id="contentPanel" class="flex-none flex-order-1 flex-none-hide"></div>
+    </div>
+</div>
+
+<div id="subscriptionDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>订阅管理</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <form>
+            <fieldset>
+                <legend>编辑订阅</legend>
+                <div class="form-group">
+                    <label>订阅名称</label>
+                    <input type="text" value="上市公司年度报告">
+                </div>
+                <div class="form-group">
+                    <label>标题检索</label>
+                    <input type="search" placeholder="请输入关键字"><i class="fa fa-search"></i>
+                </div>
+                <div class="form-group">
+                    <label>公告日期</label>
+                    <select data-option>
+                        <option value="0" selected>一个月内</option>
+                        <option value="2">三个月内</option>
+                        <option value="3">半年内</option>
+                        <option value="1">自定义</option>
+                    </select>
+                    <input type="datetime" value="2014-01-10" disabled><i class="fa fa-calendar"></i>
+                    <span>至</span>
+                    <input type="datetime" value="2014-01-10" disabled><i class="fa fa-calendar"></i>
+                </div>
+                <div class="form-group">
+                    <label>公告类型</label>
+                    <select data-option>
+                        <option value="0" selected>全部沪深公告</option>
+                        <option value="2">沪深公告</option>
+                        <option value="3">沪深公告</option>
+                        <option value="1">沪深公告</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>证券范围</label>
+                    <input type="search" placeholder="请输入证券代码或简称"><i class="fa fa-search"></i>
+                    <a class="btn btn-normal" onclick="$('#objectDialog').widget('dialog').show()">更多选择</a>
+                </div>
+                <ul class="list box">
+                    <li class="active">600000　浦发银行</li>
+                    <li>600036　招商银行</li>
+                </ul>
+            </fieldset>
+        </form>
+        <div class="btn-group">
+            <button class="btn btn-normal"><i class="fa fa-plus"></i>新 建</button>
+            <button class="btn btn-normal"><i class="fa fa-trash-o"></i>删 除</button>
+            <button class="btn btn-normal"><i class="fa fa-chevron-up"></i></button>
+            <button class="btn btn-normal"><i class="fa fa-chevron-down"></i></button>
+        </div>
+        <ul class="list-caret box">
+            <li class="active">上市公司年度报告</li>
+            <li>上市公司年度报告</li>
+            <li>上市公司年度报告</li>
+            <li>上市公司年度报告</li>
+        </ul>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal">确 定</button>
+        <button class="btn btn-normal">取 消</button>
+    </div>
+</div>
+<div id="searchDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>高级检索</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <form>
+            <div class="form-group">
+                <label>证券输入</label>
+                <input type="search" name="stock" placeholder="请输入证券代码或简称"><i class="fa fa-search"></i>
+            </div>
+            <div class="form-group">
+                <label>标题检索</label>
+                <input type="text" name="key" placeholder="请输入关键字">
+            </div>
+            <div class="form-group">
+                <label>新闻日期</label>
+                <select data-bind="onDateSelectChange" data-option>
+                    <option value="1" selected>一个月内</option>
+                    <option value="3">三个月内</option>
+                    <option value="6">半年内</option>
+                    <option value="0">自定义</option>
+                </select>
+                <input type="datetime" name="bdate" disabled><i class="fa fa-calendar"></i>
+                <span>至</span>
+                <input type="datetime" name="edate" disabled><i class="fa fa-calendar"></i>
+            </div>
+            <div class="form-group">
+                <label>新闻类型</label>
+                <input type="text" id="treeId" placeholder="点击右侧按钮勾选" readonly>
+                <a class="btn btn-normal" data-bind="onChooseBtnClick">选择</a>
+                <input type="hidden" name="treeId">
+            </div>
+            <div class="form-group">
+                <label>机构检索</label>
+                <input type="text" name="instName" placeholder="请输入机构名称">
+            </div>
+            <!-- <div class="form-group">
+                <label>选择范围</label>
+                <select name="range" data-option="checkbox">
+                    <option value="">全部</option>
+                </select>
+            </div> -->
+        </form>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal" data-bind="onConfirmBtnClick">确 定</button>
+        <button class="btn btn-normal" data-bind="onCancelBtnClick">取 消</button>
+    </div>
+</div>
+<div id="treeDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>选择类型</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <ul id="itemTree" class="ztree"></ul>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal" data-bind="onConfirmBtnClick">确 定</button>
+        <button class="btn btn-normal" data-bind="onCancelBtnClick">取 消</button>
+    </div>
+</div>
+<div id="favoritesDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>我的收藏</h3><i data-bind="onCancelBtnClick"></i>
+    </div>
+    <div class="dialog-body">
+        <ul class="list-caret box">
+            <li class="active">上市公司年度报告</li>
+            <li>上市公司年度报告</li>
+            <li>上市公司年度报告</li>
+            <li><input type="text" style="width: 100%;"></li>
+        </ul>
+        <div class="btn-group">
+            <button class="btn btn-normal" data-bind="onAddBtnClick"><i class="fa fa-plus"></i>新 建</button>
+            <button class="btn btn-normal" data-bind="onEditBtnClick"><i class="fa fa-edit"></i>编 辑</button>
+            <button class="btn btn-normal" data-bind="onRemoveBtnClick"><i class="fa fa-trash-o"></i>删 除</button>
+            <button class="btn btn-normal" data-bind="onMoveUpBtnClick"><i class="fa fa-chevron-up"></i>上 移</button>
+            <button class="btn btn-normal" data-bind="onMoveDownBtnClick"><i class="fa fa-chevron-down"></i>下 移</button>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal" data-bind="onConfirmBtnClick">确 定</button>
+        <button class="btn btn-normal" data-bind="onCancelBtnClick">取 消</button>
+    </div>
+</div>
+<div id="subscribeDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>我的订阅</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <ul class="list-caret box">
+            <li class="active">上市公司年度报告</li>
+            <li>上市公司年度报告</li>
+            <li>上市公司年度报告</li>
+            <li><input type="text" style="width: 100%;"></li>
+        </ul>
+        <div class="btn-group">
+            <button class="btn btn-normal" data-bind="onAddBtnClick"><i class="fa fa-plus"></i>新 建</button>
+            <button class="btn btn-normal" data-bind="onEditBtnClick"><i class="fa fa-edit"></i>编 辑</button>
+            <button class="btn btn-normal" data-bind="onRemoveBtnClick"><i class="fa fa-trash-o"></i>删 除</button>
+            <button class="btn btn-normal" data-bind="onMoveUpBtnClick"><i class="fa fa-chevron-up"></i>上 移</button>
+            <button class="btn btn-normal" data-bind="onMoveDownBtnClick"><i class="fa fa-chevron-down"></i>下 移</button>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal" data-bind="onConfirmBtnClick">确 定</button>
+        <button class="btn btn-normal" data-bind="onCancelBtnClick">取 消</button>
+    </div>
+</div>
+<div id="alertDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>提示</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <i class="fa fa-exclamation-triangle"></i>
+        <p>删除勾选项，请点击确定。</p>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal" data-bind="onConfirmBtnClick">确 定</button>
+        <button class="btn btn-normal" data-bind="onCancelBtnClick">取 消</button>
+    </div>
+</div>
+<div id="exportDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>提示</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <i class="fa fa-exclamation-triangle"></i>
+        <p>导出新闻列表，请点击确定。</p>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal" data-bind="onConfirmBtnClick">确 定</button>
+        <button class="btn btn-normal" data-bind="onCancelBtnClick">取 消</button>
+    </div>
+</div>
+<div id="articleDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>新闻正文</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <article id="articlePanel">
+            <h1></h1>
+            <h2>
+                <span></span>
+                <i class="icon-split"></i>
+                <a data-bind="onChangeSizeBtnClick" data-size="16">大</a>
+                <a data-bind="onChangeSizeBtnClick" class="active" data-size="14">中</a>
+                <a data-bind="onChangeSizeBtnClick" data-size="13">小</a>
+                <i class="icon-split"></i>
+                <a data-bind="onFavoritesBtnClick"><!-- <i class="fa fa-star"> --></i><b class="normal">收藏</b></a>
+                <!-- <i class="icon-split"></i>
+                <a><i class="fa fa-d009"></i>导出</a> -->
+            </h2>
+            <div id="aboutStocks"></div>
+            <div id="aboutBonds"></div>
+            <div id="aboutindustrys"></div>
+            <div id="aboutfinancials"></div>
+            <div id="aboutagency"></div>
+            <section><p></p></section>
+            <section></section>
+        </article>
+        <div id="articlePanetishi">提示：服务器忙请求超时，请稍候重试</div>
+    </div>
+    <div class="dialog-footer" style="text-align:center;">
+        <!-- <button class="btn btn-normal pull-left" data-bind="onPrevArticleLinkClick">上一条</button>
+        <button class="btn btn-normal pull-left" data-bind="onNextArticleLinkClick">下一条</button> -->
+        <button class="btn btn-normal" data-bind="onCloseBtnClick">关　闭</button>
+    </div>
+</div>
+<div id="objectDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>选择证券</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <iframe src="about:blank" frameborder="0"></iframe>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal">确 定</button>
+        <button class="btn btn-normal">取 消</button>
+    </div>
+</div>
+<div id="C3AFtooltips">
+    
+</div>
+
+<div id="diyuetishi" class="dialog point-dialog" draggable="true">
+	<div class="dialog-header">
+        <h3>提示</h3>
+        <i></i>
+    </div>
+	 <div  class="dialog-body">
+		<div class="dialog_content">
+			<div id="poinMainContentParent">
+				<div id="poinMainContent" class="dialog_main">
+					此订阅名称已存在,请修改订阅名称。
+				</div>
+				<div id="poinContentLine">
+					<button id="poinContentSure">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

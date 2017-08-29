@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>F9页面</title>
+    <script type="text/javascript">
+        document.write('<link href="../../dijit/themes/white/document.css" rel="stylesheet" type="text/css"><'+'/link>');
+    </script>
+
+    <script type="text/javascript">
+        //从location中获取参数
+        bondf9Config = { "soUrl":"/", "obj":window.location.search.split("=")[1],"domain":window.location.search.split("=")[2]};
+        //		bondf9Config = { "soUrl":"http://10.15.107.157:39080/", "obj":window.location.search.split("=")[1],"domain":window.location.search.split("=")[2]};
+        console.log("债券代码："+bondf9Config.obj.substr(0,bondf9Config.obj.indexOf("&")));
+        dojoConfig =  {
+            async:true, parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            //noscale:true,
+            deps:[
+
+            ],
+            callback: function() {
+                require(["bond/bondf9/src"],function(main){
+                            main();
+                        }
+                );
+                //left.html里声明式使用dojo/data/ItemFileReadStore，在left.js里定义依赖，而不是在deps里
+            }
+        }
+        //dojopr();
+    </script>
+    <link rel="stylesheet" href="./resources/custom.css"/>
+</head>
+<body class="claro">
+<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height: 100%;">
+    <!--<div data-dojo-type="bond/bondf9/view/topbar" data-dojo-props="region:'top'"></div>-->
+    <div data-dojo-type="bond/bondf9/view/tree" data-dojo-props="region:'left',splitter:true,minSize:50,maxSize:350" style="width:170px;height:100% " >
+    </div>
+
+    <div id="content" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"  style="background: #fffef6;overflow:hidden;">
+
+        <!--<div id ="overlayTarget15" style="width: 200px; height: 100px; background-color: darkblue;"></div>-->
+
+        <!--<div data-dojo-type="bond/bondf9/view/topline" data-dojo-props="region:'top'"></div>-->
+        <iframe  name="iframe001" id="iframe001" style="height:100%; width:100%; border:none;background: #fffef6;visibility:hidden" ></iframe>
+    </div>
+    <div id ="standby" target="content" data-dojo-type="dojox/widget/Standby" zIndex="1000" onload="hideLoading">
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>异动观察</title>
+
+	<script type="text/javascript">
+		var cdate = new Date();
+		var hours = cdate.getHours();
+		var minutes = cdate.getMinutes();
+		var time = hours + minutes/60;
+		if(time<9.5){
+			window.location='./pqfd_list.html?menu_code=pqfd';
+		}else if(time <= 15){
+			window.location='./pzyd_list.html?menu_code=pzyd';
+		}else if(time < 24){
+			window.location='./phzj_list.html?menu_code=phzj';
+		}		
+	</script>
+
+</head>
+
+<body>
+</body>
+</html>

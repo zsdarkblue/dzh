@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312" ?> 
+<list>
+<listxmls>
+<syss>
+  <dellistxml>default.xml</dellistxml> 
+  <dellistxml>extra.xml</dellistxml> 
+  <dellistxml>finance2.xml</dellistxml> 
+  <dellistxml>statistic.xml</dellistxml> 
+  <dellistxml>indicator.xml</dellistxml> 
+  <listxml showname="行情">国外商品行情.xml</listxml> 
+  <listxml showname="统计">国外商品统计.xml</listxml> 
+  <listxml showname="指标">国外商品指标.xml</listxml> 
+  </syss>
+  </listxmls>
+  </list>

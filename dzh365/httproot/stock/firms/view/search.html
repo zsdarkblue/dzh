@@ -1,0 +1,663 @@
+<div style="height: 100%;" data-dojo-attach-point="containerNode">
+    <div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'">
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" class="hbox dijitTopBar">
+            <div class="spacer"></div>
+            <div style="line-height: 25px;" class="topbar">大智慧企业库</div>
+        </div>
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="design:'headline',region:'center',gutters:false" class="ss_right vbox">
+            <div id="searchTop"  class="searchbar s_search relative">
+                <button class="btn_style absolute" data-dojo-type="dijit/form/Button" id="btnExpand">
+                    展开︾
+                </button>
+                <div id="search" class="absolute sea_btn" data-dojo-type="dijit/form/Button" data-dojo-props="label:'执行检索'"></div>
+                <div id="reset" class="absolute sea_btn2" data-dojo-type="dijit/form/Button" data-dojo-props="label:'重置检索'"></div>
+                <p class="box_title_text">【基本信息】</p>
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <colgroup>
+                        <col width="5%"/>
+                        <col width="14%"/>
+                        <col width="5%"/>
+                        <col width="10%"/>
+                        <col width="20%"/>
+                        <col width="10%"/>
+                        <col width="40%"/>
+                    </colgroup>
+                  <!--  <tr>
+                        <td>企业</td>
+                        <td colspan="6"></td>
+                    </tr> -->
+                    <tr>
+                        <td>关键字</td>
+                        <td colspan="2">
+                            <div id="comName" data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false ,placeHolder: '请输入企业名称或主营产品' "class="width_trl3"></div>
+                        </td>
+                        <td align="right">一级行业</td>
+                        <td align="left">
+                            <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="行业" class="width_trl" id="hy" ></div>
+                        </td>
+                        <td align="right">所在省市</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="地区分类"  class="width_trl"  id="dq" ></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>注册类型</td>
+                        <td colspan="2">
+                            <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="地区分类" class="width_trl3" id="zclx"></div>
+                        </td>
+                        <td align="right">控股情况</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="资本时间" class="width_trl" id="kgqk" ></div>
+                        </td>
+                        <td align="right">成立时间</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/DateTextBox"  class="width_trl2" id="clsj_begin" constraints="{datePattern:'yyyy-MM-dd', strict:true}"></div>
+                            至
+                            <div data-dojo-type="dijit/form/DateTextBox"  class="width_trl2" id="clsj_end" constraints="{datePattern:'yyyy-MM-dd', strict:true}"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>企业规模</td>
+                        <td colspan="2">
+                            <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="企业规模" class="width_trl3" id="qygm" ></div>
+                        </td>
+                        <td align="right">机构类型</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="机构类型" class="width_trl" id="jglx" ></div>
+                        </td>
+                        <td align="right">员工人数</td>
+                        <td>
+                            <div data-dojo-type="dijit/form/NumberTextBox" data-dojo-props="hasDownArrow:false, invalidMessage:'只接受数字'" class="width_trl2" id="ygrs_begin"></div>
+                            至
+                            <div data-dojo-type="dijit/form/NumberTextBox" data-dojo-props="hasDownArrow:false, invalidMessage:'只接受数字'" class="width_trl2" id="ygrs_end"></div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="ss_title">
+                    <span class="box_title_text">【财务信息】</span>
+                </div>
+                <div class="height_ctrl">
+                <table class="cw_mess" border="0" cellspacing="0" cellpadding="0" width="100%">
+                <colgroup>
+                    <col width="6%"/>
+                    <col width="4%"/>
+                    <col width="19%"/>
+                    <col width="14%"/>
+                    <col width="15%"/>
+                    <col width="13%"/>
+                    <col width="26%"/>
+                </colgroup>
+                <tr>
+                    <td>年&nbsp;&nbsp;&nbsp; 度</td>
+                    <td colspan="6" style="padding-left:0;">
+                        <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="年度" id="gmzb_Year"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>规模指标</td>
+                    <td>
+                        <!--年度&nbsp
+                         <div data-dojo-type="dijit/form/ComboBox" title="行业" >
+                            <option value="机械设备">2012</option>
+                            <option value="化工">2012</option>
+                            <option value="医药生物">2012</option>
+                            <option value="房地产">房地产</option>
+                            <option value="信息服务">信息服务</option>
+                        </div>-->
+                    </td>
+                    <td align="right">
+                        <span id="aaa">总资产</span>
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'aaa', position:['below']" style="display:none; width: 100px;">总资产
+                        </div>
+                    </td>
+                    <td>
+                        <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="总资产" id="zzc" class="option_width"></div>
+                    </td>
+                    <td align="right">
+                        <span id="baa">主营业务收入</span>
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'baa', position:['below']" style="display:none; width: 100px;">主营业务收入
+                        </div>
+                    </td>
+                    <td>
+                        <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="主营业务收入" id="zyywsr" class="option_width"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td align="right">
+                        <span id="caa">利润总额</span>
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'caa', position:['below']" style="display:none; width: 100px;">利润总额
+                        </div>
+                    </td>
+                    <td>
+                        <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="利润总额" id="jlr" class="option_width"></div>
+                    </td>
+                    <td align="right">
+                        <span id="daa">主营业务利润</span>
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'daa', position:['below']" style="display:none; width: 100px;">主营业务利润
+                        </div>
+                    </td>
+                    <td>
+                        <div data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="queryExpr:'*$\{0\}*',required:false" title="主营业务利润" id="zyywlr" class="option_width" ></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tbody id="hidd_part" style=" display:none">
+                <tr>
+                    <td>增长指标</td>
+                    <td></td>
+                    <td align="right">
+                        <span id="bbc">近三年总资产平均增长率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'bbc', position:['below']"
+                             style="display:none; width: 100px;">近三年总资产平均增长率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="bcc">近三年主营收入平均增长率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'bcc', position:['below']"
+                             style="display:none; width: 100px;">近三年主营收入平均增长率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td align="right">
+                        <span id="bdc">近三年利润总额平均增长率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'bdc', position:['below']"
+                             style="display:none; width: 100px;">近三年利润总额平均增长率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="bcb">近三年资本保值增值率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'bcb', position:['below']"
+                             style="display:none; width: 100px;">近三年资本保值增值率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>盈利能力</td>
+                    <td>
+         
+                    </td>
+                    <td align="right">
+                        <span id="dda">长期资本报酬率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'dda', position:['below']"
+                             style="display:none; width: 100px;">长期资本报酬率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right"><span id="acc">净资产收益率（%）</span>
+
+                        <div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId:'acc', position:['below']"
+                             style="display:none; width: 100px;"> 净资产收益率（%）
+                        </div>
+
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+                        <button class="btn_style" data-dojo-type="dijit/form/Button" id="btnExpand2">
+                            展开︾
+                        </button>
+                    </td>
+                </tr>
+                <tr id="show_01" style=" display:none">
+                    <td></td>
+                    <td></td>
+                    <td align="right">
+                        <span id="ddd">总资产利润率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'ddd', position:['below']"
+                             style="display:none; width: 100px;">总资产利润率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right"><span id="ssa">毛利率（%）</span>
+
+                        <div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId:'ssa', position:['below']"
+                             style="display:none; width: 100px;"> 毛利率（%）
+                        </div>
+
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+					
+					</tr>
+					<tr id="show_011" style=" display:none">
+					<td></td>
+					<td></td>
+					<td align="right">
+                    <span id="fff">销售净利率（%）</span>
+
+                    <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'fff', position:['below']"
+                             style="display:none; width: 100px;">销售净利率（%）
+                    </div>
+					</td>
+					
+					<td>
+                    <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    至
+                    <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+					</td>
+					
+					<td align="right"><span id="ffa">成本费用利润率（%）</span>
+
+                    <div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId:'ffa', position:['below']"
+                             style="display:none; width: 100px;"> 成本费用利润率（%）
+                    </div>
+					</td>
+					
+					<td>
+					<div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+					<div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+					</td>
+					<td></td>
+					
+                </tr>
+                <tr>
+                    <td>经营能力</td>
+                    <td>
+                        <!--年度&nbsp
+                         <div data-dojo-type="dijit/form/ComboBox" title="行业" >
+                            <option value="机械设备">2012</option>
+                            <option value="化工">2012</option>
+                            <option value="医药生物">2012</option>
+                            <option value="房地产">房地产</option>
+                            <option value="信息服务">信息服务</option>
+                        </div>-->
+                    </td>
+                    <td align="right"><span id="aab">总资产周转率（次）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'aab', position:['below']"
+                             style="display:none; width: 100px;">总资产周转率（次）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="add">固定资产周转率（次）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'add', position:['below']"
+                             style="display:none; width: 100px;"> 固定资产周转率（次）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+                        <button class="btn_style" data-dojo-type="dijit/form/Button" id="btnExpand3">
+                            展开︾
+                        </button>
+                    </td>
+                </tr>
+                <tr id="show_02" style=" display:none">
+                    <td></td>
+                    <td></td>
+                    <td align="right"><span id="saa">流动资产周转率（次）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'saa', position:['below']"
+                             style="display:none; width: 100px;">流动资产周转率（次）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="qaa">应收账款周转率（次）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qaa', position:['below']"
+                             style="display:none; width: 100px;"> 应收账款周转率（次）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr id="show_021" style=" display:none">
+                    <td></td>
+                    <td></td>
+                    <td align="right"><span id="qqqa">存货周转率（次）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qqqa', position:['below']"
+                             style="display:none; width: 100px;">存货周转率（次）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="qqqb">营业周期（天）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qqqb', position:['below']"
+                             style="display:none; width: 100px;"> 营业周期（天）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>偿债能力</td>
+                    <td>
+                    </td>
+                    <td align="right"><span id="aab">流动比率（倍）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'aab', position:['below']"
+                             style="display:none; width: 100px;">流动比率（倍）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="add">速动比率（倍）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'add', position:['below']"
+                             style="display:none; width: 100px;"> 速动比率（倍）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+                        <button class="btn_style" data-dojo-type="dijit/form/Button" id="btnExpand4">
+                            展开︾
+                        </button>
+                    </td>
+                </tr>
+                <tr id="show_03" style=" display:none">
+                    <td></td>
+                    <td></td>
+                    <td align="right"><span id="qab">利息保障倍数（倍）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qab', position:['below']"
+                             style="display:none; width: 100px;">利息保障倍数（倍）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="qac">资产负债比率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qac', position:['below']"
+                             style="display:none; width: 100px;">资产负债比率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+				 <tr id="show_031" style=" display:none">
+                    <td></td>
+                    <td></td>
+                    <td align="right"><span id="qaba">产权比率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qaba', position:['below']"
+                             style="display:none; width: 100px;">产权比率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="qaca">长期负债比率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qaca', position:['below']"
+                             style="display:none; width: 100px;">长期负债比率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>成长能力</td>
+                    <td>
+                        <!--年度&nbsp
+                         <div data-dojo-type="dijit/form/ComboBox" title="行业" >
+                            <option value="机械设备">2012</option>
+                            <option value="化工">2012</option>
+                            <option value="医药生物">2012</option>
+                            <option value="房地产">房地产</option>
+                            <option value="信息服务">信息服务</option>
+                        </div>-->
+                    </td>
+                    <td align="right"><span id="aab">主营业务收入增长率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'aab', position:['below']"
+                             style="display:none; width: 100px;">主营业务收入增长率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="add">总资产增长率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'add', position:['below']"
+                             style="display:none; width: 100px;"> 总资产增长率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+                        <button class="btn_style" data-dojo-type="dijit/form/Button" id="btnExpand5">
+                            展开︾
+                        </button>
+                    </td>
+                </tr>
+                <tr id="show_04" style="display:none">
+                    <td></td>
+                    <td></td>
+                    <td align="right"><span id="qad">利润总额增长率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qad', position:['below']"
+                             style="display:none; width: 100px;">利润总额增长率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td align="right">
+                        <span id="qae">资本保值增值率（%）</span>
+
+                        <div data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'qae', position:['below']"
+                             style="display:none; width: 100px;">资本保值增值率（%）
+                        </div>
+                    </td>
+                    <td>
+
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                        至
+                        <div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false" style="width:40px"></div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+            </div>
+			<div id="hidTop"  style="position: absolute; top: 260px;width:100%; height:7px;z-index: 999;text-align: center;">
+				<img id="hidTopImg" src="../firms/resources/img/up.png"/>
+			</div>
+			<!--margin-top: -297px; padding-top: 297px; id="hidTop"  class="hidTopBut" -->
+            <div data-dojo-type="dijit/layout/TabContainer" style="height:100%;box-sizing: border-box;margin-top: -297px; padding-top: 280px; " id="table_bo_list">
+			<div id="imgLoadingDiv"  style="position: absolute; display: none; width:100%;height:100%;">
+				<img src="../firms/resources/img/Loading.jpg" style=" position: absolute;top:30% ;left:50%; height:40px ;width:40px; " />
+			</div>
+			</div>
+			<div id="button_top" class="btn_top">
+				<a id="dbcp">对比企业<b id='dbNumber'>0</b>家</a>|<a style="color: #FF5A1A;" href="#" >去对比</a>
+			</div>
+                
+			<div id="dbcp_tab">
+				<table id="dbTab" class="tab_db" >
+					<colgroup>
+						<col width="85%" />
+						<col width="15%" />
+					</colgroup>
+				</table>
+				<div class="tab_btn">
+					<input id="delAll" type="button" value="取消对比" class="btn_css" />
+					<input id="beginDB" type="button" value="去对比" class="btn_css" />
+				</div>
+			</div>  
+			<div id="button_left" class="btn_top" style="width:60px;right:15px;">
+				<a id="favcp" href="#"  style="cursor:pointer; color:#000000;">我的收藏夹</a>
+			</div>
+                
+			<div id="favcp_tab"  style="right:15px;">
+				<div style="height: 12px;background: #f2f5f9;padding: 5px 10px;font-weight: bold;">请选择收藏夹：</div>
+				<table id="favTab" class="tab_db" border="0">
+					<colgroup>
+						<col width="10%" />
+						<col width="90%" />
+					</colgroup>
+					
+					<tr id="scj0">
+						<td>▶</td>
+						<td>收藏夹1</td>
+					</tr>
+					<tr id="scj1">
+						<td>▶</td>
+						<td>收藏夹2</td>
+					</tr>
+					<tr id="scj2">
+						<td>▶</td>
+						<td>收藏夹3</td>
+					</tr>
+				</table>
+				<div class="tab_btn">
+					<input id="done" type="button" value="确定" class="btn_css" />
+					<input id="cancel" type="button" value="取消" class="btn_css" />
+				</div>
+			</div>  
+			<div id="eroDialog" data-dojo-type="dijit/Dialog" style="top:100px;left:50%;height:80px ;width:300px;">请先输入财务年度！</div>
+			<div id="dbOver" data-dojo-type="dijit/Dialog" style="top:100px;left:50%;height:80px ;width:300px;">“最多只能同时对比5家企业！”</div>
+			<div id="favSuc" data-dojo-type="dijit/Dialog" style="top:100px;left:50%;height:80px ;width:300px;"></div>
+        </div>
+    </div>
+</div>

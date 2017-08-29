@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css">
+</head>
+<body class="flex-column loading">
+
+<ul class="flex-none nav-tabs">
+    <li class="active">大智慧行业</li>
+    <li>证监会行业</li>
+    <li>申万行业</li>
+</ul>
+<div class="flex-auto flex-column nav-panes">
+    <div class="flex-auto flex-column active">
+        <ul class="flex-auto columns" v-on="click: onItemClick">
+            <li v-repeat="item:items" v-attr="data-industry:item.C1" v-text="item.C2"></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="flex-auto flex-row">
+        <ul class="flex-1" v-on="click: onItemActive">
+            <li v-repeat="item:items" v-attr="data-industry:item.C1" v-class="selected:item==active"><i class="fa fa-caret-right"></i>{{item.C2}}</li>
+        </ul>
+        <ul class="flex-1" v-on="click: onItemClick">
+            <li v-repeat="item:active.children||[]" v-attr="data-industry:item.C1" v-text="item.C2"></li>
+        </ul>
+    </div>
+    <div class="flex-auto flex-column">
+        <ul class="flex-auto columns" v-on="click: onItemClick">
+            <li v-repeat="item:items" v-attr="data-industry:item.C1" v-text="item.C2"></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

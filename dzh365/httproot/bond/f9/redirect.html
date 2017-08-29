@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>页面转发</title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+    /**
+     * 通过源传过来的参数来判断转发的目标页面
+     * @type {Object}
+     */
+    var t = {
+
+        /**
+         * 地址前缀
+         */
+        getPrefix:function () {
+           var prefix = window.location.protocol + "//" + window.location.host;
+           return prefix;
+
+        },
+
+        /**
+         * 前一链接传过来的参数
+         */
+        getParams:function () {
+            //地址
+            var url = window.location.href;
+            //参数
+            var searchs = window.location.search;
+            console.log("来源:(" + url + ") 参数:(" + searchs + ")");
+            var params;
+            if (searchs) {
+                var p = searchs.replace(/^\?/, "");
+                //这里可能为&amp;
+                params = p.split("&");
+            }
+            return params;
+        },
+
+        /**
+         * 扩展点，获取目标地址
+         * @param params 参数对数组
+         */
+        getTargetUrl:function (params) {
+            var targetUrl;
+            if (params && params[0]) {
+                var v = params[0].split("=");
+
+                //判断是否提供了域名（服务于老版f9)
+                var preDomain;
+                if (params[1]) {
+                    preDomain = params[1].split("=");
+                }
+                //国债期货(chrome)
+                if (/^((XYTF)|(SFTF)).+[.]cmdty$/.exec(v[1])) {
+                    console.log(t.getPrefix() )
+                    targetUrl = t.getPrefix() + "/bond/treasuryfuturef9/index.html" + "?contractCode=" + v[1];
+                    //新版股票(chrome)
+                }
+//                else if (/[.]stk$/.exec(v[1])) {
+//                    targetUrl = t.getPrefix() + "/stock/f9/index.html?obj=" + v[1];
+//                }
+
+                else	if(/[.]bond$/.exec(v[1])&& preDomain && (preDomain[0] === "f9")){
+                    targetUrl = t.getPrefix() + "/bond/bondf9/index.html?obj="+v[1]+ "&domain=http://"+preDomain[1];
+                }
+                else {
+                    //老版f9(php)
+                    if (preDomain && (preDomain[0] === "f9")) {
+                        targetUrl = "http://" + preDomain[1] + "/f9.php?obj=" + v[1];
+                    }
+                }
+
+            }
+            return targetUrl;
+        }
+
+    };
+
+    var params = t.getParams();
+    if (params) {
+        var url = t.getTargetUrl(params);
+        if (url) {
+            console.log("target Url:"+ url);
+           window.location.href = url;
+        } else {
+            console.error("该参数无对应的目标地址!");
+        }
+
+    } else {
+        console.error("未传参数无法判断目的地址");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Config>
+	<menu code="DATAMAN" disp="数据管理中心"/>
+	<menu code="SYNCDATA" disp="下载数据"/>
+	<menu code="COMMAND" disp="自选股导入" cmd="STKTRANSPORT?&amp;NAVBARID=30100010106"/>
+	<menu code="SEPARATOR"/>
+	<menu code="DRAWTOOL" disp="画线工具(&amp;D)" />
+	<menu code="ALARM" disp="预警(&amp;Y)" />
+	<menu code="CALC" disp="计算器(&amp;J)"/>
+	<menu code="SEPARATOR"/>
+	<submenu name="公式管理">
+		<menu code="FUNCTION" disp="公式管理(&amp;F)"/>
+		<menu code="AUTOIMP" disp="公式引入(&amp;I)"/>
+		<menu code="EXPFUNC" disp="公式输出(&amp;E)"/>
+		<menu code="PARAMTEST" disp="系统测试平台(&amp;A)"/>
+	</submenu>
+	<menu code="EXPLORE" disp="条件选股(&amp;C)" />
+	<menu code="PATTERNDEF" disp="模式匹配设计(&amp;D)" />
+	<menu code="SEPARATOR"/>
+	<menu code="OPTION" disp="系统选项(&amp;O)"/>
+	<menu code="SETORDER" disp="委托设置" />
+</Config>

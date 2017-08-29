@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>大智慧 - 上证期权行情</title>
+	<link rel="stylesheet" href="../../dijit/themes/black_table/document.css"/>
+	<link rel="stylesheet" href="./resources/limit.css"/> 
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		dojoConfig = {
+			async:true, parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,
+			callback: function() {
+				require(['fund/ShanghaiOptionDIDHO/src'],function(main){main();});	
+			}
+		}
+		//dojopr();
+	</script>
+</head>
+<body class="claro">
+	<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height: 100%;">
+		<div id="myContentPane" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props=" design:'headline',region:'center',gutters:false" >
+			<div id="te" class="spacer" data-dojo-type="fund/ShanghaiOptionDIDHO/view/gridDataShow" data-dojo-props="region:'center'"></div>
+	 	</div>
+	</div>
+</body>
+</html>

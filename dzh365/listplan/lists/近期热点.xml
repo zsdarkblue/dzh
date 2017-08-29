@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col fixed="1" bkcolor="0"><value>index</value><width>35</width><name>序号</name></col><col bkcolor="0"><value>label</value><width>100</width><name>代码</name></col><col bkcolor="0"><value>name</value><width>150</width><name>名称</name></col><col bkcolor="0"><value>now</value><width>85</width><name>最新</name></col><col bkcolor="0"><value>undn</value><width>85</width><name>涨跌</name></col><col bkcolor="0"><value>updnratio</value><width>85</width><name>涨幅</name></col><col bkcolor="0"><value>updnspeed</value><width>117</width><name>涨速</name></col><col bkcolor="0"><value>volume</value><width>85</width><name>总手</name></col><col bkcolor="0"><value>amount</value><width>85</width><name>总额</name></col><col bkcolor="0"><value>volratio</value><width>139</width><name>量比</name></col><col sorted="-1" subsorted="0" bkcolor="0"><value>scirpt</value><width>220</width><name>新增时间</name><additional_id>1</additional_id><type>string</type></col></column>
+	<onload script="jqrd();" curdir="116"/></list>
+

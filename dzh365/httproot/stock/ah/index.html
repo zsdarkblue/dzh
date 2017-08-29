@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css"/>
+</head>
+<body class="flex-column loading">
+
+<dl class="flex-none">
+    <dt><a href="dzh://VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=分时走势&LABEL=HIHSAHP.index">恒生AH股溢价指数</a></dt>
+    <dd v-class="red:HIHSAHP.change>0,white:!HIHSAHP.change,green:HIHSAHP.change<0,">{{HIHSAHP.new}}</dd>
+    <dd v-class="red:HIHSAHP.change>0,white:!HIHSAHP.change,green:HIHSAHP.change<0,">{{HIHSAHP.change}}</dd>
+    <dd v-class="red:HIHSAHP.change>0,white:!HIHSAHP.change,green:HIHSAHP.change<0,">{{HIHSAHP.chg}}</dd>
+    <dt><a href="dzh://VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=分时走势&LABEL=HIAHXAH.index">恒生中国A+H指数</a></dt>
+    <dd v-class="red:HIAHXAH.change>0,white:!HIAHXAH.change,green:HIAHXAH.change<0,">{{HIAHXAH.new}}</dd>
+    <dd v-class="red:HIAHXAH.change>0,white:!HIAHXAH.change,green:HIAHXAH.change<0,">{{HIAHXAH.change}}</dd>
+    <dd v-class="red:HIAHXAH.change>0,white:!HIAHXAH.change,green:HIAHXAH.change<0,">{{HIAHXAH.chg}}</dd>
+</dl>
+<div class="flex-auto grid"></div>
+<div class="flex-splitter flex-splitter-bottom"><i></i></div>
+<div class="flex-none flex-row">
+    <iframe class="flex-1" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+    <iframe class="flex-1" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css"/>
+</head>
+<body class="flex-column loading">
+
+<div class="flex-1 flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark" data-selector=".nav-panes:eq(0)">
+                <li class="active">国债期货</li>
+                <li>价差矩阵</li>
+            </ul>
+        </div>
+        <div class="flex-auto flex-column nav-panes">
+            <div class="flex-auto grid active"></div>
+            <div class="flex-auto grid"></div>
+        </div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>分时走势</b>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="/platform/charts/index.html"></iframe>
+    </div>
+</div>
+<div class="flex-1 flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark" data-selector=".nav-panes:eq(1)">
+                <li class="active">可交割券(银行间报价)</li>
+                <li>可交割券(交易所成交)</li>
+            </ul>
+        </div>
+        <div class="flex-auto flex-column nav-panes">
+            <div class="flex-auto grid active"></div>
+            <div class="flex-auto grid"></div>
+        </div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark" data-selector=".nav-panes:eq(2)">
+                <li class="active">资金利率</li>
+                <li>债券收益率</li>
+            </ul>
+        </div>
+        <div class="flex-auto flex-column nav-panes">
+            <div class="flex-auto grid active"></div>
+            <div class="flex-auto grid"></div>
+        </div>
+    </div>
+</div>
+<div class="flex-1 flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark" data-selector=".nav-panes:eq(3)">
+                <li class="active">可交割券(银行间估值)</li>
+                <li>可交割券(交易所估值)</li>
+            </ul>
+        </div>
+        <div class="flex-auto flex-column nav-panes">
+            <div class="flex-auto grid active"></div>
+            <div class="flex-auto grid"></div>
+        </div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark" data-selector=".nav-panes:eq(4)">
+                <li class="active">国债期货新闻</li>
+                <li>货币市场新闻</li>
+                <li>国债期货研报</li>
+            </ul>
+        </div>
+        <div class="flex-auto flex-column nav-panes">
+            <div class="flex-auto grid active"></div>
+            <div class="flex-auto grid"></div>
+            <div class="flex-auto grid"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

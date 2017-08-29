@@ -1,0 +1,25 @@
+<div data-dojo-attach-point="containerNode" data-dojo-type="dijit/layout/ContentPane"
+       class="vbox dialog_size">
+    <!--上部表格-->
+    <div class="spacer myGrid">
+        <div id="capitalCounterpartyTable"></div>
+    </div>
+    <div class="block_space"></div>
+    <!--下部打操作-->
+    <div class="hbox">
+        <div class="spacer"></div>
+
+        <div data-dojo-type="dijit/form/Button" id='capitalCounterpartyAdd'>查找</div>
+        <div class="line_block_space"></div>
+
+        <div data-dojo-type="dijit/form/Button" id='capitalCounterpartyClear'>清空</div>
+        <div class="line_block_space"></div>
+
+        <div data-dojo-type="dijit/form/Button" id='capitalCounterpartyOk'>确定</div>
+        <div class="line_block_space"></div>
+
+        <div data-dojo-type="dijit/form/Button" onclick="dijit.byId('capitalCounterpartyDialog').onCancel()">取消</div>
+
+        <div class="spacer"></div>
+    </div>
+</div>

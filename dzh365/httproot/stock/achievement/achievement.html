@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>业绩预告</title>
+    <link rel="stylesheet" href="resources/css.css"/>
+</head>
+<body>
+
+<div id="container" class="flex-auto">
+    <div id="containerBorder">
+        <div id="conditionDiv">
+            <select id="dateSelect" class="marginR" data-bind="onDateSelectChange">
+                <option v-repeat="item:items" value="{{item.value}}" v-text="item.name"></option>
+            </select>
+
+
+            <ul class="btns-list">
+                <li data-bind="onShortCutClick" data-value="0">全部</li>
+                <li data-bind="onShortCutClick" data-value="3" class="active">盈利大幅增加</li>
+                <li data-bind="onShortCutClick" data-value="2">扭亏为盈</li>
+                <li data-bind="onShortCutClick" data-value="8">亏损大幅增加</li>
+                <li data-bind="onShortCutClick" data-value="1">出现亏损</li>
+                <li class="fake-select" data-bind="onFakeSelectClick">
+                    <span data-value="3">更多类型</span>
+                    <ul class="item-list" data-bind="onFakeListClick">
+                        <li class="all"><a href data-value="0">全部</a></li>
+                        <li>
+                            <dl>
+                                <dt><a href data-value="100">预喜</a></dt>
+                                <dd><a href data-value="3">盈利大幅增加</a></dd>
+                                <dd><a href data-value="5">盈利小幅增加</a></dd>
+                                <dd><a href data-value="2">扭亏为盈</a></dd>
+                                <dd><a href data-value="7">亏损大幅减少</a></dd>
+                                <dd><a href data-value="12">亏损小幅减少</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href data-value="200">预悲</a></dt>
+                                <dd><a href data-value="8">亏损大幅增加</a></dd>
+                                <dd><a href data-value="9">亏损小幅增加</a></dd>
+                                <dd><a href data-value="1">出现亏损</a></dd>
+                                <dd><a href data-value="4">盈利大幅减少</a></dd>
+                                <dd><a href data-value="11">盈利小幅减少</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href data-value="300">其他</a></dt>
+                                <dd><a href data-value="6">继续盈利(幅度不定)</a></dd>
+                                <dd><a href data-value="10">继续亏损(幅度不定)</a></dd>
+                                <dd><a href data-value="19">不确定</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+        <div id="tableContainer">
+            <div class="tbl-header">
+                <table>
+                    <colgroup>
+                        <col width="40">
+                        <col width="60">
+                        <col width="68">
+                        <col width="100">
+                        <col width="162">
+                        <col width="162">
+                        <col width="61">
+                        <col width="127">
+                        <col width="78">
+                        <col width="78">
+                        <col width="42">
+                        <col v-if="hasScroll" width="6">
+                    </colgroup>
+                    <thead>
+                    <tr data-bind="onTHeadClick">
+                        <th>序号</th>
+                        <th data-type="2">股票代码</th>
+                        <th data-type="3">股票简称</th>
+                        <th data-type="4">上年同期净利润</th>
+                        <th data-type="6">预计净利润</th>
+                        <th data-type="7">业绩变动幅度</th>
+                        <th data-type="15">预计EPS</th>
+                        <th data-type="8">预告类型</th>
+                        <th data-type="9" class="order desc">公告日期<i class="arrow"></i></th>
+                        <th data-type="14">定报日期</th>
+                        <th>详情</th>
+                        <th v-if="hasScroll"></th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="tbl-container scroll">
+                <table>
+                    <colgroup>
+                        <col width="40">
+                        <col width="60">
+                        <col width="68">
+                        <col width="100">
+                        <col width="162">
+                        <col width="162">
+                        <col width="61">
+                        <col width="127">
+                        <col width="78">
+                        <col width="78">
+                        <col width="42">
+                    </colgroup>
+                    <tbody class="hide">
+                    <tr v-repeat="item:items">
+                        <td v-text="item['num']"></td>
+                        <td>
+                            <a href="dzh://VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=分时走势&LABEL={{item['CO']}}"
+                               v-text="item['股票代码']"></a>
+                        </td>
+                        <td>
+                            <a href="dzh://VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=分时走势&LABEL={{item['CO']}}">
+                                <span class="chinese" v-text="item['股票简称']"></span>
+                            </a>
+                        </td>
+                        <td v-text="item['上期净利润']"></td>
+                        <td v-if="item.isBenefitRange">
+                            <span v-text="item.benefitRangeBefore"></span><span class="sign">~</span><span
+                                v-text="item.benefitRangeAfter"></span>
+                        </td>
+                        <td v-if="!item.isBenefitRange" v-text="item['预计净利润']"></td>
+                        <td class="num" v-if="item.isChangeRange">
+                        <span v-class="minus: item['changeRangeBefore'].indexOf('-') == -1"
+                              v-text="item['changeRangeBefore']"></span><span class="sign">~</span><span
+                                v-class="minus: item['changeRangeAfter'].indexOf('-') == -1"
+                                v-text="item['changeRangeAfter']"></span>
+                        </td>
+                        <td class="num" v-if="!item.isChangeRange" v-text="item['业绩变动幅度']"
+                            v-class="minus: item['业绩变动幅度']&&item['业绩变动幅度'].indexOf('-') == -1"></td>
+                        <td v-text="item['预计EPS']"></td>
+                        <td><span class="chinese" v-text="item['预告类型']"></span></td>
+                        <td v-text="item['公告日期']"></td>
+                        <td v-text="item['定报日期']"></td>
+                        <td>
+                            <a class="has-tip" v-if="item['详情']"   v-on="mouseover: showTip($event)">查看
+                                <span v-text="item['详情']"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="noDataMsg hide">暂无相关数据</div>
+        </div>
+        <div id="pagerParent">
+            <div class="pager" v-on="click:onClick">
+                <a v-attr="data-index:index-1">上一页</a>
+                <a v-class="active:index==1" v-text="1"></a>
+                <i v-if="count>size&&index>size/2+1">...</i>
+                <a v-class="active:index==$value" v-repeat="items" v-text="$value"></a>
+                <i v-if="count>size&&index<count-size/2">...</i>
+                <a v-class="active:index==count" v-if="count>1" v-text="count"></a>
+                <a v-attr="data-index:index+1">下一页</a>
+                <input v-attr="min:1,max:count" v-model="input" v-on="change:onChange" type="number">
+                <a v-attr="data-index:input">GO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

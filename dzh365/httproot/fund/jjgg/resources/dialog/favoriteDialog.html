@@ -1,0 +1,21 @@
+<div id="ABDlg2">
+	<div class="dijitDialogPaneContentArea">
+		<div id="ABintro2" class="tc_text">
+			收藏至
+			<div id="noticeList" data-dojo-type="dijit/form/ComboBox" >
+				<option>新建公告</option>
+			</div>
+			<div id="newNoticeName" 
+				data-dojo-type="dijit/form/TextBox"
+				data-dojo-props="placeHolder:'请输入新建公告名称',trim:true"
+				style="width: 100px"></div>
+		</div>
+		<div id="favoriteTime"></div>
+	</div>
+	<div class="dijitDialogPaneActionBar">
+		<div class="tc_btn">
+			<button data-dojo-type="dijit.form.Button" type="button" id="dybtnOk">确定</button>
+			<button data-dojo-type="dijit.form.Button" type="button" onclick="dijit.byId('dialogFavorite').onCancel()" id="btnCancel">取消</button>
+		</div>
+	</div>
+</div>

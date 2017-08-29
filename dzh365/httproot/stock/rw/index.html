@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>人物 版本号：1.01</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../../dijit/themes/white_detail/document.css"/>
+	<link rel="stylesheet" href="resources/custom.css"/>   <!--导入 自己定义的样式文件-->
+	<link rel="stylesheet" href="../../dojox/widget/Pager/Pager.css"/>
+	<link rel="stylesheet" href="resources/ver1.0.css"/>
+	<style type="text/css">
+	.slick-viewport{overflow-x: hidden !important; }
+	.btn2{
+		min-width: none !important;
+	}
+	</style>
+	<script type="text/javascript">
+		dojoConfig = {
+			async:true, parseOnLoad:false, 
+			requestProvider: "dojo/request/registry",
+			paths:{'stock':'../stock'}, 
+			baseUrl : "../../dojo",
+			noscale:true,
+			//locale:'zh-cn',
+			            callback:function () {
+                require(['stock/rw/src'], function (main) {
+                    document.body.innerHTML = [
+                        '<div data-dojo-type="dijit/layout/TabContainer" style="width: 100%; height: 100%;" class="sblue_tab tabContainer_css" id="root">',
+                        '    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="closable:false" id="tabContent', (location.search.match(/userCode=([^&]*)/) || [, ''])[1], '">',
+                        '        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:\'headline\'" style="height: 100%;">',
+                        '            <div data-dojo-type="stock/rw/view/left"></div>',
+                        '            <div data-dojo-type="stock/rw/view/right"></div>',
+                        '        </div>',
+                        '    </div>',
+                        '</div>'
+                    ].join('');
+                    main();
+                });
+            }
+		}
+	//dojopr();
+	</script>
+</head>
+<body class="claro" style="border:solid 1px transparent; margin:-1px;">
+</body>
+</html>

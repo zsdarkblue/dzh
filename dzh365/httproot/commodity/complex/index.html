@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css"/>
+</head>
+<body class="flex-column loading">
+
+<div class="flex-1 flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>国内农产品</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>国际农产品</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>分时走势</b>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="/platform/charts/index.html"></iframe>
+    </div>
+</div>
+<div class="flex-1 flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>国内金属</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>国际金属</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>相关市场</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+</div>
+<div class="flex-1 flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>国内能源化工</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>国际能源化工</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>商品新闻</b>
+            <ul class="nav-tabs tabs-blue-dark pull-right" data-selector=".nav-panes">
+                <li class="active">要闻</li>
+                <li>农产品</li>
+                <li>金属</li>
+                <li>能源化工</li>
+            </ul>
+        </div>
+        <div class="flex-auto flex-column nav-panes">
+            <div class="flex-auto grid grid-s active"></div>
+            <div class="flex-auto grid grid-s"></div>
+            <div class="flex-auto grid grid-s"></div>
+            <div class="flex-auto grid grid-s"></div>
+        </div>
+    </div>
+</div>
+
+<div class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3></h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <iframe frameborder="0" src="about:blank" allowtransparency="true"></iframe>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-dark" onclick="this.parentNode.parentNode.widget.hide();">关 闭</button>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

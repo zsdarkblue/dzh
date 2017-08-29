@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>微策略评选</title>
+<link rel="stylesheet"
+	href="../../../../dijit/themes/claro/document.css" />
+<link rel="stylesheet" href="../custom.css" />
+<script type="text/javascript">
+			var u = window.location.href+"";
+			var dojoConfig = {
+				async:true,
+				parseOnLoad:false,
+				baseUrl:'../../../../dojo',
+				noscale:true,
+				dzhUserId : u.substr(u.lastIndexOf("=")+1,u.length),//用户ID
+				dzhURL:"",//请求域名			
+					callback: function() {
+					require(["stock/MicroStrategy/resources/linkPage/src",
+							  "stock/MicroStrategy/resources/linkPage/microSelectionUtil"
+					         ],
+					         function(main,microSelectioinUtil){
+						
+								main();
+								microSelectioinUtil.startup();
+						
+								document.onkeydown = function(){
+									 if ((event.keyCode==8) || //屏蔽退格删除键      
+										    　(event.keyCode==116)|| //屏蔽 F5 刷新键      
+										   　　(event.keyCode==112)|| //屏蔽 F1 刷新键      
+										    　(event.ctrlKey && event.keyCode==82)){ //Ctrl + R   
+									console.log(123);
+									  event.keyCode = 0;
+									  event.returnvalue = false;
+									  }
+								}
+							document.onkeydown = function onkey(evt){
+						        var key = evt.keyCode;
+						        if(key == 8){
+						        	console.log(11111);
+						        	event.keyCode = 0;
+						        	event.returnvalue = false;
+						        	return false;
+						        }
+							}
+					});
+				}
+			}
+						
+		</script>
+</head>
+<body class="claro"
+	style="overflow-y: scroll; margin: 0; padding: 0; width:100%; height:auto;">
+	<div id="main" class="global_main">
+		<div style="padding-top:10px; width:100%;">
+		<div class="banner">分析师资料</div>
+		</div>
+		<div class="bg000" id="bg000" style="margin-top: -1px;">
+			<div style="float: left; margin: 10px 0 0 20px;">
+				<div class="text001">姓名:&nbsp;</div>
+				<div class="box_analystInform" id="TextBox_0" style="width:120px;"></div>
+			</div>
+			<div style="float: left; margin: 10px 0 0 20px;">
+				<div class="text001">用户类型:&nbsp;</div>
+				<div class="box_analystInform" id="TextBox_1" style="width:130px;"></div>
+			</div>
+			<div style="float: left; margin: 10px 0 0 20px;">
+				<div class="text001">所属机构:&nbsp;</div>
+				<div class="box_analystInform" id="TextBox_2" style="width:250px;"></div>
+			</div>
+			<div style="float: left; margin: 10px 0 0 20px;">
+				<div class="text001">资质编号:&nbsp;</div>
+				<div class="box_analystInform" id="TextBox_3" style="width:150px;"></div>
+			</div>
+		</div>
+
+		<div style="padding-top:10px; width:100%;">
+		<div class="banner">微策略评选</div>
+		</div>
+		<div id="tableMicro" style="width:800px; margin-top:-1px; min-height:25px;">
+			<div id="Grid_MicroStrategy" style="width: 100%;"></div>
+		</div>
+
+		<div style=" width: 800px;">
+		<div style="padding-top:10px; width:100%;">
+			<div class="banner">评选规则</div>
+		</div>
+			<div class="bg001"
+				style="margin-bottom: 10px; margin-top: -1px; height:80px;">
+				<div style="margin: 5px; float: left; width: 100%">
+					(1)拥有微策略评选权限资格的分析师，首次可从众多微策略中选取20个微策略加关注，并选取其中的5个加重点关注。</div>
+				<div style="margin: 5px; float: left; width: 100%">
+					(2)第二日可进行减分、加分和取消关注操作，减分操作只针对加重点关注的5个微策略（减分操作的基础是微策略评分数在1分以上）。</div>
+				<div style="margin: 5px; float: left; width: 100%">
+					(3)第三日可对全部加关注的20个微策略进行减分、加分和取消关注，当取消关注后可再从众多微策略中选取其他策略进行关注操作。</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

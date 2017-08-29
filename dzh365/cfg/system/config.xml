@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<list>
+    <module name="dzh_skin">
+        <config name="style" path="dzh_skin\style.xml" filetype="xml" />
+    </module>
+    <module name="categoryconfig">
+        <config name="config" path="categoryconfig\config.xml" filetype="xml" />
+    </module>
+    <module name="dzh_main">
+        <config name="Config" path="dzh_main\Config.xml" filetype="xml" />
+    </module>
+    <module name="cust_button">
+        <config name="CustButtonCfg" path="cust_button\CustButtonCfg.xml" filetype="xml" />
+    </module>
+    <module name="system">
+        <config name="config" path="system\Config.xml" filetype="xml" />
+        <config name="InfoPan" path="system\InfoPan.xml" filetype="xml" />
+		<config name="AppendCmd" path="system\AppendCmd.xml" filetype="xml"/>
+		<config name="commoncfg" path="system\commoncfg.xml" filetype="xml" />
+    </module>
+    <module name="dzh_indicenew">
+        <config name="newindice" path="dzh_indicenew\newindice.xml" filetype="xml" />
+    </module>
+	<module name="newsconfig">
+        <config name="newspages" path="newsconfig\newspages.xml" filetype="xml" />
+	</module>
+	<module name="simpleconfig">
+		<config name="Market" path="simpleconfig\Market.xml" filetype="xml" savecheck="true"/>
+		<config name="Prof_F10" path="simpleconfig\Prof_F10.xml" filetype="xml"  modifymode="user"/>
+		<config name="User_Settings" path="simpleconfig\User_Settings.xml" filetype="xml" modifymode="user"/>
+		<config name="System_Settings" path="simpleconfig\System_Settings.xml" filetype="xml" />
+		<config name="IndiGroups" path="simpleconfig\IndiGroups.xml" filetype="xml" modifymode="user"/>
+		<config name="IndiGroups-SELF" path="simpleconfig\IndiGroups-SELF.xml" filetype="xml" modifymode="user"/>
+		<config name="ExtFunc" path="simpleconfig\ExtFunc.xml" filetype="xml" />
+	</module>
+	<module name="statusbar">
+	 	<config name="config" path="statusbar2\statusbar.xml" filetype="xml" modifymode="user"/>
+	</module>
+	<module name="navigate">
+	 	<config name="config" path="navigate\navigate.xml" filetype="xml" />
+		<config name="cus_config" path="navigate\cus_navigate.xml" filetype="xml" />
+	</module>
+	<module name="dzh_menu">
+	 	<config name="frameconfig" path="dzhmenu\framemenu.xml" filetype="xml" />
+	</module>
+	<module name="newsfilter">
+	 	<config name="config" path="newsfilter2\newsfilter.xml" filetype="xml" modifymode="user"/>
+    </module>
+	<mode name="天天银" dir="metal" />
+	<mode name="彩票" dir="lottery" />
+</list>

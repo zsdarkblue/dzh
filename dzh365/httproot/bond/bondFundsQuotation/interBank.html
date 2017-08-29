@@ -1,0 +1,224 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<title>银行间质押式回购</title>
+<link rel="stylesheet" href="../../bond/bondFundsQuotation/css/base.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jQuery.datatable/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jquery-ui/themes/smoothness/jquery-ui.min.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jquery-ui/themes/smoothness/jquery.ui.theme.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jQuery.datatable/js/media/css/dataTables.scroller.css" />
+<link rel="stylesheet" href="../../bond/bondFundsQuotation/css/style.css" />
+<style>
+.fiter-none{display:none}
+</style>
+</head>
+<body>
+    <div id="main" data-did="100004">
+        <div id="tab-main" class="tab-list">
+            <ul class="tab-bar clearfix">
+                <li class="active" data-did="100006"><a href="javascript:void(0)" title="行情与报价">今日最新行情</a></li>
+                <li data-did="getIBLendingHistoryData"><a href="javascript:void(0)" title="最新行情">历史行情查询</a></li>
+                <li data-did="getIBLendingHistoryInnerDayQuotation"><a href="javascript:void(0)" title="历史最优查询">历史日内行情</a></li>
+            </ul>
+            <ul class="tab-content clearfix">
+                <li class="active">
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display dataTable" id="tab-main-datatable1">
+                            <thead>
+                                <tr class="header-group">
+                                    <th colspan="12" class="set-today-date">2014-04-15</th>
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>回购品种</th>
+                                    <th>最新利率</th>
+                                    <th>涨跌幅</th>
+                                    <th>加权平均利率</th>
+                                    <th>开盘利率</th>
+                                    <th>最高利率</th>
+                                    <th>最低利率</th>
+									<th>前收盘利率</th>
+                                    <th>前加权平均利率</th>
+                                    <th>成交量(万元)</th>
+                                </tr>
+							</thead>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <form action="#" method="post" class="filter-bar clearfix">
+                        <div class="filter-bar-inner clearfix">
+                            <label for="tab1-select1" class="item">回购品种</label>
+                            <select name="tab2-select1" id="tab2-select1"  class="item">
+                                <option value="0" selected="selected">全部</option>
+                                <option value="IBO001">IBO001</option>
+                                <option value="IBO001">IBO007</option>
+                                <option value="IBO014">IBO014</option>
+                                <option value="IBO021">IBO021</option>
+                                <option value="IBO1M">IBO1M</option>
+                                <option value="IBO2M">IBO2M</option>
+                                <option value="IBO3M">IBO3M</option>
+                                <option value="IBO4M">IBO4M</option>
+                                <option value="IBO6M">IBO6M</option>
+                                <option value="IBO1Y">IBO1Y</option>
+                            </select>
+                            <label for="tab2-input11" class="item">起始日期</label>
+							<input type="text" name="tab2-input11" id="tab2-input11" class="item item-date">
+							<label for="tab2-input12" class="item">截止日期</label>
+							<input type="text" name="tab3-input12" id="tab2-input12" class="item item-date">
+							<a href="javascript:void(0)" id="btn-export-data2" class="btn btn-export-data item" data-on="0"><span>提取数据</span></a>
+							<a href="javascript:void(0)" id="btn-export-excel2" class="btn btn-export-excel item"><span>导出Excel</span></a>
+                        </div>
+                    </form>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable2">
+                            <thead>
+                                <tr class="header-group">
+                                    <!--<th colspan="22" class="set-today-date">2014-01-18</th>-->
+                                </tr>
+                                <tr class="header-detail">
+									<th>序号</th>
+                                    <th>回购品种</th> 
+                                    <th>日期</th>	
+                                    <th>最新利率</th>	
+                                    <th>涨跌幅</th>	
+                                    <th>加权平均利率</th>	
+                                    <th>开盘利率</th>	
+                                    <th>最高利率</th>	
+                                    <th>最低利率</th>	
+                                    <th>前收盘利率</th>	
+                                    <th>前加权平均利率</th>	
+                                    <th>成交量（万元）</th>	
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <form action="#" method="post" class="filter-bar clearfix">
+                        <div class="filter-bar-inner clearfix">
+                            <label for="tab3-select1" class="item">回购品种</label>
+                            <select name="tab3-select1" id="tab3-select1"  class="item">
+                                <option value="0" selected="selected">全部</option>
+                                <option value="IBO001">IBO001</option>
+                                <option value="IBO014">IBO014</option>
+                                <option value="IBO021">IBO021</option>
+                                <option value="IBO1M">IBO1M</option>
+                                <option value="IBO2M">IBO2M</option>
+                                <option value="IBO3M">IBO3M</option>
+                                <option value="IBO4M">IBO4M</option>
+                                <option value="IBO6M">IBO6M</option>
+                                <option value="IBO1Y">IBO1Y</option>
+                            </select>
+                            <label for="tab3-input11" class="item">起始日期</label>
+							<input type="text" name="tab3-input11" id="tab3-input11" class="item item-date">
+							<label for="tab3-input12" class="item">截止日期</label>
+							<input type="text" name="tab3-input12" id="tab3-input12" class="item item-date">
+							<a href="javascript:void(0)" id="btn-export-data3" class="btn btn-export-data item" data-on="0"><span>提取数据</span></a>
+							<a href="javascript:void(0)" id="btn-export-excel3" class="btn btn-export-excel item"><span>导出Excel</span></a>
+                        </div>
+                    </form>
+                    <div class="data data-3">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable3">
+                            <thead>
+                                <tr class="header-group">
+                                    <!--<th colspan="7" class="set-today-date">2014-01-18</th>-->
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>回购品种</th>
+                                    <th>成交日期</th>
+									<th>成交时间</th>
+                                    <th>利率</th>
+                                    <th>成交量</th>
+									<th>累计成交量（万元）</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+		<div id="tab-splitter" class="tab-splitter tab-splitter-down">
+			<div class="tab-splitter-inner">
+				<div class="tab-splitter-controller"></div>
+			</div>
+		</div>
+			<div id="tab-secondary" class="tab-list">
+				<ul class="tab-bar clearfix">
+					<li id="init-did"  class="active" data-did="100204"><a href="javascript:void(0)" title="今日日内行情">今日日内行情</a></li>
+					<li data-did="getIBLendingHistoryData"><a href="javascript:void(0)" title="近一月日行情">近一月日行情</a></li>
+				</ul>
+				<ul class="tab-content">
+					<li class="active">
+						<div class="data">
+							<table cellpadding="0" cellspacing="0" border="0" class="display dataTable" id="tab-secondary-datatable1">
+								<thead>
+									<tr class="header-group">
+										<th colspan="5" class="set-today-date">dfd</th>
+									</tr>
+									<tr class="header-detail">
+										<th>序号</th>
+										<th>回购品种</th>
+										<th>成交时间</th>
+										<th>最新</th>
+										<th>成交量</th>
+									</tr>
+								</thead>
+								<tbody>
+								
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li>
+						<div class="data">
+							<table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-secondary-datatable2">
+								<thead>
+									<tr class="header-group">
+										<th colspan="12" class="set-today-date">2014-01-18</th>
+									</tr>
+									<tr class="header-detail">
+										<th>序号</th>
+										<th>回购品种</th>
+										<th>日期</th>
+										<th>最新利率</th>
+										<th>涨跌幅</th>
+										<th>加权平均利率</th>
+										<th>开盘利率</th>
+										<th>最高利率</th>
+										<th>最低利率</th>
+										<th>前收盘利率</th>
+										<th>前加权平均利率</th>
+										<th>成交量（万元）</th>
+									</tr>
+								</thead>
+								<tbody>
+								   
+								</tbody>
+							</table>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	
+<script src="../../jquery/jquery.js"></script>
+<script src="../../jquery/jquery-plugins/jQuery.datatable/js/jquery.dataTables.min.js"></script> <!-- dataTables控件 -->
+
+<script src="../../jquery/jquery-plugins/jQuery.datatable/js/media/js/dataTables.scroller.js"></script> <!-- dataTables 配合TableTools -->
+
+<script src="../../jquery/jquery-plugins/jquery-ui/jquery-ui.min.js"></script> <!-- datepicker控件在内 -->
+<script src="../../jquery/jquery-plugins/jquery-ui/datepicker-zh-CN.js"></script> <!-- datepicker 翻译 -->
+
+<script src="js/webSoket.js"></script>
+<script src="js/init.js"></script> <!-- 初始化页面js -->  
+<script src="js/index.js"></script> <!--取值控制层js -->
+
+</body>
+</html>

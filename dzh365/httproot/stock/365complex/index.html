@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/index.css"/>
+</head>
+<body class="loading">
+
+<div class="flex-row">
+    <div class="flex-3 flex-column">
+        <div class="flex-none title">
+            <select data-bind="onSelectChange" data-option>
+                <option>自选股</option>
+            </select>
+            <div class="btn-group pull-right">
+                <a class="btn" href="dzh://CHROME?URL='root://news/zongheping/news_list.html?forward=true&menuid=00100200A&search_Stocks=true'&NAVBARID=30101010103"><i class="fa fa-comment"></i>新闻</a>
+                <a class="btn" href="dzh://CHROME?URL='root://platform/bulletin/index.html?type=stock&node=%E8%87%AA%E9%80%89%E8%82%A1'&NAVBARID=30101010102"><i class="fa fa-comment"></i>公告</a>
+                <a class="btn" href="dzh://CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxgyb-zxg&name=%E8%87%AA%E9%80%89%E8%82%A1&NAVBARID=30101010104"><i class="fa fa-comment"></i>研报</a>
+                <a href="dzh://VIEWLIST?MARKET=@S&NAVBARID=30101010101">&gt;&gt;</a>
+            </div>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+        <a class="empty" href="dzh://navigate?'root://platform/optionalObject/index.html?#DZHPOPUP(300,100,806,624)#'">自选股管理</a>
+    </div>
+    <div class="flex-4 flex-column">
+        <div class="flex-none title drop-down-tabs">
+            <div>
+                <ul class="tabs-blue-dark scroller">
+                    <li v-repeat="item in dropDownItems"
+                        v-class="active: active === item"
+                        v-text="item.name"
+                        v-on="click:__click(item)"></li>
+                </ul>
+            </div>
+            <ul class="nav-tabs tabs-blue-dark">
+                <li v-repeat="item in items"
+                    v-class="active: active === item"
+                    v-text="item.name"
+                    v-on="click:__click(item)"></li>
+            </ul>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+        <div class="flex-none title">
+            <b>联动分时图</b>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+    </div>
+    <div class="flex-3 flex-column">
+        <div class="flex-none event">
+            <img v-if="isImg === true" v-attr="src:src">
+            <object v-if="isImg === false">
+                <param name="movie" v-attr="value:src">
+                <param name="wmode" value="transparent">
+            </object>
+            <a v-attr="href:link"></a>
+        </div>
+        <div class="flex-none title" style="margin-bottom: 5px;">
+            <ul class="nav-tabs tabs-blue-dark">
+                <li class="active">最新资讯</li>
+            </ul>
+        </div>
+        <div class="flex-auto grid grid-s grid-n"></div>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

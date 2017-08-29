@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>行情综合分析</title>
+    <link rel="stylesheet" href="../../dijit/themes/claro/document.css"/>
+    <link href="resources/basestyle.css" rel="stylesheet" type="text/css" />
+    <link href="resources/ver1.0.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//        "historyMarketIndex.html?code=142157&jzdate=201210&frequency=月&lan=1";
+       historyMarketConfig = {
+          code:"",
+          jzdate:"",
+          frequency:"月",
+          lan:"1"
+       };
+        var url=window.location.href;
+        url=url.substring(url.indexOf("?")+1);
+        var p=url.split("&");
+        for(var i=0;i< p.length;i++)
+        {
+            var ctP=p[i];
+            var ctModel=ctP.split("=");
+            if(ctModel.length==2)
+            {
+                historyMarketConfig[ctModel[0]]=decodeURI(ctModel[1]);
+            }
+        }
+
+        if((historyMarketConfig.code+"")=="67467")
+        {
+            historyMarketConfig.frequency="周";
+        }else
+        {
+            historyMarketConfig.jzdate=historyMarketConfig.jzdate.substr(0,6);
+            historyMarketConfig.frequency="月";
+        }
+
+        dojoConfig =  {
+            async:true, parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            //noscale:true,
+            deps:[
+            ],
+            callback: function() {
+                require(["bond/gjsscreen/src"],function(main){
+                            main();
+                        }
+                );
+            }
+        }
+                //dojopr();
+            </script>
+</head>
+<body class="claro" onblur="window.external.closeDialog();" onload="window.external.setLayeredWin(255);">
+<div id="main" data-dojo-type="dijit/layout/ContentPane" style="height: 100%;background-color: #ffffff">
+    <div data-dojo-type="bond/gjsscreen/view/historyMarket" style="height: 100%"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gb2312"?>
+<list>
+  <column>
+<col><value>index</value><width>30</width><name>序号</name></col>
+<col><value>label</value><width>70</width><name>代码</name></col>
+<col><value>name</value><width>100</width><name>名称</name></col>
+<col><value>now</value><width>65</width><name>最新</name></col>
+<col><value>undn</value><width>70</width><name>涨跌</name></col>
+<col><value>updnratio</value><width>70</width><name>涨幅</name></col>
+<col><value>buyprice1</value><width>70</width><name>买一价</name></col>
+<col><value>sellprice1</value><width>70</width><name>卖一价</name></col>
+<col><value>open</value><width>70</width><name>今开</name></col>
+<col><value>high</value><width>70</width><name>最高</name></col>
+<col><value>low</value><width>70</width><name>最低</name></col>
+<col><value>lastclose</value><width>70</width><name>昨收</name></col>
+<col><value>presettle</value><width>93</width><name>昨结算价</name></col>
+<col><value>nowvol</value><width>70</width><name>现手</name></col>
+<col><value>volume</value><width>70</width><name>总手</name></col>
+<col><value>openinterest</value><width>78</width><name>持仓量</name></col>
+<col><value>oiincday</value><width>82</width><name>日增仓</name></col>
+
+</column>
+<onload script="hxsp();" curdir="116"/>
+  </list>

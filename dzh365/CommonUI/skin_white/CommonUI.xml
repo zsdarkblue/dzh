@@ -1,0 +1,227 @@
+<Skin id="FC_STYLE">
+  <!--Grid界面配置-->
+  <Grid bkgcolor="0x00CACACA" bordercolor1="0x00464646" bordercolor2="0x00FFFFFF" defaulttextcolor="0x00000000">
+    <Header bkcolor1="0x00F4F4F4" bkcolor2="0x00DDDDDD" bordercolor1="0x00464646" bordercolor2="0x00FFFFFF"
+            linecolor1="0x00464646" linecolor2="0x00FFFFFF" textcolor="0x00000000" sorticoncolor="0x00000000"/>
+    <Body bkgcolor="0x00F6FEFF" hlinecolor="0x00A8A9A0" vlinecolor="0x00A8A9A0" treelinecolor="0x00686868"
+          itemfocuscolor1="0x00EF9300" itemfocuscolor2="0x00D67000"
+          treeplusimage="plus.png" treeminusimage="minus.png"/>
+  </Grid>
+  
+  <Tab bkgcolor1="0x00EAEAEA" bkgcolor2="0x00D3D3D3" bordercolor="0x00515151">
+    <Item bkgcolor1="0x00CFCFCF" bkgcolor2="0x00B5B5B5" curselbkgcolor1="0x0082E1FE" curselbkgcolor2="0x002CA4F4"
+          bordercolor="0x00464646" linecolor="0x00EFEFEF" textcolor="0x00000000" curseltextcolor="0x00000000"/>
+  </Tab>
+  
+  <Tab2 bkgcolor1="0x00EAEAEA" bkgcolor2="0x00D3D3D3"
+        topbordercolor1="0x00434343" topbordercolor2="0x00FFFFFF" bottombordercolor="0x00676767">
+    <Item curselbkgcolor1="0x00FADBB8" curselbkgcolor2="0x00FBB547"
+          bordercolor1="0x00757575" bordercolor2="0x00FFFFFF"/>
+  </Tab2>
+
+  <Tab3 bkgcolor="0x00CACACA">
+    <Item normal_l="tab_normal_l.png" normal_c="tab_normal_c.png" normal_r="tab_normal_r.png"
+          check_l="tab_check_l.png" check_c="tab_check_c.png" check_r="tab_check_r.png"
+          bottom_normal_l="tab_bottom_normal_l.png" bottom_normal_c="tab_bottom_normal_c.png" bottom_normal_r="tab_bottom_normal_r.png"
+          bottom_check_l="tab_bottom_check_l.png" bottom_check_c="tab_bottom_check_c.png" bottom_check_r="tab_bottom_check_r.png"/>
+  </Tab3>
+
+  <Toolbar bkgcolor1="0x00000000" bkgcolor2="0x00000000">
+    <Item hovercolor1="0x003C3C3C" hovercolor2="0x003C3C3C" downcolor1="0x00303030" downcolor2="0x00303030"
+          checkcolor1="0x00FFFFFF" checkcolor2="0x00FFFFFF" checkhovercolor1="0x000000FF" checkhovercolor2="0x000000FF"
+          checkdowncolor1="0x00FFFFFF" checkdowncolor2="0x00FFFFFF"
+          normaltextcolor="0x00E9E9E9" hovertextcolor="0x00E9E9E9" downtextcolor="0x00E9E9E9"
+          separatorcolor1="0x00757575" separatorcolor2="0x00FFFFFF"
+          bordercolor1="0x003C3C3C" bordercolor2="0x009A9A9A"/>
+  </Toolbar>
+  
+  <Scrollbar bordercolor="0x00CECECE" bkgcolor="0x00CECECE">
+    <Button bordercolor1="0x00D5D5D5" bordercolor2="0x00AAAAAA" bkgcolor1="0x00BFBFBF" bkgcolor2="0x00BFBFBF" arrowcolor="0x002F2F2F"/>
+    <ThumbButton bordercolor1="0x00D5D5D5" bordercolor2="0x00AAAAAA" bkgcolor1="0x00BFBFBF" bkgcolor2 ="0x00BFBFBF"
+                 iconcolor1="0x002F2F2F" iconcolor2="0x00E1E1E1"/>
+  </Scrollbar>
+  
+  <Panel>
+    <Splitter bkgcolor="0x00CACACA" buttoncolor="0x003C3C3C"/>
+  </Panel>
+
+  <Button normalbordercolor1="0x00363636" normalbordercolor2="0x00FFFFFF" normalbordercolor3="0x008C8C8C"
+          hoverbordercolor1="0x00363636" hoverbordercolor2="0x00FFFFFF" hoverbordercolor3="0x008C8C8C"
+          pressbordercolor1="0x00141414" pressbordercolor2="0x00FFFFFF" pressbordercolor3="0x008C8C8C"
+          disablebordercolor1="0x007B7B7B" disablebordercolor2="0x00FFFFFF" disablebordercolor3="0x008C8C8C"
+          normalbkgcolor1="0x00E4E4E4" normalbkgcolor2="0x00C8C8C8"
+          hoverbkgcolor1="0x00E5E5E5" hoverbkgcolor2="0x00C6C6C6"
+          pressbkgcolor1="0x0082E1FE" pressbkgcolor2="0x002CA4F4"
+          disablebkgcolor1="0x00E5E5E5" disablebkgcolor2="0x00C6C6C6">
+   </Button>
+  
+  <Dialog bkgcolor="0x00CACACA" defaulttextcolor="0x00000000">
+  </Dialog>
+
+  <Edit bkgcolor="0x00FFFFFF" textcolor="0x00000000" bordercolor="0x003A3A3A">
+  </Edit>
+
+  <ComboBox bkgcolor="0x00FFFFFF" listtextcolornormal="0x00000000" listtextcolorhover="0x00ffffff" bordercolor="0x003A3A3A">
+    <List bordercolor1="0x003A3A3A" bordercolor2="0x00FFFFFF" bkgcolor="0x00FFFFFF" itemfocuscolor="0x00ff9933">
+    </List>
+  </ComboBox>
+  
+  <CheckBox check="check.bmp" uncheck="uncheck.bmp"
+            checkdisable="checkdisable.bmp" uncheckdisable="uncheckdisable.bmp">
+  </CheckBox>
+  
+  <Radio check="radio_check.png" uncheck="radio_uncheck.png"
+         checkdisable="radio_check_d.png" uncheckdisable="radio_uncheck_d.png">
+  </Radio>
+  
+  <Group bordercolor1="0x00EFEFEF" bordercolor2="0x007F7F7F">
+  </Group>
+  <Menu bkgcolor="0x00EBEBEB" hightcolor1="0x00EF9300" hightcolor2="0x00D67000"
+        textcolor="0x00000000" highttextcolor="0x00FFFFFF" disabletextcolor="0x00808080"
+        separatorcolor1="0x00AEAEAE" separatorcolor2="0x00FFFFFF"/>
+</Skin>
+
+<!--自定义资源-->
+<Custom>
+  <Color id="GRID_FIXED_HLEIN_COLOR" value="0x00464646"/>
+  <Color id="GRID_CELL_PROGRESS_COLOR1" value="0x0032a8f4"/>
+  <Color id="GRID_CELL_PROGRESS_COLOR2" value="0x0092eaff"/>
+  <Color id="EDB_TOOLBAR_BKGCOLOR1" value="0x00EAEAEA"/>
+  <Color id="EDB_TOOLBAR_BKGCOLOR2" value="0x00D3D3D3"/>
+  <Color id="EDB_TOOLBAR_SPGCOLOR1" value="0x00535353"/>
+  <Color id="EDB_TOOLBAR_SPGCOLOR2" value="0x008E8E8E"/>
+  <Color id="EDB_TOOLBAR_NORMALTEXTCOLOR" value="0x00000000"/>
+  <Color id="EDB_TOOLBAR_MOUSEHOVER1" value="0x00FADBB8"/>
+  <Color id="EDB_TOOLBAR_MOUSEHOVER2" value="0x00FBB547"/>
+  <Color id="EDB_WNDBKG_COLOR" value="0x00CACACA"/>
+  <Color id="EDB_STATIC_TEXTCOLOR" value="0x00000000"/>
+  <Color id="EDB_STATIC_WARNING_TEXTCOLOR" value="0x00000000"/>
+  <Color id="EDB_DLGINDEX_STATIC_TEXTCOLOR" value="0x00000000"/>
+  <Color id="EDB_DLGINDEX_STATIC_BKGCOLOR" value="0x00CACACA"/>
+  <Color id="EDB_GRAPHDLGBAR_BKGCOLOR" value="0x00E8E8E8"/>
+  <Color id="EDB_TEECHARTTOOLBAR_BKGCOLOR" value="0x006F6F6F"/>
+  <Color id="EDB_CHAR_LEGEND_TEXT_COLOR" value="0x00000000"/>
+  <Color id="EDB_CHAR_PANEL_COLOR" value="0x00FFFFFF"/>
+  <Color id="EDB_CHAR_WALL_COLOR1" value="0x00F9F9F9"/>
+  <Color id="EDB_CHAR_WALL_COLOR2" value="0x00E4E4E4"/>
+  <Color id="EDB_CHAR_AXIS_COLOR" value="0x00878787"/>
+  <Color id="EDB_CHAR_AXIS_FONT_COLOR" value="0x00000000"/>
+  <Color id="EDB_CHAR_BORDER_COLOR" value="0x00878787"/>
+  <Color id="DATETIME_EDIT_BG_COLOR1" value="0x00FFFFFF"/>
+  <Color id="DATETIME_EDIT_BG_COLOR2" value="0x00FFFFFF"/>
+  <Color id="DATETIME_BUTTON_BG_COLOR1" value="0x00BBBBBB"/>
+  <Color id="DATETIME_BUTTON_BG_COLOR2" value="0x007B7B7B"/>
+  <Color id="DATETIME_TRIANGLE_COLOR" value="0x00000000"/>
+  <Color id="DATETIME_MONTH_TITLE_BG_COLOR1" value="0x00FFFFFF"/>
+  <Color id="DATETIME_MONTH_TITLE_BG_COLOR2" value="0x00FFFFFF"/>
+  <Color id="DATETIME_MONTH_WEEK_BG_COLOR" value="0x00FFFFFF"/>
+  <Color id="DATETIME_MONTH_DAY_BG_COLOR" value="0x00FFFFFF"/>
+  <Color id="DATETIME_MONTH_DAY_BG_COLOR1" value="0x00FFF5EC"/>
+  <Color id="DATETIME_MONTH_DAY_BG_COLOR2" value="0x00FFE5D0"/>
+  <Color id="DATETIME_MONTH_STATUS_BG_COLOR1" value="0x00FFFFFF"/>
+  <Color id="DATETIME_MONTH_STATUS_BG_COLOR2" value="0x00FFFFFF"/>
+  <Color id="DATETIME_MONTH_TITLE_FONT_COLOR" value="0x00000000"/>
+  <Color id="DATETIME_MONTH_WEEK_FONT_COLOR" value="0x00000000"/>
+  <Color id="DATETIME_MONTH_DAY_FONT_COLOR" value="0x00000000"/>
+  <Color id="DATETIME_MONTH_DAY_GRAY_COLOR" value="0x00C0C0C0"/>
+  <Color id="DATETIME_MONTH_STATUS_FONT_COLOR" value="0x00000000"/>
+  <Color id="DATETIME_MONTH_DAY_BORDER_COLOR" value="0x00FCD7B9"/>
+  <Color id="DATETIME_MONTH_DAY_SPLIT_COLOR" value="0x00F3F3F3"/>
+  <Color id="DATETIME_MONTH_DAY_EARSE_COLOR" value="0x00FFFFFF"/>
+  <Image id="EDB_TOOLBAR_IMAGE_POINTLINE" value="PointLine.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_POINTLINE_D" value="PointLine_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_BROKENLINE" value="BrokenLine.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_BROKENLINE_D" value="BrokenLine_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_POINT" value="Point.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_POINT_D" value="Point_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_SERIESSETTING" value="SeriesSetting.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_SERIESSETTING_D" value="SeriesSetting_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_DATEFORMAT" value="DateFormat.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_DATEFORMAT_D" value="DateFormat_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_GRAPHSETTING" value="GraphSetting.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_GRAPHSETTING_D" value="GraphSetting_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_GRIDLINE" value="GridLine.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_GRIDLINE_D" value="GridLine_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_HISTOGRAM" value="Histogram.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_HISTOGRAM_D" value="Histogram_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_LEGEND" value="Legend.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_MAXMIN" value="MaxMin.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_MAXMIN_D" value="MaxMin_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_LEGEND_D" value="Legend_d.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_MHISTOGRAM" value="M-Histogram.png"/>
+  <Image id="EDB_TOOLBAR_IMAGE_MHISTOGRAM_D" value="M-Histogram_d.png"/>
+    
+  <Color id="REPORT_TOOLBAR_BKGCOLOR1" value="0x00F4F4F4"/>
+  <Color id="REPORT_TOOLBAR_BKGCOLOR2" value="0x00DDDDDD"/>
+  <Color id="REPORT_TOOLBAR_NORMALTEXTCOLOR" value="0x00000000"/>
+  <Color id="REPORT_TOOLBAR_TITLECOLOR" value="0x000000ff"/> 
+  <Color id="REPORT_TOOLBAR_MOUSEHOVER1" value="0x0032a8f4"/>
+  <Color id="REPORT_TOOLBAR_MOUSEHOVER2" value="0x0092eaff"/>
+  <Color id="REPORT_GRAPHDLGBAR_BKGCOLOR" value="0x00E8E8E8"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BKG" value="0x00E8E8E8"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BORDER1" value="0x00000000"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BORDER2" value="0x00000000"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BTN_N1" value="0x00000000"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BTN_N2" value="0x00000000"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BTN_H1" value="0x003C3C3C"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BTN_H2" value="0x003C3C3C"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BTN_P1" value="0x00303030"/>
+  <Color id="REPORT_GRAPHTOOLBAR_BTN_P2" value="0x00303030"/>
+
+  <Image id="REPORT_TOOLBAR_IMAGE1" value="export_chart.png"/>
+  <Image id="REPORT_TOOLBAR_IMAGE2" value="export_excel.png"/>
+  <Image id="REPORT_TOOLBAR_IMAGE3" value="indicators_show.png"/>
+  <Image id="REPORT_TOOLBAR_IMAGE4" value="column_width_adaptive.png"/>
+  <Image id="REPORT_TOOLBAR_IMAGE5" value="filter.png"/>
+  <Image id="REPORT_TOOLBAR_IMAGE6" value="cancel_filter.png"/>
+  <Image id="REPORT_TOOLBAR_IMAGE7" value="single_ranks_transpose.png"/>
+  <Image id="REPORT_TOOLBAR_IMAGE8" value="extend_reporting.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE1" value="rect.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE2" value="cross.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE3" value="ellipse.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE5" value="text.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE6" value="eraser.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE7" value="arrow.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE8" value="line.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE9" value="max.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE10" value="min.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE11" value="lable.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE12" value="background.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE13" value="rect_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE14" value="cross_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE15" value="ellipse_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE16" value="text_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE17" value="ereaser_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE18" value="arrow_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE19" value="line_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE20" value="max_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE21" value="min_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE22" value="lable_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE23" value="background_d.png"/>
+  <Image id="REPORT_GRAPHTOOLBAR_IMAGE24" value="bkg.png"/>
+  <Image id="REPORT_STATE_JIF" value="loadinfo-2.gif"/>
+
+  <Data id="report_navigation_item_height" value="20"/>
+  <Data id="report_stat_condition_item_height" value="20"/>
+  <Data id="report_grid_ui_item_height" value="22"/>
+  <Data id="report_navigation_header" value="26"/>
+  <Data id="report_stat_condition_header" value="26"/>
+
+  <!-- type = "normal/ blod" -->
+  <Font id="REPORT_TOOLBAR_TITLEFONT" name="宋体" size="18" type="blod" underline="0" italic="0"/> <!-- 统计报表工具栏标题字体 -->
+  <Font id="report_navigation_item_font" name="宋体" size="12" type="normal" underline="0" italic="0"/> <!-- 统计报表导航树字体 -->
+  <Font id="report_navigation_header_font" name="宋体" size="12" type="normal" underline="0" italic="0"/> <!-- 统计报表导航树标题字体 -->
+  <Font id="report_stat_condition_item_font" name="宋体" size="12" type="normal" underline="0" italic="0"/> <!-- 统计报表范围树字体 -->
+  <Font id="report_stat_condition_header_font" name="宋体" size="12" type="normal" underline="0" italic="0"/> <!-- 统计报表范围树标题字体 -->
+  <Font id="report_grid_header_font" name="宋体" size="12" type="normal" underline="0" italic="0"/> <!-- 统计报表grid标题字体 -->
+  
+  <Color id="DATAREPORT_TOOLBAR_BKGCOLOR1" value="0x00EAEAEA"/>
+  <Color id="DATAREPORT_TOOLBAR_BKGCOLOR2" value="0x00D3D3D3"/>
+  <Color id="DATAREPORT_TOOLBAR_MOUSEDOWN1" value="0x0032a8f4"/>
+  <Color id="DATAREPORT_TOOLBAR_MOUSEDOWN2" value="0x0092eaff"/>
+  <Color id="DATAREPORT_TOOLBAR_MOUSEHOVER1" value="0x0032a8f4"/>
+  <Color id="DATAREPORT_TOOLBAR_MOUSEHOVER2" value="0x0092eaff"/>
+  <Color id="DATAREPORT_TOOLBAR_NORMALTEXTCOLOR" value="0x00000000"/>
+  <Color id="DATAREPORT_TOOLBAR_HOVERTEXTCOLOR" value="0x00ffffff"/>
+  <Color id="DATAREPORT_TOOLBAR_PRESSTEXTCOLOR" value="0x00000000"/>
+</Custom>

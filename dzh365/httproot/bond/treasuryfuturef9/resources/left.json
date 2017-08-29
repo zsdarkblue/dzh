@@ -1,0 +1,40 @@
+{
+    identifier:'id',
+    label:'name',
+    items:[
+        {
+            id:'contractIntroduction',
+            name:'合约简介',
+            type:'level1',
+            cls:"bond/treasuryfuturef9/view/contractIntroduction"
+        },
+        {
+            id:'conversionFactors',
+            name:'转换因子',
+            type:'level1',
+            cls:"bond/treasuryfuturef9/view/conversionFactors"
+        },
+        {
+            id:'cheapestDeliverableBonds',
+            name:'最便宜可交割债券',
+            type:'level1',
+            cls:"bond/treasuryfuturef9/view/cheapestDeliverableBonds"
+        },
+        {
+            id:'spreadMatrix',
+            name:'价差矩阵',
+            type:'level1',
+            cls:"bond/treasuryfuturef9/view/spreadMatrix"
+        },
+        {
+            id:'continuousContractPriceMatrix',
+            name:'连续合约价差矩阵',
+            type:'level1',
+            cls:"bond/treasuryfuturef9/view/continuousContractPriceMatrix"
+        }
+    ]
+}
+
+
+
+

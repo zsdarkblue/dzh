@@ -1,0 +1,29 @@
+<!--尺寸必须在此处定义，不能在dialog中定义-->
+<div data-dojo-attach-point="containerNode" data-dojo-type="dijit/layout/ContentPane"
+     style="height:300px; width:400px;" class="vbox">
+    <!--上部筛选条件-->
+    <div class="hbox">
+        <div class="spacer">
+            <label for="rateFavBondCode">债券代码</label>
+            <input id="rateFavBondCode" data-dojo-type="dijit/form/TextBox"/>
+        </div>
+
+        <div class="spacer" style="text-align: right;">
+            <div data-dojo-type="dijit/form/Button"  id='rateFavBondSearch'>查找</div>
+        </div>
+    </div>
+    <div style="height:5px;"></div>
+    <!--中部表格-->
+    <div class="spacer myGrid">
+        <div id="rateBondFavoriteTable"></div>
+    </div>
+    <div style="height:5px;"></div>
+    <!--下部确认-->
+    <div class="hbox">
+        <div class="spacer"></div>
+        <div data-dojo-type="dijit/form/Button" id='rateFavoriteSearchOK'>确定</div>
+        <div style="width:20px;"></div>
+        <div data-dojo-type="dijit/form/Button" onclick="dijit.byId('rateMoreFavoriteDialog').onCancel()">取消</div>
+        <div class="spacer"></div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<dzh:layout>
+  <dzh:title>商品</dzh:title>
+    <dzh:vbox>
+    <dzh:hbox width="100%">
+		<dzh:vbox width="50%">
+			<plugin id="3" defaultstock="SH000300" type="dzhinternal/stklistvw" width="100%" followers="4,5" layout="VIEWLIST?MARKET2=wwsc/外围市场/商品" mode="2" action="change_stock"/>
+		</dzh:vbox>
+		<dzh:vbox width="100%">
+			<plugin id="4" type="dzhinternal/stkview" width="50%" layout="走势图" mode="8"/>
+			<plugin id="5" type="dzhinternal/stkview" width="50%" layout="分时图" mode="1"/>
+		</dzh:vbox>
+	</dzh:hbox>
+	</dzh:vbox>
+</dzh:layout>

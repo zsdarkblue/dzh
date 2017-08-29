@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+	<title>客服消息记录</title>
+	<link rel="stylesheet" href="./css/record.css" />
+</head>
+<body class="flex-column" style="height:100%">
+	<div class= "flex-none"  id="flex_top">
+		<div id="top_imge_div">
+			<img id="top_imge" src="./imgs/record.png" />
+		</div>
+		<div id="search_div">
+			<div class="search_box">
+  				<img id="search_img" src="./imgs/search.png" />  
+				<input id="search_text" type="text">
+				<div id="xbutton_div">
+					<button id="search_xbutton">X</button>
+				</div>
+				
+			</div>
+			<button id="serch_sure">确定</button>
+		</div>
+	</div>
+	<div class="flex-auto"  id="historical_content" style="overflow: auto;min-width:380px;">
+		
+		<!-- 测试 -->
+	</div>
+	
+	
+	<div class= "flex-none"  id="flex_bottom">
+		<div id="close_send">
+			<div id="up_down" data-isFrist="0" data-isLast="1">
+				<div href="#" class="tools_pictures"><img id="beginUpImg" src="./imgs/beginUp.png" /></div>
+				<div  class="tools_pictures" href="#"><img id="upImg" src="./imgs/up.png" /></div>
+				<div href="#" class="tools_pictures"><img id="downImg" src="./imgs/noDown.png" /></div>
+				<div href="#"  class="tools_pictures"><img id="endDownImg" src="./imgs/noEndDown.png" /></div>
+			</div>
+			<div id="close_send_button">
+				<button id="send" type="button">返回对话</button>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" data-main="src" src="../../jquery/amd/require.js"></script>
+	
+	<script src="../../jquery/amd/cfg.js"></script>
+	
+	<script type="text/javascript">
+		document.getElementById("search_xbutton").style.display = "none";
+	
+	</script>
+	
+</body>
+
+</html>

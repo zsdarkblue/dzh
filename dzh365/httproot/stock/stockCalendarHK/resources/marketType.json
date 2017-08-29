@@ -1,0 +1,12 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+			{name:"市场分类",id:undefined},
+			{name:"香港主板",id:"100620"},
+			{name:"香港创业板",id:"100622"},
+			{name:"蓝筹股",id:"109927"},
+			{name:"红筹股",id:"100621"},
+			{name:"H股",id:"100619"}
+			]
+}

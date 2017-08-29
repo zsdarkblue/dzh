@@ -1,0 +1,33 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+		{id:'zhgl ',name:'组合管理',type:'level0',children:[{_reference:'a1'},{_reference:'a2'},{_reference:'a3'}]},
+		{id:'a1',name:'我的组合',type:'level1', cls:"bond/bondPortfolio/view/groupManagerForGroup"},
+//		{id:'a2',name:'调整持仓',type:'level1',children:[{_reference:'aa1'},{_reference:'aa2'},{_reference:'aa3'},{_reference:'aa4'}]},
+//        {id:'a2',name:'买卖调仓',type:'level1', cls:"bond/bondPortfolio/view/BSAdjust"},
+//        {id:'a3',name:'数量调仓',type:'level1', cls:"bond/bondPortfolio/view/amountAdjust"},
+//        {id:'a4',name:'权重调仓',type:'level1', cls:"bond/bondPortfolio/view/weightAdjust"},
+        {id:'a2',name:'调整持仓',type:'level1', cls:"bond/bondPortfolio/view/bondGrp_adjust"},
+        {id:'a3',name:'持仓变动',type:'level1', cls:"bond/bondPortfolio/view/bondGrp_adjustHis"},
+		{id:'zhjk',name:'组合监控',type:'level0',children:[{_reference:'b1'},{_reference:'b2'},{_reference:'b3'},{_reference:'b4'}]},
+		{id:'b1',name:'实时监控',type:'level1', cls:"bond/bondPortfolio/view/bondGrp_Mon_realT"},
+		{id:'b2',name:'组合特征',type:'level1',cls:"bond/bondPortfolio/view/bondGrp_Mon_Cha_O"},
+		{id:'b3',name:'组合分布',type:'level1',cls:"bond/bondPortfolio/view/bondGrp_Mon_Dis"},
+		{id:'b4',name:'组合现金流',type:'level1',cls:"bond/bondPortfolio/view/bondGrp_Mon_CashF"},
+//		{id:'fxfx',name:'风险分析',type:'level0',children:[{_reference:'c1'},{_reference:'c2'},{_reference:'c3'}]},
+//		{id:'c1',name:'关键年期久期',type:'level1'},
+//		{id:'c2',name:'组合VAR分析',type:'level1'},
+//		{id:'c3',name:'情景分析',type:'level1'},
+//		{id:'lshbyfx',name:'历史回报与分析',type:'level0',children:[{_reference:'d1'},{_reference:'d2'},{_reference:'d3'},{_reference:'d4'},{_reference:'d5'}]},
+//		{id:'d1',name:'历史业绩',type:'level1'},
+//		{id:'d2',name:'历史业绩统计',type:'level1'},
+//		{id:'d3',name:'跟踪误差',type:'level1'},
+//		{id:'d4',name:'归因分析',type:'level1'},
+//		{id:'d5',name:'组合对比分析',type:'level1'},
+//		{id:'xwyds',name:'新闻与大事',type:'level0',children:[{_reference:'e1'},{_reference:'e2'}]},
+//		{id:'e1',name:'历史业绩',type:'level1'},
+//		{id:'e2',name:'历史业绩统计',type:'level1'}
+		
+	       ]
+}

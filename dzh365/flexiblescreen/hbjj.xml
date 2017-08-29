@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<dzh:layout>
+	<dzh:title>创新货币基金</dzh:title>
+	<dzh:hbox>
+		<dzh:vbox width="100%">
+			<plugin id="1" type="dzhinternal/stklistvw" width="80%" layout="VIEWLIST?MARKET2=sgysp/涉股衍生品/创新货币基金" mode="1"/>
+			<plugin id="2" type="dzhinternal/stkbrowser" width="20%" layout="browse?'dzhd://DZH2/pfs/fundAdvOne.dzh.ui'"/>
+		</dzh:vbox>
+	</dzh:hbox>  
+</dzh:layout>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>行情综合分析</title>
+    <link href="resources/basestyle.css" rel="stylesheet" type="text/css" />
+    <link href="resources/ver1.0.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var parametersArr = window.location.search.split("&");
+        //获取新闻的id
+        newsConfig = {
+            newsCode:parametersArr[0].split("=")[1],
+            trend:decodeURI(parametersArr[1].split("=")[1])
+        };
+        dojoConfig =  {
+            async:true, parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            //noscale:true,
+            deps:[
+            ],
+            callback: function() {
+                require(["bond/gjsscreen/src"],function(main){
+                            main();
+                        }
+                );
+            }
+        }
+                //dojopr();
+            </script>
+</head>
+<body class="claro" onblur="window.external.closeDialog();" onload="window.external.setLayeredWin(255);">
+<div id="main" data-dojo-type="dijit/layout/ContentPane" style="height: 100%;">
+    <div data-dojo-type="bond/gjsscreen/view/newsContent" style="height: 100%"></div>
+</div>
+</body>
+</html>

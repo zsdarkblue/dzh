@@ -1,0 +1,5 @@
+<Root>
+	<ProxyC port="57007">
+		<SysSetting httpsync="false" binaryData="1" conntimeout="5" recvinterval="10" pollinterval="1000" sendinterval="500" logmodel="0" logshowl="2" logsavel="2"/>
+	</ProxyC>
+</Root>

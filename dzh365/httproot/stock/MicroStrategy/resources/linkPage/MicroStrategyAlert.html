@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+			<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+			<title>微策略评选</title>
+			<link rel="stylesheet" href="../../../../dijit/themes/claro/document.css"/>
+			<link rel="stylesheet" href="../custom.css"/>
+			<script type="text/javascript">
+			var u = window.location.href+"";
+			var dojoConfig = {
+				async:true,
+				parseOnLoad:false,
+				baseUrl:'../../../../dojo',
+				noscale:true,
+				dzhUserId : u.substr(u.lastIndexOf("=")+1,u.length),//用户ID
+				dzhURL:"",//请求域名			
+					callback: function() {
+					require(["stock/MicroStrategy/resources/linkPage/src"
+					         ],
+					         function(main){
+						
+						main();
+						
+						document.onkeydown = function onkey(evt){
+					        var key = evt.keyCode;
+					        if(key == 8  && evt.target== document.body)
+					        {
+					        	event.keyCode = 0;
+					        	event.returnvalue = false;
+					        	return false;
+					        }
+					}
+						
+					});
+				}
+			}
+						
+		</script>
+	</head>
+	<body class="claro" style="margin:0; width:100%;height:1000px; overflow:hidden;">
+		<div class="alert_main">
+	<div id="dialog" title="微策略评选" data-dojo-type="dijit/layout/ContentPane">
+    	<p>尊敬的<b style="color:rgb(76, 201, 250); font-weight:normal;">大智慧微策略</b>用户，您好！<br/>
+    	您没有<b style="color: rgb(240, 62, 62);font-weight:normal;">权限</b>评选自己所关注的微策略，为增强微策略的专业性<br/>和互动性，该功能只为具备<b style="color: rgb(240, 62, 62);font-weight:normal;">分析师</b>资格的用户开放。
+		</p>
+    </div>
+
+	
+		</div>
+	</body>
+</html>

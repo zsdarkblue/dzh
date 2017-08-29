@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>基金排名</title>
+    <link rel="stylesheet" href="resources/css.css"/>
+</head>
+<body class="loading">
+
+<header>
+    <div class="tabContainer">
+        <ul id="headerSecondUl" data-bind="onTabClick">
+            <li data-type="1" class="active">开放式基金</li>
+            <li data-type="2" data-page="1"><i></i>货币式基金</li>
+            <li data-type="3"><i></i>分级基金</li>
+            <li data-type="5" data-page="1"><i></i>短期理财</li>
+        </ul>
+    </div>
+</header>
+
+<div id="container" class="flex-auto">
+    <div id="containerBorder">
+        <div class="search-area">
+            <div class="filter-corps">
+                <input v-model="searchText" id="searchCorp"
+                       v-on="keyup: onKeyUp($event), blur: onBlur()"
+                       type="text" placeholder="请输入基金公司名称">
+
+                <ul class="filter-results hide" v-show="isShow">
+                    <li v-class="active: $index == activeItem, hide: $index > 9"
+                        v-repeat="items | filterBy searchText"
+                        v-on="click: itemClick(name)" v-text="name"></li>
+                </ul>
+            </div>
+
+            <input id="searchTxt" type="search" placeholder="请输入代码或名称">
+            <button class="btn btn-gray" data-bind="onSearchClick">查 询</button>
+        </div>
+
+        <div class="panel" data-type="1">
+            <div class="condition-area">
+                <ul class="btns-list" data-bind="onSubTabClick">
+                    <li class="active" data-value="1" data-page="1">全部</li>
+                    <li data-value="2" data-page="1">股票型</li>
+                    <li data-value="3" data-page="1">混合型</li>
+                    <li data-value="4" data-page="1">债券型</li>
+                    <li data-value="5" data-page="1">QDII</li>
+                    <li data-value="6" data-page="1">ETF</li>
+                    <li data-value="7" data-page="1">LOF</li>
+                </ul>
+            </div>
+
+            <table>
+                <colgroup>
+                    <col width="36">
+                    <col width="58">
+                    <col width="184">
+                    <col width="76">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="112">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th>序号</th>
+                    <th data-order="0">基金代码</th>
+                    <th data-order="3">基金简称</th>
+                    <th data-order="4">最新日期</th>
+                    <th data-order="5">单位净值</th>
+                    <th data-order="6">近1周</th>
+                    <th data-order="7">近1月</th>
+                    <th data-order="8">近3月</th>
+                    <th data-order="9">近6月</th>
+                    <th data-order="10">近1年</th>
+                    <th data-order="11">今年以来</th>
+                    <th data-order="12">成立至今</th>
+                    <th data-order="2" class="calendar">
+                        <span><span v-text="searchDate.beginDate"></span>至</span>
+                        <span><span v-text="searchDate.endDate"></span></span>
+                        <i class="fa fa-calendar" data-bind="onCalendarBtnClick"></i>
+                    </th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+                    <td class="number" v-text="item['基金代码']"></td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></span>
+                    </td>
+                    <td v-text="item['净值日期']" class="center number"></td>
+
+                    <td>
+                            <span class="number" v-class="num: item['单位净值'] != '-'"
+                                  v-text="item['单位净值']|fixed 4"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1周']>= 0, green: item['近1周']< 0">
+                        <span v-class="num: item['近1周'] != '-'" v-text="item['近1周'] |fixed  %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1月']>= 0, green: item['近1月']< 0">
+                        <span v-class="num: item['近1月'] != '-'" v-text="item['近1月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近3月']>= 0, green: item['近3月']< 0">
+                        <span v-class="num: item['近3月'] != '-'" v-text="item['近3月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近6月']>= 0, green: item['近6月']< 0">
+                        <span v-class="num: item['近6月'] != '-'" v-text="item['近6月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1年']>= 0, green: item['近1年']< 0">
+                        <span v-class="num: item['近1年'] != '-'" v-text="item['近1年'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['今年以来']>= 0, green: item['今年以来']< 0">
+                        <span v-class="num: item['今年以来'] != '-'" v-text="item['今年以来'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['成立以来']>= 0, green: item['成立以来']< 0">
+                        <span v-class="num: item['成立以来'] != '-'" v-text="item['成立以来'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['自定义增长率']>= 0, green: item['自定义增长率']< 0">
+                        <span v-class="num: item['自定义增长率'] != '-'" v-text="item['自定义增长率'] |fixed %"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="hide info">暂无相关数据</div>
+        </div>
+
+        <div class="panel hide" data-type="2">
+            <div class="condition-area"></div>
+
+            <table>
+                <colgroup>
+                    <col width="42">
+                    <col width="64">
+                    <col width="140">
+                    <col width="80">
+                    <col width="70">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th>序号</th>
+                    <th data-order="0">基金代码</th>
+                    <th data-order="2">基金简称</th>
+                    <th data-order="3">最新日期</th>
+                    <th data-order="4">7日</th>
+                    <th data-order="5">近1月</th>
+                    <th data-order="6">近3月</th>
+                    <th data-order="7">近6月</th>
+                    <th data-order="8">近1年</th>
+                    <th data-order="9">今年以来</th>
+                    <th data-order="10">成立至今</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+                    <td class="number" v-text="item['基金代码']"></td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></span>
+                    </td>
+                    <td v-text="item['收益截止日']" class="center number"></td>
+                    <td class="number" v-class="red: item['7日年化收益率']>= 0, green: item['7日年化收益率']< 0">
+                        <span v-class="num: item['7日年化收益率'] != '-'" v-text="item['7日年化收益率'] |fixed 3 %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1月']>= 0, green: item['近1月']< 0">
+                        <span v-class="num: item['近1月'] != '-'" v-text="item['近1月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近3月']>= 0, green: item['近3月']< 0">
+                        <span v-class="num: item['近3月'] != '-'" v-text="item['近3月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近6月']>= 0, green: item['近6月']< 0">
+                        <span v-class="num: item['近6月'] != '-'" v-text="item['近6月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1年']>= 0, green: item['近1年']< 0">
+                        <span v-class="num: item['近1年'] != '-'" v-text="item['近1年'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['今年以来']>= 0, green: item['今年以来']< 0">
+                        <span v-class="num: item['今年以来'] != '-'" v-text="item['今年以来'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['成立以来']>= 0, green: item['成立以来']< 0">
+                        <span v-class="num: item['成立以来'] != '-'" v-text="item['成立以来'] |fixed %"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="note">注：此页面收益率为年化收益率</div>
+
+        </div>
+
+        <div class="panel hide" data-type="3">
+            <div class="condition-area">
+                <ul class="btns-list" data-bind="onSubTabClick">
+                    <li data-value="1" class="active" data-page="1">母基金</li>
+                    <li data-value="2" data-page="1">分级A</li>
+                    <li data-value="3" data-page="1">分级B</li>
+                </ul>
+            </div>
+
+            <table>
+                <colgroup>
+                    <col width="36">
+                    <col width="58">
+                    <col width="184">
+                    <col width="76">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="64">
+                    <col width="112">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th>序号</th>
+                    <th data-order="0">基金代码</th>
+                    <th data-order="3">基金简称</th>
+                    <th data-order="4">最新日期</th>
+                    <th data-order="5">单位净值</th>
+                    <th data-order="6">近1周</th>
+                    <th data-order="7">近1月</th>
+                    <th data-order="8">近3月</th>
+                    <th data-order="9">近6月</th>
+                    <th data-order="10">近1年</th>
+                    <th data-order="11">今年以来</th>
+                    <th data-order="12">成立至今</th>
+                    <th data-order="2" class="calendar">
+                        <span><span v-text="searchDate.beginDate"></span>至</span>
+                        <span><span v-text="searchDate.endDate"></span></span>
+                        <i class="fa fa-calendar" data-bind="onCalendarBtnClick"></i>
+                    </th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+                    <td class="number" v-text="item['基金代码']"></td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></span>
+                    </td>
+                    <td v-text="item['最新日期']" class="center number"></td>
+                    <td>
+                            <span class="number" v-class="num: item['单位净值'] != '-'"
+                                  v-text="item['单位净值']|fixed 4"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1周']>= 0, green: item['近1周']< 0">
+                        <span v-class="num: item['近1周'] != '-'" v-text="item['近1周'] |fixed  %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1月']>= 0, green: item['近1月']< 0">
+                        <span v-class="num: item['近1月'] != '-'" v-text="item['近1月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近3月']>= 0, green: item['近3月']< 0">
+                        <span v-class="num: item['近3月'] != '-'" v-text="item['近3月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近6月']>= 0, green: item['近6月']< 0">
+                        <span v-class="num: item['近6月'] != '-'" v-text="item['近6月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1年']>= 0, green: item['近1年']< 0">
+                        <span v-class="num: item['近1年'] != '-'" v-text="item['近1年'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['今年以来']>= 0, green: item['今年以来']< 0">
+                        <span v-class="num: item['今年以来'] != '-'" v-text="item['今年以来'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['成立以来']>= 0, green: item['成立以来']< 0">
+                        <span v-class="num: item['成立以来'] != '-'" v-text="item['成立以来'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['自定义增长率']>= 0, green: item['自定义增长率']< 0">
+                        <span v-class="num: item['自定义增长率'] != '-'" v-text="item['自定义增长率'] |fixed %"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="hide info">暂无相关数据</div>
+        </div>
+
+
+        <div class="panel hide" data-type="5">
+            <div class="condition-area"></div>
+            <table>
+                <colgroup>
+                    <col width="42">
+                    <col width="64">
+                    <col width="180">
+                    <col width="80">
+                    <col width="70">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th>序号</th>
+                    <th data-order="0">基金代码</th>
+                    <th data-order="2">基金简称</th>
+                    <th data-order="3">最新日期</th>
+                    <th data-order="4">7日</th>
+                    <th data-order="5">近1月</th>
+                    <th data-order="6">近3月</th>
+                    <th data-order="7">近6月</th>
+                    <th data-order="8">近1年</th>
+                    <th data-order="9">今年以来</th>
+                    <th data-order="10">成立至今</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+                    <td class="number" v-text="item['基金代码']"></td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></span>
+                    </td>
+                    <td v-text="item['收益截止日']" class="center number"></td>
+                    <td class="number" v-class="red: item['7日年化收益']>= 0, green: item['7日年化收益']< 0">
+                        <span v-class="num: item['7日年化收益'] != '-'" v-text="item['7日年化收益'] |fixed 3 %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1月']>= 0, green: item['近1月']< 0">
+                        <span v-class="num: item['近1月'] != '-'" v-text="item['近1月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近3月']>= 0, green: item['近3月']< 0">
+                        <span v-class="num: item['近3月'] != '-'" v-text="item['近3月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近6月']>= 0, green: item['近6月']< 0">
+                        <span v-class="num: item['近6月'] != '-'" v-text="item['近6月'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['近1年']>= 0, green: item['近1年']< 0">
+                        <span v-class="num: item['近1年'] != '-'" v-text="item['近1年'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['今年以来']>= 0, green: item['今年以来']< 0">
+                        <span v-class="num: item['今年以来'] != '-'" v-text="item['今年以来'] |fixed %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['成立以来']>= 0, green: item['成立以来']< 0">
+                        <span v-class="num: item['成立以来'] != '-'" v-text="item['成立以来'] |fixed %"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="note">注：此页面收益率为年化收益率</div>
+        </div>
+
+        <div id="pagerParent">
+            <div class="pager hide" v-on="click:onClick" v-show="show">
+                <a v-attr="data-index:index-1">上一页</a>
+                <a v-class="active:index==1" v-text="1"></a>
+                <i v-if="count>size&&index>size/2+1">...</i>
+                <a v-class="active:index==$value" v-repeat="items" v-text="$value"></a>
+                <i v-if="count>size&&index<count-size/2">...</i>
+                <a v-class="active:index==count" v-if="count>1" v-text="count"></a>
+                <a v-attr="data-index:index+1">下一页</a>
+                <input v-attr="min:1,max:count" v-model="input" v-on="change:onChange" type="number"/>
+                <a v-attr="data-index:input">GO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cover hide" data-bind="onCoverClick"></div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

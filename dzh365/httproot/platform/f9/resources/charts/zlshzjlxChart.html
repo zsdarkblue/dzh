@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>主力散户资金流向图</title>
+<link rel="stylesheet" href="./css/chartPublic.css"/>
+</head>
+<body>
+	<div id="container"></div>
+	
+	<script src="../../../jquery/custom/jquery-1.7.2.min.js"></script>
+	<script src="../../../jquery/custom/highcharts4/highcharts.js"></script>
+	
+	<script type="text/javascript">
+		$(function () {
+		     $('#container').highcharts({
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: ''
+		        },
+		        subtitle: {
+		            text: ''
+		        },
+		        xAxis: {
+		            categories: [
+		                '主力',
+		                '散户'
+		            ]
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: '' //Y轴标题
+		            }
+		        },
+		        tooltip: {
+		            headerFormat: '<span style="font-size:10px">{point.key}</span>',
+		            pointFormat: '' +
+		                '',
+		            footerFormat: '<table><tbody><tr><td style="color:{series.color};padding:0">{series.name}: </td><td style="padding:0"><b>{point.y:.1f} mm</b></td></tr></tbody></table>',
+		            shared: true,
+		            useHTML: true
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        plotOptions: {
+		            column: {
+		                pointPadding: 0.2,
+		                borderWidth: 0
+		            }
+		        },
+		        series: [{
+		            name: '流入',
+		            data: [49.9, 71.5]
+		
+		        }, {
+		            name: '流出',
+		            data: [83.6, 78.8]
+		
+		        }, {
+		            name: '多余',
+		            data: [48.9, 38.8]
+		
+		        }, {
+		            name: '净流入',
+		            data: [42.4, 33.2]
+		
+		        }]
+		    });
+
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>导出框</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/globe.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/plugins/jquery-datapicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/module/export.min.css">
+<script type="text/javascript" src="../../js/jquery.js"></script>	
+<script type="text/javascript" src="../../js/base.min.js"></script>
+<script type="text/javascript" src="../../js/websocket.min.js"></script>
+<script type="text/javascript" src="../../js/file/publicop/export.js"></script>
+</head>
+<body>
+	<header class="headerbg">
+        <ul id="header">
+           <li>
+				<!--<div class="fs1 fn-left" aria-hidden="true" data-icon="&#xe01b;"></div>
+				<div class="fn-left">舆情导出</div>-->
+			</li>
+			<li class="fn-right close_btn">
+				<div class="fs1 fn-left" aria-hidden="true" data-icon="&#xe015;"></div>
+			</li>
+        </ul>
+    </header>
+	
+	<!--中间模块-->
+	<form action="http://yuqingalpha.gw.com.cn/?m=index&amp;c=hearsay&amp;f=export" method="post" id="myform">
+	<section>
+		<article>
+			<header>
+				<div class="fn-left title">
+					<div class="checkboxbd">
+						<div class="unchecked">
+						</div >
+					</div>					
+					<div class="fn-left sec_title">标题</div>
+				</div>
+				<div class="fn-right date_time">时间</div>
+			</header>
+
+				<ul id="section_ul">
+					
+				</ul>
+			
+		</article>
+		
+		<aside>
+			<header>设置条件</header>
+			<div class="s_title pink">
+				标题
+			</div>
+			<div class="textareabd">
+				<textarea id="export_textarea" placeholder="大智慧舆情报告"	rows="3"></textarea>
+				<input type="hidden" id="export_title" name="title" value="" default="">
+			</div>
+			<div class="s_title pink">
+				导出
+			</div>
+			<div class="radiobd">
+				<p><input type="radio" name="contentformat" value="title" checked="checked"/><span>标题+摘要</span></p>
+				<p><input type="radio" name="contentformat" value="content" /><span>标题+正文</span></p>
+			</div>
+			<footer>
+				<p><input type="button" value="生成报告" class="pinkbtn" /></p>
+				<p><input type="button" value="取 消" class="balckbtn" /></p>
+			</footer>	
+		</aside>	
+	</section>
+	</form>
+</body>
+</html>

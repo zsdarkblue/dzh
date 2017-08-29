@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<root ModuleName="simpleconfig\Market">
+    <section name="Market">
+        <section name="B$">
+			<entry name="CrossType" type="STRING" op="add">1-&gt;4;2-&gt;4</entry>
+        </section>
+        <section name="SZ">
+            <entry name="TypeMask" type="STRING" op="edit">399### 0;000### 1;001### 1;200### 2;184### 3;150### 3;10#### 5;11#### 5;12#### 6;131### 7;160105 9;160106 9;160505 9;160706 9;161607 9;161706 9;161903 9;162605 9;162703 9;163801 9;162607 9;161005 9;163402 9;1599## 8;16#### 10;03#### 11;002### 4;003### 4;004### 4;30#### 13;###### 12</entry>
+        </section>
+        <section name="Z$">
+            <entry name="TypeMask" type="STRING" op="edit">399### 0;000### 1;001### 1;200### 2;184### 3;150### 3;10#### 5;11#### 5;12#### 6;131### 7;160105 9;160106 9;160505 9;160706 9;161607 9;161706 9;161903 9;162605 9;162703 9;163801 9;162607 9;161005 9;163402 9;1599## 8;16#### 10;03#### 11;002### 4;003### 4;004### 4;30#### 13;###### 12</entry>
+        </section>
+	</section>
+</root>
+
+<root ModuleName="simpleconfig\User_Settings">
+    <section name="Settings">
+    <entry name="SavePRP" type="INT" op="add">1</entry>
+    </section>
+</root>

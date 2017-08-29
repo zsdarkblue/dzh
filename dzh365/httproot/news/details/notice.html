@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>公告正文</title>
+    <script>document.write('<link rel="stylesheet" href="resources/' + (location.search.match(/\bskin=([^&]*)/) || [, 'dark'])[1] + '.css">');</script>
+</head>
+<body class="scroller">
+
+<article class="loading">
+    <h1></h1>
+    <h2>
+        <span></span>
+        <i class="icon-split"></i>
+        <span></span>
+        <i class="icon-split"></i>
+        <a data-bind="onChangeSizeBtnClick" data-size="16">大</a>
+        <a data-bind="onChangeSizeBtnClick" class="active" data-size="14">中</a>
+        <a data-bind="onChangeSizeBtnClick" data-size="13">小</a>
+    </h2>
+    <section><p></p></section>
+    <section></section>
+</article>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

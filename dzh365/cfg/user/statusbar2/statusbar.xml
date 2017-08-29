@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<statusbar enable="1">
+    <region1 enable="1">
+        <mailmsg enable="1" />
+        <moveinfo enable="1" />
+        <monitor enable="1" />
+        <url enable="1"></url>
+        <InfoBarShow>1</InfoBarShow>
+        <InfoBarHeight>265</InfoBarHeight>
+        <OrderBarHeight>300</OrderBarHeight>
+        <Width>30</Width>
+    </region1>
+    <region2 enable="1">
+        <mainindex enable="1">
+            <ShowIndex>SH000001,SZ399001,SZ399006</ShowIndex>
+            <ShowIndexCount>3</ShowIndexCount>
+        </mainindex>
+        <pmd enable="1" />
+        <url enable="0"></url>
+    </region2>
+    <region3 enable="1">
+        <globalindex enable="1">
+            <ShowGlobalIndex>1</ShowGlobalIndex>
+            <INDEX_WATCH>SH000001,IXAEX,IXATX,IXDJIA,IXEFC1,IXFTSE,IXH25,IXIPI,IXKS11,IXNDX,IXPLYI,IXS30,IXSMI,IXSXXP,IXTSX,IXUDI</INDEX_WATCH>
+        </globalindex>
+        <notice enable="1" />
+        <url enable="0"></url>
+    </region3>
+    <ShowStatusBar>3</ShowStatusBar>
+</statusbar>

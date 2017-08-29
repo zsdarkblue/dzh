@@ -1,0 +1,98 @@
+@import url(./layout.css);
+@import url(./scrollbar.css);
+
+body{
+	font-size: 12px;
+	margin: 0px;
+	background: fff;
+	font-family: SimSun,sans-serif;
+}
+
+#historical_content{
+	overflow-y: auto;
+	min-width:380px;
+	
+}
+.customer_mark span,.service_mark span{
+	margin-left:5px;
+}
+
+.customer_mark{
+	color: rgb(0, 163, 7);
+}
+.service_mark{
+	color: rgb(2, 53, 255);
+}
+.talked_content{
+	margin:5px 0px 8px 20px;
+	line-height: 20px;
+	color: 000;
+}
+
+
+#flex_bottom{
+	height: 135px;
+	min-width:380px;
+}
+
+#tools{
+	height: 25px;
+	background: -webkit-gradient(linear, left center, right center, from(#D2E0F2), to(#ECF7FC));
+}
+#tools_left{
+	width: 58%;
+	display: inline-block;
+	margin-top:1px;
+}
+.tools_left img{
+	height: 21px;
+	width: 21px;
+}
+.tools_pictures img:hover{
+	border: 1px solid #8A949F;
+	margin:-1px;
+	cursor: pointer;
+}
+.tools_pictures{
+	display: inline-block;
+	margin-left: 5px;
+}
+#tools_right{
+	width: 40%;
+	display: inline-block;
+	text-align: right;
+}
+
+#talking{
+	height: 80px;
+}
+#talking_text{
+	width: 100%;
+	height: 80px;
+	resize: none;
+	outline: none;
+}
+
+#close_send{
+	height:30px;
+	background: -webkit-gradient(linear, left center, right center, from(#D2E0F2), to(#ECF7FC));
+	
+}
+#close_send_explain{
+	display: inline-block;
+	width:55%;
+	padding-top: 5px;
+	padding-left:5px;
+}
+#close_send_button{
+	display: inline-block;
+	width:40%;
+	text-align: right;
+	padding-top: 2px;
+}
+#close_send_button button{
+	margin-left: 5px;
+}
+#close_send_button button:hover{
+	cursor: pointer;
+}

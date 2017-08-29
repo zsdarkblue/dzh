@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>机构评级svg图</title>
+<link rel="stylesheet" href="./css/chartPublic.css"/>
+</head>
+<body>
+	<svg width="400" height="90">
+		<defs id="ShapeGroup">
+			<pattern id="pjText" patternUnits="userSpaceOnUse" x="60" y="0" width="280" height="20" viewBox="0 0 280 20">
+				<image x="7" width="280" height="20" xlink:href="../img/complex/pjtext.png"></image>
+			</pattern>
+			<pattern id="zxztpjText" patternUnits="userSpaceOnUse" x="20" y="10" width="80" height="20" viewBox="0 0 80 20">
+				<image x="3" width="80" height="20" xlink:href="../img/complex/zxztpjText.png"></image>
+			</pattern>
+			<pattern id="syztpjText" patternUnits="userSpaceOnUse" x="301" y="10" width="76" height="20" viewBox="0 0 76 20">
+				<image x="3" width="76" height="20" xlink:href="../img/complex/syztpjText.png"></image>
+			</pattern>
+			
+			<linearGradient id="huise">
+				<stop offset="0%" stop-color="#828282"></stop>
+				<stop offset="100%" stop-color="#828282"></stop>
+			</linerGradient>
+			
+			<linearGradient id="heise">
+				<stop offset="0%" stop-color="#000"></stop>
+				<stop offset="100%" stop-color="#000"></stop>
+			</linerGradient>
+					
+			<linearGradient id="RedBlackGradient">
+				<stop offset="0%" stop-color="#0C721F"></stop>
+				<stop offset="100%" stop-color="#0C9801"></stop>
+			</linerGradient>
+			
+			<linearGradient id="RedBlackGradient2">
+				<stop offset="0%" stop-color="#33B80F"></stop>
+				<stop offset="100%" stop-color="#40B300"></stop>
+			</linerGradient>
+			<linearGradient id="RedBlackGradient2">
+				<stop offset="0%" stop-color="#33B80F"></stop>
+				<stop offset="100%" stop-color="#40B300"></stop>
+			</linerGradient>
+			<linearGradient id="RedBlackGradient3">
+				<stop offset="0%" stop-color="#6AD003"></stop>
+				<stop offset="100%" stop-color="#7DCF00"></stop>
+			</linerGradient>
+			<linearGradient id="RedBlackGradient4">
+				<stop offset="0%" stop-color="#9DE306"></stop>
+				<stop offset="100%" stop-color="#B1DF03"></stop>
+			</linerGradient>
+			<linearGradient id="RedBlackGradient5">
+				<stop offset="0%" stop-color="#E1C502"></stop>
+				<stop offset="100%" stop-color="#FFB618"></stop>
+			</linerGradient>
+			<linearGradient id="RedBlackGradient6">
+				<stop offset="0%" stop-color="#ED8C01"></stop>
+				<stop offset="100%" stop-color="#FF790B"></stop>
+			</linerGradient>
+			<linearGradient id="RedBlackGradient7">
+				<stop offset="0%" stop-color="#F04A00"></stop>
+				<stop offset="100%" stop-color="#FF3B07"></stop>
+			</linerGradient>
+			<linearGradient id="RedBlackGradient8">
+				<stop offset="0%" stop-color="#FF0300"></stop>
+				<stop offset="100%" stop-color="#BD2323"></stop>
+			</linerGradient>
+		</defs>
+		
+		<rect x="20" y="10" width="80" height="20"  fill="url(#zxztpjText)" />
+		<rect x="300" y="10" width="80" height="20"  fill="url(#syztpjText)" />
+		
+		<g transform="translate(2,290)" stroke-width="1" stroke="url(#huise)" stroke-linejoin="round">
+			<path id="syztpjPath" id="zxtxtjPath" d="M298,-270 L200,-270 L200,-250 L208,-250 L200,-242 192,-250 L200,-250 L200,-270 Z" fill="#828282"></path>
+		</g>
+		
+		<g transform="translate(2,290)" stroke-width="1" stroke="url(#heise)" stroke-linejoin="round">
+			<path id="zxztpjPath" d="M100,-270 L200,-270 L200,-250 L208,-250 L200,-242 192,-250 L200,-250 L200,-270 Z" fill="#000"></path>
+		</g>
+		
+		<rect x="100" y="50" width="25" height="9"  fill="url(#RedBlackGradient)" />
+		<rect x="125" y="50" width="25" height="9"  fill="url(#RedBlackGradient2)" />
+		<rect x="150" y="50" width="25" height="9"  fill="url(#RedBlackGradient3)" />
+		<rect x="175" y="50" width="25" height="9"  fill="url(#RedBlackGradient4)" />
+		<rect x="200" y="50" width="25" height="9"  fill="url(#RedBlackGradient5)" />
+		<rect x="225" y="50" width="25" height="9"  fill="url(#RedBlackGradient6)" />
+		<rect x="250" y="50" width="25" height="9"  fill="url(#RedBlackGradient7)" />
+		<rect x="275" y="50" width="25" height="9"  fill="url(#RedBlackGradient8)" />
+		
+		<rect x="70" y="60" width="280" height="20"  fill="url(#pjText)" />
+		
+	</svg>
+	
+	<script type="text/javascript">
+		var urlSearch = decodeURI(location.search);
+			var searchRequest = new Object();
+			if(urlSearch.indexOf("?") != -1){
+				var searchStr = urlSearch.substr(1);
+				var searchStrs = searchStr.split("&");
+				for(var i=0,l=searchStrs.length; i<l; i++){
+					searchRequest[searchStrs[i].split("=")[0]]= (searchStrs[i].split("=")[1]);
+				}
+			
+			} 
+			
+		var newValue = parseFloat(searchRequest["newValue"]),
+		    lastValue = parseFloat(searchRequest["lastValue"]);
+		
+		
+		var lx = 100 + (newValue/5)*198;
+		var slx = 298 - ((5-lastValue)/5)*198;
+		var dStr = "M100,-270 L"+lx+",-270 "+"L"+lx+",-250 "+"L"+(lx+6)+",-250 "+"L"+lx+",-244 L"+(lx-6)+",-250 L"+lx+",-250 L"+lx+",-270 Z";
+		var sdStr = "M298,-270 L"+slx+",-270 "+"L"+slx+",-250 "+"L"+(slx+6)+",-250 "+"L"+slx+",-244 L"+(slx-6)+",-250 L"+slx+",-250 L"+slx+",-270 Z";
+		document.getElementById("zxztpjPath").setAttribute("d",dStr);
+		document.getElementById("syztpjPath").setAttribute("d",sdStr);
+	</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>财务状况排名</title>
+<link rel="stylesheet" href="./css/chartPublic.css"/>
+</head>
+<body>
+	<div id="container"></div>
+	<script src="../../../../jquery/amd/require.js" ></script>
+	<script src="./cfg.js"></script>
+
+	<script type="text/javascript">
+	require(['highcharts'],function(){
+		$(function () {
+			var urlSearch = decodeURI(location.search);
+			var searchRequest = new Object();
+			if(urlSearch.indexOf("?") != -1){
+				var searchStr = urlSearch.substr(1);
+				var searchStrs = searchStr.split("&");
+				for(var i=0,l=searchStrs.length; i<l; i++){
+					searchRequest[searchStrs[i].split("=")[0]]= (searchStrs[i].split("=")[1]);
+				}
+			
+			} 
+			var xAxisValue = eval(searchRequest["xAxisValue"]),
+			    yAxisSeries = eval(searchRequest["yData"]),
+			    myNum = parseInt(searchRequest["myNum"]),
+			    IndustryValue = parseFloat(searchRequest["IndustryValue"]),
+			    marketValue = parseFloat(searchRequest["marketValue"]),
+			    ykedu  = parseFloat(searchRequest["ykedu"]),
+			    Unit = searchRequest["Unit"];
+			    ytitles = searchRequest["ytitle"].split('');
+			ytitle =  ytitles.join(' ');   
+			var IndustryDatas = [],marketDatas=[];
+			for(var i=0,l=yAxisSeries.length; i<l; i++){
+				IndustryDatas.push(IndustryValue);
+				marketDatas.push(marketValue);
+			}
+			
+			yAxisSeries[myNum] = {color:"#F78A8A",y:yAxisSeries[myNum]};
+			
+		    new Highcharts.Chart({
+		        chart: {
+					renderTo:'container',
+		            type: ''
+		        },
+				exporting:{
+					enabled:false
+				},
+		        title: {
+		            text: ''
+		        },
+		        subtitle: {
+		            text: ''
+		        },
+		        xAxis: {
+		            categories: xAxisValue,
+		            tickmarkPlacement: 'on',
+					labels:{
+						style:{
+							color: '#606060',
+							fontSize: '12px'
+						}
+					}
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        legend: {
+		            margin:2,
+		            y:14,
+		            itemStyle:{
+						fontWeight:'normal'//这个就是不要加粗
+					}
+		        },
+		        yAxis: {
+		        	labels:{
+		        		formatter: function() {
+                        	return this.value.toFixed(1)+Unit;//这里是设置Y轴的小数位数，要几位小数就改成几
+                    	}
+                	},
+//		            min: 0,
+	               // tickInterval:ykedu, // 刻度值  
+	                tickPixelInterval:30,//刻度的高度
+		            title: {
+		                //text: '    '+ytitle, //Y轴标题
+		                text: '',
+		                style:{
+                			'width':'10em'
+            			},
+            			align:'high',
+               			rotation:0
+		            }
+		        },
+		        tooltip: {
+		            valueSuffix: Unit,
+		            formatter:function () {
+               			return Highcharts.numberFormat(this.y,2,'.')+' '+Unit;
+                	}
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        plotOptions: {
+		            column: {
+		                pointPadding: 0.2,
+		                borderWidth: 0
+		            },
+		            series: {
+			           marker: {
+			           	enabled: false 
+			           }
+			       }
+		        },
+		        series: [{
+		        	type:'column',
+		        	name:ytitles.join(''),
+		        	data: yAxisSeries
+		        }, {
+           			name: '行业水平',
+		            color: '#3366CC',
+		            type: 'spline',
+		            data: IndustryDatas
+            }, {
+           			name: '市场水平',
+		            color: '#996600',
+		            type: 'spline',
+		            data: marketDatas
+            }]
+		    });
+		
+	
+		});
+	});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+ <div class="dijitDialogPaneContentArea" style="width:800px; height: 400px; position:relative;">
+ <!-- 
+		<div class="search_box" style="top:5px;">
+			搜寻想关注的人 
+			<div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false,placeholder:'请输入人物姓名'" style="width:180px;"></div>
+			<div data-dojo-type="dijit/form/Button" class="btn_lightblue  " data-dojo-props="label:'查询'"></div>
+	    </div>
+	   -->
+	    <div style=" margin-left:15px;" class="title_sp_redline">
+    		我关注的人
+    	</div>
+    	 <div class="search_box" style="top:2px;">
+         	<div data-dojo-type="dijit/form/Button" data-dojo-props="label:'刷新'" id="reloadBtn"></div>
+         </div>
+		    	<div class="guanzhu_list">
+		    		<ul class="clearfix" id="gz_ul" style="height:301px">
+		    		</ul>
+		    		<div data-dojo-type="dijit/layout/ContentPane" class="page_list clearfix" id="gz_ul_page" style="overflow: hidden;">
+			    		<ul class="float_r">
+			    			<li class="selected">
+			    		   		 <div data-dojo-type="dijit/form/Button" data-dojo-props="label:'首页'" id="firstPage"></div>
+			    		    </li>
+			    			<li class="selected">
+			    				 <div data-dojo-type="dijit/form/Button" data-dojo-props="label:'上一页'" id="upPage"></div>
+			    			</li>
+			    			<li style="border:0">
+			    				 <div id="curpage" data-dojo-type="dijit/form/NumberTextBox" data-dojo-props="hasDownArrow:false, style:'width:20px'"></div>
+			    			 	 <span>/</span>
+			    			 	 <span id="totalPage"></span>
+			    			</li>
+			    			
+			 				<li>
+			    				 <div data-dojo-type="dijit/form/Button" data-dojo-props="label:'下一页'" id="downPage"></div>
+			    			</li>
+			    			<!-- <li>
+			    				 <div data-dojo-type="dijit/form/Button" data-dojo-props="label:'末页'" id="lastPage"></div>
+			    			</li> -->
+			    			<li>
+			    				 <div data-dojo-type="dijit/form/Button" data-dojo-props="label:'跳转'" id="submitBtn"></div>
+			    			</li>
+			    		</ul>
+			    	</div>
+		    	</div>
+		    </div>

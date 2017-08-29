@@ -1,0 +1,94 @@
+[
+    {"name":"最新负面新闻","checked":true },
+    {"name":"我的收藏","keys":"WDSC","children":[]},
+    {"name":"我的订阅","isParent":1,"open":1,"children":[]},
+	{"name":"自选股负面新闻","isParent":1,"open":1,"children":[]},
+	{"name":"股票负面新闻","keys":"FLJD_00000003000c0000","children":[]},
+    {"name":"债券负面新闻","open":1,"keys":"FLJD_00000003000c0001","children":[
+        {"name":"金融债","open":1,"children":[
+			{"name":"银行","keys":"JRZ_1"},
+            {"name":"保险","keys":"JRZ_2"},
+            {"name":"券商","keys":"JRZ_3"}
+		]},
+        {"name":"产业债（按行业）","keys":"","children":[
+            {"name":"农林牧渔","keys":"CYZ_HY_110000"},
+            {"name":"采掘","keys":"CYZ_HY_210000"},
+            {"name":"化工","keys":"CYZ_HY_220000"},
+            {"name":"钢铁","keys":"CYZ_HY_230000"},
+            {"name":"有色金属","keys":"CYZ_HY_240000"}, 
+			{"name":"机械设备","keys":"CYZ_HY_640000"},
+            {"name":"电子","keys":"CYZ_HY_270000"},
+            {"name":"家用电器","keys":"CYZ_HY_330000"},
+            {"name":"食品饮料","keys":"CYZ_HY_340000"},
+            {"name":"纺织服装","keys":"CYZ_HY_350000"},
+            {"name":"轻工制造","keys":"CYZ_HY_360000"},
+            {"name":"医药生物","keys":"CYZ_HY_370000"},
+            {"name":"公用事业","keys":"CYZ_HY_410000"},
+            {"name":"交通运输","keys":"CYZ_HY_420000"},
+            {"name":"房地产","keys":"CYZ_HY_430000"},   
+			{"name":"银行","keys":"CYZ_HY_480000"},
+            {"name":"商业贸易","keys":"CYZ_HY_450000"},
+            {"name":"休闲服务","keys":"CYZ_HY_460000"},        
+            {"name":"综合","keys":"CYZ_HY_510000"},
+			{"name":"建筑材料","keys":"CYZ_HY_610000"},
+			{"name":"建筑装饰","keys":"CYZ_HY_620000"},
+			{"name":"电气设备","keys":"CYZ_HY_630000"},
+			{"name":"国防军工","keys":"CYZ_HY_650000"},
+			{"name":"计算机","keys":"CYZ_HY_710000"},
+			{"name":"非银金融","keys":"CYZ_HY_490000"},
+			{"name":"通信","keys":"CYZ_HY_730000"},
+			{"name":"汽车","keys":"CYZ_HY_280000"}
+        ]},
+		{"name":"产业债（按类型）","open":1,"children":[
+			{"name":"企业债","keys":"CYZ_LX_6"},
+			{"name":"公司债","keys":"CYZ_LX_13"},
+			{"name":"中票","keys":"CYZ_LX_11"},
+			{"name":"短融","keys":"CYZ_LX_12"},
+			{"name":"中小企业私募债","keys":"CYZ_LX_21"}
+		]},
+		{"name":"城投债","keys":"CTZ"},
+		{"name":"担保人","keys":"DBR"}
+    ]},
+	{"name":"金融同业负面新闻","keys":"FLJD_00000003000c0004","children":[
+		{"name":"银行","keys":"FLJD_00000003000c00040000"},
+		{"name":"保险","keys":"FLJD_00000003000c00040001"},
+		{"name":"证券","keys":"FLJD_00000003000c00040002"},
+		{"name":"基金","keys":"FLJD_00000003000c00040003"},
+		{"name":"信托","keys":"FLJD_00000003000c00040004"}
+	]},
+	{"name":"行业负面新闻（申万标准）","keys":"FLJD_00000003000c0002","children":[
+		{"name":"农林牧渔","keys":"FLJD_00000003000c00020000"},
+		{"name":"采掘","keys":"FLJD_00000003000c00020001"},
+		{"name":"化工","keys":"FLJD_00000003000c00020002"},
+		{"name":"钢铁","keys":"FLJD_00000003000c00020003"},
+		{"name":"有色金属","keys":"FLJD_00000003000c00020004"},
+		
+		{"name":"机械设备","keys":"FLJD_00000003000c00020005"},
+		{"name":"电子","keys":"FLJD_00000003000c00020006"},
+		{"name":"家用电器","keys":"FLJD_00000003000c00020007"},
+		{"name":"食品饮料","keys":"FLJD_00000003000c00020008"},
+		{"name":"纺织服装","keys":"FLJD_00000003000c00020009"},
+		
+		{"name":"轻工制造","keys":"FLJD_00000003000c0002000A"},
+		{"name":"医药生物","keys":"FLJD_00000003000c0002000B"},
+		{"name":"公用事业","keys":"FLJD_00000003000c0002000C"},
+		{"name":"交通运输","keys":"FLJD_00000003000c0002000D"},
+		{"name":"房地产","keys":"FLJD_00000003000c0002000E"},
+		
+		{"name":"银行","keys":"FLJD_00000003000c0002000F"},
+		{"name":"商业贸易","keys":"FLJD_00000003000c0002000G"},
+		{"name":"休闲服务","keys":"FLJD_00000003000c0002000H"},
+		{"name":"传媒","keys":"FLJD_00000003000c0002000I"},
+		{"name":"综合","keys":"FLJD_00000003000c0002000J"},
+		
+		{"name":"建筑材料","keys":"FLJD_00000003000c0002000K"},
+		{"name":"建筑装饰","keys":"FLJD_00000003000c0002000L"},
+		{"name":"电气设备","keys":"FLJD_00000003000c0002000M"},
+		{"name":"国防军工","keys":"FLJD_00000003000c0002000N"},
+		{"name":"计算机","keys":"FLJD_00000003000c0002000O"},
+		
+		{"name":"非银金融","keys":"FLJD_00000003000c0002000P"},
+		{"name":"通信","keys":"FLJD_00000003000c0002000Q"},
+		{"name":"汽车","keys":"FLJD_00000003000c0002000R"}
+	]}
+]

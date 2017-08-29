@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/css/all.css"/>
+</head>
+<body>
+<div class="flex-column">
+    <div class="flex-none">
+        <header class="l_title">
+            <b><script>document.write(decodeURI((location.search.match(/title=([^&]*)/) || [, ''])[1]))</script></b>
+            <div class="pull-right">
+                <a data-bind="sortGrid"><i class="fa fa-sort"></i>时间排序</a>
+                <a data-bind="resetGrid"><i class="fa fa-undo"></i>还原</a>
+                <a data-bind="exportGrid"><i class="fa fa-d009"></i>导出</a>
+            </div>
+        </header>
+        <form class="s_title">
+            <div class="form-group" id="form-group-soulence1">
+                <label id="baogaoqi_dis">报告期</label>
+                <select name="tip" data-option="checkbox" multiple>
+                    <optgroup label="">
+                        <option value="4" selected>年报</option>
+                        <option value="2" selected>中报</option>
+                        <option value="1">一季报</option>
+                        <option value="3">三季报</option>
+                    </optgroup>
+                    <optgroup label="-">
+                        <option value="5" selected>最新</option>
+                        <option value="6" selected>盈利预测</option>
+                    </optgroup>
+                </select>
+                <label>年　数</label>
+                <div class="btn-group" id="years-se">
+                    <input name="years" type="hidden" value="0,4" />
+                    <a class="btn btn-white" data-bind="changeYears" data-value="0,3">3</a>
+                    <a class="btn btn-white btn-blue" data-bind="changeYears" data-value="0,4">5</a>
+                    <a class="btn btn-white" data-bind="changeYears" data-value="0,5">10</a>
+                    <a class="btn btn-white" data-bind="changeYears" data-value="0,9">上市以来</a>
+                    <a class="btn btn-white" data-bind="showTimeDialog"><i class="fa fa-th"></i></a>
+                </div>
+                <label id="data-sjlx">数据类型</label>
+                <select name="dataType" data-option>
+                    <option value="0">原始报表</option>
+                    <option value="2">销售百分比</option>
+                    <option value="3">资产百分比</option>
+                    <option value="1">同比增长率</option>
+                </select>
+            </div>
+            <div class="form-group" id="form-group-soulence2">
+                <label id="bbtype">类　型</label>
+                <select name="biaotype" data-option>
+                    <option value="1" selected>合并报表 </option>
+                    <option value="2">母公司报表</option>
+                    <option value="3">合并报表调整</option>
+                    <option value="4">母公司报表调整</option>
+                </select>
+                <label>单　位</label>
+                <select name="unit" data-option>
+                    <option value="1">元</option>
+                    <option value="1000">千元</option>
+                    <option value="10000" selected>万元</option>
+                    <option value="1000000">百万元</option>
+                    <option value="100000000">亿元</option>
+                    <option value="1000000000">十亿元</option>
+                </select>
+                <div class="btn-group">
+                    <input name="pt" type="hidden" value="2" />
+                    <i class="btn btn-white icon-unitl" title="增加一位小数点" data-bind="roundGrid" data-value="+1"></i>
+                    <i class="btn btn-white icon-unitr" title="减少一位小数点" data-bind="roundGrid" data-value="-1"></i>
+                </div>
+                <label id="hvdata_dis">币　种</label>
+                <select name="per" data-option>
+                    <option value="CNY" selected>CNY</option>
+                    <option value="USD">USD</option>
+                    <option value="JPY">JPY</option>
+                    <option value="HKD">HKD</option>
+                    <option value="GBP">GBP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="CAD">CAD</option>
+                    <option value="AUD">AUD</option>
+                </select>
+                <select name="perType" data-option>
+                    <option value="0">最新汇率</option>
+                    <option value="1" selected>历史汇率</option>
+                </select>
+                <label><input name="yingchang" type="checkbox" value="1" /><span>隐藏空行</span></label>
+				<label id="subs"><input name="Subsisting" type="checkbox" value="1" checked="checked"/><span>存续公司数据</span></label>
+				<input type="hidden" name="type_jidu" value="base" />
+            </div>
+        </form>
+    </div>
+    <div class="flex-auto">
+        <div class="grid"></div>
+    </div>
+</div>
+
+<div id="time_dialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>任意区间</h3><i></i>
+    </div>
+    <div class="dialog-body">
+        <label>从</label>
+        <select id="year-start" data-option></select>
+        <label>至</label>
+        <select id="year-end" data-option></select>
+    </div>
+    <div class="dialog-footer">
+        <button class="btn" data-bind="changeYears">确定</button>
+        <button class="btn" data-bind="hideDialog">取消</button>
+    </div>
+</div>
+
+<div id="chart_dialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>大智慧</h3><i></i>
+    </div>
+    <div class="dialog-body" style="background: #fffef6;">
+        <iframe style="width: 650px; height: 318px;" frameborder="0" src="about:blank"></iframe>
+    </div>
+</div>
+
+<div id="grid_dialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>大智慧</h3><i></i>
+    </div>
+    <div class="dialog-body" style="background: #fffef6;">
+        <iframe style="width: 650px; height: 368px;" frameborder="0" src="about:blank"></iframe>
+    </div>
+</div>
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

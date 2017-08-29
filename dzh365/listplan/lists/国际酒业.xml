@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col><value>index</value><width>37</width><name>序号</name></col><col><value>label</value><width>70</width><name>代码</name></col><col><value>name</value><width>174</width><name>名称</name></col><col fixed="1"><value>now</value><width>65</width><name>最新</name></col><col><value>undn</value><width>70</width><name>涨跌</name></col><col><value>updnratio</value><width>70</width><name>涨幅</name></col><col><value>open</value><width>70</width><name>今开</name></col><col><value>lastclose</value><width>70</width><name>昨收</name></col><col><value>high</value><width>70</width><name>最高</name></col><col><value>low</value><width>66</width><name>最低</name></col><col><value>nowvol</value><width>70</width><name>现手</name></col><col><value>volume</value><width>83</width><name>总手</name></col><col><value>indicator</value><width>70</width><name>库存量</name><precis>1</precis><param>库存量.1</param><period>day</period></col><col><value>settle</value><width>70</width><name>结算价</name></col><col><value>presettle</value><width>70</width><name>昨结算价</name></col></column>
+</list>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+	<title>专题</title>
+	
+	<link rel="stylesheet" href="../../dijit/themes/black/document.css"/>
+	
+	<script type="text/javascript">
+	var url = window.location.href;
+	var pos = url.indexOf('#');
+	var strng = url.substring(pos+1);
+	var filename = "resources/css/"+strng+".css";
+	console.log(filename);
+	var fileref=document.createElement("link")
+	fileref.setAttribute("rel", "stylesheet")
+	fileref.setAttribute("type", "text/css")
+	fileref.setAttribute("href", filename)
+	document.getElementsByTagName("head")[0].appendChild(fileref)
+	</script>
+	<script type="text/javascript">
+		dojoConfig = {
+			async:true, 
+			parseOnLoad:false,
+			//paths:{'specialTopic':'../commodity/specialTopic'},
+			baseUrl:"../../",
+			requestProvider: "dojo/request/registry",
+			callback: function() {
+				require(['commodity/specialTopic/src'],function(main){
+					main();
+				});
+			}
+		}
+		dojopr();
+	</script>
+	<!--自定义样式表-->
+	<link rel="stylesheet" href="resources/css/topic.css"/>
+</head>
+<body class="claro">
+	<div id="outterBorderContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false, liveSplitters:false" style="height:100%">
+	</div>
+</body>
+</html>

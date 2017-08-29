@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col><value>index</value><width>0</width><name>序号</name></col>
+		<col color="52FFFF"><value>name</value><width>80</width><name>名称</name></col>
+		<col fixed="1"><value>now</value><width>60</width><name>最新</name></col>
+		<col sorted="-1" subsorted="0"><value>updnratio</value><width>60</width><name>涨幅</name></col>
+	</column>
+	<script param="node">rjBD414o6uU2hf5KRJaXGMJ0f1fjzgAwXkZUySPF8ZUAsh3iLlIewq/1rxwSK2BuzP6V5bFerC56kl1Ri08VZwSw8U1BNWnsHR5zGWAvV+P1wVZACDm9H9IIHjiF9t25Mict5qUYA3OOdxhXJnmbsxn2qVQgFdEA+eehLzY6M49quZucscZClzon5LGXHP06dHoZ0LqTuBwq7zeUpWhwyODV1HzfCsNwdTcpetiJT/egAMDML7vgZrYFWkHe8t6d2VL95/jQwvFntJWrgyUmFLWsDolBkGbRlmjarfCSIRcE4xsW3sgbaFr2WUn7oX7iku0xIHzWZHA94KNRWTbejVzsnb+FX9GSGMSVvGlWn1GsWYIZS70qKhvatBlsqP6rdJ6h1D1imo9eM0XlTPcANQ9g2iuUVUbwF77eaHYGiNHVgqdwxoYT+vf+SOEUg96k7jOqKsusv4lY3S0uibk5pqVUhPMCqGZi2kd7LgXPoXRNQ0UNGreLRlIbIFd919TCAjWQI3gz9xDcM6ecIEqGURQhn7+XtDPxdn3Y7cd9lLzPrmHTaSwJHUtCssBqXf8fcJsigxdyGOohyEXIZ4sopo/P8/xCvXkstLKGQy0AeyizWRnqMPytcNaJ73t7FE7/SK3sHvccPyKbtS6ppt1LphiFHf+EtCvRyYnatjf8obXbRSyjG1iyeAfoZ5n4NeCwefEVhxEElGc4eMZU9SBbyf86m/tWdHz/2s2FCZcxqdqXNwJDkdiGkl61mvupCrJW74UG7VlFSdWha8tflGYX98RQjmet2M25oVjPjlRRcYwEn88N9EusNfT557GeThU2X3db7bLaHkEAF0KH8cAgevki15GQ49AnLm16j7vdfv9QUS4PcVVrSWLThKYS0U5q+9AC2FOyaed0qFuEv7Qg67xeoNbOd1nwfDckRUu7RfdRQTyx6Quk0358VDYixwQppTamL+U4OIfKg/wMDHE7iTON/++l0SgwvI2SFCyfbyaUaNIB9rF3+Ho03IlWTNRhDADtgVQlAbgYC7kcJMpgrzzBNep/wF1RxmuwS7YxI8gQdJUYW0orbJAGjU26XqthPBIW7UokjDhSISR8+XT41zxbnAsQlGP1ze7DiVGW5V04UGBH1oSAOZ4u7MENqW+s</script></list>

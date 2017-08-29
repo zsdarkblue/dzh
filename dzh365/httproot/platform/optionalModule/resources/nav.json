@@ -1,0 +1,227 @@
+[
+    {"name": "股票", "id": "stock", "children": [
+		{"name": "行情报价","children": [
+			{"name": "沪深行情", "link": "VIEWLIST?MARKET=@C沪深A股+SH上证A股+SZ深证A股+SZ中小企业+SZ创业板&PAGE=行情"},
+			{"name": "综合排名", "link": "menucmd?QL81"},
+			{"name": "板块监控", "link": "SHORTKEY?31"},
+			{"name": "新股申购", "link": "CHROME?URL='root://stock/xgzx/index.html'"},
+			{"name": "次新股", "link": "MARKETGROUP?次新股"},
+			{"name": "DDE决策", "link": "VIEWLIST?MARKET=@C沪深A股+SH上证A股+SZ深证A股+SZ中小企业+SZ创业板&PAGE=资金"},
+			{"name": "全息高速盘口", "link": "VIEWSTOCK?LABEL=SZ000001.stk&LAYOUT=Level2默认&PAGE=全息盘口"},
+			{"name": "主力实时监控", "link": "VIEWLIST?MARKET=@C沪深A股+SH上证A股+SZ深证A股+SZ中小企业+SZ创业板&PAGE=监控"},
+			{"name": "SV资金流向", "link": "CMD?SuperView资金"},
+			{"name": "新三板", "link": "MARKETGROUP?新三板"},
+			{"name": "常用指数", "link": "VIEWLIST?MARKET2=cyzs/常用指数/常用指数"},
+			{"name": "全球指数", "link": "MARKETGROUP?指数"},
+			{"name": "富时A50期指", "link": "VIEWLIST?MARKET=SM中国A50期指&PAGE=行情"}
+		]},
+		{"name": "股市新闻","children": [
+			{"name": "最新资讯", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900K000&prefix=false'"},
+			{"name": "热门新闻", "link": "CHROME?URL='http://pcengine.gw.com.cn/xwph/index.html'"},
+			{"name": "政策动态", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009003000&dataSelect=37014'"},
+			{"name": "股票新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009006000&dataSelect=37014'"},
+			{"name": "行业新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009002000&dataSelect=37019'"},
+			{"name": "经济新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009001000&dataSelect=37014'"},
+			{"name": "大报新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009000000&dataSelect=37019'"},
+			{"name": "负面新闻", "link": "CHROME?URL='root://news/warning/index.html'"}
+		]},	
+		{"name": "股市研究", "children": [
+			{"name": "研究报告", "link": "CHROME?URL='root://stock/yjbg-112/index.html'"},
+			{"name": "公司公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=stock'"},
+			{"name": "融资融券", "link": "CHROME?URL='root://stock/margin/overview.html'"},
+			{"name": "龙虎榜", "link": "CHROME?URL='http://pcengine.gw.com.cn/lhb/index.html'"},
+			{"name": "股东增减持", "link": "CHROME?URL='root://stock/margin/change.html'"},
+			{"name": "业绩预告", "link": "CHROME?URL='root://stock/achievement/achievement.html'"},
+			{"name": "复盘神器", "link": "CHROME?URL='http://pro.gw.com.cn/fpsq/'"}
+		]},	
+		{"name": "策略分析",  "children": [
+			{"name": "市场关注", "link": "CHROME?URL='http://pcengine.gw.com.cn/ztgz/index.html'"},
+			{"name": "TS诊断", "link": "VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=技术分析;VIEWINDI?NUMPIC=3&INDI1=TS&INDI2=VOL&INDI3=KDJ"},
+			{"name": "个股主题诊断", "link": "VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=主题诊断"}
+		]},	
+		{"name": "股转系统(新三板)","children": [
+			{"name": "新三板行情", "link": "MARKETGROUP?新三板"},
+			{"name": "新三板研究", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxbg_zxbg-A10024&name=%E6%96%B0%E4%B8%89%E7%89%88%E7%A0%94%E6%8A%A5'"}
+		]},	
+		{"name": "上证期权","children": [
+			{"name": "上证期权行情", "link": "MARKETGROUP?期权行情"},
+			{"name": "期权T报价", "link": "CHROME?URL='root://commodity/underlying/index.html'"},
+			{"name": "期权ABC", "link": "shellexe?'iexplore.exe http://edu.sse.com.cn/col/option/optionABC/'"}
+		]}
+    ]},
+    {"name": "自选股", "id": "selfstock", "children": [
+		{"name": "自选股", "link": "MARKETGROUP?自选股"},
+		{"name": "自选股公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=stock&amp;node=%E8%87%AA%E9%80%89%E8%82%A1'"},
+		{"name": "自选股新闻", "link": "CHROME?URL='root://news/zongheping/news_list.html?forward=true&amp;menuid=00100200A&amp;search_Stocks=true'"},
+		{"name": "自选股研报", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxgyb-zxg&amp;name=%E8%87%AA%E9%80%89%E8%82%A1'"},
+		{"name": "自选股管理", "link": "navigate?'root://platform/optionalObject/index.html?#DZHPOPUP(300,100,800,620)#'"},
+		{"name": "自选股导入", "link": "STKTRANSPORT?"},
+		{"name": "近期浏览", "link": "VIEWLIST?MARKET2=jqll/近期浏览/近期浏览"}
+    ]},
+    {"name": "指数", "id": "index", "children": [
+		{"name": "常用指数", "link": "VIEWLIST?MARKET2=cyzs/常用指数/常用指数"},
+		{"name": "全球指数", "link": "MARKETGROUP?指数"},
+		{"name": "中金所", "link": "MARKETGROUP?中国金融期货交易所"},
+		{"name": "富时A50期指", "link": "VIEWLIST?MARKET=SM中国A50期指&amp;PAGE=行情"},
+		{"name": "恒生指数", "link": "VIEWLIST?MARKET=HI恒生指数&amp;PAGE=行情"},
+		{"name": "上证系列", "link": "VIEWLIST?MARKET2=indextree/指数系列/上证系列"},
+		{"name": "深证系列", "link": "VIEWLIST?MARKET2=indextree/指数系列/深证系列"},
+		{"name": "中证系列", "link": "VIEWLIST?MARKET2=indextree/指数系列/中证系列"},
+		{"name": "巨潮指数", "link": "VIEWLIST?MARKET2=indextree/指数系列/巨潮系列"},
+		{"name": "自定义指数", "link": "VIEWLIST?MARKET=$$&amp;PAGE=行情"}
+    ]},
+    {"name": "港美股", "id": "hkusa", "children": [
+		{"name": "香港市场", "children": [
+			{"name": "沪港通行情", "link": "MARKETGROUP?沪港通"},
+			{"name": "沪港通新闻", "link": "CHROME?URL='root://news/zongheping/news_list.html?menuid=0000AH001&amp;prefix=false'"},
+			{"name": "沪港通研究", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=type_gsyj-gsyj_hgt&amp;name=沪港通'"},
+			{"name": "AH比价分析", "link": "CHROME?URL='root://stock/ah/index.html'"},
+			{"name": "恒生指数", "link": "VIEWLIST?MARKET=HI恒生指数&amp;PAGE=行情"},
+			{"name": "港股全行情", "link": "MARKETGROUP?港股"},
+			{"name": "港股主板", "link": "VIEWLIST?MARKET=HK香港主板&amp;PAGE=品种相关"},
+			{"name": "香港创业板", "link": "VIEWLIST?MARKET=HK香港创业板&amp;PAGE=品种相关"},
+			{"name": "香港权证", "link": "VIEWLIST?MARKET=HK香港权证&amp;PAGE=品种相关"},
+			{"name": "牛熊证", "link": "VIEWLIST?MARKET=HK牛熊证&amp;PAGE=品种相关"},
+			{"name": "香港债券", "link": "VIEWLIST?MARKET=HK香港债券&amp;PAGE=品种相关"},
+			{"name": "国企股", "link": "VIEWLIST?MARKET=@C国企股+@BH股&amp;PAGE=行情"},
+			{"name": "红筹股", "link": "VIEWLIST?MARKET=@B红筹股&amp;PAGE=行情"},
+			{"name": "蓝筹股", "link": "VIEWLIST?MARKET=@B蓝筹股&amp;PAGE=行情"},
+			{"name": "港股行业分类", "link": "VIEWLIST?MARKET2=gg_hy/港股行业&amp;PAGE=品种相关"},	
+			{"name": "香港主板综合排名", "link": "QL?71"},
+			{"name": "香港创业板综合排名", "link": "QL?72"},
+			{"name": "港股公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=stock_hk'"}
+		]},
+		{"name": "美国市场", "children": [
+			{"name": "全部美股", "link": "VIEWLIST?MARKET=@C全部美股+NY纽交所+NS纳斯达克&amp;PAGE=品种相关"},
+			{"name": "知名美股", "link": "VIEWLIST?MARKET2=qbmg_qbmg/全部美股/知名美股"},
+			{"name": "全球股票指数", "link": "VIEWLIST?MARKET=IX全球指数&amp;page=行情"},
+			{"name": "纽交所股票", "link": "VIEWLIST?MARKET=NY&amp;PAGE=品种相关"},
+			{"name": "纳斯达克股票", "link": "VIEWLIST?MARKET=NS&amp;PAGE=品种相关"},
+			{"name": "标普500成分股", "link": "VIEWLIST?MARKET2=qbmg_qbmg/全部美股/标普500"},
+			{"name": "纳斯达克100成分股", "link": "VIEWLIST?MARKET2=qbmg_qbmg/全部美股/纳斯达克100"},
+			{"name": "道琼斯成份", "link": "VIEWLIST?MARKET2=qbmg_qbmg/全部美股/道琼斯成份"},
+			{"name": "美股板块", "link": "VIEWLIST?MARKET2=qbmg_mghy/美股行业"},
+			{"name": "互联网中概股", "link": "VIEWLIST?MARKET2=qbzgg_hlwzgg/互联网中概股/互联网中概股"},
+			{"name": "全部中概股", "link": "VIEWLIST?MARKET2=qbzgg_qbzgg/全部中概股/全部中概股"},
+			{"name": "中概股行业分类", "link": "VIEWLIST?MARKET2=qbzgg_hy/中概股行业"}
+		]}
+    ]},
+    {"name": "基金", "id": "bond", "children": [
+		{"name": "分级行情", "link": "MARKETGROUP?分级基金行情"},
+		{"name": "分级套利", "link": "CHROME?URL='root://fund/structured/index.html'"},
+		{"name": "封闭基金", "link": "VIEWLIST?MARKET=@G封闭基金+SH上证基金+SZ深证基金&amp;PAGE=行情"},
+		{"name": "ETF基金", "link": "VIEWLIST?MARKET=@GETF基金+SHETF基金+SZETF基金&amp;PAGE=行情"},
+		{"name": "LOF基金", "link": "VIEWLIST?MARKET=@GLOF基金+SH上证LOF+SZ深证LOF&amp;PAGE=行情"},
+		{"name": "T+0基金", "link": "VIEWLIST?MARKET2=jjbk_T/基金板块/T+0基金&amp;PAGE=行情"},
+		{"name": "基金净值", "link": "CHROME?URL='root://fund/npv/index.html'"},
+		{"name": "基金排行", "link": "CHROME?URL='root://fund/npv/ranking.html'"},
+		{"name": "基金公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=fund'"},
+		{"name": "基金研究", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxbg_type-jjyj&amp;name=%E6%8C%89%E7%B1%BB%E5%9E%8B_%E5%9F%BA%E9%87%91%E7%A0%94%E7%A9%B6'"},
+		{"name": "基金新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900C000&amp;dataSelect=37014&amp;prefix=false#'"}
+    ]},
+    {"name": "商品", "id": "commodity", "children": [
+        {"name": "商品行情", "children": [
+            {"name": "股指期货", "link": "VIEWLIST?MARKET=@C金期指+SF金期指+SF上证50期指+SF中证500期指&amp;page=行情"},
+            {"name": "大连商品", "link": "VIEWLIST?MARKET=DC&amp;PAGE=品种相关"},
+            {"name": "郑州商品", "link": "VIEWLIST?MARKET=ZC&amp;PAGE=品种相关"},
+            {"name": "上海期货", "link": "VIEWLIST?MARKET=SC&amp;PAGE=品种相关"},
+            {"name": "渤海商品", "link": "VIEWLIST?MARKET=BO&amp;PAGE=品种相关"},
+            {"name": "国债期货", "link": "VIEWLIST?MARKET=SF国债期货&amp;PAGE=行情"},
+            {"name": "香港期货", "link": "MARKETGROUP?港股期货"},
+            {"name": "上海黄金", "link": "VIEWLIST?MARKET=SG&amp;PAGE=品种相关"},
+            {"name": "大圆银泰", "link": "VIEWLIST?MARKET=YT&amp;PAGE=行情"},
+            {"name": "君泰贵金属", "link": "VIEWLIST?MARKET=JT&amp;PAGE=行情"},
+            {"name": "昆明贵金属", "link": "VIEWLIST?MARKET=KP&amp;PAGE=行情"}
+        ]},
+        {"name": "全球商品", "children": [
+            {"name": "芝加哥CME", "link": "VIEWLIST?MARKET=CM&amp;PAGE=行情"},
+            {"name": "伦敦商品", "link": "VIEWLIST?MARKET=LM&amp;PAGE=行情"},
+            {"name": "芝加哥CBOT", "link": "VIEWLIST?MARKET=CB&amp;PAGE=行情"},
+            {"name": "洲际美洲", "link": "VIEWLIST?MARKET=IC&amp;PAGE=行情"},
+            {"name": "全球外汇", "link": "VIEWLIST?MARKET=FX主要外汇&amp;PAGE=行情"},
+            {"name": "纽约商品", "link": "VIEWLIST?MARKET=NX&amp;PAGE=行情"},
+            {"name": "纽约期货", "link": "VIEWLIST?MARKET=CX&amp;PAGE=行情"},
+            {"name": "新加坡期货", "link": "VIEWLIST?MARKET=SM&amp;PAGE=行情"},
+            {"name": "洲际欧洲", "link": "VIEWLIST?MARKET=IP&amp;PAGE=行情"},
+            {"name": "贵金属现货", "link": "VIEWLIST?MARKET=FX国际贵金属&amp;PAGE=品种相关"}
+        ]},
+        {"name": "商品资讯", "children": [
+            {"name": "金融期货新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900G000&amp;dataSelect=37014&amp;prefix=false'"},
+            {"name": "能源化工新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900W001&amp;droplist=true'"},
+            {"name": "建材新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900X001&amp;droplist=true'"},
+            {"name": "期权新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900H000&amp;dataSelect=37014&amp;prefix=true&amp;navigation=false'"},
+            {"name": "农产品新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900U001&amp;droplist=true'"},
+            {"name": "金属新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900U001&amp;droplist=true'"},
+            {"name": "外汇新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900E000&amp;dataSelect=37014&amp;prefix=false#'"},
+            {"name": "贵金属新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900A000&amp;dataSelect=37014'"}
+        ]}
+    ]},
+    {"name": "债券", "id": "fund", "children": [
+		{"name": "债券行情", "link": "MARKETGROUP?债券"},
+		{"name": "债券新闻", "link": "CHROME?URL='root://news/zongheping/news_list.html?multi_list=false&amp;forward=true&amp;menuid=000001000'"},
+		{"name": "债券公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=bond'"},
+		{"name": "债券研究", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxbg_zxbg-A10010&amp;name=%E6%8C%89%E7%B1%BB%E5%9E%8B-%E5%9B%BA%E5%AE%9A%E6%94%B6%E7%9B%8A'"}
+    ]},
+    {"name": "外汇", "id": "forex", "children": [
+		{"name": "人民币系列", "link": "VIEWLIST?MARKET=FX人民币系列&amp;PAGE=行情"},
+		{"name": "人民币中间价", "link": "VIEWLIST?MARKET=IB人民币中间价&amp;PAGE=行情"},
+		{"name": "主要外汇", "link": "VIEWLIST?MARKET=FX主要外汇&amp;PAGE=行情"},
+		{"name": "外汇新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900E000&amp;dataSelect=37014&amp;prefix=false#'"},
+		{"name": "贵金属新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900A000&amp;dataSelect=37014'"}
+    ]},
+    {"name": "新闻", "id": "news", "children": [
+		{"name": "股市新闻", "children": [
+			{"name": "热门新闻", "link": "CHROME?URL='http://pcengine.gw.com.cn/xwph/index.html'"},
+			{"name": "负面新闻", "link": "CHROME?URL='root://news/warning/index.html'"},
+			{"name": "行业新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009002000&amp;dataSelect=37019'"},
+			{"name": "大报新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009000000&amp;dataSelect=37019'"},	
+			{"name": "最新资讯", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900Y&amp;navigation=false#'"},
+			{"name": "政策动态", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009003000&amp;dataSelect=37014'"},
+			{"name": "股票新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009006000&amp;dataSelect=37014'"},
+			{"name": "经济新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=009001000&amp;dataSelect=37014'"}
+		]},
+		{"name": "股市研究", "children": [
+			{"name": "公司公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=stock'"},
+			{"name": "研究报告", "link": "CHROME?URL='root://stock/yjbg-112/index.html'"},
+			{"name": "业绩预告", "link": "CHROME?URL='root://stock/achievement/achievement.html'"},
+			{"name": "龙虎榜", "link": "CHROME?URL='http://pcengine.gw.com.cn/lhb/index.html'&amp;NAVBARID=30100010113"},
+			{"name": "融资融券", "link": "CHROME?URL='root://stock/margin/overview.html'"},
+			{"name": "股东增减持", "link": "CHROME?URL='root://stock/margin/change.html'"}
+		]},
+		{"name": "自选股", "children": [
+			{"name": "自选股新闻", "link": "CHROME?URL='root://news/zongheping/news_list.html?forward=true&amp;menuid=00100200A&amp;search_Stocks=true'"},
+			{"name": "自选股研报", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxgyb-zxg&amp;name=%E8%87%AA%E9%80%89%E8%82%A1'"},
+			{"name": "自选股公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=stock&amp;node=%E8%87%AA%E9%80%89%E8%82%A1'"}
+		]},
+		{"name": "新三板研究", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxbg_zxbg-A10024&amp;name=%E6%96%B0%E4%B8%89%E7%89%88%E7%A0%94%E6%8A%A5'"},
+		{"name": "基金", "children": [
+			{"name": "宝类产品排名", "link": "CHROME?URL='root://fund/npv/chart.html'"},
+			{"name": "基金公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=fund'"},
+			{"name": "基金研报", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxbg_type-jjyj&amp;name=%E6%8C%89%E7%B1%BB%E5%9E%8B_%E5%9F%BA%E9%87%91%E7%A0%94%E7%A9%B6'"},
+			{"name": "基金新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900C000&amp;dataSelect=37014&amp;prefix=false'"}
+		]},
+		{"name": "债券", "children": [
+			{"name": "债券新闻", "link": "CHROME?URL='root://news/zongheping/news_list.html?multi_list=false&amp;forward=true&amp;menuid=000001000'"},	
+			{"name": "债券公告", "link": "CHROME?URL='root://platform/bulletin/index.html?type=bond'"},	
+			{"name": "债券研究", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=zxbg_zxbg-A10010&amp;name=%E6%8C%89%E7%B1%BB%E5%9E%8B-%E5%9B%BA%E5%AE%9A%E6%94%B6%E7%9B%8A'"}
+		]},
+		{"name": "港美股", "children": [
+			{"name": "沪港通新闻", "link": "CHROME?URL='root://news/zongheping/news_list.html?menuid=0000AH001&amp;prefix=false'&amp;NAVBARID=30100040102"},
+			{"name": "沪港通研究", "link": "CHROME?URL='root://stock/yjbg-112/index.html?treeid=type_gsyj-gsyj_hgt&amp;name=沪港通'&amp;NAVBARID=30100040104"}
+		]},
+		{"name": "商品外汇", "children": [
+			{"name": "能源化工新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900W001&amp;droplist=true'"},
+			{"name": "建材新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900X001&amp;droplist=true'"},
+			{"name": "外汇新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900E000&amp;dataSelect=37014&amp;prefix=false#'"},
+			{"name": "期权新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900H000&amp;dataSelect=37014&amp;prefix=true&amp;navigation=false'"},
+			{"name": "金融期货新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900G000&amp;dataSelect=37014&amp;prefix=false'"},
+			{"name": "农产品新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900V001&amp;droplist=true'"},
+			{"name": "金属新闻", "link": "CHROME?URL='root://news/112news/news_dropList.html?menuid=00900U001&amp;droplist=true'"},
+			{"name": "贵金属新闻", "link": "CHROME?URL='root://news/112news/news_list.html?menuid=00900A000&amp;dataSelect=37014'"}
+		]}
+    ]},
+    {"name": "财富俱乐部", "link": "CHROME?URL='http://pckf.gw.com.cn:1080/index.php'"},
+    {"name": "近期浏览", "link": "VIEWLIST?MARKET2=jqll/近期浏览/近期浏览"},
+    {"name": "首页", "link": "CHROME?URL='root://stock/365complex/index.html'"}
+	
+]

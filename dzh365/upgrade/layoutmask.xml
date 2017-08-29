@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="GB2312"?> <list version="1.0">
+  <layouts>
+		<layout desc="sh519800">
+			<mask>SH{label=519800},OF{label=519800}</mask>
+			<dzhcmd>navigate?'root://fund/fundCompanyAdv/index.html?obj=OF519800.fnd#DZHPOPUP(1020,600)#'</dzhcmd>
+		</layout>
+   	       <layout desc="上证债券">
+  		<plan>ske</plan>
+  		<mask>SH{subn=上证债券},SH{subn=上证回购},SH{subn=上证转债}</mask>
+  		</layout>
+   	       <layout desc="债券">
+  		<plan>sk</plan>
+  		<mask>SZ{type=3},SZ{type=15},SZ{type=12}</mask>
+  		</layout>
+		<layout desc="服务器债券">
+  		<plan>ib</plan>
+  		<mask>00{marketlabel=IB}</mask>
+		</layout>
+ 		<layout desc="暂停上市">
+  		<plan>pa</plan>
+  		<mask>00{marketlabel=SH}{submarkettype=100},00{marketlabel=SZ}{submarkettype=100}</mask>
+  	    </layout>
+ 		<layout desc="已退市">
+  		<plan>da</plan>
+  		<mask>00{marketlabel=SH}{submarkettype=99},00{marketlabel=SZ}{submarkettype=99}</mask>
+  	    </layout>
+  		<layout desc="外汇">
+  		<plan>ibf</plan>
+  		<mask>IB{type=6}</mask>
+  	    </layout>
+  		<layout desc="贵金属">
+  		<plan>FX</plan>
+  		<mask>FX</mask>
+  	    </layout>
+		<layout desc="纽约期货">
+  		<plan>CX</plan>
+  		<mask>CX</mask>
+  	    </layout>  
+  		<layout desc="泛亚">
+  		<plan>FY</plan>
+  		<mask>BC,BO,FY,SG,SJ,SS,JT,KP,YC,YT,ZS</mask>
+  	    </layout>
+  		<layout desc="海外市场">
+  		<plan>ac</plan>
+  		<mask>00{type=1}</mask>
+  	    </layout>
+  	   	<layout desc="ETF基金">
+  		<plan>afe</plan>
+  		<mask>SH{type=10},SH{type=11}</mask>
+  	    </layout>
+  	   	<layout desc="深圳ETF基金">
+  		<plan>afd</plan>
+  		<mask>SZ{type=10}</mask>
+  	    </layout>
+  	   	<layout desc="上证基金">
+  		<plan>afc</plan>
+  		<mask>SH{type=2}</mask>
+  	    </layout>
+  	   	<layout desc="深证基金">
+  		<plan>afb</plan>
+  		<mask>SZ{type=2}</mask>
+  	    </layout>
+  		<layout desc="基金净值">
+  		<plan>afof</plan>
+  		<mask>OF{type=2}</mask>
+  	    </layout>
+  		<layout desc="基金">
+  		<plan>af</plan>
+  		<mask>SZ{type=2},SZ{type=11}</mask>
+  	    </layout>
+
+  	   	<layout desc="上证B股">
+  		<plan>BH</plan>
+  		<mask>SH{subn=上证B股}</mask>
+  	    </layout>
+  	   	<layout desc="深证B股">
+  		<plan>BZ</plan>
+  		<mask>SZ{subn=深证B股}</mask>
+  	    </layout>
+		<layout desc="国债期货">
+			<plan>SFTF</plan>
+			<mask>SF{subn=国债期货}</mask>
+  	    </layout>
+  	    <layout desc="上证50期指">
+			<plan>SFSZ50</plan>
+			<mask>SF{subn=上证50期指}</mask>
+  	    </layout>
+  	    <layout desc="中证500期指">
+			<plan>SFZZ500</plan>
+			<mask>SF{subn=中证500期指}</mask>
+		</layout>
+		<layout desc="国债预发行">
+			<plan>WI</plan>
+			<mask>WI</mask>
+		</layout>
+		<layout desc="天津贵金属">
+			<plan>JM</plan>
+			<mask>JM,A1,A2,A3</mask>
+		</layout>
+		<layout desc="股指期权">
+			<plan>IO</plan>
+			<mask>IO</mask>
+		</layout>
+		<layout desc="期权仿真">
+			<plan>OP</plan>
+			<mask>OP</mask>
+		</layout>
+		<layout desc="上证期权">
+			<plan>HO</plan>
+			<mask>HO</mask>
+		</layout>
+		<layout desc="纸黄金">
+			<plan>GP</plan>
+			<mask>GP</mask>
+		</layout>
+		<layout desc="监控中心">
+			<plan>EC</plan>
+			<mask>EC</mask>
+		</layout>
+		<layout desc="大连期权">
+	 		<plan>DO</plan>
+			<mask>DO,EO</mask>
+		</layout>
+
+  </layouts>
+</list>

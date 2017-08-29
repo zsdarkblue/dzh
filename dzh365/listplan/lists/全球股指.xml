@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col color="0" bkcolor="0"><value>index</value><width>60</width><name>序号</name></col><col color="0" bkcolor="0"><value>label</value><width>70</width><name>代码</name></col><col color="0" bkcolor="0"><value>name</value><width>180</width><name>名称</name></col><col fixed="1" color="0" bkcolor="0"><value>now</value><width>90</width><name>最新</name></col><col color="0" bkcolor="0"><value>undn</value><width>70</width><name>涨跌</name></col><col color="0" bkcolor="0"><value>updnratio</value><width>70</width><name>涨幅</name></col><col color="0" bkcolor="0"><value>open</value><width>90</width><name>今开</name></col><col color="0" bkcolor="0"><value>lastclose</value><width>90</width><name>昨收</name></col><col color="0" bkcolor="0"><value>high</value><width>90</width><name>最高</name></col><col color="0" bkcolor="0"><value>low</value><width>90</width><name>最低</name></col></column>
+	<onload script="IndexGlobalQuots();" curdir="116"/></list>

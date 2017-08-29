@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>贵金属资讯</title>
+
+    <script type="text/javascript">
+
+
+        function openQQ()
+        {
+//            alert(window.location.search);
+            var qqNum = window.location.search.split("=")[1];
+//            alert(qqNum);
+//            window.external.setLayeredWin(255);
+//            onblur="window.external.closeDialog();"
+            var url = 'http://wpd.b.qq.com/page/webchat.html?nameAccount='+qqNum
+            window.open(url,"_self",
+                    '匿名交谈','location=no,scrollbars=yes,width=700px,height=500px,left=200px,top=150px');
+        }
+
+
+    </script>
+
+
+</head>
+<body     onload="openQQ();"  >
+<div >
+</div>
+
+</body>
+</html>

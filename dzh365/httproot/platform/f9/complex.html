@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>股票F9--公司速览</title>
+<link rel="stylesheet" href="./resources/css/complex.css"/>
+</head>
+<body>
+	<div class="SL-header">
+		最新价:<span>-</span>
+		涨跌幅:<span>-</span>
+		涨跌:<span>-</span>
+		<a onclick="location.reload()"><i class="fa fa-undo"></i>还原</a>
+	</div>
+	
+	<div id="leftRightBox">
+		<div id="leftBody">
+		
+			<div class="item_list border_top_none border_left_none">
+				<span>重要指标</span>
+				<a href="javascript:void(0)" id="report_zy" data-type="33">更多>></a>
+			</div>
+			<div id="importantDiv" class="content">
+				<div id="importantTable" class="under_line">
+		
+				</div>
+				<div id="dbplr" class="under_line">
+			
+				</div>
+				<div id="fhsz">
+			
+				</div>		
+				<div class="wzjs under_line">
+					<p id="tcP">概念题材：<span id="tcSpan"></span></p>
+				</div>
+				<div id="sjkzrDiv" class="wzjs"></div>
+			</div>
+			<div class="item_list border_left_none">
+				<span>行业排名</span>
+			</div>
+			<div class="content" id="hypmContent">
+				<p class="hy_con">所属行业：--</p>
+				<input type="hidden" value="浦发银行" />
+				<div id="hypmLabel" class="under_line"><div id="scbx" class="selected">市场表现</div><div id="gskm">公司规模</div><div id="gzsp">估值水平</div><div  id="cwzk">财务状况</div></div>
+				<div id="hypmscmx" class="select_box">
+					<p><span class="stockName"></span>1年涨跌幅在行业内名列第<span id="scbxRank"></span>，<span id="scbxbjhy">弱于</span>行业指数，<span id="scbxbjsc">弱于</span>上证指数</p>
+					<div id="scpmGsgmChartBox" class="chart_box">
+						<div id="scpmgsgmLoadingDiv" class="iframeLoading">
+							<img class="iframeLoadingimg"  src="./resources/img/complex/loading.gif"/>
+						</div>
+					</div>
+					
+				</div>
+				<div id="hypmgsgm" class="hide_box">
+					<p><span class="stockName"></span>流通市值在行业内名列第<span id="gsgmRank"></span>，<span id="gsgmbjhy">低于</span>行业平均水平，<span id="gsgmbjsc">低于</span>市场平均水平</p>
+					<div id="hypmGsgmChartBox" class="chart_box">
+
+						<div id="hypmgsgmLoadingDiv" class="iframeLoading">
+							<img class="iframeLoadingimg"  src="./resources/img/complex/loading.gif"/>
+						</div>
+					</div>
+					
+				</div>
+				<div id="hypmgzsp" class="hide_box">
+					<p><span class="stockName"></span>市盈率<span id="TTMspan">TTM</span>在行业内名列第<span id="gzspTTMRank">1</span>，<span id="zspbjhy">低于</span>行业指数，<span id="zspbjsc">低于</span>市场平均水平</p>
+					<div id="hypmzspChartBox" class="chart_box">
+
+						<div id="hypmzspLoadingDiv" class="iframeLoading">
+							<img class="iframeLoadingimg"  src="./resources/img/complex/loading.gif"/>
+						</div>
+					</div>
+					
+				</div>
+				<div id="hypmcwzk" class="hide_box">
+					<p><span class="stockName"></span>每股收益<span id="TTMspan">TTM</span>在行业内名列第<span id="cwzkTTMRank">1</span>，<span id="cwzkbjhy">低于</span>行业指数，<span id="cwzkbjsc">低于</span>市场平均水平</p>
+					<div id="hypmcwzkChartBox" class="chart_box">
+
+						<div id="hypmcwzkLoadingDiv" class="iframeLoading">
+							<img class="iframeLoadingimg"  src="./resources/img/complex/loading.gif"/>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="item_list border_left_none">
+				<span>机构评级</span>
+			</div>
+			<div class="content" style="margin-bottom:-13px;height:281px;">
+				<p>截止<span id="pjdate">--</span>，共有<span id="pjnum">--</span>家机构发布评级，整体评级为：<span id="ztpj"></span></p>
+				<div id="jgpjBox" class="chart_box">
+					<div id="jgpjmoveDiv"><div></div></div>
+					<div id="jgpjLoadingDiv" class="iframeLoading">
+						<img class="iframeLoadingimg"  src="./resources/img/complex/loading.gif"/>
+					</div>
+					
+				</div>
+				<div id="jgpjmousemoveBox">
+					
+				</div>
+				<p class="yqpjtzqk">近期评级调整情况:</p>
+				<div id="jgpjmxBox">
+
+				</div>
+			</div>
+			
+			<div class="item_list border_left_none">
+				<span>融资融券</span>
+				<!--<a href="javascript:void(0)" id="rzrq" data-type="R">更多>></a>-->
+			</div>
+			<div id="rzrqContent" class="content">
+				<p class="m_bottom_5">
+				截止--，融资余额为--万元，占流通市值比为0.00%。融券余额为--万元。
+				</p>
+				<div id="rzrqLoadingDiv" class="iframeLoading">
+					<img class="iframeLoadingimg"  src="./resources/img/complex/loading.gif"/>
+				</div>
+				<div id="rzChart">
+					<div id="rzChartBox" class="chart_box">
+
+					</div>
+				</div>
+				<div id="rqChart">
+					<div id="rqChartBox" class="chart_box">
+
+					</div>
+				</div>								
+			</div>
+			
+			<div class="item_list border_left_none">
+				<span id="sd_title_bh"><span class="sd_t">十大股东</span></span>
+				<a href="javascript:void(0)" id="sdgd_lt" data-type="14">更多>></a>
+			</div>
+			<div id="sdgdDiv" class="content">
+				<div id="sdgdLabel" class="under_line"><div id="sdgd" class="selected">十大股东</div><div id="sdltgd">十大流通股东</div></div>
+			</div>
+			
+			<div class="item_list border_left_none">
+				<span>主要产品与服务</span>
+				<a href="javascript:void(0)" id="company_pro" data-type="42">更多>></a>
+			</div>
+			<div id="zycpBox" class="content">
+		
+			</div>
+			
+			<div class="item_list border_left_none">
+				<span>公司简介</span>
+			</div>
+			<div class="content">
+				<p id="gsjjP"></p>
+				
+				<table id="addreesTable" class="hs_t_1" style="table-layout: fixed">
+					
+				</table>
+			</div>
+			
+		</div>
+	
+		<div id="rightBody">
+			<div class="item_list border_top_none">
+				<span>新闻</span>
+				<a href="javascript:void(0)" id="company_news" data-type="94">更多>></a>
+			</div>
+			<div id="newBox" class="content">
+
+			</div>
+			<div class="item_list">
+				<span>公告</span>
+				<a href="javascript:void(0)" id="company_notice" data-type="93">更多>></a>
+			</div>
+			<div id="bulletinBox" class="content">
+	
+			</div>
+			<div class="item_list">
+				<span>投资者E互动</span>
+				<a href="javascript:void(0)" id="company_news_e" data-type="94">更多>></a>
+			</div>
+			<div id="tzznewBox" class="content">
+			</div>
+			<div class="item_list">
+				<span>研报</span>
+				<a href="javascript:void(0)" id="company_yb">更多>></a>
+			</div>
+			<div id="jgybBox" class="content">
+			</div>
+			
+			<div class="item_list">
+				<span>业绩预测</span>
+			</div>
+			<div class="content yjyc_height">
+				<p class="m_bottom_5"><span id="ylycjzDateNum"></span><span class="stockName"></span><span id="forecastProfitBrief"></span></p>
+				<p class="m_top_0" id="ylyczf"></p>
+				
+				<div id="ylycChartBox" class="chart_box">
+					<!-- <iframe src="http://dsjalpha.gw.com.cn/f9/?m=F9stock&c=Financial&obj=SZ000423.stk&pType=8&tip=4%2C2%2C5&years=0%2C4&biaotype=1&unit=10000&pt=2&per=CNY&perType=1&type_jidu=SOULENCE&id=10900302&dwunit=0&type=dialog"></iframe> -->
+					<div id="yjycmoveDiv"><div></div></div>
+					<div id="ylycLoadingDiv" class="iframeLoading">
+						<img class="iframeLoadingimg"  src="./resources/img/complex/loading.gif"/>
+					</div>
+					
+					<div id="ylycMousemoveTableBox"></div>
+				</div>
+			</div>
+			
+			
+			<div class="item_list">
+				<span>机构持股</span>
+				<a href="javascript:void(0)" id="jgcg_zy" data-type="15">更多>></a>
+			</div>
+			<div class="content">
+				<div id="jgcgBox">
+				</div>
+			</div>
+			<div class="item_list">
+				<span>股东户数</span>
+				<a href="javascript:void(0)" id="gdhs_zy" data-type="12">更多>></a>
+			</div>
+			<div class="content">
+				<div id="gdhsBox">
+				</div>
+			</div>
+			
+			<div class="item_list">
+				<span>财务数据</span>
+				<a href="javascript:void(0)" id="report_cw" data-type="33">更多>></a>
+			</div>
+
+		</div>
+	</div>
+	<div id="frame_dialog" class="dialog" draggable="true">
+	    <div class="dialog-header"><h3></h3><i></i></div>
+	    <div class="dialog-body" style="background: #fffef6;">
+	        <iframe frameborder="0" src="about:blank" style="display:block; margin: -1px 0; background: #fffef6;"></iframe>
+	    </div>
+	</div>
+	<script data-main="./src.js" src="../../jquery/amd/require.js"></script>
+	<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

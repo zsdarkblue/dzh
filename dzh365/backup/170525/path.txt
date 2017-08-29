@@ -1,0 +1,9 @@
+常用栏指标	\userdata\FREQ.IND;
+工作区方案	\userdata\workspace;
+系统易捷键	\*.htk;
+预警	\userdata\self\ALERT.DAT;
+自定义工具栏按钮	\cfg\selfcomm.cfg;
+自定义股票池	\userdata\pool;
+自定义指标	\userdata\SELFN.DTA;
+自定义组合条件	\userdata\SELF\*.CEP;
+自选股	\userdata\block\自选*.blk;

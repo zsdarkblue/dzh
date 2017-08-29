@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>宝类产品</title>
+    <link rel="stylesheet" href="resources/css.css"/>
+</head>
+<body class="loading">
+<!--<h1>-->
+    <!--<span>宝类产品收益率排名</span>-->
+<!--</h1>-->
+
+
+<header>
+    <div class="tabContainer">
+        <ul id="headerSecondUl">
+            <li class="active">宝类产品收益率排名</li>
+
+        </ul>
+    </div>
+</header>
+
+<div id="container" class="flex-auto">
+<div id="containerBorder">
+
+    <div class="table-container">
+        <table class="sort-table">
+            <colgroup>
+                <col width="40">
+                <col width="108">
+                <col width="129">
+                <col width="80">
+                <col width="88">
+                <col width="88">
+                <col width="70">
+                <col width="118">
+                <col width="72">
+                <col width="185">
+            </colgroup>
+            <thead>
+            <tr data-bind="onTHeadClick">
+                <th>序号</th>
+                <th data-type="名称">名称</th>
+                <th data-type="合作基金">合作基金</th>
+
+
+                <th data-type="合作基金代码">基金代码</th>
+                <th data-type="收益截止日">收益截止日</th>
+                <th data-type="万份收益">万份收益</th>
+                <th data-type="7日年化收益">7日年化</th>
+                <th>
+                    <span>年化收益率</span>
+                    <select name="selectRange" v-on="change: changeSelectRange">
+                        <option value="近1月">近1月</option>
+                        <option value="近3月">近3月</option>
+                        <option value="近6月">近6月</option>
+                        <option value="近1年">近1年</option>
+                        <option value="今年以来">年初至今</option>
+                        <option value="成立以来">成立至今</option>
+                    </select>
+                </th>
+                <th data-type="投资起点">投资起点</th>
+                <th data-type="网站平台">网站平台</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-repeat="item:items">
+                <td colspan="10">
+                    <table class="innerTbl">
+                        <colgroup>
+                            <col width="40">
+                            <col width="108">
+                            <col width="129">
+
+                            <col width="80">
+                            <col width="88">
+                            <col width="88">
+                            <col width="70">
+                            <col width="118">
+                            <col width="72">
+                            <col width="185">
+                        </colgroup>
+                        <tbody>
+                            <tr v-repeat="record:item.lists">
+                                <td class="number" v-if="$index === 0" rowspan="{{item.lists.length}}"  v-text="item.index + 1"></td>
+                                <td class="align-left" v-if="$index === 0" rowspan="{{item.lists.length}}">
+                                    <span class="limit" v-text="record['名称']" title="{{record['名称']}}"></span>
+                                </td>
+                                <td class="align-left">
+                                    <span class="limit" title="{{record['合作基金']}}" v-text="record['合作基金']"></span>
+                                </td>
+
+                                <td class="number" v-text="record['合作基金代码']"></td>
+                                <td class="number" v-text="record['收益截止日'] | formatDate"></td>
+                                <td class="number">
+                                    <span v-class="num: record['万份收益'] != '-'" v-text="record['万份收益'] | fixed 4"></span>
+                                </td>
+                                <td class="number">
+                                    <span v-class="num: record['7日年化收益'] != '-'" v-text="record['7日年化收益'] | fixed %"></span>
+                                </td>
+                                <td class="number">
+                                    <span v-class="num: record['growthRate'] != '-'"
+                                          v-text="record['growthRate'] | fixed %"></span>
+                                </td>
+                                <td class="number">
+                                <span class="num">
+                                <span v-text="record['投资起点']"></span><span v-if="record['投资起点'] !== '-'">元</span>
+                                </span>
+                                </td>
+                                <td class="align-left">
+                                    <span class="limit" title="{{record['网站平台']}}" v-text="record['网站平台']"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+
+
+
+                <!--<td v-text="$index + 1"></td>-->
+                <!--<td class="align-left">-->
+                    <!--<span class="limit" title="{{item['合作基金']}}" v-text="item['合作基金']"></span>-->
+                <!--</td>-->
+                <!--<td class="align-left">-->
+                    <!--<span class="limit" v-text="item['名称']" title="{{item['名称']}}"></span>-->
+                <!--</td>-->
+
+                <!--<td v-text="item['合作基金代码']"></td>-->
+                <!--<td v-text="item['收益截止日']"></td>-->
+                <!--<td>-->
+                    <!--<span v-class="num: item['万份收益'] != '-'" v-text="item['万份收益'] | fixed 4"></span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span v-class="num: item['7日年化收益'] != '-'" v-text="item['7日年化收益'] | fixed %"></span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span v-class="num: item['growthRate'] != '-'" v-text="item['growthRate'] | fixed %"></span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="num">-->
+                    <!--<span v-text="item['投资起点']"></span><span v-if="item['投资起点'] !== '-'">元</span>-->
+                    <!--</span>-->
+                <!--</td>-->
+                <!--<td class="align-left">-->
+                    <!--<span class="limit" title="{{item['网站平台']}}" v-text="item['网站平台']"></span>-->
+                <!--</td>-->
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="hide info">暂无相关数据</div>
+</div>
+    </div>
+
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

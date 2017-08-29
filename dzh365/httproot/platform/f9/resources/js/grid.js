@@ -1,0 +1,1 @@
+define(["jquery","grid"],function(b,a){return a.extend(function(c){b("body>.flex-column>.flex-none").on("click","[data-bind$=Click]",this.handleEvents.bind(this)).on("change","[data-bind$=Change]",this.handleEvents.bind(this))},{handleEvents:function(d){var c=d.currentTarget.dataset.bind;c in this&&typeof this[c]==="function"&&this[c](d)}})});

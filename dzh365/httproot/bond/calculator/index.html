@@ -1,0 +1,964 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<title>综合计算器</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jQuery.datatable/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jquery-ui/themes/smoothness/jquery-ui.min.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jquery-ui/themes/smoothness/jquery.ui.theme.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="custom/css/style.css" />
+</head>
+<body>
+    <div id="header">
+        <div class="wrap">
+			<input type="text" disabled="disabled" id="search_txt" class="text_content" value="请输入债券代码或简称..." />
+			<span id="search_select"></span>
+        </div>
+    </div>
+    <div id="main">
+        <div class="wrap">
+            <div id="tab-main" >
+                <div class="data data-left fl">
+                    <!--form action="#" method="post" class="data-form clearfix"-->
+                        <table cellpadding="0" cellspacing="0" class="display dataTable original-table" id="tab-main-datatable1">
+							<thead>
+                                <tr>
+                                    <th class="title-bar" colspan="4">债券换算<a href="javascript:;" id="save_SSJG" title="保存试算结果" class="fr icon icon-save">保存</a></th>
+                                </tr>
+                            </thead>
+						</table>
+						<!--{{{固息债-->
+						<div id="conversion-0" class="rowbg">
+							<table class="row-select-disabled display dataTable original-table fl" style="width:230px; margin:0; clear:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td>交易日</td></tr>
+									<tr><td>结算方式</td></tr>
+									<tr><td>结算日</td></tr>
+								</tbody>
+								<tbody class="dynamic">
+									<tr><td>净价</td></tr>
+									<tr><td>应计利息</td></tr>
+									<tr><td>全价</td></tr>
+									<tr><td>到期收益率_央行规则（%）</td></tr>
+									<tr><td>到期收益率_复利（%）</td></tr>
+									<tr><td>到期收益率_单利（%）</td></tr>
+									<tr><td>麦氏久期</td></tr>
+									<tr><td>修正久期</td></tr>
+									<tr><td>凸性</td></tr>
+									<tr><td>基点价值(元)</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>中债登估值</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input type="text" id="ZZDGZ_trade_date_0" class="unified-item item-date rounded"></td></tr>
+									<tr><td id="ZZDGZ_settlement_way_0">--</td></tr>
+									<tr><td id="ZZDGZ_pay_date_0">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="ZZDGZ_default_0">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>历史换算</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input type="text" id="LSHS_trade_date_0" class="unified-item item-date rounded"></td></tr>
+									<tr>
+										<td>
+											<select name="" id="LSHS_settlement_way_0" class="unified-item rounded item-special">
+												<option value="1" selected="selected">T+1</option>
+												<option value="0">T+0</option>
+											</select>
+										</td>
+									</tr>
+									<tr><td id="LSHS_pay_date_0">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="LSHS_default_0">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:200px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>假设换算</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input id="JSHS_trade_date_0" type="text" class="unified-item item-date rounded"></td></tr>
+									<tr>
+										<td>
+											<select name="" id="JSHS_settlement_way_0" class="unified-item rounded item-special">
+												<option value="1" selected="selected">T+1</option>
+												<option value="0">T+0</option>
+											</select>
+										</td>
+									</tr>
+									<tr><td id="JSHS_pay_date_0">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="JSHS_default_0">
+									<tr>
+										<td><input type="radio" name="convert_type" value="netPrice" /><input id="netPrice_0" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="accruedInterest_0">--</td></tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="fullPrice" /><input id="fullPrice_0" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY4" /><input id="bondYieldY4_0" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY1" /><input id="bondYieldY1_0" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY3" /><input id="bondYieldY3_0" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="msDuration_0">--</td></tr>
+									<tr><td id="xzDuration_0">--</td></tr>
+									<tr><td id="convexity_0">--</td></tr>
+									<tr><td id="basePointValue_0">--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+						</div>
+						<!--固息债}}}-->
+						
+						<!--{{{浮息债-->
+						<div id="conversion-1" class="hidden rowbg">
+							<table class="row-select-disabled display dataTable original-table fl" style="width:230px; margin:0; clear:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td>交易日</td></tr>
+									<tr><td>结算方式</td></tr>
+									<tr><td>结算日</td></tr>
+								</tbody>
+								<tbody class="dynamic">
+									<tr><td>净价</td></tr>
+									<tr><td>应计利息</td></tr>
+									<tr><td>全价</td></tr>
+									<tr><td>到期收益率_央行规则（%）</td></tr>
+									<tr><td>到期收益率_复利（%）</td></tr>
+									<tr><td>到期收益率_单利（%）</td></tr>
+									<tr><td>有效利差（BP）_复利</td></tr>
+									<tr><td>利差久期</td></tr>
+									<tr><td>利差凸性</td></tr>
+									<tr><td>利率久期</td></tr>
+									<tr><td>利率凸性</td></tr>
+									<tr><td>利差基点价值（元）</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>中债登估值</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input type="text" id="ZZDGZ_trade_date_1" class="unified-item item-date rounded"></td></tr>
+									<tr><td id="ZZDGZ_settlement_way_1">--</td></tr>
+									<tr><td id="ZZDGZ_pay_date_1">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="ZZDGZ_default_1">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>历史换算</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input id="LSHS_trade_date_1" type="text" class="unified-item item-date rounded"></td></tr>
+									<tr>
+										<td>
+											<select name="" id="LSHS_settlement_way_1" class="unified-item rounded item-special">
+												<option value="1" selected="selected">T+1</option>
+												<option value="0">T+0</option>
+											</select>
+										</td>
+									</tr>
+									<tr><td id="LSHS_pay_date_1">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="LSHS_default_1">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:200px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>假设换算</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input id="JSHS_trade_date_1" type="text" class="unified-item item-date rounded"></td></tr>
+									<tr>
+										<td>
+											<select name="" id="JSHS_settlement_way_1" class="unified-item rounded item-special">
+												<option value="1" selected="selected">T+1</option>
+												<option value="0">T+0</option>
+											</select>
+										</td>
+									</tr>
+									<tr><td id="JSHS_pay_date_1">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="JSHS_default_1">
+									<tr>
+										<td><input type="radio" name="convert_type" value="netPrice" /><input id="netPrice_1" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="accruedInterest_1">--</td></tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="fullPrice" /><input id="fullPrice_1" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY4" /><input id="bondYieldY4_1" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY1" /><input id="bondYieldY1_1" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY3" /><input id="bondYieldY3_1" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="interestMarginBP" /><input id="interestMarginBP_1" type="text" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="marginDuration_1">--</td></tr>
+									<tr><td id="marginConvexity_1">--</td></tr>
+									<tr><td id="rateDuration_1">--</td></tr>
+									<tr><td id="rateConvexity_1">--</td></tr>
+									<tr><td id="basePointValue_1">--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+						</div>
+						<!--浮息债}}}-->
+						
+						<!--{{{固息含权债-->
+						<div id="conversion-2" class="hidden rowbg">
+							<table class="row-select-disabled display dataTable original-table fl" style="width:230px; margin:0; clear:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td>交易日</td></tr>
+									<tr><td>结算方式</td></tr>
+									<tr><td>结算日</td></tr>
+								</tbody>
+								<tbody class="dynamic">
+									<tr><td>净价</td></tr>
+									<tr><td>应计利息</td></tr>
+									<tr><td>全价</td></tr>
+									<tr><td>到期收益率_央行规则（%）</td></tr>
+									<tr><td>到期收益率_复利（%）</td></tr>
+									<tr><td>到期麦氏久期</td></tr>
+									<tr><td>到期修正久期</td></tr>
+									<tr><td>到期凸性</td></tr>
+									<tr><td>到期基点价值（元）</td></tr>
+									<tr><td>行权收益率_央行规则（%）</td></tr>
+									<tr><td>行权收益率_复利（%）</td></tr>
+									<tr><td>行权麦氏久期</td></tr>
+									<tr><td>行权修正久期</td></tr>
+									<tr><td>行权凸性</td></tr>
+									<tr><td>行权基点价值（元）</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>中债登估值（推荐）</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input type="text" id="ZZDGZ_trade_date_TJ_2" class="unified-item item-date rounded"></td></tr>
+									<tr><td id="ZZDGZ_settlement_way_TJ_2">--</td></tr>
+									<tr><td id="ZZDGZ_pay_date_TJ_2">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="ZZDGZ_default_TJ_2">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>中债登估值（非推荐）</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input type="text" id="ZZDGZ_trade_date_FTJ_2" class="unified-item item-date rounded"></td></tr>
+									<tr><td id="ZZDGZ_settlement_way_FTJ_2">--</td></tr>
+									<tr><td id="ZZDGZ_pay_date_FTJ_2">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="ZZDGZ_default_FTJ_2">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:200px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>假设换算</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input id="JSHS_trade_date_2" type="text" class="unified-item item-date rounded"></td></tr>
+									<tr>
+										<td>
+											<select name="" id="JSHS_settlement_way_2" class="unified-item rounded item-special">
+												<option value="1" selected="selected">T+1</option>
+												<option value="0">T+0</option>
+											</select>
+										</td>
+									</tr>
+									<tr><td id="JSHS_pay_date_2">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="JSHS_default_2">
+									<tr>
+										<td><input type="radio" name="convert_type" value="netPrice" /><input type="text" id="netPrice_2" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="accruedInterest_2">--</td></tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="fullPrice" /><input type="text" id="fullPrice_2" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY4" /><input type="text" id="bondYieldY4_2" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY1" /><input type="text" id="bondYieldY1_2" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="msDuration_2">--</td></tr>
+									<tr><td id="xzDuration_2">--</td></tr>
+									<tr><td id="convexity_2">--</td></tr>
+									<tr><td id="basePointValue_2">--</td></tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="exerciseBondYieldY8" /><input type="text" id="exerciseBondYieldY8_2" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="exerciseBondYieldY5" /><input type="text" id="exerciseBondYieldY5_2" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="exerciseMacaulayDuration_2">--</td></tr>
+									<tr><td id="exerciseCorrectDuration_2">--</td></tr>
+									<tr><td id="exerciseConvexity_2">--</td></tr>
+									<tr><td id="exerciseBasePointValue_2">--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+						</div>
+						<!--固息含权债}}}-->
+						
+						<!--{{{浮息含权债-->
+						<div id="conversion-3" class="hidden rowbg">
+							<table class="row-select-disabled display dataTable original-table fl" style="width:230px; margin:0; clear:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td>交易日</td></tr>
+									<tr><td>结算方式</td></tr>
+									<tr><td>结算日</td></tr>
+								</tbody>
+								<tbody class="dynamic">
+									<tr><td>净价</td></tr>
+									<tr><td>应计利息</td></tr>
+									<tr><td>全价</td></tr>
+									<tr><td>到期收益率_央行规则（%）</td></tr>
+									<tr><td>到期收益率_复利（%）</td></tr>
+									<tr><td>到期有效利差（BP）_复利</td></tr>
+									<tr><td>到期利差久期</td></tr>
+									<tr><td>到期利差凸性</td></tr>
+									<tr><td>到期利率久期</td></tr>
+									<tr><td>到期利率凸性</td></tr>
+									<tr><td>到期利差基点价值（元）</td></tr>
+									<tr><td>行权收益率_央行规则（%）</td></tr>
+									<tr><td>行权收益率_复利（%）</td></tr>
+									<tr><td>行权有效利差(BP)_复利</td></tr>
+									<tr><td>行权利差久期</td></tr>
+									<tr><td>行权修正凸性</td></tr>
+									<tr><td>行权利率久期</td></tr>
+									<tr><td>行权利率凸性</td></tr>
+									<tr><td>行权利差基点价值（元）</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>中债登估值（推荐）</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input type="text" id="ZZDGZ_trade_date_TJ_3" class="unified-item item-date rounded"></td></tr>
+									<tr><td id="ZZDGZ_settlement_way_TJ_3">--</td></tr>
+									<tr><td id="ZZDGZ_pay_date_TJ_3">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="ZZDGZ_default_TJ_3">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:170px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>中债登估值（非推荐）</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input type="text" id="ZZDGZ_trade_date_FTJ_3" class="unified-item item-date rounded"></td></tr>
+									<tr><td id="ZZDGZ_settlement_way_FTJ_3">--</td></tr>
+									<tr><td id="ZZDGZ_pay_date_FTJ_3">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="ZZDGZ_default_FTJ_3">
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td>--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+							<table class="row-select-disabled display dataTable original-table fl" style="width:200px; margin:0; clear:none; border-left:none;">
+								<thead>
+									<tr class="header-detail">
+										<th>假设换算</th>
+									</tr>
+								</thead>
+								<tbody class="fixed">
+									<tr><td><input id="JSHS_trade_date_3" type="text" class="unified-item item-date rounded"></td></tr>
+									<tr>
+										<td>
+											<select name="" id="JSHS_settlement_way_3" class="unified-item rounded item-special">
+												<option value="1" selected="selected">T+1</option>
+												<option value="0">T+0</option>
+											</select>
+										</td>
+									</tr>
+									<tr><td id="JSHS_pay_date_3">--</td></tr>
+								</tbody>
+								<tbody class="dynamic" id="JSHS_default_3">
+									<tr>
+										<td><input type="radio" name="convert_type" value="netPrice" /><input type="text" id="netPrice_3" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="accruedInterest_3">--</td></tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="fullPrice" /><input type="text" id="fullPrice_3" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY4" /><input type="text" id="bondYieldY4_3" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="bondYieldY1" /><input type="text" id="bondYieldY1_3" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="interestMarginBP" /><input type="text" id="interestMarginBP_3" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="marginDuration_3">--</td></tr>
+									<tr><td id="marginConvexity_3">--</td></tr>
+									<tr><td id="rateDuration_3">--</td></tr>
+									<tr><td id="rateConvexity_3">--</td></tr>
+									<tr><td id="basePointValue_3">--</td></tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="exerciseBondYieldY8" /><input type="text" id="exerciseBondYieldY8_3" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr>
+										<td><input type="radio" name="convert_type" value="exerciseBondYieldY5" /><input type="text" id="exerciseBondYieldY5_3" class="unified-item rounded item-special" value=""></td>
+									</tr>
+									<tr><td id="exerciseInterestMarginY5_3">--</td></tr>
+									<tr><td id="exerciseMarginDuration_3">--</td></tr>
+									<tr><td id="exerciseMarginConvexity_3">--</td></tr>
+									<tr><td id="exerciseRateDuration_3">--</td></tr>
+									<tr><td id="exerciseRateConvexity_3">--</td></tr>
+									<tr><td id="exerciseBasePointValue_3">--</td></tr>
+									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+								</tbody>
+							</table>
+						</div>
+						<!--浮息含权债}}}-->
+                    <!--/form-->
+                </div>
+                <div class="data data-right fr">
+                    <form action="#" method="post" class="data-form clearfix">
+                        <div class="box-fixed-height">
+                            <h3 class="title-bar">债券基本资料</h3>
+                            <table cellpadding="0" cellspacing="0" class="display dataTable original-table row-select-disabled autowidth" id="datatable_JBZL">
+                                <thead>
+                                    <tr>
+                                        <th class="title-bar hidden" width="25%"></th>
+                                        <th class="title-bar hidden" width="25%"></th>
+                                        <th class="title-bar hidden" width="25%"></th>
+                                        <th class="title-bar hidden" width="25%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody><tr><td>债券代码</td><td>--</td><td>债券简称</td><td>--</td></tr><tr><td>上市市场</td><td>--</td><td>发行价</td><td>--</td></tr><tr><td>起息日</td><td>--</td><td>到期日</td><td>--</td></tr><tr><td>发行年限</td><td>--</td><td>票面利率</td><td>--</td></tr><tr><td>下一次付息日</td><td>--</td><td>年付息次数</td><td>--</td></tr><tr><td>距离下次付息(天)</td><td>--</td><td>每年付息日</td><td>--</td></tr><tr><td>发行规模(亿元)</td><td>--</td><td>剩余年限(年)</td><td>--</td></tr><tr><td>票面利率</td><td>--</td><td>最新债券评级</td><td>--</td></tr></tbody>
+                            </table>
+                        </div>
+                        <div class="box-auto-height">
+                            <h3 class="title-bar" id="title-bar-3">债券现金流<a href="javascript:;" id="XJL_xls" class="fr icon icon-excel">导出Excel</a></h3>
+                            <table cellpadding="0" cellspacing="0" class="display dataTable original-table row-select-disabled" id="datatable_XJL">
+                                <thead>
+                                    <tr class="header-detail">
+                                        <th width="25%">日期</th>
+                                        <th width="25%">利息</th>
+                                        <th width="25%">本金</th>
+                                        <th width="25%">现金流/百元</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+									<tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="tab-splitter" class="tab-splitter tab-splitter-down">
+                <div class="tab-splitter-inner">
+                    <div class="tab-splitter-controller"></div>
+                </div>
+            </div>
+            <div id="tab-secondary" class="tab-list">
+                <ul class="tab-bar clearfix">
+                    <li class="active"><a href="#" title="今日报价">今日报价</a></li>
+                    <li><a href="#" title="今日行情">今日行情</a></li>
+                    <li><a href="#" title="近一月历史行情">近一月历史行情</a></li>
+                    <li><a href="#" title="近一月中债登估值">近一月中债登估值</a></li>
+                    <li><a href="#" title="试算结果">试算结果</a></li>
+                </ul>
+                <ul class="tab-content">
+                    <li class="active">
+                        <div class="data">
+							<!--银行间今日报价表-->
+							<div style="height:0; overflow:hidden;" id="JRBJ_type_0">
+								<a href="javascript:;" class="icon icon-excel" id="JRBJ_type_0_xls">导出Excel</a>
+								<table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_JRBJ_type_0">
+									<thead>
+										<tr class="header-detail">
+											<th rowspan="2">报价时间</th>
+											<th colspan="4">买入</th>
+											<th colspan="2">差价</th>
+											<th colspan="4">卖出信息</th>
+										</tr>
+										<tr class="header-detail">
+											<th>报价方</th>
+											<th>面额(万元)</th>
+											<th>净价</th>
+											<th>收益率(%)</th>
+											<th>净价差额</th>
+											<th>收益率差额(BP)</th>
+											<th>收益率(%)</th>
+											<th>净价</th>
+											<th>面额(万元)</th>
+											<th>报价方</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+							<!--交易所今日报价表-->
+							<div style="height:100%;" id="JRBJ_type_1">
+								<a href="javascript:;" class="icon icon-excel" id="JRBJ_type_1_xls">导出Excel</a>
+								<table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_JRBJ_type_1">
+									<thead>
+										<tr class="header-detail">
+											<th>交易方向</th>
+											<th>价格</th>
+											<th>数量(手)</th>
+											<th>交易方向</th>
+											<th>价格</th>
+											<th>数量(手)</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="data">
+							<!--银行间和交易所今日行情表-->
+							<a href="javascript:;" class="icon icon-excel" id="JRHQ_xls">导出Excel</a>
+                            <table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_JRHQ">
+                                <thead>
+                                    <tr class="header-detail">
+                                        <th>债券代码</th>
+                                        <th>债券简称</th>
+                                        <th>最新价</th>
+                                        <th>开盘价</th>
+                                        <th>涨跌</th>
+                                        <th>涨跌幅</th>
+                                        <th>最高价</th>
+                                        <th>最低价</th>
+                                        <th>昨收盘</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="data">
+							<a href="javascript:;" class="icon icon-excel" id="JYYLSHQ_xls">导出Excel</a>
+                            <table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_JYYLSHQ">
+                                <thead>
+                                    <tr class="header-detail">
+                                        <th>债券代码</th>
+                                        <th>债券简称</th>
+                                        <th>日期</th>
+                                        <th>最新净价</th>
+                                        <th>最新收益率</th>
+                                        <th>成交金额(万元)</th>
+                                        <th>涨跌幅(%)</th>
+                                        <th>加权平均净价</th>
+                                        <th>加权平均收益率</th>
+                                        <th>开盘净价</th>
+                                        <th>最高净价</th>
+                                        <th>最低净价</th>
+                                        <!-- <th>开盘收益率</th>
+                                        <th>最高收益率</th>
+                                        <th>最低收益率</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="data">
+							<a href="javascript:;" class="icon icon-excel" id="JYYZZDGZ_xls">导出Excel</a>
+                            <table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_JYYZZDGZ">
+                                <thead>
+                                    <tr class="header-detail">
+                                        <th>债券代码</th>
+                                        <th>债券简称</th>
+                                        <th>日期</th>
+                                        <th>理论净价</th>
+                                        <th>理论全价</th>
+                                        <th>应计利息</th>
+                                        <th>剩余期限</th>
+                                        <th>到期收益率</th>
+                                        <th>修正久期</th>
+                                        <th>凸性</th>
+                                        <th>利差久期</th>
+                                        <th>利差凸性</th>
+                                        <th>利率久期</th>
+                                        <th>利率凸性</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="data">
+							<div id="SSJG_0" style="visibility:visible; height:100%;">
+								<a href="javascript:;" class="icon icon-excel" id="SSJG_xls_0">导出Excel</a>
+								<table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_SSJG_0">
+									<thead>
+										<tr class="header-detail">
+											<th>债券代码</th>
+											<th>债券简称</th>
+											<th>结算日期</th>
+											<th>净价</th>
+											<th>应计利息</th>
+											<th>全价</th>
+											<th>到期收益率_央行规则</th>
+											<th>到期收益率_复利</th>
+											<th>到期收益率_单利</th>
+											<th>麦氏久期</th>
+											<th>修正久期</th>
+											<th>凸性</th>
+											<th>基点价值</th>
+											<th>试算日期</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</div>
+							<div id="SSJG_1" style="visibility:hidden; height:0;">
+								<a href="javascript:;" class="icon icon-excel" id="SSJG_xls_1">导出Excel</a>
+								<table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_SSJG_1">
+									<thead>
+										<tr class="header-detail">
+											<th>债券代码</th>
+											<th>债券简称</th>
+											<th>结算日期</th>
+											<th>净价</th>
+											<th>应计利息</th>
+											<th>全价</th>
+											<th>到期收益率_央行规则</th>
+											<th>到期收益率_复利</th>
+											<th>到期收益率_单利</th>
+											<th>有效利差(BP)_复利</th>
+											<th>利差久期</th>
+											<th>利差凸性</th>
+											<th>利率久期</th>
+											<th>利率凸性</th>
+											<th>利差基点价值</th>
+											<th>试算日期</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</div>
+							<div id="SSJG_2" style="visibility:hidden; height:0;">
+								<a href="javascript:;" class="icon icon-excel" id="SSJG_xls_2">导出Excel</a>
+								<table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_SSJG_2">
+									<thead>
+										<tr class="header-detail">
+											<th>债券代码</th>
+											<th>债券简称</th>
+											<th>结算日期</th>
+											<th>净价</th>
+											<th>应计利息</th>
+											
+											<th>全价</th>
+											<th>到期收益率_央行规则</th>
+											<th>到期收益率_复利</th>
+											<th>到期麦氏久期</th>
+											<th>到期修正久期</th>
+											
+											<th>到期凸性</th>
+											<th>到期基点价值</th>
+											<th>行权日</th>
+											<th>行权价</th>
+											<th>行权收益率_央行规则</th>
+											
+											<th>行权收益率_复利</th>
+											<th>行权麦氏久期</th>
+											<th>行权修正久期</th>
+											<th>行权凸性</th>
+											<th>行权基点价值</th>
+											
+											<th>试算日期</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</div>
+							<div id="SSJG_3" style="visibility:hidden; height:0;">
+								<a href="javascript:;" class="icon icon-excel" id="SSJG_xls_3">导出Excel</a>
+								<table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable_SSJG_3">
+									<thead>
+										<tr class="header-detail">
+											<th>债券代码</th>
+											<th>债券简称</th>
+											<th>结算日期</th>
+											<th>净价</th>
+											<th>应计利息</th>
+											
+											<th>全价</th>
+											<th>到期收益率_央行规则</th>
+											<th>到期收益率_复利</th>
+											<th>到期有效利差(BP)_复利</th>
+											<th>到期利差久期</th>
+											
+											<th>到期利差凸性</th>
+											<th>到期利率久期</th>
+											<th>到期利率凸性</th>
+											<th>到期利差基点价值</th>
+											<th>行权日</th>
+											
+											<th>行权价</th>
+											<th>行权收益率_央行规则</th>
+											<th>行权收益率_复利</th>
+											<th>行权有效利差(BP)_复利</th>
+											<!-- <th>行权麦氏久期</th> -->
+											
+											<th>行权利差久期</th>
+											<th>行权利差凸性</th>
+											<th>行权利率久期</th>
+											<th>行权利率凸性</th>
+											<th>行权利差基点价值</th>
+											
+											<th>试算日期</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script src="../../jquery/jquery.js"></script>
+<script src="../../jquery/jquery-plugins/jQuery.datatable/js/jquery.dataTables.min.js"></script> <!-- dataTables控件 -->
+<script src="../../jquery/jquery-plugins/jquery-ui/jquery-ui.min.js"></script> <!-- datepicker控件在内 -->
+<script src="../../jquery/jquery-plugins/jquery-ui/datepicker-zh-CN.js"></script> <!-- datepicker 翻译 -->
+
+<script src="custom/js/websocket.js"></script>
+<script src="custom/js/jquery.autocomplete.js"></script>
+<script src="custom/js/helper.js"></script>
+<script src="custom/js/api.js?sdf"></script>
+
+<script src="js/function.js"></script> <!-- JS调用主文件 --> 
+<script>
+function addRowBg() {
+	$('.rowbg tr').on('click', function(){
+		var rowNum = $(this).index();
+		
+		removeRowBg();
+		var classStr = $(this).parent().prop('class');
+		var reg = /dynamic/g;
+		var reg1 = /fixed/g;
+		if (reg.test(classStr)) {
+			$('.rowbg .dynamic').each(function (index, domEle) {
+				$(domEle).find('tr').eq(rowNum).addClass('row_selected');
+			});
+		} else if (reg1.test(classStr)) {
+			$('.rowbg .fixed').each(function (index, domEle) {
+				$(domEle).find('tr').eq(rowNum).addClass('row_selected');
+			});
+		}
+	});
+}
+
+function removeRowBg() {
+	$('.rowbg tr').removeClass('row_selected');
+}
+
+resizeHeight(); // 点击隐藏下方的Tab以及拖拽调整高度
+addRowBg();
+
+// 防止输入债券代码会被客户端截获
+setTimeout(function() {$('#search_txt').prop('disabled', false);}, 500);
+</script>
+</body>
+</html>

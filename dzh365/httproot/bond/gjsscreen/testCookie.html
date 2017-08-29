@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>dojo.fx Demo</title>
+    <script type="text/javascript" src="../../dojo/dojo.js" djConfig="isDebug: true">
+    </script>
+    <script type="text/javascript">
+        function test1(){
+            dojo.require("dojo.fx");
+            dojo.addOnLoad(function(){
+                var fadeout = dojo.fadeOut({
+                    node: "foo",
+                    duration: 1000
+                });
+                fadeout.play();
+            });
+        }
+        function test2(){
+            dojo.animateProperty({
+                node: "foo",
+                duration: 1000,
+                properties: { opacity: 0 }
+            }).play();
+        }
+        function test3(){
+            dojo.animateProperty({
+                node: "foo",
+                properties: { color: {start:'',end:'blue'}}
+            }).play();
+        }
+        function test4(){
+            dojo.fadeIn({
+                node: "foo",
+                duration: 1000
+            }).play()
+//            dojo.fadeOut({
+//                node: "foo",
+//                duration: 1000
+//            }).play()
+        }
+        function test5(){
+            dojo.animateProperty({
+                node: "foo",
+            duration:20000,
+                    properties: {
+                width: { start: '200', end: '400', unit:"px" },
+                height: { start:'200', end: '400', unit:"px" },
+                paddingTop: { start:'5', end:'50', unit:"px" }
+            }
+        }).play();
+        }
+        function test6(){
+            dojo.animateProperty({
+                node: "foo",
+                properties: { color: {start:'blue',end:'black'}}
+            }).play();
+        }
+    </script>
+</head>
+<body>
+<div id="foo">
+    This is dojo.fx demo.
+</div>
+<button type="button" onclick="test1()">测试1</button>
+<button type="button" onclick="test2()">测试2</button>
+<button type="button" onclick="test3()">测试3</button>
+<button type="button" onclick="test4()">测试4</button>
+<button type="button" onclick="test5()">测试5</button>
+<button type="button" onclick="test6()">测试6</button>
+</body>
+</html>

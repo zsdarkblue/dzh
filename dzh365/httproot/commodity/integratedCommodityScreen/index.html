@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>商品综合屏</title>
+	<link rel="stylesheet" href="../../dijit/themes/black/document.css"/>
+	<script type="text/javascript">
+		dojoConfig = {
+			async:true, parseOnLoad:false,
+			baseUrl:'../../',
+			noscale:false, //配置整体是否缩放 
+			//requestProvider: "dojo/request/registry",
+			//_baseW:900, _baseH:550,  //缩放的基数
+			callback: function() {
+				require(["commodity/integratedCommodityScreen/src","dojo/on"],
+				         function(main,on){
+							on(document.body, "click", function(evt){
+						
+								dojo.query(".selected").forEach(function(node){
+									dojo.removeClass(node,"selected")	
+								});
+								
+								dojo.query(evt.target).closest(".slick-row").children().forEach(function(node){
+									dojo.addClass(node,"selected")
+								});
+						
+							})
+						main();
+					});
+			}
+		}
+
+		dojopr();
+	</script>
+	<!--自定义样式表-->
+	<link rel="stylesheet" href="resources/css/commid.css"/>
+</head>
+<body class="claro">
+	<div data-dojo-type="commodity/integratedCommodityScreen/view/main" data-dojo-props="splitter:false, region:'top'" style="height:100%"></div>
+</body>
+</html>

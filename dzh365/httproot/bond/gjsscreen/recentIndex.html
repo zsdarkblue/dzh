@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>近期指数走势</title>
+    <link href="resources/basestyle.css" rel="stylesheet" type="text/css" />
+    <link href="resources/ver1.0.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        dojoConfig =  {
+            async:true, parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            //noscale:true,
+            deps:[
+            ],
+            callback: function() {
+                require(["bond/gjsscreen/src"],function(main){
+                            main();
+                        }
+                );
+            }
+        }
+                //dojopr();
+            </script>
+</head>
+<body class="claro" onblur="window.external.closeDialog();"  onload="window.external.setLayeredWin(255);">
+<div id="main" data-dojo-type="dijit/layout/ContentPane" style="height: 100%;overflow-x: hidden;">
+    <div data-dojo-type="bond/gjsscreen/view/recentIndexPage" style="height: 100%">
+
+    </div>
+</div>
+</body>
+</html>

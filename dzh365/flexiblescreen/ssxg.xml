@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<dzh:layout>
+	<dzh:title>创新货币基金</dzh:title>
+	<dzh:hbox>
+		<dzh:vbox width="100%">
+			<plugin id="1" type="dzhinternal/stklistvw" width="80%" layout="VIEWLIST?MARKET2=listedstock/新股/上市新股" mode="1"/>
+			<plugin id="2" type="dzhinternal/stklistvw" width="20%" layout="VIEWLIST?MARKET2=unlistedstock/新股/未上市新股" mode="1"/>
+		</dzh:vbox>
+	</dzh:hbox>  
+</dzh:layout>

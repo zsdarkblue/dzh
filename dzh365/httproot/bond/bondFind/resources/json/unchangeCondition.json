@@ -1,0 +1,68 @@
+[
+	{
+		"name": "survivalStatus",
+		"title_name":"存续状态",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"未到期","value":"1"},{"title":"已到期","value":"2"}]
+	},
+	{
+		"name": "publisherName",
+		"title_name":"发行人名称",
+		"type": "input",
+		"allValue": ""
+	},
+	{
+		"name": "bondType",
+		"title_name":"债券类型",
+		"type": "select",
+		"allValue": ["不限","元","千元","万元","百万元","亿元","十亿元"]
+	},
+	{
+		"name": "bondRating",
+		"title_name":"债项评级",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"AAA","value":"1"},{"title":"AA+","value":"2"},{"title":"AA","value":"3"},{"title":"AA-","value":"4"},{"title":"A+","value":"5"},{"title":"A","value":"6"},{"title":"A-1","value":"7"},{"title":"A-2","value":"8"},{"title":"其他","value":"others"}]
+	},
+	{
+		"name": "mainBodyRating",
+		"title_name":"主体评级",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"AAA","value":"1"},{"title":"AA+","value":"2"},{"title":"AA","value":"3"},{"title":"AA-","value":"4"},{"title":"A+","value":"5"},{"title":"A","value":"6"},{"title":"其他","value":"others"}]
+	},
+	{
+		"name": "guaranteeWay",
+		"title_name":"担保方式",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"第三方担保","value":"a1"},{"title":"抵押担保","value":"b1"},{"title":"质押担保","value":"c1"},{"title":"个人担保","value":"d1"},{"title":"无担保","value":"e1"},{"title":"其他","value":"others"}]
+	},
+	{
+		"name": "leftTerm",
+		"title_name":"剩余期限",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"1年内","value":"1"},{"title":"1-3年","value":"2"},{"title":"3-5年","value":"3"},{"title":"5-7年","value":"4"},{"title":"7-10年","value":"5"},{"title":"10-15年","value":"6"},{"title":"15-20年","value":"7"},{"title":"20-30年","value":"8"},{"title":"30年以上","value":"9"}]
+	},
+	{
+		"name": "listMarket",
+		"title_name":"上市市场",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"银行间","value":"CNIBEX"},{"title":"上交所","value":"CNSESH"},{"title":"深交所","value":"CNSESZ"},{"title":"固定收益平台","value":"CNETPF"},{"title":"综合协议平台","value":"CNSZCP"},{"title":"柜台","value":"CNCONT"},{"title":"未上市","value":"CNNCIM"},{"title":"其他","value":"others"}]
+	},
+	{
+		"name": "interestAccrualWay",
+		"title_name":"计息方式",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"贴现","value":"1"},{"title":"2","value":"0"},{"title":"固息","value":"2"},{"title":"浮息","value":"3"},{"title":"递进","value":"4"}]
+	},
+	{
+		"name": "bondRight",
+		"title_name":"赎回回售",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"不含权","value":"0"},{"title":"仅可回售","value":"1"},{"title":"仅可赎回","value":"2"},{"title":"既可回售又可赎回","value":"3"}]
+	},
+	{
+		"name": "valuationRate",
+		"title_name":"估值收益率",
+		"type": "selectCheckbox",
+		"allValue": [{"title":"全部","value":"all"},{"title":"0至3%","value":"1"},{"title":"3至5%","value":"2"},{"title":"5至7%","value":"3"},{"title":"7至9%","value":"4"},{"title":"9%以上","value":"5"},{"title":"自定义","value":"custom"}]
+	}
+]

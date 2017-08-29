@@ -1,0 +1,10 @@
+{
+  "identifier":"id",
+  "label": "name",
+  "items":[
+   		{name:"全部",id:"0"},
+   		{name:"多",id:"21"},
+        {name:"平",id:"22"},
+        {name:"空",id:"23"}
+        ]
+}

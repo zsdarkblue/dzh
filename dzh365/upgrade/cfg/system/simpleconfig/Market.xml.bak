@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<root>
+    <section name="Market">
+        <section name="$$">
+            <entry name="name" type="STRING">自定指数</entry>
+            <entry name="shortname" type="STRING">指数</entry>
+            <entry name="labellen" type="INT">4</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">AA01</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="TYPE" type="STRING">指数=AA**,1,2</entry>
+            <entry name="SubType" type="STRING">自定指数 2 100</entry>
+            <entry name="TypeMask" type="STRING">AA** 0</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+		
+        <section name="B$">
+            <entry name="name" type="STRING">板块指数</entry>
+            <entry name="shortname" type="STRING">板块</entry>
+            <entry name="labellen" type="INT">6</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">990001</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="SubType" type="STRING">板块指数 2 100 0</entry>
+            <entry name="TypeMask" type="STRING">99**** 0</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+			<entry name="CrossType" type="STRING">1-&gt;4;2-&gt;4</entry>
+        </section>
+        <section name="BO">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">渤海商品交易所</entry>
+            <entry name="shortname" type="STRING">渤商</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="SubType" type="STRING">渤海商品 0 1 7;</entry>
+            <entry name="closetime3" type="INT">1600</entry>
+            <entry name="opentime3" type="INT">1330</entry>
+            <entry name="opentime2" type="INT">900</entry>
+            <entry name="closetime2" type="INT">1130</entry>
+            <entry name="closetime1" type="INT">300</entry>
+            <entry name="opentime1" type="INT">1900</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">3</entry>
+        </section>
+        <section name="CB">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">芝加哥期货交易所</entry>
+            <entry name="shortname" type="STRING">CBOT</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">800</entry>
+            <entry name="closetime1" type="INT">3000</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">CBOT农产品 2 100 7;CBOT乙醇 3 100 7;美国国债 2 100 7;美利率掉期 2 100 7;道琼斯期指 2 100 7;美联邦基金 2 100 7</entry>
+            <entry name="TypeMask" type="STRING">ZR** 0;ZM** 0;ZL** 0;ZS** 0;ZSM** 0;ZW** 0;ZWM** 0;ZC** 0;ZCM** 0;ZO** 0;DDG@# 0;BSW@# 0;SOM@# 0;ZH** 1;ZT** 2;ZF** 2;ZN** 2;ZB** 2;UL** 2;T2@# 2;Z3N@# 2;N1U** 3;T1U** 3;F1U** 3;B1U** 3;YM** 4;ZD** 4;DD** 4;AW** 4;RX@# 4;ZQ** 5</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="CM">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">芝加哥商业交易所</entry>
+            <entry name="shortname" type="STRING">芝加哥商业</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">600</entry>
+            <entry name="closetime1" type="INT">2930</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">CME棕榈油 2 100 7;CME畜产 2 100 7;CME奶制品 2 100 7;CME林业 2 100 7;CME商品期指 2 100 7;标普期指 2 100 7;纳斯达克期指 2 100 7;CME日经期指 2 100 7;NIFTY期指 2 100 7;标普行业期指 2 100 7;外汇期货 4 100 7;微型外汇 4 100 7;新兴外汇 4 100 7;短期利率 2 100 7;利率期指 2 100 7;房地产期指 2 100 7</entry>
+            <entry name="TypeMask" type="STRING">CPO@# 0;GDK@# 2;CSC@# 2;LBS@# 3;GIE@# 4;FXD@# 4;EMD@# 5;ND@# 6;QCN@# 6;BIO@# 6;NKD@# 7;NIY@# 7;ENY@# 7;ACD@# 10;ANE@# 10;SEK@# 10;6B@# 10;PSF@# 10;6J@# 10;NOK@# 10;ENK@# 10;6N@# 10;MCD@# 11;J7@# 10;MSF@# 11;MJY@# 11;MNY@# 11;CZK@# 12;ECK@# 12;EHF@# 12;HUF@# 12;ILS@# 12;KRW@# 12;PLN@# 12;EPZ@# 12;GLB@# 13;LBA@# 14;BOS@# 15;DEN@# 15;WDC@# 15;SFR@# 15;LA@@# 15;MIA@# 15;NYM@# 15;SDG@# 15;CHI@# 15;CUS@# 15;EMF@# 8;MNF@# 8;E@D@# 10;E@K@# 10;@JY@# 10; M6@@# 11;SM@@# 5;XA@@# 9;RM@@# 12;TR@@# 12;CNY@# 12;GF@# 1;LH@# 1;LC@# 1;NF@# 2;DA@# 2;DY@# 2;CB@# 2;GD@# 4;ES@# 5;SP@# 5;MD@# 5;SG@# 5;SU@# 5;NQ@# 6;6A@# 10;6C@# 10;6S@# 10;6E@# 10;E7@# 10;RP@# 10;RF@# 10;RY@# 10;6L@# 12;6L@## 12;6M@# 12;6R@# 12;6Z@# 12;GE@# 13;GE@## 13;EB@# 13;EB@## 13;EJ@# 13</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="CX">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">纽约商品交易所</entry>
+            <entry name="shortname" type="STRING">COMEX</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">600</entry>
+            <entry name="closetime1" type="INT">2915</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">COMEX黄金 2 100 7;COMEX白银 2 100 7;COMEX铜 4 100 7;黄金波动率 2 100 7</entry>
+            <entry name="TypeMask" type="STRING">GC** 0;GCM** 0;QO@# 0;MGC@# 0;SI** 1;QI@# 1;XSN@# 1;HG** 2;QC** 2;GVF** 3</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="DC">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">大连商品交易所</entry>
+            <entry name="shortname" type="STRING">大商</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">900</entry>
+            <entry name="opentime2" type="INT">1030</entry>
+            <entry name="closetime1" type="INT">1015</entry>
+            <entry name="closetime2" type="INT">1130</entry>
+            <entry name="opentime3" type="INT">1330</entry>
+            <entry name="closetime3" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">大连商品 0 1 7;期指 0 10 8</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="Prefixtime" type="INT">5</entry>
+            <entry name="TradeTime" type="INT">3</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+        </section>
+		<section name="EC">
+            <entry name="BaseInfoPath" type="STRING" />
+            <entry name="StkDataPath" type="STRING" />
+            <entry name="name" type="STRING">中国期货保证金监控中心</entry>
+            <entry name="shortname" type="STRING">中国期货保证金监控中心</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">2100</entry>
+			<entry name="closetime1" type="INT">230</entry>
+            <entry name="opentime2" type="INT">900</entry>            
+            <entry name="closetime2" type="INT">1015</entry>
+			<entry name="opentime3" type="INT">1030</entry>
+            <entry name="closetime3" type="INT">1130</entry>
+			<entry name="opentime4" type="INT">1330</entry>
+            <entry name="closetime4" type="INT">1500</entry>			
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING" />
+            <entry name="Forbiden" type="STRING" />
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">商品指数 2 100 0</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="TradeTime" type="INT">4</entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+        </section>
+        <section name="FX">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">全球外汇</entry>
+            <entry name="shortname" type="STRING">外汇</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">600</entry>
+            <entry name="closetime1" type="INT">2930</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">主要外汇 4 100 6;人民币系列 4 100 6;国际贵金属 2 100 6;指数 2 0 0;其他外汇 4 100 6</entry>
+            <entry name="TypeMask" type="STRING">XAGUSD 2;XAUUSD 2;XAUHKD 2;XPTUSD 2;XPDUSD 2;UDI 3;***CNY 1;***CNY* 1;***CNH 1;CNY*** 1;CNH*** 1;AUDCAD 0;AUDJPY 0;AUDNZD 0;AUDUSD 0;CADEUR 0;CHFJPY 0;EURAUD 0;EURCAD 0;EURCHF 0;EURGBP 0;EURJPY 0;EURNOK 0;EURSEK 0;EURUSD 0;GBPAUD 0;GBPCAD 0;GBPCHF 0;GBPJPY 0;GBPUSD 0;JPYCAD 0;JPYEUR 0;JPYGBP 0;NZDUSD 0;USDBGN 0;USDBRL 0;USDCAD 0;USDCHF 0;USDCZK 0;USDDKK 0;USDHKD 0;USDHRK 0;USDHUF 0;USDINR 0;USDJPY 0;USDKRW 0;USDLTL 0;USDLVL 0;USDMXN 0;USDNOK 0;USDPLN 0;USDRUB 0;USDSEK 0;USDSGD 0;USDTHB 0;USDTRY 0;USDTWD 0;USDZAR 0;****** 4</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+	
+
+        <section name="HF">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">香港联合交易所期货</entry>
+            <entry name="shortname" type="STRING">港期</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">830</entry>
+            <entry name="closetime1" type="INT">2500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">HSI</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">恒指期货 0 1 7;波幅期货 2 1 7;股息期货 2 1 7;利率期货 2 1 7;黄金期货 2 1 7;金砖市场 2 1 7;货币期货 4 1 7;中华120 1 1 7;亚洲商品 0 1 7;股票期货 2 1 7</entry>
+            <entry name="TypeMask" type="STRING">HSI** 0;HHI** 0;MCH** 0;MHI** 0;VHS** 1;DHS** 2;DHH** 2;HB1** 3;HB3** 3;EF3** 3;H1S** 3;H3S** 3;GLD** 4;BOV** 5;BSE** 5;SAF** 5;MCX** 5;CUS** 6;CHH** 7;LRA** 8;LRZ** 8;LRC** 8;***** 9</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="HI">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">恒生指数</entry>
+            <entry name="shortname" type="STRING">恒生</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="closetime1" type="INT">1600</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">恒生指数 2 100 0</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="Group@恒生指数" type="STRING">恒生旗舰指数=HSI,HSF,HSU,HSP,HSC;恒生基准指数=HSCI,HSCIEN,HSCIMT,HSCIIN,HSCICG,HSCISV,HSCITC,HSCIUT,HSCIFN,HSCIPC,HSCIIT,HSCICO,HSLI,HSMI,HSSI;恒生主题指数=HSBCI,HSCEI,HSCCI,HFIN,HSII,HSMCGI,HSNRI,HSML100,HSFML25,HSHK35,HSREIT,HSSUS;恒生策略指数=VHSI,HSRHSI1,HSRHSIE1,HSRCEI2,HSRCEIE2,HSISI,HSCEISI,HFINSI,HSI2SI,HSCEI2SI,HFIN2SI,HSILI,HSCEILI,HFINLI,HSEWI,HSCEEWI;恒生跨市场指数=HSC50,HSAHP,AHXAH,AHXA,AHXH,HSMHSUS,HSCAHSI;恒生内地上市=HSCAIT,HSCASUS;恒生股息点指数=HSIDPI,HSCEIDPI;恒生其它=HSCEIC4,LIPROP</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="HK">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">香港联合交易所</entry>
+            <entry name="shortname" type="STRING">港</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1200</entry>
+            <entry name="closetime2" type="INT">1600</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">HSI</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">香港主板 3 1 1;香港创业板 3 1 1;香港权证 3 2000 14;牛熊证 3 2000 14;香港债券 3 500 3;香港信托 3 1000 13;香港指数 2 100 0;港股通 3 1 1</entry>
+            <entry name="TypeMask" type="STRING">08### 1;30### 3;31### 3;320## 3;321## 3;322## 3;323## 3;324## 3;6#### 3;#### 16;***** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="VarTradeUnit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+			<entry name="CrossType" type="STRING">7-&gt;0</entry>
+        </section>
+        <section name="IB">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">外汇交易中心</entry>
+            <entry name="shortname" type="STRING">IB</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">700</entry>
+            <entry name="closetime1" type="INT">1900</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">人民币即期竞价 4 100 6;人民币即期询价 4 100 6;人民币中间价 4 100 6</entry>
+            <entry name="TypeMask" type="STRING">@@@@@@A 0;@@@@@@B 1;@@@@@@C 2</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="IC">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">洲际美国</entry>
+            <entry name="shortname" type="STRING">ICE</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">600</entry>
+            <entry name="closetime1" type="INT">3100</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">ICE软商品 2 100 7;美元期指 2 100 7;罗素期指 2 100 7;外汇期货 4 100 7;ICE农产品 4 100 7</entry>
+            <entry name="TypeMask" type="STRING">CC** 0;KC@# 0;CT** 0;SB** 0;OJ** 0;SF** 0;DX** 1;RG** 2;RV** 2;RF@# 2;TF** 2;G2@# 2;V2@# 2;AR@# 3;AS@# 3;KAU@# 3;YA@# 3;QA@# 3;PC@# 3;PK@# 3;GN@# 3;PS@# 3;PZ@# 3;HR@# 3;KEJ@# 3;KEP@# 3;YZ@# 3;EZ@# 3;KGB@# 3;HY@# 3;KCU@# 3;KMF@# 3;KMP@# 3;KSN@# 3;KSV@# 3;KX@# 3;NJ@# 3;KY@# 3;NT@# 3;KOL@# 3;KRK@# 3;RF@# 3;KRZ@# 3;SF@# 3;SB@# 3;KJ@# 3;SS@# 3;SY@# 3;VC@# 3;VU@# 3;MP@# 3;ZJ@# 3;ZR@# 3;ZX@# 3;KZY@# 3;IAU@# 3;IEJ@# 3;IEO@# 3;IEP@# 3;IGB@# 3;IKX@# 3;IMF@# 3;IMP@# 3;IRK@# 3;IRZ@# 3;ISN@# 3;ISV@# 3;KRA@# 3;KEO@# 3;KRU@# 3;KIU@# 3;KBX@# 3;ICN@# 4;IS@# 4;ISM@# 4;IBO@# 4;IW@# 4</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="IO">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">中金所仿真行情</entry>
+            <entry name="shortname" type="STRING">股权</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">915</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1515</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">股指期权 1 100 7</entry>
+            <entry name="TypeMask" type="STRING">* 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Prefixtime" type="INT">5</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="IP">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">洲际交易所-欧洲市场</entry>
+            <entry name="shortname" type="STRING">洲际欧洲</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">630</entry>
+            <entry name="closetime1" type="INT">615</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">ICE原油 2 100 7;ICE燃料油 4 100 7;ICE柴油 2 100 7;ICE汽油 4 100 7;ICE天然气 4 100 7;ICE煤炭 2 100 7;ICE电力 2 100 7;ICE碳排放 2 100 7;ICE原油指数 2 100 7</entry>
+            <entry name="TypeMask" type="STRING">BNX@# 0;B@# 0;T@# 0;MID@# 0;ULS@# 0;O@# 1;G@# 2;N@# 3;GPM* 4;M@# 4;NGM@# 4;TTF@# 4;ATW@# 5;AFR@#* 5;NCF@# 5;SUB@# 5;UC* 5;CRF* 5;Y@# 6;P@# 6;CER* 7;CES@# 7;ERU@# 7;C@# 7;MEC@# 8;F@# 8</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="IX">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">全球指数</entry>
+            <entry name="shortname" type="STRING">IX</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">600</entry>
+            <entry name="closetime1" type="INT">2900</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">全球指数 2 100 0;全球其它 2 100 0</entry>
+            <entry name="TypeMask" type="STRING">XIN9 0;XIN0 0;XIN0U 0;DJIA 0;SPX 0;NDX 0;TSX 0;IBOVESPA 0;FTSE 0;GDAXI 0;FCHI 0;FMIB 0;AEX 0;BEL20 0;PSI20 0;RTS 0;EFC1 0;EF80 0;ATX 0;IBEX 0;SMI 0;ASE 0;S30 0;C20 0;IPI 0;ISEQ 0;H25 0;SX5E 0;EF3X 0;SXXP 0;N225 0;KS11 0;KSP2 0;FTSTI 0;KLSE 0;SENSEX 0;PCOMP 0;SET 0;AORD 0;XJO 0;NZ50 0;TWII 0;TW50 0;UDI 0;CRBI 0;PLYI 0;TRJCRB 0;TRCCI 0;****** 1</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="Group@全球指数" type="STRING">美洲股市=DJIA,SPX,NDX,TSX,IBOVESPA;欧洲股市=FTSE,GDAXI,FCHI,FMIB,IBEX,SMI,AEX,BEL20,PSI20,S30,C20,H25,ATX,ASE,IPI,ISEQ,RTS,EF3X,EFC1,EF80,SX5E,SXXP;亚太股市=N225,KS11,KSP2,FTSTI,KLSE,SENSEX,PCOMP,SET,AORD,XJO,NZ50,TWII,TW50,XIN9,XIN0,XIN0U;其它指数=UDI,CRBI,PLYI,TRJCRB,TRCCI</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+
+        <section name="JT">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">无锡君泰贵金属</entry>
+            <entry name="shortname" type="STRING">无锡君泰</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">600</entry>
+            <entry name="closetime1" type="INT">430</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">000001</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">无锡君泰 2 100 16</entry>
+            <entry name="TypeMask" type="STRING">* 0;</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="LM">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">伦敦金属交易所</entry>
+            <entry name="shortname" type="STRING">LME</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">800</entry>
+            <entry name="closetime1" type="INT">2600</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">LME金属 2 100 7</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="NS">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">纳斯达克交易所</entry>
+            <entry name="shortname" type="STRING">纳斯达克</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">2130</entry>
+            <entry name="closetime1" type="INT">2800</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">Nasdaq股票 4 100 1</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="NX">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">纽约商业交易所</entry>
+            <entry name="shortname" type="STRING">NYMEX</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">600</entry>
+            <entry name="closetime1" type="INT">2900</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">NYMEX原油 2 100 7;NYMEX天燃气 4 100 7;NYMEX燃料油 4 100 7;NYMEX汽油 4 100 7;原油波动率 4 100 7;NYMEX贵金属 2 100 7;NYMEX钢材 2 100 7;NYMEX煤炭 2 100 7;NYMEX铀 2 100 7;NYMEX电力 2 100 7;NYMEX其它 2 100 7</entry>
+            <entry name="TypeMask" type="STRING">CL** 0;XBZ** 0;QM@# 0;RE@# 0;NG** 1;NPG@# 1;QG@# 1;MNG@# 1;NGD@# 1;NGP@# 1;NN@# 1;HO** 2;QH@# 2;BH@# 2;XRB** 3;GLI** 3;RT@# 3;QU@# 3;CVF** 4;PL** 5;PA** 5;HRC** 6;QL** 7;UX** 8;L#** 9;A4S** 9;Z9** 9;U6** 9;K3** 9;T3** 9;H3** 9;B3** 9;WS@# 10;WCE@# 10;REB@# 10;MB@# 10;BB@# 10</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="NY">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">纽约交易所</entry>
+            <entry name="shortname" type="STRING">纽交所</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">2130</entry>
+            <entry name="closetime1" type="INT">2800</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">Nyse股票 4 100 1</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+        <section name="OF">
+            <entry name="name" type="STRING">基金净值</entry>
+            <entry name="shortname" type="STRING">基金</entry>
+            <entry name="labellen" type="INT">6</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="SubType" type="STRING">基金净值 3 100 2</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="HO">
+            <entry name="BaseInfoPath" type="STRING" />
+            <entry name="StkDataPath" type="STRING" />
+            <entry name="name" type="STRING">上证期权</entry>
+            <entry name="shortname" type="STRING">上证期权</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="closetime1" type="INT">1130</entry>			
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING" />
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">上证期权 3 100 7</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+        </section>
+        <section name="SC">
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">上海期货交易所</entry>
+            <entry name="shortname" type="STRING">上期</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="SubType" type="STRING">上海期货 0 1 7;期指 0 5 8</entry>
+            <entry name="TypeMask" type="STRING">****** 0;</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="opentime1" type="INT">900</entry>
+            <entry name="opentime2" type="INT">1030</entry>
+            <entry name="closetime1" type="INT">1015</entry>
+            <entry name="closetime2" type="INT">1130</entry>
+            <entry name="opentime3" type="INT">1330</entry>
+            <entry name="closetime3" type="INT">1500</entry>
+            <entry name="Prefixtime" type="INT">5</entry>
+            <entry name="TradeTime" type="INT">3</entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+        </section>
+        <section name="SF">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">中国金融期货交易所</entry>
+            <entry name="shortname" type="STRING">金</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">915</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1515</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">金期指 1 1 8;上证50期指 1 1 8;中证500期指 1 1 8;国债期货 3 1 7</entry>
+            <entry name="TypeMask" type="STRING">IF**** 0;IH**** 1;IC**** 2;****** 3</entry>
+            <entry name="CrossType" type="STRING">1-&gt;0;2-&gt;0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Prefixtime" type="INT">5</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="SG">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">上海黄金交易所</entry>
+            <entry name="shortname" type="STRING">黄金</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">2000</entry>
+            <entry name="opentime2" type="INT">900</entry>
+            <entry name="closetime1" type="INT">230</entry>
+            <entry name="closetime2" type="INT">1130</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">000001</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">上海黄金 2 100 16</entry>
+            <entry name="TypeMask" type="STRING">****** 0;</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="opentime3" type="INT">1330</entry>
+            <entry name="closetime3" type="INT">1530</entry>
+            <entry name="TradeTime" type="INT">3</entry>
+        </section>
+        <section name="SH">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">上海证券交易所</entry>
+            <entry name="shortname" type="STRING">沪</entry>
+            <entry name="labellen" type="INT">6</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">000001</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="TYPE" type="STRING">沪指=000###,1,2 沪A=######,3,2 沪B=9#####,2,3</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="SubType" type="STRING">上证指数 2 100 0;上证A股 2 100 1;上证B股 3 100 1;上证基金 3 100 2;上证债券 2 10 3;上证转债 2 10 12;上证回购 3 10 15;上证出入库 2 10 3;ETF基金 3 100 10;开放基金 3 10 10;上证权证 3 100 14;上证其它 2 100 4;中证指数 2 100 0;上证风险 2 100 1;上证退市 2 100 1;上证小公募 2 10 3;上证LOF 3 100 11</entry>
+            <entry name="TypeMask" type="STRING">000300 12;939988 11;938936 2;0000## 0;0009## 12;103### 7;104### 7;105### 7;106### 7;107### 7;130### 4;519### 9;521### 9;522### 8;523### 9;501### 16;502### 16;503### 16;09#### 11;938### 11;10#### 5;11#### 5;20#### 6;50#### 3;51#### 8;58#### 10;60#### 1;9##### 2;0##### 4;12#### 4;###### 11</entry>
+            <entry name="CrossType" type="STRING">12-&gt;0</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="SO">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">全国中小企业股份转让系统</entry>
+            <entry name="shortname" type="STRING">股转系统</entry>
+            <entry name="labellen" type="INT">6</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="TYPE" type="STRING"></entry>
+            <entry name="SubType" type="STRING">挂牌公司 3 100 1;两网及退市 3 100 1;三板指数 3 100 0</entry>
+            <entry name="TypeMask" type="STRING">87#### 0;83#### 0;43#### 0;4##### 1;899### 2</entry>
+            <entry name="CrossType" type="STRING"></entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Prefixtime" type="INT">0</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+
+        <section name="SW">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">申万指数</entry>
+            <entry name="shortname" type="STRING">申万</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">申万指数 2 100 0</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="Group@申万指数" type="STRING">申万市场表征=801001,801002,801003,801005,801250,801300,801901,801903,801905,802611,802612;申万风格指数=801811,801812,801813,801821,801822,801823,801831,801832,801833,801841,801842,801843,801851,801852,801853,801861,801862,801863;申万量化策略=803611,803612,803613;申万主题=801260,801270,801280;申万300行业=801311,801321,801322,801323,801324,801325,801326,801327,801331,801332,801333,801334,801335,801336,801337,801341,801342,801343,801344,801345,801346,801347,801351;申万一级行业=801010,801020,801030,801040,801050,801060,801070,801080,801090,801100,801110,801120,801130,801140,801150,801160,801170,801180,801190,801200,801210,801220,801230;申万二级行业=801011,801012,801013,801014,801015,801016,801021,801022,801023,801031,801032,801033,801034,801035,801036,801037,801041,801051,801052,801061,801062,801071,801072,801073,801074,801075,801081,801082,801083,801084,801091,801092,801093,801094,801101,801102,801111,801112,801121,801122,801123,801131,801132,801141,801142,801143,801151,801152,801153,801154,801155,801156,801161,801162,801163,801164,801171,801172,801173,801174,801175,801176,801177,801178,801181,801182,801191,801192,801193,801194,801201,801202,801211,801212,801213,801214,801221,801222,801223,801224,801231,802600</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="SZ">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">深圳证券交易所</entry>
+            <entry name="shortname" type="STRING">深</entry>
+            <entry name="labellen" type="INT">6</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">399001</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="TYPE" type="STRING">深指=2@##,1,2 深A=####,3,2 深B=2###,2,2</entry>
+            <entry name="SubType" type="STRING">深证指数 2 100 0;深证A股 2 100 1;深证B股 3 100 1;深证基金 3 100 2;中小企业 2 100 1;深证债券 3 10 3;深证转债 3 100 12;深证回购 3 100 15;ETF基金 3 100 10;深证LOF 3 100 11;开放基金 3 100 10;深证权证 3 100 14;深证其它 2 100 4;创业板 2 100 1;深证退市 2 100 1;深证小公募 3 10 3</entry>
+            <entry name="TypeMask" type="STRING">399### 0;000### 1;001### 1;200### 2;184### 3;150### 3;10#### 5;11#### 5;12#### 6;131### 7;160105 9;160106 9;160505 9;160706 9;161607 9;161706 9;161903 9;162605 9;162703 9;163801 9;162607 9;161005 9;163402 9;1599## 8;16#### 10;03#### 11;002### 4;003### 4;004### 4;30#### 13;###### 12</entry>
+            <entry name="CrossType" type="STRING">4-&gt;1;13-&gt;1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+
+        <section name="WI">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">国债预发行</entry>
+            <entry name="shortname" type="STRING">国债预发行</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">国债预发行 3 10 3</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="Z$">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">深圳证券交易所</entry>
+            <entry name="shortname" type="STRING">深</entry>
+            <entry name="labellen" type="INT">6</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING">399001</entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="TYPE" type="STRING">深指=2@##,1,2 深A=####,3,2 深B=2###,2,2</entry>
+            <entry name="SubType" type="STRING">深证指数 2 100 0;深证A股 2 100 1;深证B股 3 100 1;深证基金 3 100 2;中小企业 2 100 1;深证债券 3 10 3;深证转债 3 100 12;深证回购 3 100 15;ETF基金 3 100 10;深证LOF 3 100 11;开放基金 3 100 10;深证权证 3 100 14;深证其它 2 100 4;创业板 2 100 1</entry>
+            <entry name="TypeMask" type="STRING">399### 0;000### 1;001### 1;200### 2;184### 3;150### 3;10#### 5;11#### 5;12#### 6;131### 7;160105 9;160106 9;160505 9;160706 9;161607 9;161706 9;161903 9;162605 9;162703 9;163801 9;162607 9;161005 9;163402 9;1599## 8;16#### 10;03#### 11;002### 4;003### 4;004### 4;30#### 13;###### 12</entry>
+            <entry name="CrossType" type="STRING">4-&gt;1;13-&gt;1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="AuxMarket" type="STRING">SZ</entry>
+            <entry name="PrefixTime" type="INT">15</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="ZC">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">郑州商品交易所</entry>
+            <entry name="shortname" type="STRING">郑商</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">900</entry>
+            <entry name="opentime2" type="INT">1030</entry>
+            <entry name="closetime1" type="INT">1015</entry>
+            <entry name="closetime2" type="INT">1130</entry>
+            <entry name="opentime3" type="INT">1330</entry>
+            <entry name="closetime3" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">郑州商品 0 1 7;期指 0 1 8</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="Prefixtime" type="INT">5</entry>
+            <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">3</entry>
+        </section>
+        <section name="ZH">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">深证H股</entry>
+            <entry name="shortname" type="STRING">深证H股</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">8</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">930</entry>
+            <entry name="opentime2" type="INT">1300</entry>
+            <entry name="closetime1" type="INT">1130</entry>
+            <entry name="closetime2" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">深证H股 3 1 1</entry>
+            <entry name="TypeMask" type="STRING">29**** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">2</entry>
+        </section>
+        <section name="ZI">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">中证指数</entry>
+            <entry name="shortname" type="STRING">中证</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">900</entry>
+            <entry name="closetime1" type="INT">1630</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">中证指数 2 100 0</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="VarTradeTime" type="INT">1</entry>
+            <entry name="TradeTime" type="INT">1</entry>
+        </section>
+		<section name="DO">
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">大连商品期权</entry>
+            <entry name="shortname" type="STRING">大连期权</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">2100</entry>
+            <entry name="closetime1" type="INT">2330</entry>
+            <entry name="opentime2" type="INT">900</entry>
+            <entry name="closetime2" type="INT">1015</entry>
+            <entry name="opentime3" type="INT">1030</entry>
+            <entry name="closetime3" type="INT">1130</entry>
+			<entry name="opentime4" type="INT">1330</entry>
+			<entry name="closetime4" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">大连期权 1 10 7;</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="Prefixtime" type="INT">5</entry>
+	        <entry name="AutoPriceDigit" type="INT">1</entry>
+		    <entry name="TradeTime" type="INT">4</entry>
+        </section>		
+		<section name="EO">
+	        <entry name="AutoPriceDigit" type="INT">1</entry>
+            <entry name="BaseInfoPath" type="STRING"></entry>
+            <entry name="StkDataPath" type="STRING"></entry>
+            <entry name="name" type="STRING">郑州商品期权</entry>
+            <entry name="shortname" type="STRING">郑州期权</entry>
+            <entry name="labellen" type="INT">0</entry>
+            <entry name="namelen" type="INT">0</entry>
+            <entry name="timezone" type="INT">8</entry>
+            <entry name="opentime1" type="INT">2100</entry>
+            <entry name="closetime1" type="INT">2330</entry>
+            <entry name="opentime2" type="INT">900</entry>
+            <entry name="closetime2" type="INT">1015</entry>
+            <entry name="opentime3" type="INT">1030</entry>
+            <entry name="closetime3" type="INT">1130</entry>
+			<entry name="opentime4" type="INT">1330</entry>
+			<entry name="closetime4" type="INT">1500</entry>
+            <entry name="py" type="INT">1</entry>
+            <entry name="mainindex" type="STRING"></entry>
+            <entry name="Version" type="INT">100</entry>
+            <entry name="SubType" type="STRING">郑州期权 1 100 7;</entry>
+            <entry name="TypeMask" type="STRING">****** 0</entry>
+            <entry name="LargeRepData" type="INT">1</entry>
+            <entry name="LastDynaReq" type="INT">0</entry>
+            <entry name="Forbiden" type="STRING"></entry>
+            <entry name="Prefixtime" type="INT">5</entry>
+			<entry name="TradeTime" type="INT">4</entry>
+        </section>
+        <entry name="markets" type="STRING">SH SZ SO SF HK B$ OF HO $$ SG SC ZC DC ZI IX BO SW NS NY EC SP FX IC LM NX CB CX Z$ IB HI HF CM IP ZH JT WI IO AO DO EO</entry>
+    </section>
+</root>

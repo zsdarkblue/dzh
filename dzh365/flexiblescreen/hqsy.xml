@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<dzh:layout>
+  <dzh:title>ETF精选</dzh:title>
+  <dzh:hbox>
+    <dzh:vbox width="100%">
+        <plugin id="1" type="dzhinternal/stklistvw" width="100%" layout="VIEWLIST?MARKET2=gjszl2/贵金属/行情总览" mode="1"/>
+	   <plugin id="2" type="dzhinternal/chromeview" width="45"  layout="URL=root://bond/gjsscreen/gjsIndex.html;"/>
+    </dzh:vbox>
+  </dzh:hbox>  
+</dzh:layout>

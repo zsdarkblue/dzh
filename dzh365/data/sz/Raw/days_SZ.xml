@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<List>
+	<Repos GenDate="2017-05-25" Market="SZ">
+		<Repo ActualDays="5" Code="131810" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-05-31" MaturitySettlementDay="2017-05-26"/>
+		<Repo ActualDays="6" Code="131811" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-06-01" MaturitySettlementDay="2017-05-31"/>
+		<Repo ActualDays="6" Code="131800" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-06-01" MaturitySettlementDay="2017-05-31"/>
+		<Repo ActualDays="6" Code="131809" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-06-01" MaturitySettlementDay="2017-05-31"/>
+		<Repo ActualDays="7" Code="131801" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-06-02" MaturitySettlementDay="2017-06-01"/>
+		<Repo ActualDays="14" Code="131802" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-06-09" MaturitySettlementDay="2017-06-08"/>
+		<Repo ActualDays="28" Code="131803" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-06-23" MaturitySettlementDay="2017-06-22"/>
+		<Repo ActualDays="91" Code="131805" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-08-25" MaturitySettlementDay="2017-08-24"/>
+		<Repo ActualDays="182" Code="131806" FirstOutstandingDay="2017-05-26" FirstSettlementDay="2017-05-25" MaturityOutstandingDay="2017-11-24" MaturitySettlementDay="2017-11-23"/>
+	</Repos>
+</List>

@@ -1,0 +1,33 @@
+<script src="../../jquery/cfg.js"></script>
+<script>
+	var url, code = (location.search.match(/\bobj=([^&]*)/) || [, ''])[1];
+	var type = (location.search.match(/\btype=([^&]*)/) || [, ''])[1];
+	var clear = (location.search.match(/\bclear=([^&]*)/) || [, ''])[1];
+	var pg = (location.search.match(/\bpg=([^&]*)/) || [, ''])[1];
+	switch (true) {
+		case (/\.(stk|bond|fnd)$/.test(code) || type != ''):
+			url = '/platform/f9/index.html?obj=' + code;
+			if (type != '') {
+				url += '&type=' + type;
+			}
+			if (clear != '') {
+				url += '&clear=' + clear;
+			}
+			if (pg != '') {
+				url += '&pg=' + pg;
+			}
+			break;
+		case /^SFT[^.]+\.cmdty$/.test(code):
+			url = '/bond/treasuryfuturef9/index.html?contractCode=' + code;
+			break;
+		default:
+			url = '//' + [
+				'f9data.gw.com.cn',
+				'f9databeta.gw.com.cn',
+				'f9dataalpha.gw.com.cn',
+				'f9datadev.gw.com.cn'
+			]['env' in external ? external.env : 2] + '/f9/f9.php?obj=' + code;
+			break;
+	}
+	location.replace(url + '&redirect=1');
+</script>

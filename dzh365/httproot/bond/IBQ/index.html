@@ -1,0 +1,843 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<title>银行间债券IBQ</title>
+<link rel="stylesheet" href="../../bond/IBQ/css/base.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jQuery.datatable/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jquery-ui/themes/smoothness/jquery-ui.min.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jquery-ui/themes/smoothness/jquery.ui.theme.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/artDialog/skins/gw.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jQuery-zTree/css/zTreeStyle/zTreeStyle.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jquery-smartMenu/smartMenu.css" />
+<link rel="stylesheet" href="../../jquery/jquery-plugins/jQuery.datatable/js/media/css/dataTables.scroller.css" />
+<link rel="stylesheet" href="../../bond/IBQ/css/style.css" />
+</head>
+<body>
+    <div id="main">
+        <div id="tab-main" class="tab-list">
+            <ul class="tab-bar clearfix">
+                <li class="active hasActive" data-did="getTodayQuotation"><a href="javascript:void(0)" title="行情与报价" data-did="110">行情与报价</a></li>
+                <li data-did="getBestPrices"><a href="javascript:void(0)" title="最优报价" data-did="100011">最优报价</a></li>
+                <li data-did="getTodayQuotation"><a href="javascript:void(0)" title="最新行情" data-did="100007">最新行情</a></li>
+                <li data-did="getHistoryBestPrices"><a href="javascript:void(0)" title="历史最优查询" data-did="historyOptimal">历史最优查询</a></li>
+                <li data-did="getHistoryQuotation"><a href="javascript:void(0)" title="历史行情查询" data-did="history">历史行情查询</a></li>
+                <li data-did="getHistoryInnerDayQuotation"><a href="javascript:void(0)" title="历史日内行情" data-did="innerDay">历史日内行情</a></li>
+            </ul>
+            <ul class="tab-content clearfix">
+                <li class="active">
+                    <form action="#" method="post" class="filter-bar clearfix">
+                        <div class="filter-bar-inner clearfix">
+                            <label for="tab1-select1" class="item">债券类型</label>
+                            <select name="tab1-select1" id="tab1-select1"  class="item">
+                                <option value="0" selected="selected">全部债券</option>
+                                <option value="1">国债</option>
+                                <option value="2">央行票据</option>
+                                <option value="3">政策性银行债</option>
+                                <option value="4">商业银行债</option>
+                                <option value="12">短期融资券</option>
+                                <option value="30">资产支持证券</option>
+                                <option value="5">非银行金融债</option>
+                                <option value="6">企业债</option>
+                                <option value="11">中期票据</option>
+                                <option value="8">国际机构债</option>
+                                <option value="10">地方政府债</option>
+								<option value="23">同业存单</option>
+                            </select>
+                            <label for="tab1-select2" class="item">票息类型</label>
+                            <select name="tab1-select2" id="tab1-select2" class="item">
+                                <option value="0" selected="selected">全部债券</option>
+								<option value="1">零息</option>
+                                <option value="2">贴现</option>
+                                <option value="3">固息</option>
+                                <option value="4">浮息</option>
+                            </select>
+                            <label for="tab1-select3" class="item">债券评级</label>
+                            <select name="tab1-select3" id="tab1-select3" class="item">
+                                <option value="0" selected="selected">全部评级</option>
+                                <option value="1">AAA</option>
+                                <option value="2">AA</option>
+                                <option value="3">AA+</option>
+                                <option value="4">AA-</option>
+                                <option value="5">A</option>
+                                <option value="6">A+</option>
+                                <option value="7">A-</option>
+                                <option value="8">A-1</option>
+                                <option value="9">A-2</option>
+                                <option value="10">A-3</option>
+								<option value="11">BBB及以下</option>
+                            </select>
+                            <label for="tab1-select4" class="item">主体评级</label>
+                            <select name="tab1-select4" id="tab1-select4" class="item">
+                                <option value="0" selected="selected">全部评级</option>
+                                <option value="1">AAA</option>
+                                <option value="2">AA</option>
+                                <option value="3">AA+</option>
+                                <option value="4">AA-</option>
+                                <option value="5">A</option>
+                                <option value="6">A+</option>
+                                <option value="7">A-</option>
+                                <option value="8">BBB及以下</option>
+                            </select>
+                            <button id="btn-filter1" class="btn btn-filter item" data-in="1"><span>更多筛选</span></button>
+                        </div>
+                    </form>
+                    <div class="data data-visibility">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable1">
+                            <thead>
+                                <tr class="header-group">
+                                    <th colspan="4" class="set-today-date">2014-01-18</th>
+                                    <th colspan="4">最新行情</th>
+                                    <th colspan="5">最优买入</th>
+                                    <th colspan="5">最优卖出</th>
+                                    <th colspan="2">买卖差</th>
+                                    <th colspan="3">参考指标</th>
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>代码</th>
+                                    <th>简称</th>
+                                    <th>剩余年限</th>
+                                    <th>净价</th>
+                                    <th>YTM</th>
+                                    <th>加权均价</th>
+                                    <th>加权YTM</th>
+									<th>时间</th>
+                                    <th>报价方</th>
+                                    <th>券面额(万)</th>
+                                    <th>净价</th>
+                                    <th>收益率(%)</th>
+                                    <th>收益率(%)</th>
+                                    <th>净价</th>
+                                    <th>券面额(万)</th>
+                                    <th>报价方</th>
+									<th>时间</th>
+                                    <th>净价差</th>
+                                    <th>收益率差(BP)</th>
+                                    <th>票面利率</th>
+                                    <th>债券评级</th>
+                                    <th>主体评级</th>
+                                </tr>
+							</thead>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <form action="#" method="post" class="filter-bar filter-bar-2 clearfix">
+                        <div class="filter-bar-inner clearfix">
+                            <label for="tab2-select1" class="item">债券类型</label>
+                            <select name="tab2-select1" id="tab2-select1"  class="item">
+                                <option value="0" selected="selected">全部债券</option>
+                                <option value="1">国债</option>
+                                <option value="2">央行票据</option>
+                                <option value="3">政策性银行债</option>
+                                <option value="4">商业银行债</option>
+                                <option value="12">短期融资券</option>
+                                <option value="30">资产支持证券</option>
+                                <option value="5">非银行金融债</option>
+                                <option value="6">企业债</option>
+                                <option value="11">中期票据</option>
+                                <option value="8">国际机构债</option>
+                                <option value="10">地方政府债</option>
+								<option value="23">同业存单</option>
+                            </select>
+                            <label for="tab2-select2" class="item">票息类型</label>
+                            <select name="tab2-select2" id="tab2-select2" class="item">
+								<option value="0" selected="selected">全部债券</option>
+                                <option value="1">零息</option>
+                                <option value="2">贴现</option>
+                                <option value="3">固息</option>
+                                <option value="4">浮息</option>
+                            </select>
+                            <label for="tab2-select3" class="item">债券评级</label>
+                            <select name="tab2-select3" id="tab2-select3" class="item">
+                                <option value="0" selected="selected">全部评级</option>
+                                <option value="1">AAA</option>
+                                <option value="2">AA</option>
+                                <option value="3">AA+</option>
+                                <option value="4">AA-</option>
+                                <option value="5">A</option>
+                                <option value="6">A+</option>
+                                <option value="7">A-</option>
+                                <option value="8">A-1</option>
+                                <option value="9">A-2</option>
+                                <option value="10">A-3</option>
+								<option value="11">BBB及以下</option>
+                            </select>
+                            <label for="tab2-select4" class="item">主体评级</label>
+                            <select name="tab2-select4" id="tab2-select4" class="item">
+                                <option value="0" selected="selected">全部评级</option>
+                                <option value="1">AAA</option>
+                                <option value="2">AA</option>
+                                <option value="3">AA+</option>
+                                <option value="4">AA-</option>
+                                <option value="5">A</option>
+                                <option value="6">A+</option>
+                                <option value="7">A-</option>
+                                <option value="8">BBB及以下</option>
+                            </select>
+                            <button id="btn-columns1" class="btn btn-columns item"><span>更多指标</span></button>
+                            <button id="btn-filter2" class="btn btn-filter item" data-in="2"><span>更多筛选</span></button>
+                        </div>
+                        <div class="filter-bar-inner clearfix">
+                            <span class="tips">债券代码为蓝色，表示该只债券是当天已经有过成交的债券，点击更多指标可添加中债估值指标。</span>
+                        </div>
+                    </form>
+                    <div class="data data-2">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable2">
+                            <thead>
+                                <tr class="header-group">
+                                    <th colspan="4" class="set-today-date">2014-01-18</th>
+                                    <th colspan="5">买入信息</th>
+                                    <th colspan="2">买卖价差</th>
+                                    <th colspan="5">卖出信息</th>
+									<th colspan="4">最近成交</th>
+                                    <th colspan="3">参考指标</th>
+                                </tr>
+                                <tr class="header-detail">
+									<th>序号</th>
+                                    <th>代码</th>
+                                    <th>简称</th>
+                                    <th>剩余年限</th>
+									
+									<th>时间</th>
+                                    <th>报价方</th>
+                                    <th>券面总额(万元)</th>
+                                    <th>净价</th>
+                                    <th>收益率(%)</th>
+
+                                    <th>净价差额</th>
+                                    <th>收益率差(BP)</th>
+									
+                                    <th>收益率(%)</th>
+                                    <th>净价</th>
+                                    <th>券面总额(万元)</th>
+                                    <th>报价方</th>
+									<th>时间</th>
+									
+									<th>日期</th>
+                                    <th>净价</th>
+                                    <th>全价</th>
+                                    <th>收益率(%)</th>
+                                    <th>票面利率/参考利率(%)</th>
+                                    <th>债券评级</th>
+                                    <th>主体评级</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <form action="#" method="post" class="filter-bar clearfix">
+                        <div class="filter-bar-inner clearfix">
+                            <label for="tab3-select1" class="item">债券类型</label>
+                            <select name="tab3-select1" id="tab3-select1"  class="item">
+                                <option value="0" selected="selected">全部债券</option>
+                                <option value="1">国债</option>
+                                <option value="2">央行票据</option>
+                                <option value="3">政策性银行债</option>
+                                <option value="4">商业银行债</option>
+                                <option value="12">短期融资券</option>
+                                <option value="30">资产支持证券</option>
+                                <option value="5">非银行金融债</option>
+                                <option value="6">企业债</option>
+                                <option value="11">中期票据</option>
+                                <option value="8">国际机构债</option>
+                                <option value="10">地方政府债</option>
+								<option value="23">同业存单</option>
+                            </select>
+                            <label for="tab3-select2" class="item">票息类型</label>
+                            <select name="tab3-select2" id="tab3-select2" class="item">
+								<option value="0" selected="selected">全部债券</option>
+                                <option value="1">零息</option>
+                                <option value="2">贴现</option>
+                                <option value="3">固息</option>
+                                <option value="4">浮息</option>
+                            </select>
+                            <label for="tab3-select3" class="item">债券评级</label>
+                            <select name="tab3-select3" id="tab3-select3" class="item">
+                                <option value="0" selected="selected">全部评级</option>
+                                <option value="1">AAA</option>
+                                <option value="2">AA</option>
+                                <option value="3">AA+</option>
+                                <option value="4">AA-</option>
+                                <option value="5">A</option>
+                                <option value="6">A+</option>
+                                <option value="7">A-</option>
+                                <option value="8">A-1</option>
+                                <option value="9">A-2</option>
+                                <option value="10">A-3</option>
+								<option value="11">BBB及以下</option>
+                            </select>
+                            <label for="tab3-select4" class="item">主体评级</label>
+                            <select name="tab3-select4" id="tab3-select4" class="item">
+                                <option value="0" selected="selected">全部评级</option>
+                                <option value="1">AAA</option>
+                                <option value="2">AA</option>
+                                <option value="3">AA+</option>
+                                <option value="4">AA-</option>
+                                <option value="5">A</option>
+                                <option value="6">A+</option>
+                                <option value="7">A-</option>
+                                <option value="8">BBB及以下</option>
+                            </select>
+                            <button id="btn-filter3" class="btn btn-filter item" data-in="3"><span>更多筛选</span></button>
+                        </div>
+                    </form>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable3">
+                            <thead>
+                                <tr class="header-group">
+                                    <th colspan="22" class="set-today-date">2014-01-18</th>
+                                </tr>
+                                <tr class="header-detail">
+									<th>序号</th>
+                                    <th>代码</th> 
+                                    <th>简称</th>	
+                                    <th>剩余年限</th>	
+                                    <th>交易方式</th>	
+                                    <th>最新净价</th>	
+                                    <th>最新收益率</th>	
+                                    <th>成交量(万元)</th>	
+                                    <th>涨跌幅(%)</th>	
+                                    <th>加权平均净价</th>	
+                                    <th>加权平均收益率</th>	
+                                    <th>开盘净价</th>	
+                                    <th>最高净价</th>	
+                                    <th>最低净价</th>	
+                                    <th>开盘收益率</th>	
+                                    <th>最高收益率</th>	
+                                    <th>最低收益率</th>	
+                                    <th>票面利率/参考利率(%)</th>	
+                                    <th>债券评级</th>	
+                                    <th>主体评级</th>	
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <form action="#" method="post" class="filter-bar clearfix">
+                        <div class="filter-bar-inner clearfix">
+							<!--<label for="tab4-input11" class="item">起始日期</label>
+                            <input type="text" name="tab4-input11" id="tab4-input11" class="item item-date">-->
+                            <label for="tab4-input12" class="item">查询日期</label>
+                            <input type="text" name="tab4-input12" id="tab4-input12" class="item item-date">
+                            <label for="tab4-select1" class="item">债券类型</label>
+                            <select name="tab4-select1" id="tab4-select1"  class="item">
+                                <option value="0" selected="selected">全部债券</option>
+                                <option value="1">国债</option>
+                                <option value="2">央行票据</option>
+                                <option value="3">政策性银行债</option>
+                                <option value="4">商业银行债</option>
+                                <option value="12">短期融资券</option>
+                                <option value="30">资产支持证券</option>
+                                <option value="5">非银行金融债</option>
+                                <option value="6">企业债</option>
+                                <option value="11">中期票据</option>
+                                <option value="8">国际机构债</option>
+                                <option value="10">地方政府债</option>
+								<option value="23">同业存单</option>
+                            </select>
+                            <label for="tab4-select2" class="item">票息类型</label>
+                            <select name="tab4-select2" id="tab4-select2" class="item">
+								<option value="0" selected="selected">全部债券</option>
+                                <option value="1">零息</option>
+                                <option value="2">贴现</option>
+                                <option value="3">固息</option>
+                                <option value="4">浮息</option>
+                            </select>
+                            <button id="btn-filter4" class="btn btn-filter item" data-in="4"><span>更多筛选</span></button>
+							<a href="javascript:void(0)" id="btn-export-data4" class="btn btn-export-data item" data-on="0"><span>提取数据</span></a>
+							<a href="javascript:void(0)" id="btn-export-excel4" class="btn btn-export-excel item"><span>导出Excel</span></a>
+                        </div>
+                       <!-- <div class="filter-bar-inner clearfix">
+                            <span class="tips">债券代码为蓝色，表示该只债券是当天已经有过成交的债券，点击更多指标可添加中债估值指标。</span>
+                        </div>-->
+                    </form>
+                    <div class="data data-3">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable4">
+                            <thead>
+                                <tr class="header-group">
+                                    <th colspan="6" class="set-today-date">2014-01-18</th>
+                                    <th colspan="5">买入信息</th>
+                                    <th colspan="2">买卖价差</th>
+                                    <th colspan="5">卖出信息</th>
+                                   <!-- <th colspan="4">最近成交</th>
+                                    <th colspan="3">参考指标</th>-->
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>代码</th>
+                                    <th>简称</th>
+                                    <th>剩余年限</th>
+                                    <th>日期</th>
+									
+									<th>时间</th>
+                                    <th>报价方</th>
+                                    <th>速度</th>
+                                    <th>券面总额(万元)</th>
+                                    <th>净价</th>
+                                    <th>收益率(%)</th>
+									
+                                    <th>净价差额</th>
+                                    <th>收益率差(BP)</th>
+									
+                                    <th>收益率(%)</th>
+                                    <th>净价</th>
+                                    <th>券面总额(万元)</th>
+                                    <th>速度</th>
+                                    <th>报价方</th>
+                                    <!--<th>日期</th>
+                                    <th>净价</th>
+                                    <th>全价</th>
+                                    <th>收益率(%)</th>
+                                    <th>票面利率/参考利率(%)</th>
+                                    <th>债券评级</th>
+                                    <th>主体评级</th>-->
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <form action="#" method="post" class="filter-bar clearfix">
+                        <div class="filter-bar-inner clearfix">
+                            <!--<label for="tab5-input11" class="item">起始日期</label>
+                            <input type="text" name="tab7-input11" id="tab5-input11" class="item item-date">-->
+                            <label for="tab5-input12" class="item">查询日期</label>
+                            <input type="text" name="tab7-input12" id="tab5-input12" class="item item-date">
+                            <label for="tab5-select1" class="item">债券类型</label>
+                            <select name="tab5-select1" id="tab5-select1"  class="item">
+                                <option value="0" selected="selected">全部债券</option>
+                                <option value="1">国债</option>
+                                <option value="2">央行票据</option>
+                                <option value="3">政策性银行债</option>
+                                <option value="4">商业银行债</option>
+                                <option value="12">短期融资券</option>
+                                <option value="30">资产支持证券</option>
+                                <option value="5">非银行金融债</option>
+                                <option value="6">企业债</option>
+                                <option value="11">中期票据</option>
+                                <option value="8">国际机构债</option>
+                                <option value="10">地方政府债</option>
+								<option value="23">同业存单</option>
+                            </select>
+                            <label for="tab7-select2" class="item">票息类型</label>
+                            <select name="tab5-select2" id="tab5-select2" class="item">
+								<option value="0" selected="selected">全部债券</option>
+                                <option value="1">零息</option>
+                                <option value="2">贴现</option>
+                                <option value="3">固息</option>
+                                <option value="4">浮息</option>
+                            </select>
+                            <label for="tab5-check1" class="item item-check clearfix">
+                                <input type="checkbox" name="tab5-check1" id="tab5-check1">
+                                <span>含权债行权指标</span>
+                            </label>
+                            <button id="btn-filter5" class="btn btn-filter item" data-in="5"><span>更多筛选</span></button>
+                            <a href="javascript:void(0)" id="btn-export-data4" class="btn btn-export-data item"><span>提取数据</span></a>
+                            <a href="javascript:void(0)" id="btn-export-exce5" class="btn btn-export-excel item"><span>导出Excel</span></a>
+                        </div>
+                    </form>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable5">
+                            <thead>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>代码</th>
+                                    <th>简称</th>
+                                    <th>剩余年限</th>
+                                    <th>成交日期</th>
+                                    <th>收盘净价</th>
+                                    <th>收盘收益率</th>
+                                    <th>成交量(万元)</th>
+                                    <th>涨跌幅(%)</th>
+                                    <th>加权平均净价</th>
+                                    <th>加权平均收益率</th>
+                                    <th>开盘净价</th>
+                                    <th>最高净价</th>
+                                    <th>最低净价</th>
+                                    <th>平均全价</th>
+                                    <th>全价涨跌</th>
+                                    <th>全价涨跌幅</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <form action="#" method="post" class="filter-bar clearfix">
+                        <div class="filter-bar-inner clearfix">
+                            <!--<label for="tab8-input11" class="item">起始日期</label>
+                            <input type="text" name="tab8-input11" id="tab6-input11" class="item item-date">-->
+                            <label for="tab8-input12" class="item">查询日期</label>
+                            <input type="text" name="tab6-input12" id="tab6-input12" class="item item-date">
+                            <label for="tab8-select1" class="item">债券类型</label>
+                            <select name="tab8-select1" id="tab6-select1"  class="item">
+                                <option value="0" selected="selected">全部债券</option>
+                                <option value="1">国债</option>
+                                <option value="2">央行票据</option>
+                                <option value="3">政策性银行债</option>
+                                <option value="4">商业银行债</option>
+                                <option value="12">短期融资券</option>
+                                <option value="30">资产支持证券</option>
+                                <option value="5">非银行金融债</option>
+                                <option value="6">企业债</option>
+                                <option value="11">中期票据</option>
+                                <option value="8">国际机构债</option>
+                                <option value="10">地方政府债</option>
+								<option value="23">同业存单</option>
+                            </select>
+                            <label for="tab6-select2" class="item">票息类型</label>
+                            <select name="tab6-select2" id="tab6-select2" class="item">
+								<option value="0" selected="selected">全部债券</option>
+                                <option value="1">零息</option>
+                                <option value="2">贴现</option>
+                                <option value="3">固息</option>
+                                <option value="4">浮息</option>
+                            </select>
+                            <label for="tab6-check1" class="item item-check clearfix">
+                                <input type="checkbox" name="tab6-check1" id="tab6-check1">
+                                <span>含权债行权指标</span>
+                            </label>
+                            <button id="btn-filter6" class="btn btn-filter item"><span>更多筛选</span></button>
+                            <a href="javascript:void(0)" id="btn-export-data5" class="btn btn-export-data item" data-on="0"><span>提取数据</span></a>
+                            <a href="javascript:void(0)" id="btn-export-exce6" class="btn btn-export-excel item"><span>导出Excel</span></a>
+                        </div>
+                    </form>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-main-datatable6">
+                            <thead>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>代码</th>
+                                    <th>简称</th>
+                                    <th>剩余年限</th>
+                                    <th>成交日期</th>
+                                    <th>成交时间</th>
+                                    <th>成交净价</th>
+                                    <th>收盘收益率</th>
+                                    <th>涨跌幅(%)</th>
+                                    <th>前收盘净价</th>
+                                    <th>累计成交量</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="tab-splitter" class="tab-splitter tab-splitter-down">
+            <div class="tab-splitter-inner">
+                <div class="tab-splitter-controller"></div>
+            </div>
+        </div>
+        <div id="tab-secondary" class="tab-list">
+            <ul class="tab-bar clearfix">
+                <li class="active" data-did="100211"><a href="javascript:void(0)" title="日内最优报价">日内最优报价</a></li>
+                <li data-did="100007"><a href="javascript:void(0)" title="今日最新行情">今日最新行情</a></li>
+                <li data-did="100207"><a href="javascript:void(0)" title="今日日内行情">今日日内行情</a></li>
+                <li data-did="getOneMonthBestPrices.dzh"><a href="javascript:void(0)" title="近一月历史最优">近一月历史最优</a></li>
+                <li data-did="getOneMonthDayQuotation.dzh"><a href="javascript:void(0)" title="近一月日行情">近一月日行情</a></li>
+                <li data-did="getOneMonthInnerDayQuotation.dzh"><a href="javascript:void(0)" title="近一个月日内行情">近一个月日内行情</a></li>
+            </ul>
+            <ul class="tab-content">
+                <li class="active hasActive">
+                    <div class="data data-visibility">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display dataTable" id="tab-secondary-datatable1">
+                            <thead>
+                                <tr class="header-group">
+                                    <th id="upDate" colspan="2"></th>
+                                    <th colspan="4">买入</th>
+                                    <th colspan="2">价差</th>
+                                    <th colspan="4">卖出</th>
+                                </tr>
+                                <tr class="header-detail">
+									<th>序号</th>
+									<th>报价时间</th>
+									
+									<th>报价方</th>
+									<th>面额（万元）</th>
+									<th>净价</th>
+									<th>收益率（%）</th>
+									
+									<th>净价差额</th>
+									<th>收益率差（bp）</th>
+									
+									<th>收益率（%）</th>
+									<th>净价</th>
+									<th>面额（万元）</th>
+									<th>报价方</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+							
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-secondary-datatable2">
+                            <thead>
+                                <tr class="header-group">
+                                    <th colspan="15" class="set-today-date">2014-01-18</th>
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+									<th>代码</th>
+                                    <th>交易方式</th>
+                                    <th>最新净价</th>
+                                    <th>最新收益率</th>
+                                    <th>成交量（万元）</th>
+                                    <th>涨跌幅（%）</th>
+                                    <th>加权平均净价</th>
+                                    <th>加权平均收益率</th>
+                                    <th>开盘净价</th>
+                                    <th>最高净价</th>
+                                    <th>最低净价</th>
+                                    <th>开盘收益率</th>
+                                    <th>最高收益率</th>
+                                    <th>最低收益率</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-secondary-datatable3">
+                            <thead>
+                                <tr class="header-group">
+                                    <th colspan="11" class="set-today-date">2014-01-18</th>
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>时间</th>
+                                    <th>最新净价</th>
+                                    <th>最新收益率</th>
+                                    <th>成交量(万元)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-secondary-datatable4">
+                            <thead>
+								<tr class="header-group">
+                                    <th colspan="3"></th>
+                                    <th colspan="5">买入</th>
+                                    <th colspan="2">价差</th>
+                                    <th colspan="5">卖出</th>
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>报价日期</th>
+                                    <th>报价时间</th>
+									
+                                    <th>报价方</th>
+                                    <th>速度</th>
+                                    <th>面额(万元)</th>
+                                    <th>净价</th>
+                                    <th>收益率(%)</th>
+									
+                                    <th>净价差额</th>
+                                    <th>收益率差(BP)</th>
+									
+                                    <th>收益率(%)</th>
+                                    <th>净价</th>
+                                    <th>面额(万元)</th>
+                                    <th>速度</th>
+                                    <th>报价方</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-secondary-datatable5">
+                            <thead>
+								<tr class="header-group">
+                                   
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>代码</th>
+                                    <th>简称</th>
+                                    <th>成交日期</th>
+                                    <th>收盘净价</th>
+                                    <th>收盘收益率</th>
+                                    <th>成交量(万元)</th>
+                                    <th>涨跌幅(%)</th>
+                                    <th>加权平均净价</th>
+                                    <th>加权平均收益率</th>
+                                    <th>开盘净价</th>
+                                    <th>最高净价</th>
+                                    <th>最低净价</th>
+                                    <th>平均全价</th>
+                                    <th>全价涨跌</th>
+                                    <th>全价涨跌幅</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="data">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="tab-secondary-datatable6">
+                            <thead>
+                                <tr class="header-group">
+                                    
+                                </tr>
+                                <tr class="header-detail">
+                                    <th>序号</th>
+                                    <th>代码</th>
+                                    <th>简称</th>
+                                    <th>成交日期</th>
+                                    <th>时间</th>
+                                    <th>成交净价</th>
+                                    <th>成交收益率</th>
+                                    <th>累计成交量(万元)</th>
+                                    <th>涨跌幅(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="dialog-more-filter-1" class="dialog-box">
+        <form action="#" method="post" id="dialog-form">
+            <p class="filter-block">
+                <label for="filter-remain-time-begin-1" class="pre-tips">剩余期限</label>
+                <input class="text-num" name="filter-remain-time-begin-1" id="filter-remain-time-begin-1" onKeyUp="clearNoNum(event,this)" onBlur="checkNum(this)" data-alt="剩余期限" />
+                ---
+                <input class="text-num" name="filter-remain-time-end-1" id="filter-remain-time-end-1" onKeyUp="clearNoNum(event,this)" onBlur="checkNum(this)" data-alt="剩余期限" />
+                <select name="filter-remain-time-unit-1" id="filter-remain-time-unit-1" class="">
+                    <option value="year" selected="selected">年</option>
+                    <option value="day">天</option>
+                </select>
+            </p>
+            <p class="filter-block">
+                <label for="filter-release-time-begin-1" class="pre-tips">发行期限</label>
+                <input class="text-num" name="filter-release-time-begin-1" id="filter-release-time-begin-1" onKeyUp="clearNoNum(event,this)" onBlur="checkNum(this)" data-alt="发行期限" />
+                ---
+                <input class="text-num" name="filter-release-time-end-1" id="filter-release-time-end-1" onKeyUp="clearNoNum(event,this)" onBlur="checkNum(this)" data-alt="发行期限" />
+                <select name="filter-release-time-unit-1" id="filter-release-time-unit-1" class="">
+                    <option value="year" selected="selected">年</option>
+                    <option value="day">天</option>
+                </select>
+            </p>
+            <p class="filter-block">
+                <label for="filter-release-date-begin-1" class="pre-tips">发行日期</label>
+                <input type="text" name="filter-release-date-begin-1" id="filter-release-date-begin-1" class="item-date" />
+                ---
+                <input type="text" name="filter-release-date-end-1" id="filter-release-date-end-1" class="item-date" />
+            </p>
+            <p class="filter-block">
+                <label for="filter-duration-begin-1" class="pre-tips">久期</label>
+                <input class="text-num" name="filter-duration-begin-1" id="filter-duration-begin-1" onKeyUp="clearNoNum(event,this)" onBlur="checkNum(this)" data-alt="久期" />
+                ---
+                <input class="text-num" name="filter-duration-end-1" id="filter-duration-end-1" onKeyUp="clearNoNum(event,this)" onBlur="checkNum(this)" data-alt="久期" />
+            </p>
+        </form>
+    </div>
+
+    
+	<div id="dialog-more-columns" class="dialog-box">
+        <div id="more-columns-tree" class="ztree">
+            
+        </div>
+        <div id="position-controller">
+            <button class="btn" id="move-up" data-pos="prev"><span>上移</span></button>
+            <button class="btn" id="move-down" data-pos = "next"><span>下移</span></button>
+        </div>
+    </div>
+	
+<script src="../../jquery/jquery.js"></script>
+<script src="../../jquery/jquery-plugins/jQuery.datatable/js/jquery.dataTables.min.js"></script> <!-- dataTables控件 -->
+<script src="../../jquery/jquery-plugins/jQuery.datatable/js/media/js/dataTables.scroller.js"></script> <!-- dataTables 配合TableTools -->
+
+<script src="../../jquery/jquery-plugins/jquery-ui/jquery-ui.min.js"></script> <!-- datepicker控件在内 -->
+<script src="../../jquery/jquery-plugins/jquery-ui/datepicker-zh-CN.js"></script> <!-- datepicker 翻译 -->
+
+<script src="../../jquery/jquery-plugins/jquery-smartMenu/jquery-smartMenu-min.js"></script> <!-- 右键菜单 -->
+<script src="../../jquery/jquery-plugins/artDialog/jquery.artDialog.js"></script> <!-- artDialog对话框 -->
+<script src="../../jquery/jquery-plugins/jQuery-zTree/js/jquery.ztree.all-3.5.min.js"></script> <!-- ztree -->
+<script src="js/webSoket.js"></script>
+<script src="js/getPermissions.js"></script>  
+<script src="js/function.js"></script> <!-- JS调用主文件 -->  
+<script>
+    dojoConfig = {dojopr:false};
+    $.extend($.fn.dataTable.ext.oSort, {
+        'numeric-pre':function (e) {
+            e = e === '--' ? -999999999 : e;
+            return '-' == e || '' === e ? 0 : 1 * e;
+        },
+        'string-pre':function (e) {
+            'string' != typeof e && (e = null !== e && e.toString ? e.toString() : '');
+            return e === '--' ? '-999999999' : e.toLowerCase();
+        },
+        'string-asc':function (e, h) {
+            if (isNaN(e) || isNaN(h)) {
+                return e < h ? -1 : e > h ? 1 : 0;
+            } else {
+                return Number(e) - Number(h);
+            }
+        },
+        'string-desc':function (e, h) {
+            if (isNaN(e) || isNaN(h)) {
+                return e < h ? 1 : e > h ? -1 : 0;
+            } else {
+                return Number(h) - Number(e);
+            }
+        }
+    });
+	//限制输入框  开始
+	function clearNoNum(event,obj){ 
+        //响应鼠标事件，允许左右方向键移动 
+        event = window.event||event; 
+        if(event.keyCode == 37 | event.keyCode == 39){ 
+            return; 
+        } 
+        //先把非数字的都替换掉，除了数字和. 
+        obj.value = obj.value.replace(/[^\d.]/g,""); 
+        //必须保证第一个为数字而不是. 
+        obj.value = obj.value.replace(/^\./g,""); 
+        //保证只有出现一个.而没有多个. 
+        obj.value = obj.value.replace(/\.{2,}/g,"."); 
+        //保证.只出现一次，而不能出现两次以上 
+        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$","."); 
+    } 
+    function checkNum(obj){ 
+        //为了去除最后一个. 
+        obj.value = obj.value.replace(/\.$/g,""); 
+    }
+	//结束
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>大智慧-债券组合</title>
+    <script type="text/javascript">
+        document.write('<link href="../../dijit/themes/white/document.css" rel="stylesheet" type="text/css"><'+'/link>');
+        document.write('<link href="resources/limit.css" rel="stylesheet" type="text/css"><'+'/link>');
+    </script>
+    <script type="text/javascript">
+
+        bondPortfolioConfig = { "soUrl":"/bond"};
+        //http://10.15.88.70:9089/bond
+        bondCustomKeyboardSpirit = { "keyboardValue":""};
+        dojoConfig =  {
+            async:true,
+            parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            //noscale:true,
+            deps:[
+
+            ],
+            requestProvider: "dojo/request/registry",
+            callback: function() {
+                require(['bond/bondPortfolio/src'],function(main){
+                            console.log("开始解析");
+                            if (window.external && window.external.getDZHProperty) {
+                                console.log("客户端可供调用的方法属性有：\n");
+                                console.log(window.external);
+                                bondPortfolioConfig.currentUserID = window.external.getDZHProperty("userid");
+                            }else{
+                                bondPortfolioConfig.currentUserID = "dzhcpz218";
+                            }
+                            main();
+                        }
+                );
+                //left.html里声明式使用dojo/data/ItemFileReadStore，在left.js里定义依赖，而不是在deps里
+            }
+        }
+                //dojopr();
+            </script>
+
+</head>
+<body class="claro">
+<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height: 100%;">
+    <!--<div data-dojo-type="bond/bondPortfolio/view/topbar" data-dojo-props="region:'top'"></div>-->
+    <!--<div id="left" data-dojo-type="dijit/layout/ContentPane"  data-dojo-props="region:'left', splitter:true,maxSize:350" style="width:220px;">-->
+        <!--<div data-dojo-type="bond/bondPortfolio/view/treeNavigation" data-dojo-props="region:'top', splitter:true" style="height:100%;" >-->
+
+        <!--</div>-->
+    <!--</div>-->
+    <div data-dojo-type="bond/bondPortfolio/view/treeNavigation" data-dojo-props="region:'left',splitter:true,minSize:50,maxSize:350"
+         style="width:170px;height:100% " >
+    </div>
+
+    <div id="myContentPane" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props=" design:'headline',region:'center',gutters:false" >
+        <div id="myContentPaneGrid" data-dojo-id="mytopContentPaneGrid" class="spacer" data-dojo-type="dijit/layout/ContentPane"  data-dojo-props="region:'center'" >
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

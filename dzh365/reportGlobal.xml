@@ -1,0 +1,71 @@
+<global>
+	<functions>
+		<function id="itemExist" script="sys.lua" func="itemExist"/>
+		<function id="log" script="sys.lua" func="log"/>
+		<function id="notify" script="sys.lua" func="notifyMsg"/>
+		<function id="fetch" script="sys.lua" func="fetchData"/>
+		<function id="loadStat" script="sys.lua" func="loadStat"/>
+		<function id="refreshNav" script="sys.lua" func="refreshNavgationTree"/>
+		<function id="refreshObj" script="sys.lua" func="refreshObjTree"/>
+		<function id="refreshFilter" script="sys.lua" func="refreshFilter"/>
+		<function id="refreshUI" script="sys.lua" func="refreshUIData"/>
+		<function id="customFilter" script="sys.lua" func="customFilter"/>
+		<function id="isTrue" script="sys.lua" func="isTrue"/>
+		<function id="setString" script="sys.lua" func="setStringField"/>
+		<function id="popupDlg"  script="sys.lua" func="popupDlg"/>
+		<function id="cfa" script="sys.lua" func="changeFilterAttribute"/>
+		<function id="deleteData" script="sys.lua" func="deleteRecord"/>
+	    <function id="execUIFlow" script="sys.lua" func="execUIFlow"/>
+		<function id="getFilterValue" script="sys.lua" func="getFilterValue"/>
+		<function id="stringEqual" script="sys.lua" func="stringEqual"/>
+		<function id="goUrl" script="sys.lua" func="goUrl"/>
+		<function id="goBack" script="sys.lua" func="goBack"/>
+		<function id="goForward" script="sys.lua" func="goForward"/>
+		<function id="openFile" script="sys.lua" func="openFile"/>
+		<function id="switchMaxAndMin" script="sys.lua" func="switchMaxAndMin"/>
+		<function id="confirm" script="sys.lua" func="confirmBox"/>
+		<function id="tips" script="sys.lua" func="tips"/>
+		<function id="ExecDZHCmd" script="sys.lua" func="executeSysCmd"/>	
+		<function id="selectGridRow" script="sys.lua" func="selectGridRow"/>
+		<function id="downloadFile" script="sys.lua" func="downloadDZHFile"/>
+		<function id="loadUrl" script="sys.lua" func="loadUrl"/>
+		<function id="dateComparation" script="sys.lua" func="dateComparation"/>
+		<function id="reLoadHeader" script="sys.lua" func="refreshGridHeader"/>
+		<function id="refreshPanel" script="sys.lua" func="refreshPanel"/>
+		<function id="dateIntervalCalc" script="sys.lua" func="dateIntervalCalc"/>
+		<function id="checkAuthority" script="sys.lua" func="checkAuthority"/>
+		<function id="refreshTabHeader" script="sys.lua" func="refreshTabHeader"/>
+	</functions>
+
+	<datasources>
+		<datasource id="getSqlData" provider="DP.ssSqlProvider" />
+		<datasource id="ssUniData" provider="DP.ssUniDataProvider" did="41031" timeout="30"/>
+		<datasource id="ssSoData" provider="DP.ssSoProvider" so="libhelloworld.so" timeout="30"/>
+        <datasource id="iqSqlData" provider="DP.iqQueryProvider" timeout="30"/>
+		<datasource id="objTreeData" provider="DP.objTreeProvider" timeout="30"/>
+		<datasource id="customReportData" provider="DP.CollectStatProvider" dataFile="customReport.dat"/>
+	</datasources>
+	
+	
+     <!--·¶Î§Ê÷¶¨Òå--> 
+	<datadefine id="range_data" provider="objTreeData" didlist="41522" RangeList="112310" timeout="15" canAutoFetch="false" />
+	<datadefine id="range_data1" provider="objTreeData" didlist="41504" RangeList="105190" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data2" provider="objTreeData" didlist="41506" RangeList="105559" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data3" provider="objTreeData" didlist="41506" RangeList="109034" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data5" provider="objTreeData" didlist="41505" RangeList="100003" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data6" provider="objTreeData" didlist="41513" RangeList="999999" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data7" provider="objTreeData" didlist="41504" RangeList="105378" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data9" provider="objTreeData" didList="41504" RangeList="105391" timeout="15" canAutoFetch="false"/>  	
+	<datadefine id="range_data10" provider="objTreeData" didlist="41516" RangeList="110299" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data11" provider="objTreeData" didlist="41500" RangeList="111338" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data12" provider="objTreeData" didlist="41500" RangeList="111332" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data13" provider="objTreeData" didlist="41514" RangeList="100007" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data14" provider="objTreeData" didlist="41519" RangeList="100000" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data15" provider="objTreeData" DidList="41520" RangeList="2" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data16" provider="objTreeData" DidList="41520" RangeList="83" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data17" provider="objTreeData" DidList="41520" RangeList="3621" timeout="15" canAutoFetch="false"/>
+	<datadefine id="range_data18" provider="objTreeData" DidList="41526" RangeList="107481" timeout="15" canAutoFetch="false"/>		
+
+
+	
+</global>

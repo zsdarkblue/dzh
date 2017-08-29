@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!--配置文件路径cfg\SelfSeltStockAppendCmd.xml-->
+
+<AppendCmd>   
+	<SelfStock cmd="FBROWSE?URL='http://ad.gw.com.cn/pages/top.html'&amp;SIZE='0,0'&amp;KEY='wnd1'&amp;ALIGN='RB'&amp;ANCHOR='0,-84'" />
+</AppendCmd>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/sall.css"/>
+</head>
+<body>
+<header>
+    <div class="tabContainer">
+        <div class="marginCenter">
+            <ul id="headerSecondUl" data-bind="onHeaderTabsClick" class="pull-left">
+                <li data-value="overview">两融市场总览</li>
+                <li data-value="trading">市场交易明细</li>
+                <li class="active">个股交易明细</li>
+                <li data-value="ranking">券商月度排名</li>
+            </ul>
+        </div>
+        <a href="DZH://REPORT?ReportModule.dll&MODULE='115'&MODULEREPLACED='ssddvsd'&PARAM='loadStat 1632_1 1632_1'">相关专题报表</a>
+    </div>
+</header>
+
+<div id="container" class="flex-auto">
+    <div id="containerBorder">
+        <div id="chartContainer">
+            <h3>
+                <i class="fa fa-chevron-circle-right"></i>
+                <b class="nameCode"></b>
+
+                <div class="form-group">
+                    <input type="search" placeholder="请输入证券代码或简称"><i class="fa fa-search"></i>
+                    <button class="btn btn-gray" data-bind="onSearchBtnClick">查 询</button>
+                </div>
+            </h3>
+            <ul data-bind="onChangeRTypeClick">
+                <li>
+                    <div data-value="0" class="check-box checkedBox"><i data-value="0"></i></div>
+                    <div data-value="0" class="line-color blue"></div>
+                    <span data-value="0">融资余额</span></li>
+                <li>
+                    <div data-value="1" class="check-box"><i data-value="1"></i></div>
+                    <div data-value="1" class="line-color orange"></div>
+                    <span data-value="1">融券余量</span></li>
+                <li>
+                    <div data-value="2" class="check-box"><i data-value="2"></i></div>
+                    <div data-value="2" class="line-color red"></div>
+                    <span data-value="2">两融余额</span></li>
+                <li>
+                    <div data-value="3" class="check-box"><i data-value="3"></i></div>
+                    <div data-value="3" class="line-color green"></div>
+                    <span data-value="3">两融差额</span></li>
+            </ul>
+            <div id="highchartContainer"></div>
+        </div>
+
+        <div id="tableContainer">
+            <h3>
+                <i class="fa fa-chevron-circle-right"></i>
+                <b class="nameCode"></b><b>融资融券交易明细</b>
+
+            </h3>
+            <table>
+                <colgroup>
+                    <col width="50">
+                    <col width="120">
+                    <col width="120">
+                    <col width="120">
+                    <col width="120">
+                    <col width="120">
+                    <col width="120">
+                    <col width="120">
+                </colgroup>
+                <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>交易日期</td>
+                    <td>融资余额(元)</td>
+                    <td>融资买入额(元)</td>
+                    <td>融资偿还额(元)</td>
+                    <td>融券余额(元)</td>
+                    <td>融券卖出量(股)</td>
+                    <td>融券偿还量(股)</td>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="pagerParent">
+            <div class="pager" v-on="click:onClick">
+                <a v-attr="data-index:index-1">上一页</a>
+                <a v-class="active:index==1" v-text="1"></a>
+                <i v-if="count>size&&index>size/2+1">...</i>
+                <a v-class="active:index==$value" v-repeat="items" v-text="$value"></a>
+                <i v-if="count>size&&index<count-size/2">...</i>
+                <a v-class="active:index==count" v-if="count>1" v-text="count"></a>
+                <a v-attr="data-index:index+1">下一页</a>
+                <input v-attr="min:1,max:count" v-model="input" v-on="change:onChange" type="number">
+                <a v-attr="data-index:input">GO</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tisiDialog" class="dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>提示</h3><i></i>
+    </div>
+    <div class="dialog-body">
+    </div>
+    <div class="dialog-footer">
+        <button class="btn btn-normal" data-bind="onDialogHideClick">确 定</button>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

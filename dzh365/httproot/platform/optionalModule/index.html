@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自选模块</title>
+<link rel="stylesheet" href="../../dijit/themes/white/document.css" />
+<link rel="stylesheet" href="resources/css/custom.css" />
+<script>
+    window.dojoConfig = {
+        async:true,
+        parseOnLoad:false,
+        noscale:true,
+        baseUrl:'../../dojo',
+        callback:function () {
+            require(['platform/optionalModule/src'], function (main) {
+                new main();
+            });
+        }
+    };
+    </script>
+</head>
+<body class="claro">
+<div class="dialogPane_bg" style=" width:580px; height:380px; padding:10px;">
+    <div class="search_line_zx">
+        <input type="text" id="filter" class="sear_text" />
+    </div>
+    <div class="spacer hbox">
+        <div class="spacer vbox border_t_l" style=" width:45%;height:301px; padding:1px; background:#fff; overflow:auto;">
+            <div id="simpleTree"></div>
+        </div>
+        <div class="spacer vbox" style=" width:10%;height:301px; ">
+            <div class="spacer"></div>
+            <div style="text-align:center">
+                <input data-bind="addSelected" title="添加选中节点" type="button" class="btn_calcu" value="&gt;"/>
+                <!--<input data-bind="addAll" title="添加全部节点" type="button" class="btn_calcu" value="&gt;&gt;"/>
+                <br /><br />-->
+                <input data-bind="removeSelected" title="删除选中节点" type="button" class="btn_calcu" value="&lt;"/>
+                <input data-bind="removeAll" title="删除全部节点" type="button" class="btn_calcu" value="&lt;&lt;"/>
+            </div>
+            <div class="spacer"></div>
+        </div>
+        <div class="spacer vbox " style=" width:45%;height:314px; visibility: visible;">
+            <div style="height: 24px; margin-top: -24px;">已选模块(至少<span id="keep">0</span>个, 最多<span id="limit">0</span>个)：</div>
+            <div class="spacer vbox" style="border: #b8b8b8 1px solid; padding:1px;">
+                <ul id="list" class="spacer ser_list"></ul>
+            </div>
+            <div class="btn_ud_group">
+                <input data-bind="moveDown" class="btn_calcu" value ="下移" type="button" />
+                <input data-bind="moveUp" class="btn_calcu" value ="上移" type="button" />
+                <input data-bind="reset" class="btn_calcu" value="默认恢复" type="button"/>
+            </div>
+        </div>
+    </div>
+    <div class="spacer" style=" height:23px; padding:10px 0; border-top: 1px solid #A1A1A1; text-align:right; ">
+        <input data-bind="save" class="btn_calcu" value="确定" type="button"/>
+        <input data-bind="cancel" class="btn_calcu" value="取消" type="button" style="margin-left: 10px;" />
+    </div>
+</div>
+</body>
+</html>

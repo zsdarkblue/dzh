@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>集合理财F9--公司速览</title>
+<link rel="stylesheet" href="./resources/css/set.css"/>
+</head>
+<body>
+	<div class="Header">
+		<span>产品速览</span>
+		<a onclick="location.reload()"><i class="fa fa-undo"></i>还原</a>
+	</div>
+	<div class="top-box">
+		<ul>
+			<li class="r-border" id="top-cinfo-right">
+				<dl>
+					<dd>
+						<span>最新净值：</span><span>--</span>
+						<span>复权净值：</span><span>--</span>
+					</dd>
+					<dd class="r-s-con">
+						<span>近一周：</span><span>--</span>
+						<span>近一个月：</span><span>--</span>
+						<span>最新日期：</span><span>--</span>
+					</dd>
+				</dl>
+			</li>
+			<li class="t-center l-border r-border" id="top-cinfo-center">
+				<dl>
+					<dd><span>状　　态：</span><span>--</span></dd>
+					<dd><span>类　　型：</span><span>--</span></dd>
+					<dd><span>规　　模：</span><span>--</span></dd>
+				</dl>
+			</li>
+			<li class="l-border">
+				<div class="lb-pro">相关产品</div>
+				<div id="top-cinfo-ri-cen">
+					<dl>
+						<dd class="lb-empty">--</dd>
+					</dl>
+				</div>
+				<div class="lb-list d-none" id="top-cinfo-ri-ri"><dl></dl></div>
+			</li>
+		</ul>
+	</div>
+	<div class="flex-row center">
+		<div class="c-leftbox">
+			<div class="item_list"><span>净值走势</span></div>
+			<div class="c-height content loading" id="c-c-content">
+				<div class="c-c-c-top wid100">
+					<span class="selected" data-bind="3m">3个月</span>
+					<span data-bind="6m">6个月</span>
+					<span data-bind="1y">1年</span>
+					<span data-bind="3y">3年</span>
+					<span data-bind="all">成立以来</span>
+				</div>
+				<div class="c-c-c-con" id="networth"></div>
+			</div>
+			<div class="item_list"><span>阶段收益(%)</span></div>
+			<div class="content c2-height loading" id="jdsy-con"></div>
+			<div class="content c3-height" id="jdsy-table"></div>
+			<div class="item_list"><span>年度收益(%)</span></div>
+			<div class="content c3-height c4-height loading"></div>
+			<div class="item_list">
+				<span>风险与收益</span>
+				<span class="span-color">(最近一年)</span>
+			</div>
+			<div class="content riskReturn loading"></div>
+		</div>
+		<div class="c-rightbox">
+			<div class="item_list"><span>基本信息</span></div>
+			<div class="c-height content" id="c-r-info">
+				<dl>
+					<dd><span>券商代码</span><span class="f-right t-right">--</span></dd>
+					<dd><span>计划类型</span><span class="f-right t-right">--</span></dd>
+					<dd><span>预计年化收益率</span><span class="f-right t-right">--</span></dd>
+					<dd><span>是否提取业绩报酬</span><span class="f-right t-right">--</span></dd>
+					<dd><span>管理人</span><span class="f-right t-right">--</span></dd>
+					<dd><span>托管人</span><span class="f-right t-right">--</span></dd>
+					<dd><span>研究顾问</span><span class="f-right t-right">--</span></dd>
+					<dd><span>存续期</span><span class="f-right t-right">--</span></dd>
+					<dd><span>推广起始日</span><span class="f-right t-right">--</span></dd>
+					<dd><span>推广截止日</span><span class="f-right t-right">--</span></dd>
+					<dd><span>成立日期</span><span class="f-right t-right">--</span></dd>
+					<dd><span>终止日期</span><span class="f-right t-right">--</span></dd>
+					<dd><span>业绩比较基准</span><span class="f-right t-right">--</span></dd>
+				 </dl>
+			</div>
+			<div class="item_list">
+				<span>投资经理</span>
+				<a href="javascript:void(0)" data-type="4">更多>></a>
+			</div>
+			<div class="content tzjl-cla">
+				<table class="common-table" id="tzjl-con">
+					<tr><td rowspan="2" width="20%"><img src="data:image/png;base64,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" /></td><td class="t_t_name pa-le"  width="80%">--</td></tr>
+					<tr><td class="pa-le">--</td></tr>
+				</table>
+			</div>
+			<div class="item_list"><span>购买信息</span></div>
+			<div class="content buy-cla loading"></div>
+			<div class="item_list"><span>产品份额变动(亿份)</span></div>
+			<div class="content product loading" id="product-fe"></div>
+			<div class="content product-table"></div>
+		</div>
+	</div>
+	<div class="item_list">
+		<span>资产配置</span>
+		<span class="span-color assetsCfg-date"></span>
+	</div>
+	<div class="content assetsCfg">
+		<div class="flex-row cfg-top">
+			<div class="cfg-t-left hei100" id="a-c-chat"></div>
+			<div class="cfg-t-right hei100">
+				<div class="cfg-list under_line">
+					<div class="selected">行业分布</div>
+					<div class="">券种分布</div>
+				</div>
+				<div class="commhei loading"></div>
+				<div class="commhei d-none"></div>
+			</div>
+		</div>
+		<div class="cfg-bottom">
+			<div class="cfg-list cfg-b-header under_line">
+				<div class="selected">重仓股</div>
+				<div>重仓债</div>
+				<div>重仓基金</div>
+			</div>
+			<div class="commhei loading"></div>
+			<div class="commhei d-none"></div>
+			<div class="commhei d-none"></div>
+		</div>
+	</div>
+	<div class="item_list"><span>产品公告</span></div>
+	<div class="content notice loading"></div>
+	<script data-main="./src.js" src="../../jquery/amd/require.js"></script>
+	<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

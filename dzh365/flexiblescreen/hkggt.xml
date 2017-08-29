@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<dzh:layout>
+  <dzh:title>港股通灵活屏</dzh:title>
+  <dzh:hbox>
+    <dzh:vbox width="75%">
+        <plugin id="1" type="dzhinternal/stklistvw" width="100%" layout="MARKETGROUP?沪港通" mode="1"/>
+    </dzh:vbox>
+    <dzh:vbox width="25%">
+        <plugin id="2" type="dzhinternal/chromeview" width="100%" layout="CHROME?URL=root://stock/hgt_pcchart/charts.html;" followers="2" action="change_linkurl"/>
+    </dzh:vbox>
+  </dzh:hbox>  
+</dzh:layout>
+

@@ -1,0 +1,145 @@
+@import url(./layout.css);
+@import url(./scrollbar.css);
+
+body{
+	font-size: 12px;
+	margin: 0px;
+	background: fff;
+	font-family: SimSun,sans-serif;
+}
+
+#flex_top{
+	height: 28px;
+	min-width:380px;
+	background: -webkit-gradient(linear, left center, right center, from(#D2E0F2), to(#ECF7FC));
+}
+#top_imge_div{
+	display: inline-block;
+	width:45%;
+	text-align: left;
+	margin-top: 3px;
+}
+
+#top_imge{
+	margin-left: 5px;	
+	vertical-align: middle;
+	
+}
+#search_div{
+	display: inline-block;
+	width:53%;
+	text-align: right;
+/*	margin-top: 2px;  */
+	vertical-align: top;
+}
+.search_box{
+	display: inline-block;	
+	border: 1px solid #aaa;
+	background: #fff;
+/*	vertical-align: text-bottom;  */
+	margin-top: 3px;
+	padding-left: 2px;
+	height: 20px;
+}
+
+#search_img{
+/*	width:15px;
+	height:15px;  */
+	margin-top: 2px;
+}
+#xbutton_div{
+	display: inline-block;	
+	vertical-align: top;
+	width:21px;
+	
+}
+#search_xbutton{
+	
+	border: 0px;
+	margin-top: 2px;
+	background: #fff;
+	outline: none;
+	cursor: pointer;
+/*	display: none;	*/
+}
+#search_text{
+	width:115px;	
+	border:0px;
+	outline: none;
+	vertical-align: top;
+}
+#serch_sure{
+	vertical-align: super;
+}
+
+
+	
+
+#historical_content{
+	overflow-y: auto;
+	min-width:380px;
+	margin-top: 5px
+}
+.customer_mark span,.service_mark span{
+	margin-left:5px;
+}
+
+.customer_mark{
+	color: rgb(0, 163, 7);
+}
+.service_mark{
+	color: rgb(2, 53, 255);
+}
+.talked_content{
+	margin:5px 0px 8px 20px;
+	line-height: 20px;
+	color: 000;
+}
+.searchContent{
+	background: #FDFA05;
+}
+
+#flex_bottom{
+	height: 30px;
+	min-width:380px;
+}
+#up_down img{
+/*	height: 21px;
+	width: 21px;   */
+}
+.tools_pictures img:hover{
+	border: 1px solid #8A949F;
+	margin:-1px;
+	cursor: pointer;
+}
+
+.tools_pictures {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+#close_send{
+	height:30px;
+	background: -webkit-gradient(linear, left center, right center, from(#D2E0F2), to(#ECF7FC));
+	
+}
+#up_down{
+	display: inline-block;
+	width:55%;
+	padding-top: 5px;
+	padding-left:5px;
+	vertical-align: middle;
+}
+#close_send_button{
+	display: inline-block;
+	width:40%;
+	text-align: right;
+	padding-top: 2px;
+	vertical-align: -webkit-baseline-middle;
+}
+#close_send_button button{
+	margin-left: 5px;
+}
+#close_send_button button:hover{
+	cursor: pointer;
+}

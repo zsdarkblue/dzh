@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312"?>
+<dzh:layout>
+  <dzh:title>ETF</dzh:title>
+  <dzh:hbox>
+    <dzh:vbox width="50%">
+      <plugin id="1" type="dzhinternal/stkview" width="50%" layout="EDXDP" mode="101" defaultstock="SH000001"/>
+      <plugin id="2" type="dzhinternal/stkview" width="50%" layout="EDX" mode="101" defaultstock="SH510050.fnd"/>
+    </dzh:vbox>
+    <dzh:vbox width="50%">
+      <plugin id="3" type="dzhinternal/stkview" width="50%" layout="EDX" mode="101" defaultstock="SH510180.fnd"/>
+      <plugin id="4" type="dzhinternal/stkview" width="50%" layout="EDX" mode="101" defaultstock="SH510300.fnd"/>
+    </dzh:vbox>
+  </dzh:hbox>  
+</dzh:layout>

@@ -1,0 +1,13 @@
+<div class="vbox">	
+	<div class="hbox">
+		<div id="dydata"></div>
+		<div ><label for="dataSource">请输入订阅名称：</div>
+		<div class="spacer">
+		<div data-dojo-type="dijit/layout/ContentPane" label="订阅标题"><div data-dojo-type="dijit/form/ComboBox" data-dojo-props="hasDownArrow:false,maxLength:30,trim:true" id="mydybt"></div></div>
+		</div>				
+	</div>	
+	<div class="dijitDialogPaneActionBar">
+		<button data-dojo-type="dijit/form/Button" type="button" id="dybtnOk">确定</button>
+		<button data-dojo-type="dijit/form/Button" type="button" onclick="dijit.byId('dialogdy').onCancel()" id="btnCancel">取消</button>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+
+<div class="dijitDialogPaneContentArea" style="width:680px; background:#fff;">
+  	<p class="report_box_title"><b>请您填写建议，我们收到后会尽快地给你答复，或拨打<span>021-20219919</span>电话投诉！</b></p>
+  	<table class="repot_table">
+          <colgroup>
+              <col width="15%" />
+              <col width="35%" />
+              <col width="15%" />
+              <col width="35%" />
+          </colgroup>
+  		<tr>
+  			<td><span class="color_red">*</span>标题</td>
+  			<td colspan="3" > <!--   -->
+  				<input id="bt" name="bt" data-dojo-type="dijit/form/TextBox" required="true" trim="true" class="input_report"/>
+  			</td>
+  		</tr>
+  		<tr>
+  			<td> 人物</td>
+  			<td colspan="3" >
+  				<input id="rwName" name="name" data-dojo-type="dijit/form/TextBox" class="input_report" />
+  			</td>
+  		</tr>
+  		<tr>
+  			<td><span class="color_red">*</span>描述</td>
+  			<td colspan="3">
+  				<textarea name="content" id="rwContent" class="repor_text"  required="true" trim="true"
+  				data-dojo-type="dijit/form/SimpleTextarea" data-dojo-props="placeholder:'请您详细描述投诉对象及理由，以保证您的投诉得到及时准确的处理(500个字以内)'" style="resize:none"></textarea>
+  			</td>
+  		</tr>
+  		<tr>
+  			<td> 反馈人</td>
+  			<td><input id="sugName" name="sugName" data-dojo-type="dijit/form/TextBox" class="input_report input_report2" /></td>
+            <td><span class="color_red">*</span>联系电话</td>
+  			<td>
+  				<input id="rwPhone" name="phone"  data-dojo-type="dijit/form/TextBox"  required="true" trim="true"
+  				class="input_report input_report2" />
+  			</td>
+  		</tr>
+  		<!--
+  		<tr>
+  			<td> 上传附件</td>
+  			<td>
+   			<input type="file" id="file" name="file" />
+
+  			</td>
+  			<td>注：文件大小不超过2M</td>
+  		</tr>
+  		 -->
+  		<tr>
+  			<td colspan="4" align="right">
+  			 <button data-dojo-type="dijit/form/Button" class="btn_lightblue" id="saveFrom">提 交</button>
+	    	</td>
+  		</tr>
+  	</table>
+  </div>

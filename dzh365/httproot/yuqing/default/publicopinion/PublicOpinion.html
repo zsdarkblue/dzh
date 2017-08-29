@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>舆情监测首页</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/globe.min.css"/>	
+<link rel="stylesheet" type="text/css" href="../../css/plugins/jquery-datapicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/module/publicopinion.min.css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/base.min.js"></script>
+<script type="text/javascript" src="../../js/websocket.min.js"></script>
+<script type="text/javascript" src="../../js/lib/block/dialogUi.min.js"></script>
+<script type="text/javascript" src="../../js/lib/autocomplete/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="../../js/lib/calendar/jquery-ui-datapicker.min.js"></script>
+<script type="text/javascript" src="../../js/file/publicop/publicopinion.js"></script>
+</head>
+<body>
+
+<div class="icontent">
+ <div class="ititle top_yuqing fn-left">
+  <span class="ititle2"></span>
+	<div id="i_tab">
+	 <div data-source="0" class="itab pointer firsttab">重要</div>
+	 <div data-source="0" class="itab pointer itab_unslt">全部</div>
+	 <div data-source="1" class="itab pointer itab_unslt">微博</div>
+	 <div data-source="2" class="itab pointer itab_unslt">媒体</div>
+	</div>
+ </div>
+  <div class="fn-right top_right">
+ 	<div class="search_frame">
+	    <div class="fs1 text_mark1" aria-hidden="true" data-icon="&#xe005;"></div>
+	 	<input type="text" id="selectTxt" class="text_content" />
+	 	<div class="fs1 text_mark2" aria-hidden="true" data-icon="&#xe004;" ></div>
+ 	</div>
+ 	<input type="text" class="calendarformat" id="calendartext" value=""/>
+ 	<div id="data_btn" class="fs1 img_mark1" aria-hidden="true" data-icon="&#xe009;"></div>
+ 	<div id="customized_btn" class="fs1 img_mark2" aria-hidden="true" data-icon="&#xe008;"></div>
+ 	<div id="refresh_btn" class="fs1 img_mark3" aria-hidden="true" data-icon="&#xe006;"></div>
+
+  </div>
+</div>
+<div class="conBd">
+ <div class="left_box">
+ </div>
+ <div class="ibody_style" id="main_content">
+	 <div class="ibody_bd" id="ibody_bd">
+	 </div>
+	 <div id="export_icon"></div>	
+ </div>
+ <div class="right_box"> 	
+ </div>
+</div>
+ <div id="right_tip">
+	 <div class="fs1 close_mark" aria-hidden="true" data-icon="&#xe007;" id="open"></div>
+	 <div class="fs1 open_mark" aria-hidden="true" data-icon="&#xe000;" id="close"></div>
+	 <div class="right_name" id="customer_name">
+	 </div>
+	
+ </div>
+ 
+</body>
+</html>

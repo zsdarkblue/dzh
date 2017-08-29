@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>大智慧 - 排行榜</title>
+	<link rel="stylesheet" href="../../dijit/themes/claro/document.css"/>
+	<link rel="stylesheet" href="./resources/topList.css"/>
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,
+			callback: function() {
+				require(["marco/topList/src"],function(main){main();});
+			}
+		}
+		//dojopr();
+	</script>
+</head>
+<body class="claro" style="overflow-y:auto;">
+	<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height:2040px;overflow:auto;overflow-y:hidden;">
+ 		<div data-dojo-type="marco/topList/view/top" data-dojo-props="region:'top'" style="width:100%" id="mainTop"></div>
+	    <div data-dojo-type="marco/topList/view/right" data-dojo-props="region:'center'" style="width:100%;overflow-x:hidden;overflow-y:hidden;display:none;" id="mainRight"></div>
+	</div>
+</body>
+</html>

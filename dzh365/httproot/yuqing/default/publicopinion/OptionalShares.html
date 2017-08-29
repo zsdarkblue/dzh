@@ -1,0 +1,243 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>舆情监测首页</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/globe.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/module/optionalshares.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/lib/block/dialogUi.js"></script>
+<!-- <script type="text/javascript" src="../../js/file/publicop/publicopinion.js"></script> -->
+<script type="text/javascript">
+  	$(document).ready(function() {
+		$("#content div").hide(); // Initially hide all content
+		$("#tabs li:first").attr("id","current"); // Activate first tab
+		$("#content div:first").fadeIn(); // Show first tab content
+	    
+	    $('#tabs a').click(function(e) {
+	        e.preventDefault();        
+	        $("#content div").hide(); //Hide all content
+	        $("#tabs li").attr("id",""); //Reset id's
+	        $(this).parent().attr("id","current"); // Activate this
+	        $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+	    });
+	})();
+</script>
+</head>
+<body>
+
+<section id="_left">
+	<ul id="tabs">
+	    <li><a href="#" title="tab1">重要</a></li>
+	    <li><a href="#" title="tab2">全部</a></li>
+	    <li><a href="#" title="tab3">媒体</a></li>
+	    <li><a href="#" title="tab4">微博</a></li>  
+	    <li><a href="#" title="tab5">论坛</a></li>
+	    <li><a href="#" title="tab6">公告</a></li>
+	    <li><a href="#" title="tab7">延报</a></li>   
+	</ul>
+
+	<div id="content"> 
+	    <div id="tab1">
+	        11111111111    
+	    </div>
+	    <div id="tab2">
+	        22222222222    
+	    </div>
+	    <div id="tab3">
+	        33333333333
+	    </div>
+	    <div id="tab4">
+	    	<section class="weibo">
+	    		<ul>
+			        <li>
+			        	【腾讯微博】本报6月5日讯(记者 夏似飞)今天，省委书记、省人大常委会主任徐守盛专程来到韶山考察调研毛泽东同志诞辰120周年纪念活动筹备和纪念设施建设情况，研究解决相关重大问题。精心组织好纪念活动和纪念设施建设，以此为契机进一步凝聚人心，振奋精神，加快湖南科学发展。
+			        </li>
+			        <li>
+			        	<span>2013-6-6 17:36:07来自新浪微博</span>
+			        	<span>成霖股份</span>
+			        	<br>
+			        </li>
+		        </ul>
+	        	<ul>
+			        <li>
+			        	【腾讯微博】本报6月5日讯(记者 夏似飞)今天，省委书记、省人大常委会主任徐守盛专程来到韶山考察调研毛泽东同志诞辰120周年纪念活动筹备和纪念设施建设情况，研究解决相关重大问题。精心组织好纪念活动和纪念设施建设，以此为契机进一步凝聚人心，振奋精神，加快湖南科学发展。
+			        </li>
+			        <li>
+			        	<span>2013-6-6 17:36:07来自新浪微博</span>
+			        	<span>成霖股份</span>
+			        	<br>
+			        </li>
+		        </ul>
+	        	<ul>
+			        <li>
+			        	【腾讯微博】本报6月5日讯(记者 夏似飞)今天，省委书记、省人大常委会主任徐守盛专程来到韶山考察调研毛泽东同志诞辰120周年纪念活动筹备和纪念设施建设情况，研究解决相关重大问题。精心组织好纪念活动和纪念设施建设，以此为契机进一步凝聚人心，振奋精神，加快湖南科学发展。
+			        </li>
+			        <li>
+			        	<span>2013-6-6 17:36:07来自新浪微博</span>
+			        	<span>成霖股份</span>
+			        	<br>
+			        </li>
+		        </ul>
+	        	<ul>
+			        <li>
+			        	【腾讯微博】本报6月5日讯(记者 夏似飞)今天，省委书记、省人大常委会主任徐守盛专程来到韶山考察调研毛泽东同志诞辰120周年纪念活动筹备和纪念设施建设情况，研究解决相关重大问题。精心组织好纪念活动和纪念设施建设，以此为契机进一步凝聚人心，振奋精神，加快湖南科学发展。
+			        </li>
+			        <li>
+			        	<span>2013-6-6 17:36:07来自新浪微博</span>
+			        	<span>成霖股份</span>
+			        	<br>
+			        </li>
+		        </ul>
+	        	<ul>
+			        <li>
+			        	【腾讯微博】本报6月5日讯(记者 夏似飞)今天，省委书记、省人大常委会主任徐守盛专程来到韶山考察调研毛泽东同志诞辰120周年纪念活动筹备和纪念设施建设情况，研究解决相关重大问题。精心组织好纪念活动和纪念设施建设，以此为契机进一步凝聚人心，振奋精神，加快湖南科学发展。
+			        </li>
+			        <li>
+			        	<span>2013-6-6 17:36:07来自新浪微博</span>
+			        	<span>成霖股份</span>
+			        	<br>
+			        </li>
+		        </ul>
+	    	</section>
+	    </div>
+	    <div id="tab5">
+	        55555555555    
+	    </div>
+	    <div id="tab6">
+	        <section class="postList">
+	    		<ul>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+		        </ul>
+		        <ul>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+			        <li>
+			        	<span class="mark">△</span>
+			        	<span class="brief">深圳成霖洁具股份有限公司重大会议成霖洁具股份有限报告</span>
+			        	<span class="source">巨潮咨询网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-6-7 16:48:49</span>
+			        	<span class="name">成霖股份</span>
+			        </li>
+		        </ul>
+	    	</section>
+	    </div>
+	    <div id="tab7">
+	        77777777777    
+	    </div>
+	</div>
+</section>
+<section id="_right">
+	<div style="background:#aeaeae;height:29px;">
+		<div style="padding:4px 0px 0px 0px;">
+			<div class="tabMenu" style="width:120px;">自选股</div>
+			<div class="tabMenuRadius"></div>
+		</div>
+	</div>
+	<div style="height:45px;border-bottom: 1px solid #b4c2cf;">
+		<div style="padding:8px 0px 0px 30px">
+			<div style="float:left;"><img src="../../image/refreshzxg.png" id="refresh" style="cursor: pointer;" /></div>
+			<div style="float:left;"><input type="text" value="自选股" style="width:160px;height:29px; border:1px solid #d2d2d2; background:#dddddd; readonly:true;" /></div>
+			<div style="float:left;"><img src="../../image/zxgslt.png" style="cursor: pointer;" /></div>
+		</div>
+		<div style="padding:5px 0px 0px 10px;">&nbsp;&nbsp;&nbsp;<input id="" type="button" value="添加自选股" class="btn_bg_gradient" /></div>
+	</div>
+	
+	<div id="RresultTitle">
+		<span class="code">股票代码</span>
+		<span class="TitlecodeName">股票名称</span>
+		<span class="upDown">现价(涨跌幅)</span>
+		<span class="del">&nbsp;</span>
+	</div>
+
+	<div id="Rresult">
+		<ul>
+			<li class="ResultCode">SH600155</li>
+			<li class="ResultName">宝硕股份</li>
+			<li class="ResultRose">3.49（0.29%↑）</li>
+			<li class="ResultDel">×</li>
+		</ul>
+		<ul>
+			<li class="ResultCode">SH600155</li>
+			<li class="ResultName">宝硕股份</li>
+			<li class="ResultRose">3.49（0.29%↑）</li>
+			<li class="ResultDel">×</li>
+		</ul>
+		<ul>
+			<li class="ResultCode">SH600155</li>
+			<li class="ResultName">宝硕股份</li>
+			<li class="ResultRose">3.49（0.29%↑）</li>
+			<li class="ResultDel">×</li>
+		</ul>
+		<ul>
+			<li class="ResultCode">SH600155</li>
+			<li class="ResultName">宝硕股份</li>
+			<li class="ResultRose">3.49（0.29%↑）</li>
+			<li class="ResultDel">×</li>
+		</ul>
+		<ul>
+			<li class="ResultCode">SH600155</li>
+			<li class="ResultName">宝硕股份</li>
+			<li class="ResultRose">3.49（0.29%↑）</li>
+			<li class="ResultDel">×</li>
+		</ul>
+	</div>
+
+</section>
+
+
+ 
+</body>
+</html>

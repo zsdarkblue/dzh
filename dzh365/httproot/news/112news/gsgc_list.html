@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>异动观察-盘前沸点</title>
+<link href="resources/style/index.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript">
+	
+	function showPN(position_id,div_id){
+		var obj=document.getElementById(div_id); 
+		if(obj == null) return;
+		var padding=60; 
+		var posHeight = document.getElementById(position_id);
+		var outDivObj = document.getElementById('left_news_list');
+		var B = posHeight.offsetTop-outDivObj.scrollTop; 
+		obj.style.top = (B+padding)+"px"; 
+		obj.style.visibility="visible";
+	}
+	
+	function hiddenPN(div_id){
+		var obj = document.getElementById(div_id);
+		if(obj == null) return;
+		obj.style.visibility="hidden";
+	}
+	
+		document.addEventListener("DOMContentLoaded", function(){ //检测可用区域的宽度，写样式。
+			var doc = document,
+				bodyH = doc.body.clientHeight,
+				style = doc.createElement("style"),
+				rules = ".list_pages_box{height:" + (bodyH - 26) + "px;}";
+			style.type='text/css';
+			style.rel='stylesheet';
+			style.appendChild( doc.createTextNode(rules) );
+			doc.head.appendChild(style);
+		});
+
+		var dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,	
+			callback: function() {
+				require(["news/112news/src"], function(main){ main(); });
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+<div class="top_nav_listpage" id="nav-bar-wrap" style="display:block;">
+
+	<ul class="ydgc_ZtGs_top_nav_bar_list">
+        <li><a href="./ztgc_list.html?ydgc_name=ztgc" >主题观察</a></li>
+		<li><a href="#" class="selected">公司观察</a></li>
+    </ul>
+    <div class="clear"></div>
+</div>
+
+
+<div class="list_pages_box">
+	<div class="list_pages_con_ydgc list_pages_left_ydgc_ZtGs f_left" id="left_news_list">
+		<div id = "list_body" class="list_ZtGs_body">
+			<div id="list_body_title" class="width:100%">
+				<div class = "title_ydgc title_bg ztgc_mc ydgc_ZtGs_border" >公司名称</div>
+				<div class = "title_ydgc title_bg ztgc_hq ydgc_ZtGs_border" >行情</div>
+				<div class = "title_ydgc title_bg ztgc_sj ydgc_ZtGs_border" style="text-align:center">事件</div>
+				<div class = "title_ydgc title_bg ztgc_dt ydgc_ZtGs_border" >时间</div>
+			</div>
+			<div id = "list_body_data" style="height:100%;"></div>			
+		</div>
+		
+	</div>
+    <div class="list_pages_con f_right list_pages_right_ydgc_ZtGs" id="content">
+    	<div id="detail-pane-wrap" class="list_text_box font_14 font_gray_3">
+			<h2 id="xin_wen_title" class="text_title font_gray_6 font_16">&nbsp;</h2>
+			<div class="text_msg font_12">
+				<p class="font_center font_gray_9"><span id="xin_wen_info" class="">&nbsp;</span>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;字号:<a href="#" class="font_gray_9" data-font-size="16">&nbsp;&nbsp;大</a><a href="#" class="font_gray_9" data-font-size="14">&nbsp;&nbsp;中</a><a href="#" class="font_gray_9" data-font-size="12">&nbsp;&nbsp;小</a></span></p>
+           
+			</div>
+		  
+			<div id="xin_wen_detail" class="text_con padding_t10"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<iframe name="news_iframe" style="display:none;"><!-- 用于a:visited --></iframe>
+</body>
+</html>

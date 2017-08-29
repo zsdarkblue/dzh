@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>贵金属资讯</title>
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <script type="text/javascript">
+        BizQQWPA.addCustom({aty: '1', a: '1001',type:'2', nameAccount: 800061687, selector: 'BizQQWPA'});
+
+            function closeWin()
+            {
+                setTimeout(function () {
+                    document.getElementById("BizQQWPA").click();
+                },3000);
+
+
+                setTimeout(function () {
+                    window.opener = null;
+         　          window.open(' ', '_self', ' ');
+                     　window.close();
+                },18000);
+                var i=8;
+                setInterval(function(){
+                    document.getElementById("endTime").innerText=i--;
+                }, 1000);
+
+            }
+
+
+
+
+    </script>
+
+
+</head>
+<body   onload="closeWin()" >
+<div style="display: none">
+关闭窗口倒计时：<spen id="endTime" ></spen><br/>
+
+<button id="BizQQWPA" style="width: 200px;">如果没有提示窗口,请点我</button>
+<!--<a id="BizQQWPA" href="#" onclick="clickWin(event)">dsadasdas</a>-->
+<!--<div id="BizQQWPA">rewrwe</div>-->
+
+</div>
+
+</body>
+</html>

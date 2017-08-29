@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312" ?>
+ <root name="commoncfg">
+ <kv key="FUNC_BLK_EXCLUDE">市场分类 沪市指数 中证指数 申万指数 证监会行业 深市指数 其它版块</kv>
+ <kv key="DZHYUN_HTTP_URL">v2.yundzh.com</kv>
+ </root>

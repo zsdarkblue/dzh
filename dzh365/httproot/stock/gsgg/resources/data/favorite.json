@@ -1,0 +1,8 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+		{id:'wdgg',name:'我的公告',type:'level0'},
+		{id:'wdcx',name:'我的查询',type:'level0'},
+		]
+}

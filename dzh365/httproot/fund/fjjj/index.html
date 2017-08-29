@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>大智慧 - 分级基金报价</title>
+	<link rel="stylesheet" href="../../dijit/themes/white_normal/document.css"/>	
+	<style type="text/css">
+		.classA { cursor:pointer; }
+		.classB { cursor:pointer; }
+		.classC { cursor:pointer; }
+	</style>
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		dojoConfig = {
+			async:true, parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,
+			callback: function() {
+				require(['fund/fjjj/src'],function(main){main();});	
+			}
+		}
+		//dojopr();
+	</script>
+</head>
+<body class="claro">
+	<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:true, design:'headline'" style="height: 100%;">
+
+		<div data-dojo-type="fund/fjjj/view/topMune" region="top"></div>
+ 		<!-- 左边的树 的区域-->
+<!--  		<div data-dojo-type="fund.fjjj.view.left" data-dojo-props="region:'leading',splitter:true,minSize:20" style="width:200px;" ></div-->
+			<!-- 右边的2个grid的布局 -->
+		<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline',region:'center'">
+			<div data-dojo-type="fund/fjjj/view/topGrid" data-dojo-props="splitter:false,region:'top'" style="height:50%;"></div>
+			<div data-dojo-type="fund/fjjj/view/bottomGraph" data-dojo-props="region:'center'"></div>
+		</div>
+	</div>
+</body>
+</html>

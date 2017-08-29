@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>个股融券图</title>
+<link rel="stylesheet" href="./css/chartPublic.css"/>
+</head>
+<body>
+	<div id="container"></div>
+	
+	<script src="../../../../jquery/amd/require.js" ></script>
+	<script src="./cfg.js"></script>
+
+	<script type="text/javascript">
+	require(['highcharts'],function(){
+		var urlSearch = location.search;
+		var searchRequest = new Object();
+		if(urlSearch.indexOf("?") != -1){
+			var searchStr = urlSearch.substr(1);
+			var searchStrs = searchStr.split("&");
+			for(var i=0,l=searchStrs.length; i<l; i++){
+				searchRequest[searchStrs[i].split("=")[0]]= (searchStrs[i].split("=")[1]);
+			}
+		
+		} 
+		var datas = eval(decodeURI(searchRequest["datas"]));
+		 new Highcharts.Chart({
+			chart: {
+				renderTo:'container',
+				type: 'bar'
+			},
+			title: {    
+	            text: ''                    
+	        },  
+	        exporting: {
+	            enabled: false
+	        },
+	        xAxis: {   
+	            categories: ['融资余额', '流通市值'],
+	            tickmarkPlacement: 'on',
+	            title: {     
+	                text: null     
+	            }                                                  
+	        },                                                                 
+	        yAxis: {  
+	            min: 0, 
+	            title: {   
+	                text: '',  
+	                align: 'high'  
+	            }, 
+	            dataLabels: '万元',  
+	            tickPixelInterval:200,
+	            gridLineWidth: 0,
+	            labels: {  
+	                overflow: 'justify',
+	                formatter:function(){
+			        	return '';
+			        }
+	            }                                                              
+	        },                                                                 
+	        tooltip: { 
+	        	enabled: false    
+	        },                                                                 
+	        plotOptions: {  
+	            bar: {     
+	                dataLabels: {   
+	                    enabled: true,
+	                    formatter: function(){
+	                    	return Highcharts.numberFormat(this.y,2,'.')+'(万元)';
+	                    }   
+	                }                                                          
+	            }                                                              
+	        },                                                                 
+	        legend: {  
+	            enabled: false   
+	        },                                                                 
+	        credits: {   
+	            enabled: false     
+	        },                                                                 
+	        series: [{
+	            data: [{color:'#FCF12E',y:datas[0]}, {color: '#F78A8A',y:datas[1]}]                                
+	        }]                                                                 
+	    });                                                                    
+	}); 
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312"?>
+<stockmarks version="1">
+    <priority abh="10" default="10"/>
+    <blks>
+        <blk labels='SH' blockname="沪股通" filepath="\USERDATA\BLOCK\沪股通.BLK" property="0x01"   str="T" priority="0"/>
+ 	<blk labels='SZ' blockname="深股通" filepath="\USERDATA\BLOCK\深股通.BLK" property="0x08"   str="T"/>
+        <blk labels='HK' blockname="全部港股通" filepath="\USERDATA\BLOCK\全部港股通.BLK" property="0x02"   str="T"/>
+	<blk labels='SH,SZ' blockname="融资融券" filepath="\USERDATA\BLOCK\融资融券.BLK" property="0x04" str="R"/>
+    </blks>
+    <subtypes>
+        <subtype label="SH" subtype="15" property="0x8000" str="Q"/>
+        <subtype label="SZ" subtype="15" property="0x10" str="Q"/>
+    </subtypes>
+</stockmarks>

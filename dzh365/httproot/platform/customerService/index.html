@@ -1,0 +1,102 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+	<title>在线客服</title>
+	<link rel="stylesheet" href="./css/index.css" />
+</head>
+<body class="flex-column" style="height:100%">
+	<div class="flex-auto" id="historical_content" style="overflow: auto;min-width:380px;margin-top: 5px;">
+		<div class="customer_mark">
+			<span class="talk_name">我</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<div class="service_mark">
+			<span class="talk_name">客服800078</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<!-- 测试 -->
+		<div class="customer_mark">
+			<span class="talk_name">我</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<div class="service_mark">
+			<span class="talk_name">客服800078</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<div class="customer_mark">
+			<span class="talk_name">我</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<div class="service_mark">
+			<span class="talk_name">客服800078</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<div class="customer_mark">
+			<span class="talk_name">我</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<div class="service_mark">
+			<span class="talk_name">客服800078</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">已经很久没有收到您的消息了，请问您还在电脑前吗？如果没有其他的问题我将主动关闭该对话。随时欢迎您再次向我咨询，祝您今天好心情！</div>
+		<div class="customer_mark">
+			<span class="talk_name">我</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<div class="service_mark">
+			<span class="talk_name">客服800078</span><span class="talk_year">2014/9/17</span><span class="talk_time">10:36:27</span>
+		</div>
+		<div class="talked_content">你好</div>
+		<!-- 测试 -->
+	</div>
+
+	<div class= "flex-none" id="flex_bottom">
+		<div id="tools">
+			<div id="tools_left">
+				<div href="#" class="tools_pictures"><img src="./imgs/phiz.png" /></div>
+				<div class="tools_pictures" href="#"><img src="./imgs/file.png" /></div>
+				<div href="#" class="tools_pictures"><img src="./imgs/photo.png" /></div>
+				<div href="#" class="tools_pictures"><img src="./imgs/screenshot.png" /></div>
+			</div>
+			<div id="tools_right">
+				<a id="showRecord" href="#" class="tools_pictures"><img src="./imgs/record.png" /></a>
+			</div>
+		</div>
+		<div id="talking">
+			<textarea id="talking_text"></textarea>
+		</div>
+		<div id="close_send">
+			<div id="close_send_explain"><span>直接Enter发送，shift+Enter 换行</span></div>
+			<div id="close_send_button">
+				<button onclick="hide()" id="close" type="button">关闭</button>
+				<button id="send" type="button">发送</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		//生产环境使用此地址
+		document.write('<script src="./js/loadRecord.js"><\/script>');
+	</script>
+	<script type="text/javascript">
+		/// 显示iframe里的聊天记录页
+		document.getElementById("showRecord").addEventListener("click",function(){
+			$record.show(); // 显示
+		});
+		/* 显示iframe里的聊天记录页
+		document.getElementById("hideRecord").addEventListener("click",function(){
+			$record.hide(); // 隐藏
+		}); */
+		/// 点击按钮，输入聊天信息
+		document.getElementById("send").addEventListener("click",function(){
+			$record.send({"user":"dzh","service_user":"kf","msg_type":"1","msg_html":"点击发送","msg_content":"点击发送"});
+		});
+		/// 敲回车键，输入聊天信息
+		document.getElementById("talking_text").addEventListener("keyup",function(evt){
+			if(evt.keyCode == 13){
+				$record.send({"user":"dzh","service_user":"kf","msg_type":"1","msg_html":"按了回车","msg_content":"按了回车"});
+			}
+		});
+	</script>
+</body>
+</html>

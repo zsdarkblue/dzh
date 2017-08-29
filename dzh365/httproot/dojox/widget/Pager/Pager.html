@@ -1,0 +1,12 @@
+<div data-dojo-attach-point="pagerContainer" tabIndex="0" data-dojo-attach-event="onkeypress: _handleKey, onfocus: _a11yStyle, onblur:_a11yStyle" class="${orientation}PagerContainer">
+    <div class="pagerContainer">
+		<div data-dojo-attach-point="pagerContainerStatus" class="${orientation}PagerStatus"></div>
+		<div data-dojo-attach-point="pagerContainerPager" class="${orientation}PagerPager">
+			<div tabIndex="0" data-dojo-attach-point="pagerNext" class="pagerIconContainer" data-dojo-attach-event="onclick: _pagerNext"><img data-dojo-attach-point="pagerIconNext" src="${iconNext}" alt="Next" /></div>
+			<div tabIndex="0" data-dojo-attach-point="pagerPrevious" class="pagerIconContainer" data-dojo-attach-event="onclick: _pagerPrevious"><img data-dojo-attach-point="pagerIconPrevious" src="${iconPrevious}" alt="Previous" /></div>
+		</div>
+		<div data-dojo-attach-point="pagerContainerView" class="${orientation}PagerView">
+		    <div data-dojo-attach-point="pagerItemContainer"><ul data-dojo-attach-point="containerNode" class="pagerItems"></ul></div>
+		</div>
+    </div>
+</div>

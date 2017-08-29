@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css">
+</head>
+<body class="flex-column loading">
+
+<ul class="flex-none nav-tabs">
+    <li class="active">按字母顺序</li>
+    <li>按类型</li>
+    <li style="display: none">做市商</li>
+    <li style="display: none">主办券商</li>
+    <li style="display: none">通用</li>
+</ul>
+<div class="flex-auto flex-column nav-panes">
+    <div class="flex-auto flex-column active">
+        <ol class="flex-none" v-on="click: onIndexBtnClick">
+            <li v-repeat="item:indexes" v-text="item.C8" v-class="highlight:item.C8===index"></li>
+        </ol>
+        <ul class="flex-auto columns" v-on="click: onItemClick">
+            <li v-repeat="item:blocks" v-attr="data-block:item.C3" v-text="item.C4" v-class="selected:item.C8===index,highlight:item.C7==='1'"></li>
+            <li></li>
+        </ul>
+        <i class="fa fa-chevron-left" v-if="pageCount>1&&pageIndex>1" v-on="click: onPrevBtnClick"></i>
+        <i class="fa fa-chevron-right" v-if="pageCount>1&&pageIndex<pageCount" v-on="click: onNextBtnClick"></i>
+    </div>
+    <div class="flex-auto flex-column">
+        <ul class="flex-auto columns" v-on="click: onItemClick">
+            <li v-repeat="item:blocks" v-attr="data-block:item.C3" v-text="item.C4" v-class="selected:item.C8===index,highlight:item.C7==='1',separator:item.C5!==blocks[$index-1].C5"></li>
+            <li></li>
+        </ul>
+        <i class="fa fa-chevron-left" v-if="pageCount>1&&pageIndex>1" v-on="click: onPrevBtnClick"></i>
+        <i class="fa fa-chevron-right" v-if="pageCount>1&&pageIndex<pageCount" v-on="click: onNextBtnClick"></i>
+    </div>
+    <div class="flex-auto flex-column">
+        <ol class="flex-none" v-on="click: onIndexBtnClick">
+            <li v-repeat="item:indexes" v-text="item.py" v-class="highlight:item.py===index"></li>
+        </ol>
+        <ul class="flex-auto columns" v-on="click: onItemClick">
+            <li v-repeat="item:blocks" v-attr="data-block:item.code" v-text="item.name" v-class="selected:item.py===index"></li>
+            <li></li>
+        </ul>
+        <i class="fa fa-chevron-left" v-if="pageCount>1&&pageIndex>1" v-on="click: onPrevBtnClick"></i>
+        <i class="fa fa-chevron-right" v-if="pageCount>1&&pageIndex<pageCount" v-on="click: onNextBtnClick"></i>
+    </div>
+    <div class="flex-auto flex-column">
+        <ol class="flex-none" v-on="click: onIndexBtnClick">
+            <li v-repeat="item:indexes" v-text="item.py" v-class="highlight:item.py===index"></li>
+        </ol>
+        <ul class="flex-auto columns" v-on="click: onItemClick">
+            <li v-repeat="item:blocks" v-attr="data-block:item.code" v-text="item.name" v-class="selected:item.py===index"></li>
+            <li></li>
+        </ul>
+        <i class="fa fa-chevron-left" v-if="pageCount>1&&pageIndex>1" v-on="click: onPrevBtnClick"></i>
+        <i class="fa fa-chevron-right" v-if="pageCount>1&&pageIndex<pageCount" v-on="click: onNextBtnClick"></i>
+    </div>
+    <div class="flex-auto flex-column">
+        <ul class="flex-auto columns" v-on="click: onItemClick">
+            <li v-repeat="item:blocks" v-attr="data-block:item.C3" v-text="item.C4"></li>
+            <li></li>
+        </ul>
+        <i class="fa fa-chevron-left" v-if="pageCount>1&&pageIndex>1" v-on="click: onPrevBtnClick"></i>
+        <i class="fa fa-chevron-right" v-if="pageCount>1&&pageIndex<pageCount" v-on="click: onNextBtnClick"></i>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

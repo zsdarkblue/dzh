@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/complex.css"/>
+</head>
+<body class="flex-column loading">
+
+<div class="flex-none flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark">
+                <li class="active" data-obj="SH000001.index">上证综指</li>
+                <li data-obj="ZICES300.index">沪港通300</li>
+                <li data-obj="SH000159.index">沪股通</li>
+            </ul>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark">
+                <li class="active" data-obj="HIHSI.index">恒生指数</li>
+                <li data-obj="ZICES100.index">港股通100</li>
+                <li data-obj="HIHSAHP.index">AH溢价</li>
+            </ul>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>联动分时图</b>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+    </div>
+</div>
+<div class="flex-auto flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>沪股通</b>
+            <span class="limit"></span>
+        </div>
+        <div class="flex-auto grid"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>港股通</b>
+            <span class="limit"></span>
+        </div>
+        <div class="flex-auto grid"></div>
+    </div>
+</div>
+<div class="flex-none flex-row">
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>沪股通新闻</b>
+        </div>
+        <div class="flex-auto grid"></div>
+    </div>
+    <div class="flex-1 flex-column">
+        <div class="flex-none title">
+            <b>港股通新闻</b>
+        </div>
+        <div class="flex-auto grid"></div>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

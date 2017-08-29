@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0;" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<title>大智慧债市早报</title>
+<link rel="stylesheet" href="resources/css/base.css" />
+<link rel="stylesheet" href="resources/css/style.css" />
+<link rel="stylesheet" href="resources/css/custom.css" />
+</head>
+<body>
+    <div id="header" >
+        <div class="wrap">
+            <h1>大智慧债市早报</h1>
+            <span class="date" id="news_date"></span>
+        </div>
+    </div>
+    <div id="content">
+        <div class="wrap">
+            <div id="nav">
+                <h2 class="bar"><div class="bar-inner"><strong>导航</strong></div></h2>
+                <ul class="item">
+                    <li><a class="title" href="#zhaishiyaowen">债市要闻</a></li>
+                    <li><a class="title" href="#jigoushidian">机构视点</a></li>
+                    <li>
+                        <a class="title" href="#guoneishichang">国内市场</a>
+                        <!--ul class="sub-nav">
+                            <li><a class="title" href="#yinhangjian">银行间现券</a></li>
+                            <li><a class="title" href="#huobishichang">货币市场</a></li>
+                            <li><a class="title" href="#huilv">汇率</a></li>
+                        </ul-->
+                    </li>
+                    <li><a class="title" href="#guojishichang">国际市场</a></li>
+                    <!-- <li>
+                        <a class="title" href="#jingjishuju">经济日历</a>
+                        <ul class="sub-nav">
+                            <li><a class="title" href="#yijinggongbu">已经公布</a></li>
+                            <li><a class="title" href="#jijianggongbu">即将公布</a></li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a class="title" href="#pingjitiaozheng">评级调整</a>
+                        <ul class="sub-nav">
+                            <li><a class="title" href="#zuorizhaixiang">债项评级调整</a></li>
+                            <li><a class="title" href="#zuorizhuti">主体评级调整</a></li>
+                            <li><a class="title" href="#zuorilieru">列入负面观察</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="title" href="#jiaoyitishi">交易提示</a>
+                        <ul class="sub-nav">
+                            <li><a class="title" href="#jinrizhaobiao">今日招标</a></li>
+                            <li><a class="title" href="#jinrifaxing">今日发行</a></li>
+                            <li><a class="title" href="#jinrifuxi">今日付息</a></li>
+                            <li><a class="title" href="#jinrijiaokuan">今日缴款</a></li>
+                            <li><a class="title" href="#jinridaoqi">今日到期</a></li>
+                            <li><a class="title" href="#jinrizhaipai">今日摘牌</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="title" href="#mianzeshengming">免责声明</a></li>
+                </ul>
+            </div>
+            <div id="main">
+				<div id="toggle">
+                <h2 class="bar" id="zhaishiyaowen"><div class="bar-inner">【债市要闻】</div></h2>
+				<div class="content-box">
+                    <div class="content">
+                        <div class="inner-block">
+							<div id="data_1_2"></div>
+						</div>
+					</div>
+				</div>
+                <h2 class="bar" id="jigoushidian"><div class="bar-inner">【机构视点】</div></h2>
+				<div class="content-box">
+                    <div class="content">
+                        <div class="inner-block">
+							<div id="data_1_3"></div>
+						</div>
+					</div>
+				</div>
+                <h2 class="bar" id="guoneishichang"><div class="bar-inner">【国内市场动态】</div></h2>
+				<div class="content-box">
+					<div class="content">
+						<div class="inner-block">
+							<div id="data_1_7"></div>
+						</div>
+					</div>
+				</div>
+                <div class="content-box">
+                    <div class="content">
+                        <!--h3 class="title" id="yinhangjian">【银行间现券】</h3-->
+                        <div class="inner-block">
+							<div class="text-right t-caption"><h5 class="fl">成交统计（按债券类型）</h5><span class="t-date"></span></div>
+							<div id="data8"></div>
+							<div class="text-right t-caption"><h5 class="fl">成交统计（按待偿期）</h5><span class="t-date"></span></div>
+							<div id="data9"></div>
+							<div class="text-right t-caption"><h5 class="fl">中债总指数净价指数走势</h5><span class="t-date"></span></div>
+							<div class="flot-wrap" id="flot-wrap-10">
+								<span class="flot-y-label" style="display:none;">债券指数</span>
+								<div class="flot-chart" style="margin-left:0;">
+									<div id="data10" style="width:610px; height:230px;"></div>
+									<div class="flot-x-label text-center">
+										<span><i class="tl-red"></i>中债总指数净价指数</span>
+									</div>
+								</div>
+							</div>
+							<div class="text-right t-caption"><h5 class="fl">银行间固定利率国债收益率</h5><span class="t-date"></span></div>
+							<div id="data11"></div>
+							<div class="text-right t-caption"><h5 class="fl">银行间固定利率政策性金融债收益率（国开行）</h5><span class="t-date"></span></div>
+							<div id="data12"></div>
+							<div class="text-right t-caption"><h5 class="fl">银行间中短期票据收益率（AAA）</h5><span class="t-date"></span></div>
+							<div id="data13"></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <!--h3 class="title" id="huobishichang">【货币市场】</h3-->
+                        <div class="inner-block">
+							<div class="text-right t-caption"><h5 class="fl">本周公开市场操作</h5><span class="t-date"></span></div>
+                            <div id="data2"></div>
+							<div class="text-right t-caption"><h5 class="fl">SHIBOR</h5><span class="t-date"></span></div>
+							<div id="data3"></div>
+							<div class="text-right t-caption"><h5 class="fl">SHIBOR走势</h5><span class="t-date"></span></div>
+							<div class="flot-wrap" id="flot-wrap-4">
+								<div class="flot-chart">
+									<div id="data4" style="width:610px; height:230px;"></div>
+									<div class="flot-x-label text-center">
+										<span><i class="tl-blue"></i>SH001D</span>
+										<span><i class="tl-red"></i>SH001W</span>
+										<span><i class="tl-green"></i>SH002W</span>
+										<span><i class="tl-purple"></i>SH001M</span>
+									</div>
+								</div>
+							</div>
+							<div class="text-right t-caption"><h5 class="fl">银行间回购利率</h5><span class="t-date"></span></div>
+							<div id="data5"></div>
+							<div class="text-right t-caption"><h5 class="fl">CNY利率互换</h5><span class="t-date"></span></div>
+							<div id="data6"></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <!--h3 class="title" id="huilv">【汇率】</h3-->
+                        <div class="inner-block">
+							<div class="text-right t-caption"><h5 class="fl">人民币（中间价）</h5><span class="t-date"></span></div>
+							<div id="data7"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="bar" id="guojishichang"><div class="bar-inner">【国际市场动态】</div></h2>
+				<div class="content-box">
+					<div class="content">
+						<div class="inner-block">
+							<div id="data_1_8"></div>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="inner-block">
+						<div class="text-right t-caption"><h5 class="fl">LIBOR</h5><span class="t-date"></span></div>
+						<div id="data14"></div>
+						<div class="text-right t-caption"><h5 class="fl">外围市场</h5><span class="t-date"></span></div>
+						<div id="data15"></div>
+					</div>
+				</div>
+                <!-- <h2 class="bar" id="jingjishuju"><div class="bar-inner">【经济日历】</div></h2>
+                <div class="content-box">
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="yijinggongbu">【已经公布】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+							<div id="data16"></div>
+                        </div>
+                    </div>
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="jijianggongbu">【即将公布】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+							<div id="data17"></div>
+                        </div>
+                    </div>
+                </div> -->
+                <h2 class="bar" id="pingjitiaozheng"><div class="bar-inner">【评级调整】</div></h2>
+                <div class="content-box">
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="zuorizhaixiang">【近一周债项评级调整】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+							<div id="data18"></div>
+                        </div>
+                    </div> 
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="zuorizhuti">【近一周主体评级调整】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+							<div id="data19">
+							</div>
+                        </div>
+                    </div>    
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="zuorilieru">【近一周列入负面观察】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+							<div id="data20">
+							</div>
+                        </div>
+                    </div>             
+                </div>
+                <h2 class="bar" id="jiaoyitishi"><div class="bar-inner">【交易提示】</div></h2>
+                <div class="content-box">
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="jinrizhaobiao">【今日招标】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+							<div id="data21">
+							</div>
+                        </div>
+                    </div>
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="jinrifaxing">【今日发行】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+							<div id="data22">
+							</div>
+                        </div>
+                    </div>
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="jinrifuxi">【今日付息】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+                            <div id="data23">
+							</div>
+                        </div>
+                    </div>
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="jinrijiaokuan">【今日缴款】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+                            <div id="data24">
+							</div>
+                        </div>
+                    </div>
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="jinridaoqi">【今日到期】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+                            <div id="data25">
+							</div>
+                        </div>
+                    </div>
+                    <div class="content">
+						<div class="text-right t-caption"><h3 class="title fl" id="jinrizhaipai">【今日摘牌】</h3><span class="t-date"></span></div>
+                        <div class="inner-block">
+                            <div id="data26">
+							</div>
+                        </div>
+                    </div>
+                </div>
+				</div>
+				<h2 class="bar" id="mianzeshengming"><div class="bar-inner">免责声明</div></h2>
+				<div class="content-box">
+                    <div class="content">
+                        <div class="inner-block">　　本报告由上海大智慧股份有限公司（以下简称“本公司”）编制。本公司具有中国证监会许可的证券投资咨询业务资格。本报告基于合法取得的信息，但本公司对这些信息的准确性和完整性不作任何保证。本报告所包含的分析基于各种假设，不同假设可能导致分析结果出现重大不同。报告中的内容和意见仅供参考，并不构成对所述证券买卖的出价，在任何情况下，本报告中的信息或所表述的意见并不构成对任何人的投资建议。除法律或规则规定必须承担的责任外，本公司及其雇员不对使用本报告及其内容所引发的任何直接或间接损失负任何责任。本公司或关联机构可能会持有报告中所提到的公司所发行的证券头寸并进行交易，还可能为这些公司提供或争取提供投资银行业务服务。客户应当考虑到本公司可能存在可能影响本报告客观性的利益冲突。本报告版权归本公司所有。本公司保留所有权利。未经本公司事先书面许可，任何机构和个人均不得以任何形式翻版、复制、引用或转载，否则，本公司将保留随时追究其法律责任的权利。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../jquery/jquery.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery-plugins/lazyLoader.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-plugins/jquery-scrolltofixed-min.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery-plugins/jquery.flot.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery-plugins/jquery.flot.time.js"></script>
+	
+	<script type="text/javascript" src="resources/js/Socket.js"></script>
+    <script type="text/javascript" src="resources/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>港股综合屏</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<script type="text/javascript">
+		document.write('<link href="../../dijit/themes/black/document.css" rel="stylesheet" type="text/css"><'+'/link>');
+	</script>
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		dojoConfig = {
+			async:true, parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			requestProvider: "dojo/request/registry",
+			paths:{'stock':'../stock'},
+			noscale:false, //配置整体是否缩放
+			callback: function() {
+				require(['stock/hkStkZhp/src','dojo/on'],
+					function(main,on){
+						on(document.body, "click", function(evt){
+								dojo.query(".selected").forEach(function(node){
+									dojo.removeClass(node,"selected")	
+								});
+								
+								dojo.query(evt.target).closest(".slick-row").children().forEach(function(node){
+									dojo.addClass(node,"selected")
+								});
+							})
+						main();
+					});
+			}
+		}
+		dojopr();
+	</script>
+	<!--自定义样式表-->
+	<script type="text/javascript">
+		document.write('<link href="resources/css/common.css" rel="stylesheet" type="text/css"><'+'/link>');
+	</script>
+</head>
+<body class="claro">
+	<div data-dojo-type="stock/hkStkZhp/view/main" data-dojo-props="splitter:false, region:'top'" style="height:100%"></div>
+</body>
+</html>

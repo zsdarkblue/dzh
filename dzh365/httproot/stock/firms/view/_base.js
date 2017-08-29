@@ -1,0 +1,2 @@
+//>>built
+define("stock/firms/view/_base","dojo/_base/lang,dojo/aspect,dojo/query,dojo/on,dojo/mouse,dojo/dom-style,dojo/request,dijit/_WidgetBase,dijit/_TemplatedMixin,dijit/_WidgetsInTemplateMixin,dijit/layout/_ContentPaneResizeMixin,stock/firms/view/_data,dojo/NodeList-traverse,dojo/NodeList-manipulate,dojo/NodeList-fx".split(","),function(f,g,h,i,j,k,l,a,b,c,d,e){return dojo.declare("stock.firms.view._base",[a,b,c,d,e],{postCreate:function(){this.inherited(arguments)}})});

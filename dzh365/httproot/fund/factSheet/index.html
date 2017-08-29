@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>大智慧 - 基金</title>
+	<link rel="stylesheet" href="./resources/style.css"/>
+	<link rel="stylesheet" href="./resources/common.css"/>
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,
+			callback: function() {
+				require(['fund/factSheet/src'],function(main){main();});
+			}
+		}
+		//dojopr();
+	</script>
+</head>
+<body>
+</body>
+</html>

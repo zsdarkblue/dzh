@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col><value>index</value><width>0</width><name>序号</name></col>
+		<col><value>name</value><width>180</width><name>名称</name></col>
+        <col><value>now</value><width>80</width><name>最新</name></col>
+        <col><value>undn</value><width>80</width><name>涨跌</name></col>
+		<col><value>updnratio</value><width>80</width><name>涨幅</name></col>
+	</column>
+<onload script="xgsc();" curdir="116"/></list>

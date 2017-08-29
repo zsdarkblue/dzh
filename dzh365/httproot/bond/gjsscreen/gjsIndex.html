@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>行情综合分析</title>
+    <link href="resources/basestyle.css" rel="stylesheet" type="text/css" />
+    <link href="resources/ver1.0.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        //alpha为内网 beta为beta环境，空为外网(默认为空)
+        serverEvn={
+            evn:""
+        }
+        dojoConfig =  {
+            async:true, parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            baseW:1366,
+            _baseH:45,
+            noscale:false,
+            deps:[
+            ],
+            requestProvider: "dojo/request/registry",
+            callback: function() {
+                require(["bond/gjsscreen/src","dojo/request/registry","dojo/request/proxy" ],function(main,request,proxy){
+                            request.register(/^http:\/\/reader2.gw.com.cn/, proxy);
+                            main();
+                        }
+                );
+            }
+        }
+                //dojopr();
+            </script>
+</head>
+<body class="claro"  >
+<div id="main" data-dojo-type="dijit/layout/ContentPane" style="height: 100%;overflow-y:hidden">
+    <div data-dojo-type="bond/gjsscreen/view/gjsMassAge" style="height: 100%">
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>大盘关注</title>
+<link href="resources/style/focus.css" rel="stylesheet" type="text/css" />
+<link href="resources/style/index.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+		var dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,	
+			callback: function() {
+				require(["news/marketAttention/src"], function(main){ main(); });
+				//require(["news/ui-marketAttention/src"], function(main){ main(); });
+			}
+		}
+		window.onload = function(){
+			document.getElementById('tc_focus_text').style.height = document.documentElement.clientHeight -305 + "px";
+		}
+		window.onresize = function(){
+			document.getElementById('tc_focus_text').style.height = document.documentElement.clientHeight -305 + "px";
+		}
+		//dojopr();
+	</script>
+</head>
+
+<body class="overflow">
+<div class="tc_focus" id="tc">
+	<div class="content_index box_space1 hbox  margin_r10 ">
+		<div class="content_index_box box_space1 vbox" style="width:50%;">
+			<div class="con_box box_space1 vbox" style = "margin-top: 3px">
+				<div id="home-focus1" class="list-min-height-11">
+				</div>
+			</div>
+			<div class="con_box box_space1 vbox">
+				<div id = "home-focus2" class="con_list_box">          	
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="content_index_box box_space1 vbox"  style="width:50%">
+			<div class="con_box box_space1 vbox">
+				<div class="con_list_box box_space1 ">
+					<div id="home-focus3" class="list-min-height-11">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="tc_focus_t" style="height:10%;">	
+		<div class = "bborder " style="margin-top: 8px"></div>	
+		<div id = "xin_wen_title" class="font_black_ex font_14 margin_b5"></div>
+		<span id="xin_wen_info"></span>
+		<span>字号:<a href="#" class="font_gray" data-font-size="16">大</a><a href="#" class = "font_gray" data-font-size="14">中</a><a href="#" class="font_gray" data-font-size="12">小</a></span>
+	</div>
+	<div style = "height:10px"></div>
+	<div id="tc_focus_text" class="tc_focus_text font_gray2 font_14" >
+		<!-- <div id="hideDetail"  data-dojo-type="dijit/form/Button" data-dojo-props="label:'132456789',onClick:alert(1111)"></div> -->
+		<div id="xin_wen_detail"></div>
+	</div>
+	<iframe name="news_iframe" style="display:none;"><!-- 用于a:visited --></iframe>
+</div>
+</body>
+</html>

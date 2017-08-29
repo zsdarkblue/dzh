@@ -1,0 +1,32 @@
+<div data-dojo-attach-point="containerNode" data-dojo-type="dijit/layout/ContentPane"
+     class="dialog_size1 ">
+    <div class="vbox  globalHeight">
+
+        <div class="spacer"></div>
+        <div class="hbox">
+            <div class="dlg_input dlg_input_other">
+                <input id="capitalTarget1" type="checkbox" data-dojo-attach-point="capital1"
+                       data-dojo-type="dijit/form/CheckBox" value="2" checked="true"/>
+                <label for="capitalTarget1">我的交易对手方</label>
+            </div>
+            <div class="dlg_input "><a class="dlg_input_other_color" id="editCapitalTargetDlg" href="">编辑我的交易对手</a></div>
+        </div>
+
+        <div class="hbox ">
+            <div class="dlg_input dlg_input_other">
+                <input id="capitalTarget2" type="checkbox" data-dojo-attach-point="capital2"
+                       data-dojo-type="dijit/form/CheckBox" value="1" checked="true"/>
+                <label for="capitalTarget2">智慧通债券论坛</label>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="hbox spacer">
+            <div class="spacer"></div>
+            <div data-dojo-type="dijit/form/Button" id='capitalSearchOK'>确定</div>
+            <div style="width:20px;"></div>
+            <div data-dojo-type="dijit/form/Button" onclick="dijit.byId('capitalNeedQuoteSubmitDialog').onCancel()">取消</div>
+            <div class="spacer"></div>
+        </div>
+
+    </div>
+</div>

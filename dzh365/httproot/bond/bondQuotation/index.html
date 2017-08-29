@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <title>智慧通债券论坛</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../../dijit/themes/black_table/document.css"/>
+
+    <!--<link rel="stylesheet" href="resources/custom.css"/>-->
+    <script type="text/javascript">
+//        bondForumConfig = { "soUrl":"http://10.15.92.139:8080/",favRateBondCodes:[],favCreditBondCodes:[],
+//                rateCounterparty:[],creditCounterparty:[],capitalCounterparty:[],f9Url:"f9dataalpha.gw.com.cn"};
+
+        bondForumConfig = { "soUrl":"/",favRateBondCodes:[],favCreditBondCodes:[],
+        rateCounterparty:[],creditCounterparty:[],capitalCounterparty:[],f9Url:"f9dataalpha.gw.com.cn"};
+
+//        bondForumConfig = { "soUrl":"http://10.15.107.148:8080/",favRateBondCodes:[],favCreditBondCodes:[],
+//            rateCounterparty:[],creditCounterparty:[],capitalCounterparty:[],f9Url:"f9dataalpha.gw.com.cn"};
+
+        dojoConfig = {
+            async:true,
+            parseOnLoad:false,
+            noscale:true,
+            baseUrl:'../../dojo',
+            callback:function () {
+                console.dir(this);
+                require(["bond/bondQuotation/src"], function (main) {
+                    main();
+                });
+            }
+        }
+            </script>
+</head>
+<body class="claro vbox">
+<div class="redTitle">
+    <div class="title_right"><span>智慧通债券论坛</span></div>
+</div>
+<div data-dojo-type="bond/bondQuotation/view/main"  class="spacer vbox body_recall"></div>
+</body>
+</html>

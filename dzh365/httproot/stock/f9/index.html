@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+			<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+			<title>F9页面</title>
+			<script type="text/javascript">
+				document.write('<link href="../../dijit/themes/black_f9/document.css" rel="stylesheet" type="text/css"><'+'/link>');
+			</script>
+
+			<script type="text/javascript">
+			var u = window.location.href;
+			var dojoConfig = {
+				async:true,
+				parseOnLoad:false,
+				baseUrl:'../../dojo',
+				//paths:{'stock':'../stock'},
+				noscale:true,
+				dzhCode:u.substr(u.indexOf("=")+1,12),//股票代码
+				tradeinfo_f9:[],//股票行业数据
+				dzhURL:"",//请求域名			
+					callback: function() {
+					require(["stock/f9/src"],function(main){	
+						main();
+						
+					
+						
+					});
+				}
+			}
+						dojopr();
+			</script>
+		<link rel="stylesheet" href="./resources/custom.css"/>
+	</head>
+	<body class="claro">
+	  	<div class="searchCode" style="top:2px;position:absolute;padding-left:2px;z-index:999;">
+			<div data-dojo-type="dijit/form/TextBox" id="setStkCodeInput" style="width: 118px; height:20px;"></div>
+			<span data-dojo-type="dijit/form/Button" data-dojo-attach-point="setStkCodeButton" id="SettingCode"
+			data-dojo-props="label:'设置'" style="margin-left:-7px;"></span>
+		</div>
+		
+	
+		<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:true, design:'sidebar'" style="height: 100%;">
+		<!-- 左边的树的区域-->
+			<div data-dojo-type="stock/f9/view/tree" data-dojo-props="region:'left',splitter:true,minSize:50,maxSize:350" style="width:170px;" >
+			</div>
+		<!-- 右边的框架区域-->
+			<div id="content" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="overflow:hidden">		
+ 			
+ 				   <iframe class="iframe001" id="iframe001" style="height:100%; width:100%; border:none;" src=" "></iframe>
+ 		
+ 			</div>
+		</div>
+	</body>
+</html>

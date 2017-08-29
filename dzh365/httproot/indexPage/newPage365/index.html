@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>365新首页</title>
+	<link href="../../dijit/themes/black/document.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="resources/mystyle.css"/>
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			async:true, 
+			parseOnLoad : false, 
+			baseUrl:'../../dojo',
+			//locale:'en', 
+			//noscale:true,
+			deps:[
+			],
+			callback: function() {
+				require(['indexPage/newPage365/src'],function(main){
+						main();
+					}
+				);	
+				//left.html里声明式使用dojo/data/ItemFileReadStore，在left.js里定义依赖，而不是在deps里
+			}
+		}
+		//dojopr();
+	</script>
+	
+	
+</head>
+
+<body class="claro" style="min-width:1024px;max-width:1280px;margin:0 auto;">
+	<div class="hbox" style="max-height:1200px;min-height:580px;height:100%">
+		<!-- 第一列 -->
+		<div id="part1" class="vbox selectionDiv" style="width:280px">
+			<div style="height:154px">
+				<div class="vbox" style="height:100%">					 
+					<div class="title" style="padding-left:0px;">
+						<!-- 自选观察 -->
+						<div id="priStockManager"></div>
+					</div>
+					<div id="TzxgcCP" class="spacer1 vbox">
+						<div id="Tzxgc"></div>
+					</div>
+				</div>
+			</div>
+			<div id="TzxgDiv" class="spacer1 vbox" style="height:100%;">
+				<div id="Tzxg_grid"></div>
+			</div>
+			<div id="" style="height:150px">
+				<div class="vbox favModule" style="height: 100%">					 
+					<div class="title">猜你喜欢</div>
+					<div class="favContainer spacer1 vbox">
+						<div class="spacer1"></div>
+						<div style="position:relative;height: 68px;">
+							<div class="hbox favBody" style="position:absolute;">
+								<div class="spacer1 favItemContainer">
+									<div class="favItem">
+										<div class="favItemTitle" id="title1"></div>
+										<div class="favItemContent" id="content1">
+										</div>
+									</div>
+								</div>
+								<div class="spacer1 favItemContainer">
+									<div class="favItem">
+										<div class="favItemTitle" id="title2"></div>
+										<div class="favItemContent" id="content2"></div>
+									</div>
+								</div>
+								<div class="spacer1 favItemContainer">
+									<div class="favItem">
+										<div class="favItemTitle" id="title3"></div>
+										<div class="favItemContent" id="content3"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="spacer1"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 第二列 -->
+		<div id="part2" class="spacer3 vbox selectionDiv" style="width:1px">
+			<div class="spacer1 vbox" style="height:1px;">
+				<div class="vbox spacer1">					 
+					<div class="title" id="minSharingPlans-title">上证指数</div>
+					<div class="spacer1" style="overflow: hidden">
+						<div id="Cszzs" ></div>
+					</div>
+				</div>
+			</div>
+			<div class="spacer1 hbox" style="height: 1px;">
+				<div class="spacer1 vbox" style="width: 1px; margin-right:6px;">
+					<div class="vbox spacer1" >					 
+						<div class="title">最关注</div>
+						<div class="spacer1 vbox" style="overflow: hidden;">
+							<div id="Tzgz"></div>
+						</div>
+					</div>
+				</div>
+				<div  class="spacer1 vbox" style="width:1px;">
+					<div class="vbox spacer1">					 
+						<div class="title">热门主题</div>
+						<div class="spacer1 hbox">
+							<!-- 控制列 -->
+							<div class="vbox" style="width:80px;">
+								<div id="topicController"></div>
+							</div>
+							<!-- 成分列 -->
+							<div id="TrmztContainer" class="spacer1 vbox" style="overflow: hidden;">
+								<div id="topicContainer"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- 第三列 -->
+		<div class="selectionDiv" style="position:relative;width:290px">
+			<div  id="part3" class="vbox" style="position:absolute;height:100%;"> </div>
+		</div>
+	</div>
+	
+	<div id="maskDiv"></div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新闻列表-大智慧通讯社</title>
+<link href="resources/style/index.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript">
+		console.log(new Date().getTime(), "解析第一行JS代码");
+		document.addEventListener("DOMContentLoaded", function(){ //检测可用区域的宽度，写样式。
+			var doc = document,
+				bodyH = doc.body.clientHeight,
+				style = doc.createElement("style"),
+				rules = ".list_pages_box{height:" + (bodyH - 26) + "px;}";
+			style.type='text/css';
+			style.rel='stylesheet';
+			style.appendChild( doc.createTextNode(rules) );
+			doc.head.appendChild(style);
+		});
+
+		var dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,	
+			callback: function() {
+				console.log(new Date().getTime(), "开始执行dojoConfig的callback函数，该函数中首先加载项目的js文件");
+				require(["news/112news/src"], function(main){ main(); });
+			}
+		}
+	</script>
+
+
+<script type="text/javascript" src="resources/js/jquery.js"></script>
+<script type="text/javascript" src="resources/js/websocket.js"></script>
+<script type="text/javascript" src="resources/js/lib/autocomplete/jquery.autocomplete.js"></script>
+
+<script  type="text/javascript" language="javascript">
+	$(document).ready(function(){
+		
+		var _url='/gweb/fuzzySearch?core=solr_stock_base_info&q=(stock_code:*6* OR stock_name:*6*) AND plate:1 AND type:101 AND NOT market:STAS00&fields=stock_code,stock_name,organ_id&orderFields=stock_code&orderTypes=asc&start_num=0&row_num=10';
+		$("#investor_name").autocomplete(_url, {
+			minChars: 1,
+			delay: 100,
+			cacheLength: 500,
+			max: 100,
+			width: 176,
+			scrollHeight: 300,
+			websocket: true,
+			websocketOption : "news",
+			matchCase: true,
+			matchContains: true,
+			callformatdelay:false,
+			ajaxfun:'getjsonstock',
+			websocketType: "jg",
+			
+			createUrlFun:function(str){
+				//console.log(str);
+				//return '/gweb/fuzzySearch?core=solr_stock_base_info&q=(stock_code:*6* OR stock_name:*6*) AND plate:1 AND type:101 AND NOT market:STAS00&fields=stock_code,stock_name,organ_id&orderFields=stock_code&orderTypes=asc&start_num=0&row_num=10';
+				//return '/gweb/fuzzySearch?core=solr_stock_base_info&q=(stock_code:*'+str+'* OR stock_name:*'+str+'* OR stock_jp:*'+str.toUpperCase()+'*) AND plate:1 AND type:101 AND NOT market:STAS00&fields=stock_code,stock_name,organ_id&orderFields=stock_code&orderTypes=asc&start_num=0&row_num=10';
+				return '/keyspirit/search?f=0&e=N1&__encoding=gbk&l=10&key=' + encodeURI(str);
+			},
+			formatItem: function(row, i, max, id) {	
+				//return "<a id=stock_" + i + " txt="+row[0]+">" +row[0]+"&nbsp;&nbsp;&nbsp;&nbsp;"+ row[1] + "</a>";
+				return "<span id=" + id + " >" +row[2].replace(/\D/g, '')+"&nbsp;&nbsp;&nbsp;&nbsp;"+ row[0] + "</span>";
+			}
+		}).result(function(event, row) {
+				//console.log(row);
+				//var stock_code = row[0];
+				var stock_code = row[2].replace(/\D/g, '');
+				var stock_name = row[0];
+				$('#investor_name').val(stock_name);
+				$('#investor_value').val(stock_code);
+			});
+	});
+
+</script>
+</head>
+
+<body>
+<div class="investor_top_listpage" id="nav-bar-wrap">
+	<ul class="investor_inline investor_nav_list">
+	 <li class="zq_obj">证券代码</li>
+	 <li class="zq_name">证券名称</li>
+	 <li class="zq_title">标题</li>
+	 <li class="zq_time">发布日期</li>
+	</ul>
+	<div class="investor_inline">
+		<input id="investor_name" type="text" class="font_gray" value="请输入证券"/>
+		<input id="investor_btn" type="submit" value="搜索"/>
+		<input id="investor_value" type="hidden"/>
+	</div>
+</div>
+
+
+<div id="content" class="list_pages_box">
+    <div class="list_pages_con list_pages_left_ydgc_ZtGs f_left" id="xin_wen_list_wrap"></div>
+    <div class="list_pages_con list_pages_right_ydgc_ZtGs f_right" id="content">
+    	<div id="detail-pane-wrap" class="list_text_box font_14 font_gray_3">
+			<h2 id="xin_wen_title" class="text_title font_gray_6 font_16">&nbsp;</h2>
+			<div class="text_msg font_12">
+				<p class="font_center font_gray_9" id="xin_wen_info"></p>   
+			</div>
+		  
+			<div id="xin_wen_detail" class="text_con padding_t10"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="noneContent" style="display:none;">
+	<p class='font_blue2 font_16 padding10' align='center'><strong>没有搜索的证券数据，请选择其他证券。</strong></p>
+</div>
+
+<iframe id="news_iframe" name="news_iframe" class="iframe"></iframe>
+
+</body>
+</html>

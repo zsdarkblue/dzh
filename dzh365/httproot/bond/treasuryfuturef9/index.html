@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>大智慧-国债期货f9</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../../dijit/themes/white/document.css"/>
+    <link rel="stylesheet" href="resources/custom.css"/>
+   
+    <script type="text/javascript">
+        //从location中获取参数
+        treasuryFutureConfig = { "soUrl":"/bond/", "contractCode":(location.search.match(/\bcontractCode=([^&]*)/) || [, ''])[1],"beginDate":"","endDate":""};
+       if(treasuryFutureConfig.contractCode.length==6){
+           alert("地址栏参数已经更改：TF1306变为XYTF1306.cmdty,请重新修改参数!");
+       }
+
+        dojoConfig = {
+            async:true,
+            parseOnLoad:false,
+            noscale:true,
+            baseUrl:'../../dojo',
+            deps:[
+            ],
+            callback:function () {
+                console.dir(this);
+                require(["bond/treasuryfuturef9/src","dojo/request"], function (main) {
+                    console.log("开始解析");
+                    main();
+                });
+            }
+        }
+    </script>
+</head>
+<body class="claro">
+
+
+    <div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height: 100%;">
+         <!--<div data-dojo-type="bond/treasuryfuturef9/view/topbar" data-dojo-props="region:'top'"></div>-->
+        <div id="left" data-dojo-type="dijit/layout/ContentPane"  data-dojo-props="region:'left',splitter:true,minSize:50,maxSize:350" style="width:170px;height:100% ">
+             <div data-dojo-type="bond/treasuryfuturef9/view/left" style="width:170px;"></div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"style="height: 100%;overflow: hidden;background-color: #fffef6" >
+        
+            <div data-dojo-type="bond/treasuryfuturef9/view/topline" data-dojo-props="region:'top'"style="height: 21px"></div>
+            <div data-dojo-type="dijit/layout/ContentPane" id="myContentPane" data-dojo-id="mytopContentPane" data-dojo-props="region:'center'" style="height:95%;" ></div>
+			
+        </div>
+		<!--<div id ="standby" target="myContentPane" dojoType="dojox/widget/Standby"></div>-->
+        <div id ="standby" target="myContentPane" data-dojo-type="dojox/widget/Standby" zIndex="1000" onload="hideLoading">
+        </div>
+		
+    </div>
+
+</body>
+</html>

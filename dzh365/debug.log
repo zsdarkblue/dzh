@@ -1,0 +1,528 @@
+[0102/220026:ERROR:backend_impl.cc(1169)] Critical error found -8
+[0102/220026:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0102/220026:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\Users\Lisa\Documents\dzh365\WebKitCache to C:\Users\Lisa\Documents\dzh365\old_WebKitCache_000
+[0102/220026:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0102/221025:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0102/221025:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0102/221025:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\Users\Lisa\Documents\dzh365\WebKitCache to C:\Users\Lisa\Documents\dzh365\old_WebKitCache_000
+[0102/221025:ERROR:backend_impl.cc(221)] Unable to create cache
+[0219/101939:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0219/101939:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0219/101939:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\Users\ZHANGSU\Documents\dzh365\WebKitCache to C:\Users\ZHANGSU\Documents\dzh365\old_WebKitCache_000
+[0219/101939:ERROR:backend_impl.cc(221)] Unable to create cache
+[0219/102143:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0219/102143:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0219/102143:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0219/102143:ERROR:backend_impl.cc(221)] Unable to create cache
+[0220/191813:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0220/191813:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0220/191813:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0220/191813:ERROR:backend_impl.cc(221)] Unable to create cache
+[0221/093423:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0221/093423:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0221/093423:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0221/093423:ERROR:backend_impl.cc(221)] Unable to create cache
+[0222/091411:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0222/091411:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0222/091411:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0222/091411:ERROR:backend_impl.cc(221)] Unable to create cache
+[0222/093402:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0222/093402:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0222/093402:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0222/093402:ERROR:backend_impl.cc(221)] Unable to create cache
+[0223/091834:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0223/091834:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0223/091834:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0223/091834:ERROR:backend_impl.cc(221)] Unable to create cache
+[0224/091401:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0224/091401:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0224/091401:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0224/091401:ERROR:backend_impl.cc(221)] Unable to create cache
+[0224/091933:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0224/091933:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0224/091933:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0224/091933:ERROR:backend_impl.cc(221)] Unable to create cache
+[0224/092911:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0224/092911:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0224/092911:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0224/092911:ERROR:backend_impl.cc(221)] Unable to create cache
+[0228/092126:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0228/092126:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0228/092126:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0228/092126:ERROR:backend_impl.cc(221)] Unable to create cache
+[0228/103308:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0228/103308:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0228/103308:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0228/103308:ERROR:backend_impl.cc(221)] Unable to create cache
+[0301/130049:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0301/130049:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0301/130049:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0301/130049:ERROR:backend_impl.cc(221)] Unable to create cache
+[0306/133156:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0306/133156:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0306/133156:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0306/133156:ERROR:backend_impl.cc(221)] Unable to create cache
+[0317/094220:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0317/094220:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0317/094220:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0317/094220:ERROR:backend_impl.cc(221)] Unable to create cache
+[0320/103225:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0320/103225:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0320/103225:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0320/103225:ERROR:backend_impl.cc(221)] Unable to create cache
+[0322/094103:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0322/094103:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0322/094103:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0322/094103:ERROR:backend_impl.cc(221)] Unable to create cache
+[0323/094849:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0323/094849:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0323/094849:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0323/094849:ERROR:backend_impl.cc(221)] Unable to create cache
+[0324/132733:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0324/132733:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0324/132733:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0324/132733:ERROR:backend_impl.cc(221)] Unable to create cache
+[0327/090514:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0327/090514:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0327/090514:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0327/090514:ERROR:backend_impl.cc(221)] Unable to create cache
+[0327/091704:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0327/091704:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0327/091704:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0327/091704:ERROR:backend_impl.cc(221)] Unable to create cache
+[0327/092200:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0327/092200:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0327/092200:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0327/092200:ERROR:backend_impl.cc(221)] Unable to create cache
+[0328/094112:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0328/094112:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0328/094112:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0328/094112:ERROR:backend_impl.cc(221)] Unable to create cache
+[0329/092601:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0329/092601:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0329/092601:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0329/092601:ERROR:backend_impl.cc(221)] Unable to create cache
+[0330/092328:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0330/092328:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0330/092328:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0330/092328:ERROR:backend_impl.cc(221)] Unable to create cache
+[0330/093337:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0330/093337:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0330/093337:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0330/093337:ERROR:backend_impl.cc(221)] Unable to create cache
+[0331/134400:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0331/134400:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0331/134400:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0331/134400:ERROR:backend_impl.cc(221)] Unable to create cache
+[0405/094306:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0405/094306:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0405/094306:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0405/094306:ERROR:backend_impl.cc(221)] Unable to create cache
+[0406/092347:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0406/092347:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0406/092347:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0406/092347:ERROR:backend_impl.cc(221)] Unable to create cache
+[0406/092532:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0406/092532:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0406/092532:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0406/092532:ERROR:backend_impl.cc(221)] Unable to create cache
+[0407/093721:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0407/093721:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0407/093721:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0407/093721:ERROR:backend_impl.cc(221)] Unable to create cache
+[0410/092355:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0410/092355:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0410/092355:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0410/092355:ERROR:backend_impl.cc(221)] Unable to create cache
+[0410/093401:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0410/093401:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0410/093401:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0410/093401:ERROR:backend_impl.cc(221)] Unable to create cache
+[0411/092912:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0411/092912:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0411/092912:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0411/092912:ERROR:backend_impl.cc(221)] Unable to create cache
+[0412/093927:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0412/093927:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0412/093927:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0412/093927:ERROR:backend_impl.cc(221)] Unable to create cache
+[0413/092940:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0413/092940:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0413/092940:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0413/092940:ERROR:backend_impl.cc(221)] Unable to create cache
+[0414/092813:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0414/092813:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0414/092813:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0414/092813:ERROR:backend_impl.cc(221)] Unable to create cache
+[0519/091146:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0519/091146:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0519/091146:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0519/091146:ERROR:backend_impl.cc(221)] Unable to create cache
+[0519/091551:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0519/091551:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0519/091551:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0519/091551:ERROR:backend_impl.cc(221)] Unable to create cache
+[0522/090924:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0522/090924:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0522/090924:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0522/090924:ERROR:backend_impl.cc(221)] Unable to create cache
+[0522/091706:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0522/091706:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0522/091706:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0522/091706:ERROR:backend_impl.cc(221)] Unable to create cache
+[0523/092428:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0523/092428:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0523/092428:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0523/092428:ERROR:backend_impl.cc(221)] Unable to create cache
+[0523/092446:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0523/092446:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0523/092446:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0523/092446:ERROR:backend_impl.cc(221)] Unable to create cache
+[0523/092501:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0523/092501:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0523/092501:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0523/092501:ERROR:backend_impl.cc(221)] Unable to create cache
+[0523/092514:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0523/092514:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0523/092514:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0523/092514:ERROR:backend_impl.cc(221)] Unable to create cache
+[0524/094031:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0524/094031:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0524/094031:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0524/094031:ERROR:backend_impl.cc(221)] Unable to create cache
+[0525/092316:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0525/092316:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0525/092316:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0525/092316:ERROR:backend_impl.cc(221)] Unable to create cache
+[0525/092340:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0525/092340:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0525/092340:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0525/092340:ERROR:backend_impl.cc(221)] Unable to create cache
+[0525/092430:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0525/092430:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0525/092430:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0525/092430:ERROR:backend_impl.cc(221)] Unable to create cache
+[0525/093107:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0525/093107:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0525/093107:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0525/093107:ERROR:backend_impl.cc(221)] Unable to create cache
+[0526/091455:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0526/091455:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0526/091455:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0526/091455:ERROR:backend_impl.cc(221)] Unable to create cache
+[0526/091657:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0526/091657:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0526/091657:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0526/091657:ERROR:backend_impl.cc(221)] Unable to create cache
+[0531/092548:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0531/092548:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0531/092548:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0531/092548:ERROR:backend_impl.cc(221)] Unable to create cache
+[0601/092404:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0601/092404:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0601/092404:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0601/092404:ERROR:backend_impl.cc(221)] Unable to create cache
+[0602/092253:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0602/092253:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0602/092253:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0602/092253:ERROR:backend_impl.cc(221)] Unable to create cache
+[0602/092311:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0602/092311:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0602/092311:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0602/092311:ERROR:backend_impl.cc(221)] Unable to create cache
+[0602/092326:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0602/092326:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0602/092326:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0602/092326:ERROR:backend_impl.cc(221)] Unable to create cache
+[0602/092345:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0602/092345:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0602/092345:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0602/092345:ERROR:backend_impl.cc(221)] Unable to create cache
+[0602/092454:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0602/092454:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0602/092454:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0602/092454:ERROR:backend_impl.cc(221)] Unable to create cache
+[0602/092549:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0602/092549:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0602/092549:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0602/092549:ERROR:backend_impl.cc(221)] Unable to create cache
+[0605/092218:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0605/092218:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0605/092218:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0605/092218:ERROR:backend_impl.cc(221)] Unable to create cache
+[0605/092241:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0605/092241:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0605/092241:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0605/092241:ERROR:backend_impl.cc(221)] Unable to create cache
+[0605/092449:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0605/092449:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0605/092449:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0605/092449:ERROR:backend_impl.cc(221)] Unable to create cache
+[0605/092539:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0605/092539:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0605/092539:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0605/092539:ERROR:backend_impl.cc(221)] Unable to create cache
+[0606/092446:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0606/092446:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0606/092446:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0606/092446:ERROR:backend_impl.cc(221)] Unable to create cache
+[0607/092144:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0607/092144:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0607/092144:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0607/092144:ERROR:backend_impl.cc(221)] Unable to create cache
+[0608/092413:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0608/092413:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0608/092413:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0608/092413:ERROR:backend_impl.cc(221)] Unable to create cache
+[0608/092454:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0608/092454:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0608/092454:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0608/092454:ERROR:backend_impl.cc(221)] Unable to create cache
+[0608/092513:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0608/092513:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0608/092513:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0608/092513:ERROR:backend_impl.cc(221)] Unable to create cache
+[0608/092632:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0608/092632:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0608/092632:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0608/092632:ERROR:backend_impl.cc(221)] Unable to create cache
+[0609/092906:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0609/092906:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0609/092906:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0609/092906:ERROR:backend_impl.cc(221)] Unable to create cache
+[0612/091931:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0612/091931:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0612/091931:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0612/091931:ERROR:backend_impl.cc(221)] Unable to create cache
+[0613/092639:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0613/092639:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0613/092639:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0613/092639:ERROR:backend_impl.cc(221)] Unable to create cache
+[0613/133708:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0613/133708:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0613/133708:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0613/133708:ERROR:backend_impl.cc(221)] Unable to create cache
+[0614/090836:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0614/090836:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0614/090836:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0614/090836:ERROR:backend_impl.cc(221)] Unable to create cache
+[0614/092509:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0614/092509:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0614/092509:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0614/092509:ERROR:backend_impl.cc(221)] Unable to create cache
+[0615/091517:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0615/091517:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0615/091517:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0615/091517:ERROR:backend_impl.cc(221)] Unable to create cache
+[0616/092414:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0616/092414:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0616/092414:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0616/092414:ERROR:backend_impl.cc(221)] Unable to create cache
+[0616/092453:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0616/092453:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0616/092453:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0616/092453:ERROR:backend_impl.cc(221)] Unable to create cache
+[0616/092639:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0616/092639:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0616/092639:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0616/092639:ERROR:backend_impl.cc(221)] Unable to create cache
+[0619/091956:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0619/091956:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0619/091956:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0619/091956:ERROR:backend_impl.cc(221)] Unable to create cache
+[0620/092039:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0620/092039:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0620/092039:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0620/092039:ERROR:backend_impl.cc(221)] Unable to create cache
+[0621/091756:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0621/091756:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0621/091756:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0621/091756:ERROR:backend_impl.cc(221)] Unable to create cache
+[0622/091748:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0622/091748:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0622/091748:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0622/091748:ERROR:backend_impl.cc(221)] Unable to create cache
+[0623/092551:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0623/092551:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0623/092551:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0623/092551:ERROR:backend_impl.cc(221)] Unable to create cache
+[0627/091505:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0627/091505:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0627/091505:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0627/091505:ERROR:backend_impl.cc(221)] Unable to create cache
+[0627/094247:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0627/094247:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0627/094247:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0627/094247:ERROR:backend_impl.cc(221)] Unable to create cache
+[0629/093137:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0629/093137:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0629/093137:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0629/093137:ERROR:backend_impl.cc(221)] Unable to create cache
+[0630/092622:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0630/092622:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0630/092622:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0630/092622:ERROR:backend_impl.cc(221)] Unable to create cache
+[0703/092909:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0703/092909:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0703/092909:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0703/092909:ERROR:backend_impl.cc(221)] Unable to create cache
+[0704/091925:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0704/091925:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0704/091925:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0704/091925:ERROR:backend_impl.cc(221)] Unable to create cache
+[0706/092619:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0706/092619:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0706/092619:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0706/092619:ERROR:backend_impl.cc(221)] Unable to create cache
+[0707/092718:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0707/092718:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0707/092718:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0707/092718:ERROR:backend_impl.cc(221)] Unable to create cache
+[0710/092724:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0710/092724:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0710/092724:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0710/092724:ERROR:backend_impl.cc(221)] Unable to create cache
+[0719/093047:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0719/093047:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0719/093047:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0719/093047:ERROR:backend_impl.cc(221)] Unable to create cache
+[0721/093023:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0721/093023:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0721/093023:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0721/093023:ERROR:backend_impl.cc(221)] Unable to create cache
+[0724/101804:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0724/101804:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0724/101804:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0724/101804:ERROR:backend_impl.cc(221)] Unable to create cache
+[0725/092749:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0725/092749:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0725/092749:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0725/092749:ERROR:backend_impl.cc(221)] Unable to create cache
+[0726/093130:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0726/093130:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0726/093130:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0726/093130:ERROR:backend_impl.cc(221)] Unable to create cache
+[0727/093008:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0727/093008:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0727/093008:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0727/093008:ERROR:backend_impl.cc(221)] Unable to create cache
+[0728/091507:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0728/091507:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0728/091507:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0728/091507:ERROR:backend_impl.cc(221)] Unable to create cache
+[0728/091552:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0728/091552:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0728/091552:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0728/091552:ERROR:backend_impl.cc(221)] Unable to create cache
+[0801/092716:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0801/092716:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0801/092716:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0801/092716:ERROR:backend_impl.cc(221)] Unable to create cache
+[0802/092726:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0802/092726:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0802/092726:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0802/092726:ERROR:backend_impl.cc(221)] Unable to create cache
+[0803/094603:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0803/094603:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0803/094603:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0803/094603:ERROR:backend_impl.cc(221)] Unable to create cache
+[0804/093348:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0804/093348:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0804/093348:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0804/093348:ERROR:backend_impl.cc(221)] Unable to create cache
+[0807/092146:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0807/092146:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0807/092146:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0807/092146:ERROR:backend_impl.cc(221)] Unable to create cache
+[0807/092205:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0807/092205:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0807/092205:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0807/092205:ERROR:backend_impl.cc(221)] Unable to create cache
+[0807/092243:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0807/092243:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0807/092243:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0807/092243:ERROR:backend_impl.cc(221)] Unable to create cache
+[0807/092952:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0807/092952:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0807/092952:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0807/092952:ERROR:backend_impl.cc(221)] Unable to create cache
+[0809/092920:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0809/092920:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0809/092920:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0809/092920:ERROR:backend_impl.cc(221)] Unable to create cache
+[0810/134723:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0810/134723:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0810/134723:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0810/134723:ERROR:backend_impl.cc(221)] Unable to create cache
+[0811/130308:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0811/130308:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0811/130308:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0811/130308:ERROR:backend_impl.cc(221)] Unable to create cache
+[0814/093811:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0814/093811:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0814/093811:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0814/093811:ERROR:backend_impl.cc(221)] Unable to create cache
+[0815/092111:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0815/092111:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0815/092111:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0815/092111:ERROR:backend_impl.cc(221)] Unable to create cache
+[0815/093340:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0815/093340:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0815/093340:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0815/093340:ERROR:backend_impl.cc(221)] Unable to create cache
+[0816/092707:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0816/092707:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0816/092707:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0816/092707:ERROR:backend_impl.cc(221)] Unable to create cache
+[0817/093844:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0817/093844:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0817/093844:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0817/093844:ERROR:backend_impl.cc(221)] Unable to create cache
+[0818/092712:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0818/092712:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0818/092712:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0818/092712:ERROR:backend_impl.cc(221)] Unable to create cache
+[0821/092740:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0821/092740:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0821/092740:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0821/092740:ERROR:backend_impl.cc(221)] Unable to create cache
+[0822/092116:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0822/092116:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0822/092116:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0822/092116:ERROR:backend_impl.cc(221)] Unable to create cache
+[0822/093028:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0822/093028:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0822/093028:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0822/093028:ERROR:backend_impl.cc(221)] Unable to create cache
+[0823/092917:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0823/092917:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0823/092917:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0823/092917:ERROR:backend_impl.cc(221)] Unable to create cache
+[0824/095636:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0824/095636:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0824/095636:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0824/095636:ERROR:backend_impl.cc(221)] Unable to create cache
+[0825/093758:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0825/093758:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0825/093758:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0825/093758:ERROR:backend_impl.cc(221)] Unable to create cache
+[0828/093217:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0828/093217:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0828/093217:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0828/093217:ERROR:backend_impl.cc(221)] Unable to create cache
+[0828/200252:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0828/200252:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0828/200252:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0828/200252:ERROR:backend_impl.cc(221)] Unable to create cache
+[0828/200505:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0828/200505:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0828/200505:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0828/200505:ERROR:backend_impl.cc(221)] Unable to create cache
+[0828/215354:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0828/215354:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0828/215354:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\dzh365\WebKitCache to C:\dzh365\old_WebKitCache_000
+[0828/215354:ERROR:backend_impl.cc(221)] Unable to create cache
+[0829/110305:ERROR:backend_impl.cc(2139)] Corrupt Index file
+[0829/110305:ERROR:cache_util_win.cc(43)] Unable to move the cache: 5
+[0829/110305:ERROR:backend_impl.cc(134)] Unable to move cache folder C:\Users\ZHANGSU\Downloads\dzh365\WebKitCache to C:\Users\ZHANGSU\Downloads\dzh365\old_WebKitCache_000
+[0829/110305:ERROR:backend_impl.cc(221)] Unable to create cache

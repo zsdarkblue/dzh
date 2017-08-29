@@ -1,0 +1,80 @@
+<div data-dojo-attach-point="containerNode" data-dojo-type="dijit/layout/ContentPane"
+     class="vbox dialog_size">
+
+    <div id="rateCounterpartyAddNodeContainer" data-dojo-type="dijit/layout/TabContainer"
+         class="spacer">
+        <div id="rateCounterpartyAddPanel1" data-dojo-type="dijit/layout/ContentPane" style="padding: 5px 15px;"
+             title="条件查找"
+             data-dojo-props="selected:true">
+            <div class="vbox" style="height:100%;width:100%;">
+                <div class="hbox">
+                    <div class="spacer">
+                        <label for="rateCounterpartyAddComp">公司</label>
+                        <input id="rateCounterpartyAddComp" data-dojo-type="dijit/form/TextBox"/>
+                    </div>
+                    <div class="spacer">
+                        <label for="rateCounterpartyAddName">姓名</label>
+                        <input id="rateCounterpartyAddName" data-dojo-type="dijit/form/TextBox"/>
+                    </div>
+
+                    <div class="spacer">
+                        <label for="rateCounterpartyAddAccount">帐号</label>
+                        <input id="rateCounterpartyAddAccount" data-dojo-type="dijit/form/TextBox"/>
+                    </div>
+                    <div>
+                        <div data-dojo-type="dijit/form/Button" id='rateCounterpartyAddSearch'>查找</div>
+                    </div>
+                </div>
+
+                <div class="block_space"></div>
+
+                <div class="spacer myGrid" data-dojo-type="dijit/layout/ContentPane">
+                    <div id="rateCounterpartyTable1"></div>
+                </div>
+
+                <div class="block_space"></div>
+
+                <!--下部打操作-->
+                <div class="hbox">
+                    <div class="spacer"></div>
+
+                    <div data-dojo-type="dijit/form/Button" id='rateCounterpartyAddOk'>确定</div>
+                    <div class="line_block_space"></div>
+
+                    <div data-dojo-type="dijit/form/Button"
+                         onclick="dijit.byId('rateCounterpartyAddDialog').onCancel()">取消
+                    </div>
+
+                    <div class="spacer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rateCounterpartyAddPanel2" data-dojo-type="dijit/layout/ContentPane" style="padding: 5px 15px;"
+             title="从IM联系人添加">
+            <div class="vbox" style="height:100%;">
+
+                <div class="spacer myGrid" data-dojo-type="dijit/layout/ContentPane">
+                    <div id="rateCounterpartyTable2"></div>
+                </div>
+
+                <div class="block_space"></div>
+
+                <!--下部打操作-->
+                <div class="hbox">
+                    <div class="spacer"></div>
+                    <div data-dojo-type="dijit/form/Button" id='rateCounterpartyAddOk2'>确定</div>
+                    <div class="line_block_space"></div>
+
+                    <div data-dojo-type="dijit/form/Button"
+                         onclick="dijit.byId('rateCounterpartyAddDialog').onCancel()">取消
+                    </div>
+
+                    <div class="spacer"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

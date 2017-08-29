@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>F9深度资料</title>
+    <link rel="stylesheet" href="resources/css/all.css"/>
+    <style>
+        body {
+            overflow: hidden;
+            border-top: solid 1px #A0A9A8;
+            box-sizing: border-box;
+            background: #FFFEF6;
+        }
+
+        .flex-splitter {
+            box-sizing: border-box;
+            border: solid #A0A9A8;
+            border-width: 0 1px;
+        }
+
+        .flex-splitter>i {
+            width: 9px;
+            left: -1px;
+        }
+
+        aside {
+            width: 200px;
+            overflow: auto;
+        }
+
+        aside>* {
+            min-width: 180px;
+        }
+
+        .flex-auto {
+            overflow: hidden;
+        }
+
+        .flex-auto>.l_title {
+            position: relative;
+            margin-bottom: -27px;
+        }
+
+        .flex-auto>iframe {
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+        }
+
+        .flex-auto>.l_title {
+            display: none;
+        }
+		.flex-none .l_title b span{
+			float:right;
+			margin-right:12%;
+		}
+    </style>
+</head>
+<body class="flex-row">
+
+<aside class="flex-none">
+    <div class="l_title"><b><script>document.write((location.search.match(/obj=([^&.]*)/) || [, 'SH600000'])[1]);</script></b></div>
+    <ul id="nav" class="ztree"></ul>
+</aside>
+<div class="flex-splitter"><i></i></div>
+<div class="flex-auto flex-column">
+    <div class="l_title flex-none">
+        <b>公司介绍</b><i class="icon-loading"></i>
+        <div class="pull-right">
+            <a><i class="fa fa-undo"></i>还原</a>
+            <!--<a><i class="fa fa-d009"></i>导出</a>-->
+        </div>
+    </div>
+    <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="about:blank"></iframe>
+</div>
+<input type="hidden" id="list_reload" />
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+<script>/Chrome\/25/.test(navigator.userAgent) && document.querySelector('.flex-column').setAttribute('class', 'flex-auto');</script>
+</body>
+</html>

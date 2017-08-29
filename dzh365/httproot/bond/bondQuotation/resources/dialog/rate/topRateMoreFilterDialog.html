@@ -1,0 +1,45 @@
+<div data-dojo-attach-point="containerNode" data-dojo-type="dijit/layout/ContentPane"
+     class="dialog_size3">
+    <div class="vbox globalHeight">
+        <div class="spacer"></div>
+
+        <div class="vbox">
+            <div class="spacer moreFilter">
+                <label for="rateMoreFilterCouponType">息票类型</label>
+                <select id="rateMoreFilterCouponType"  data-dojo-type="bond/bondQuotation/view/_helper/MCheckedMultiSelect">
+                    <option value="all" selected="selected">全部</option>
+                    <option value="1" selected="selected">贴现</option>
+                    <option value="2" selected="selected">固定利率</option>
+                    <option value="3" selected="selected">浮动利率</option>
+                </select>
+            </div>
+
+            <div class="spacer moreFilter">
+                <label for="rateMoreFilterMarketTime">上市时间</label>
+                <select id="rateMoreFilterMarketTime"  data-dojo-type="bond/bondQuotation/view/_helper/MCheckedMultiSelect">
+                    <option value="all" selected="selected">全部</option>
+                    <option value="1" selected="selected">今日上市</option>
+                    <option value="2" selected="selected">近一周上市</option>
+                    <option value="3" selected="selected">近二周上市</option>
+                    <option value="4" selected="selected">近一个月上市</option>
+                    <option value="5" selected="selected">一个月以上上市</option>
+                </select>
+            </div>
+
+            <div class="spacer moreFilter">
+                <label for="rateMoreFilterBondCode">债券代码</label>
+                <input id="rateMoreFilterBondCode"  style="width:105px;" data-dojo-type="dijit/form/TextBox"/>
+            </div>
+        </div>
+
+
+        <div class="hbox spacer">
+            <div class="spacer"></div>
+            <div data-dojo-type="dijit/form/Button" id='rateMoreFilterOK'>确定</div>
+            <div style="width:20px;"></div>
+            <div data-dojo-type="dijit/form/Button" onclick="dijit.byId('rateMoreFilterDialog').onCancel()">取消</div>
+            <div class="spacer"></div>
+        </div>
+
+    </div>
+</div>

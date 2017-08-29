@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/rall.css"/>
+</head>
+<body>
+<header>
+    <div class="tabContainer">
+        <div class="marginCenter">
+            <ul id="headerSecondUl" data-bind="onHeaderTabsClick" class="pull-left">
+                <li data-value="overview">两融市场总览</li>
+                <li data-value="trading">市场交易明细</li>
+                <li data-value="single">个股交易明细</li>
+                <li class="active">券商月度排名</li>
+            </ul>
+        </div>
+        <a href="DZH://REPORT?ReportModule.dll&MODULE='115'&MODULEREPLACED='ssddvsd'&PARAM='loadStat 1632_1 1632_1'">相关专题报表</a>
+    </div>
+</header>
+
+<div id="container" class="flex-auto no-resize">
+    <div id="containerBorder">
+        <div id="conditionDiv">
+
+            <div class="floatRight">
+                <label>单位  </label><select id="unitSelect" data-bind="onUnitChange">
+                    <option value="1">元, 股</option>
+                    <option selected=true value="2">万元, 万股</option>
+                    <option value="3">亿元, 亿股</option>
+                </select>
+            </div>
+
+            <div>
+                <label>市场</label>
+                <select id="mTyepSelect" class="marginR" data-bind="onDateSelectChange">
+                    <option value="1">沪深两市</option>
+                    <option value="2">沪市</option>
+                    <option value="3">深市</option>
+                </select>
+
+                <label>统计年月</label>
+                <select id="yearSelect" data-bind="onDateSelectChange">
+
+                </select>
+                <label>年</label>
+                <select id="monSelect" data-bind="onDateSelectChange">
+                    <option value="01">1月</option>
+                    <option value="02">2月</option>
+                    <option value="03">3月</option>
+                    <option value="04">4月</option>
+                    <option value="05">5月</option>
+                    <option value="06">6月</option>
+                    <option value="07">7月</option>
+                    <option value="08">8月</option>
+                    <option value="09">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="tableContainer">
+            <div class="table-container">
+                <div class="tbl-header">
+                    <table>
+                        <colgroup>
+                            <col width="50">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col class="has-scroll" width="6">
+                        </colgroup>
+
+                        <thead>
+                        <tr>
+                            <th rowspan="2">排名</th>
+                            <th rowspan="2">券商简称</th>
+                            <th colspan="2">融资</th>
+                            <th colspan="2">融券</th>
+                            <th colspan="3">综合</th>
+                        </tr>
+                        <tr>
+                            <th>月度融资余额</th>
+                            <th>月度累计买入额</th>
+                            <th>月融券余量</th>
+                            <th>月度融券卖出量</th>
+                            <th>月末融资融券余额</th>
+                            <th class="last">月末融资融券净额</th>
+                            <th class="has-scroll"></th>
+                        </tr>
+                        </thead>
+                    </table>
+                    </div>
+                <div class="tbl-container scroll">
+                    <table>
+                        <colgroup>
+                            <col width="50">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                            <col width="120">
+                        </colgroup>
+                        <tbody></tbody>
+                    </table>
+                    </div>
+                </div>
+
+        </div>
+        <div id="pagerParent">
+            <div class="pager" v-on="click:onClick">
+                <a v-attr="data-index:index-1">上一页</a>
+                <a v-class="active:index==1" v-text="1"></a>
+                <i v-if="count>size&&index>size/2+1">...</i>
+                <a v-class="active:index==$value" v-repeat="items" v-text="$value"></a>
+                <i v-if="count>size&&index<count-size/2">...</i>
+                <a v-class="active:index==count" v-if="count>1" v-text="count"></a>
+                <a v-attr="data-index:index+1">下一页</a>
+                <input v-attr="min:1,max:count" v-model="input" v-on="change:onChange" type="number">
+                <a v-attr="data-index:input">GO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gb2312"?>
+<list>
+  <column>
+		<col><value>index</value><width>37</width><name>序号</name></col>
+<col><value>label</value><width>70</width><name>代码</name></col>
+<col><value>name</value><width>90</width><name>名称</name></col>
+<col fixed="1"><value>now</value><width>65</width><name>最新</name></col>
+<col><value>undn</value><width>70</width><name>涨跌</name></col>
+<col sorted="-1" subsorted="0"><value>updnratio</value><width>70</width><name>涨幅</name></col>
+<col><value>volume</value><width>75</width><name>总手</name></col>
+<col><value>exchange</value><width>75</width><name>换手率</name></col>
+<col><value>nowvol</value><width>70</width><name>现手</name></col>
+<col><value>amount</value><width>70</width><name>总额</name></col>
+<col><value>lastclose</value><width>65</width><name>昨收</name></col>
+<col><value>open</value><width>65</width><name>今开</name></col>
+<col><value>high</value><width>65</width><name>最高</name></col>
+<col><value>low</value><width>65</width><name>最低</name></col>
+<col><value>updnspeed</value><width>70</width><name>涨速</name></col>
+<col><value>datavalue401</value><width>89</width><name>行业</name></col>
+<col><value>prop</value><width>72</width><name>市盈率</name></col>
+<col><value>pnratio</value><width>70</width><name>市净率</name></col>
+<col><value>datavalue118</value><width>70</width><name>市销率</name></col>
+<col><value>buyprice</value><width>70</width><name>委买价</name></col>
+<col><value>sellprice</value><width>70</width><name>委卖价</name></col>
+<col><value>invol</value><width>67</width><name>内盘</name></col>
+<col><value>outvol</value><width>70</width><name>外盘</name></col>
+<col><value>amount</value><width>78</width><name>总额</name></col>
+<col><value>hilowratio</value><width>80</width><name>振幅</name></col>
+<col><value>volratio</value><width>70</width><name>量比</name></col>
+<col><value>avgprice</value><width>70</width><name>均价</name></col>
+<col><value>wantratio</value><width>70</width><name>委比</name></col>
+<col><value>wantdiff</value><width>70</width><name>委差</name></col>
+<col><value>tickcount</value><width>70</width><name>成交笔数</name></col>
+<col><value>buysellsym</value><width>70</width><name>成交方向</name></col>
+<col><value>allvalue</value><width>70</width><name>总市值</name></col>
+<col><value>floatvalue</value><width>70</width><name>流通市值</name></col>
+</column>
+	<script  param="path">
+rjBD414o6uU2hf5KRJaXGCpxe7B5ZI4+SEYQAIFWPw+RJZgCMzvwXQDGAJzQ3Hd5zCn5dHEKaj4zh8lQE7A/e9uzX6ubYsk6UfUiD/X3PKkH4W8bQBgDkgHjcGeSxQQoe9pRjx+arBi/MsvKmauZK8r2emI5TreU23RSPB3qNnnXVjFARESoaOEmItGy+OmtWTex6fyiO+1oYyL4swxOy/tXDcXomiwUaMt61KE8T5UMBPXbvkXrGseWUPpntFUYjaBsYwbA4Uhm1DqBJmhAvydFqgt6wDwAUR188MxI4T5lGFHc44oA0zhZe7/JHje/mCOhVhABFRZTpJBPZ1pCmy+Akq3rEii0bqIRz50ST1YMu7f6Gx7+x3FqCZjFItwWMlcF8uqs98lU+8TR0hsdK2GbU6Ol47HhIMPg44IQzKstBaozV5nNA6VdwJNvGIZwL5vKOLNrrNlloRtE6WzZ0u8JayEHhnDInRgc9XSSBgQ8Nlywl5DGF8gGM5kuyVjuZDCMftSwkyV10aSfoP+5WQpx10KYsRE1wIgT6OLnjBDtjqFAlRvlg485yRS1xXEEieO/FMo+LOCNVuZNroJNQ7WTaMozpMYW7gFXW7LQSO5hPBLj5/zsbFoiIQsqun15oTxY3AC6Uoydpn47dFTXdzGbJyjDvCNJp6VvGNtkruZklZtk7JM64es6EmujXyCASjjX+B3orRt7GGplrF5xL7NeR4eOklCsBHYfeGD1XiimyqFlV2L7AVP6sPnhi2ZGnXi/AXg3yTWUztGU9b60nDrErQ4ZZjQ4Xwr9nIC4T9s5132yFSlMAWbuIKwC5wwpRw+uCLDdXlHAKI+f3ByfqJTLCD/XwHceVJYmia5ebTgGG6Mc8pdssFoiDctThWROdND4QtE/lZbS8XeUVN159op8gve0bg2ge0xQ8HvrK3rvYYmGJawrHEgVylIt9Qfr22OEUuBYSeTdnqb6R/5zpmR7azShxxKIzN99AeIYfEeuXgKylK85h6aq7cO1IShQ4mp7uXshcUJP0osNBGdDRDwftnBsiqhS6rmpDaBhdCp4GctnOoH8PZJZH6kkKJBl0eqjziGZqaGNntQhMTq10l1YV8Ir58UYG3a1XL19lAuk+gRtVCL27vYmChG6BdXs3EWTLPVWL9B79GMvmoRFkXWjqVw5cRyIya66gbzovrEN7HzFuT0sFJMAn84zjZmId/njGFOdz2ugt3xEQWZYQQ==
+	</script>
+  </list>

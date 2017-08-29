@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/oall.css"/>
+</head>
+<body>
+<header>
+    <div class="tabContainer">
+        <div class="marginCenter">
+            <ul id="headerSecondUl" data-bind="onHeaderTabsClick" class="pull-left">
+                <li class="active">两融市场总览</li>
+                <li data-value="trading">市场交易明细</li>
+                <li data-value="single">个股交易明细</li>
+                <li data-value="ranking">券商月度排名</li>
+            </ul>
+        </div>
+        <a href="DZH://REPORT?ReportModule.dll&MODULE='115'&MODULEREPLACED='ssddvsd'&PARAM='loadStat 1632_1 1632_1'">相关专题报表</a>
+    </div>
+</header>
+
+<div id="container" class="flex-auto">
+    <div id="containerBorder">
+        <div id="chartContainer">
+            <div id="chartHeader">
+                <ul data-bind="onChangeMTypeClick">
+                    <li data-value="1" class="active">沪深两市</li>
+                    <li data-value="2">沪市</li>
+                    <li data-value="3">深市</li>
+                </ul>
+                <div class="pull-right"><span>日期：</span><span id="dateSpan"></span></div>
+            </div>
+            <div id="chartDiv">
+                <div id="chartParent">
+                    <div id="highchartContainer"></div>
+                    <ul data-bind="onChangeRTypeClick">
+                        <li>
+                            <div data-value="0" class="check-box checkedBox"><i data-value="0"></i></div>
+                            <div data-value="0" class="line-color blue"></div>
+                            <span data-value="0">融资余额</span></li>
+                        <li>
+                            <div data-value="1" class="check-box"><i data-value="1"></i></div>
+                            <div data-value="1" class="line-color orange"></div>
+                            <span data-value="1">融券余量</span></li>
+                        <li>
+                            <div data-value="2" class="check-box"><i data-value="2"></i></div>
+                            <div data-value="2" class="line-color red"></div>
+                            <span data-value="2">两融余额</span></li>
+                        <li>
+                            <div data-value="3" class="check-box"><i data-value="3"></i></div>
+                            <div data-value="3" class="line-color green"></div>
+                            <span data-value="3">两融差额</span></li>
+                    </ul>
+                </div>
+                <div id="chartCaption" class="pull-right">
+                    <div><p><span class="red size-big"></span> <span>亿元</span></p>
+
+                        <p><span>两市</span><span>融资余额</span></p>
+                    </div>
+
+                    <div><p><span class="red size-big"></span> <span>亿元</span></p>
+
+                        <p>较上日</p>
+                    </div>
+                    <div><p><span class="red size-big"></span></p>
+
+                        <p>较上日增幅</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table id="volumeTable">
+            <colgroup>
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th rowspan="2"></th>
+                <th colspan="2" v-text="date.C1"></th>
+                <th colspan="2" v-text="date.C2"></th>
+                <th colspan="2">两日差额</th>
+                <th rowspan="2"></th>
+            </tr>
+            <tr>
+                <th>融资余额</th>
+                <th>融券余额</th>
+                <th>融资余额</th>
+                <th>融券余额</th>
+                <th>融资差额</th>
+                <th>融券差额</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-repeat="item:volume">
+                <td v-text="item.C1"></td>
+                <td v-text="item.C2"></td>
+                <td v-text="item.C3"></td>
+                <td v-text="item.C4"></td>
+                <td v-text="item.C5"></td>
+                <td v-html="item.C6"></td>
+                <td v-html="item.C7"></td>
+                <td v-html="item.a"></td>
+            </tr>
+            </tbody>
+        </table>
+        <p id="explanation">说明：融资融券数据分别由上海证券交易所、深圳证券交易所网站披露，更新时间一般在交易日上午8:30至9:30之间。</p>
+
+        <div id="tableContainer">
+            <div class="text_center">
+                <div class="table_box">
+                    <h3>
+                        <i class="fa fa-chevron-circle-right"></i>
+                        <b>沪深主板融资余额前十</b>
+                    </h3>
+                    <table>
+                        <colgroup>
+                            <col width="30">
+                            <col width="50">
+                            <col width="50">
+                            <col width="70">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <td>排名</td>
+                            <td>证券代码</td>
+                            <td>证券简称</td>
+                            <td>融资余额</td>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="table_box">
+                    <h3>
+                        <i class="fa fa-chevron-circle-right"></i>
+                        <b>中小板融资余额前十</b>
+                    </h3>
+                    <table>
+                        <colgroup>
+                            <col width="30">
+                            <col width="50">
+                            <col width="50">
+                            <col width="70">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <td>排名</td>
+                            <td>证券代码</td>
+                            <td>证券简称</td>
+                            <td>融资余额</td>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="table_box">
+                    <h3>
+                        <i class="fa fa-chevron-circle-right"></i>
+                        <b>创业板融资余额前十</b>
+                    </h3>
+                    <table>
+                        <colgroup>
+                            <col width="30">
+                            <col width="50">
+                            <col width="50">
+                            <col width="70">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <td>排名</td>
+                            <td>证券代码</td>
+                            <td>证券简称</td>
+                            <td>融资余额</td>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text_center">
+                <div class="table_box">
+                    <h3>
+                        <i class="fa fa-chevron-circle-right"></i>
+                        <b>沪深主板融券余量前十</b>
+                    </h3>
+                    <table>
+                        <colgroup>
+                            <col width="30">
+                            <col width="50">
+                            <col width="50">
+                            <col width="70">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <td>排名</td>
+                            <td>证券代码</td>
+                            <td>证券简称</td>
+                            <td>融券余量</td>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="table_box">
+                    <h3>
+                        <i class="fa fa-chevron-circle-right"></i>
+                        <b>中小板融券余量前十</b>
+                    </h3>
+                    <table>
+                        <colgroup>
+                            <col width="30">
+                            <col width="50">
+                            <col width="50">
+                            <col width="70">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <td>排名</td>
+                            <td>证券代码</td>
+                            <td>证券简称</td>
+                            <td>融券余量</td>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="table_box">
+                    <h3>
+                        <i class="fa fa-chevron-circle-right"></i>
+                        <b>创业板融券余量前十</b>
+                    </h3>
+                    <table>
+                        <colgroup>
+                            <col width="30">
+                            <col width="50">
+                            <col width="50">
+                            <col width="70">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <td>排名</td>
+                            <td>证券代码</td>
+                            <td>证券简称</td>
+                            <td>融券余量</td>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

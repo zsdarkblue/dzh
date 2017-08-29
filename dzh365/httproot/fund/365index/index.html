@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>大智慧 - 365首页</title>
+	<link href="./resources/css.css" rel="stylesheet" />
+	<script type="text/javascript">
+		var now = new Date().getTime();
+		dojoConfig = {
+			async:true, parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,
+			callback: function() {
+				require(['fund/365index/src'],function(main){main();});	
+			}
+		}
+		//dojopr();
+
+window.onresize = window.onload = function(){
+    var ot=(window.document.getElementById("body").offsetHeight-window.document.getElementById("main").offsetHeight)/2
+    if(ot>=0){
+        window.document.getElementById("main").style.top=ot+"px";
+    }
+    else{
+        window.document.getElementById("main").style.top=0+"px";
+    }
+    //var a = window.document.getElementById("img_h");
+    //if(a!=null){
+	   // a.style.height=window.document.getElementById("side_h").offsetHeight+"px";
+    //}
+}
+function show_msg(){
+    window.document.getElementById("show_msg").style.display='block';
+    window.document.getElementById("bg").style.display='block';
+}
+function close_msg(){
+    window.document.getElementById("show_msg").style.display='none';
+    window.document.getElementById("bg").style.display='none';
+}
+function close_tip(){
+    window.document.getElementById("show_msg2").style.display='none';
+    window.document.getElementById("bg").style.display='none';
+}
+function nTabs(thisObj, Num) {
+    if (thisObj.className == "active") return;
+    var tabList = document.getElementById("myTab").getElementsByTagName("div");
+    for (i = 0; i < tabList.length; i++) {
+        if (i == Num) {
+            thisObj.className = "active";
+            document.getElementById("myTab_Content" + i).style.display = "block";
+        } else {
+            tabList[i].className = "normal";
+            document.getElementById("myTab_Content" + i).style.display = "none";
+        }
+    }
+}
+function hasClass(obj, cls) {  
+    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+}
+function addClass(obj, cls) {  
+    if (!this.hasClass(obj, cls)) obj.className += " " + cls;  
+}  
+function removeClass(obj, cls) {  
+    if (hasClass(obj, cls)) {  
+        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
+        obj.className = obj.className.replace(reg, ' ');  
+    }  
+} 
+function vote(event){
+	var src = event.currentTarget;
+	var v = document.getElementById("voteValue");
+	v.value = src.getAttribute("value");
+	v.realValue = src.getAttribute("realValue");
+	var a = document.getElementsByName("selOption");
+	for(var i=0;i<a.length;i++){
+		removeClass(a[i],"select");
+	}
+	addClass(src,"select");
+}
+	</script>
+</head>
+<body id="body">
+   <div class="main hbox" id="main">
+    	<!--left-->
+    	<div data-dojo-type="fund/365index/view/left"></div>
+
+    	<!--right-->
+    	<div data-dojo-type="fund/365index/view/right"></div>
+    </div>
+    <div class="show_msg" id="show_msg">
+        <div class="show_msg_title"><a href="javascript:close_msg()" class="close"></a></div>
+        <div class="show_msg_con" style="padding:0;height:480px;">
+        </div>
+    </div>
+
+    <div class="show_msg alert_box" id="show_msg2">
+        <div class="show_msg_title"><a href="javascript:close_tip()" class="close"></a></div>
+        <div class="show_msg_con">
+            <div class="show_msg_txt" id="msg_detail">
+            </div>
+        </div>
+        <div class="show_msg_btn">
+            <input type="button" value="确定" class="common_btn" onclick="close_tip();"/>
+        </div>
+    </div>
+    <div class="bg" id="bg"></div>
+
+</body>
+</html>

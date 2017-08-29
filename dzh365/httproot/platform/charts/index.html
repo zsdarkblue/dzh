@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../../dijit/themes/black_details/document.css"/>
+    <style>
+        strong { font-weight: normal; }
+        div[data-dojo-attach-point=mLabel]>span:nth-of-type(even){ min-width: 45px; display: inline-block; float: right; font-family: simsun; text-align: right; }
+    </style>
+    <script>
+        dojoConfig = {
+            async:true,
+            parseOnLoad:false,
+            noscale:true,
+            baseUrl:'../../dojo',
+                        deps:[
+                'dojox/customfig/customfig'
+            ],
+            callback:function () {
+                require(['platform/charts/src']);
+            }
+        };
+            </script>
+</head>
+<body class="claro" style="background-color:#000;">
+<div id="container"></div>
+</body>
+</html>

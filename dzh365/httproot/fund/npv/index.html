@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>基金净值</title>
+    <link rel="stylesheet" href="resources/css.css"/>
+</head>
+<body>
+
+<header>
+    <div class="tabContainer">
+        <ul id="headerSecondUl" data-bind="onTabClick">
+            <li data-type="1" class="active">开放式基金</li>
+            <li data-type="2" data-page="1"><i></i>封闭式基金</li>
+            <li data-type="3" data-page="1"><i></i>货币式基金</li>
+            <li data-type="5"><i></i>分级基金</li>
+            <li data-type="4" data-page="1"><i></i>短期理财</li>
+        </ul>
+    </div>
+</header>
+
+<div id="container" class="flex-auto">
+    <div id="containerBorder">
+        <div class="search-area">
+            <div class="filter-corps">
+                <input v-model="searchText" id="searchCorp"
+                       v-on="keyup: onKeyUp($event), blur: onBlur()"
+                       type="text" placeholder="请输入基金公司名称">
+
+                <ul class="filter-results hide" v-show="isShow">
+                    <li v-class="active: $index == activeItem, hide: $index > 9"
+                        v-repeat="items | filterBy searchText"
+                        v-on="click: itemClick(name)" v-text="name"></li>
+                </ul>
+            </div>
+
+            <input id="searchTxt" type="search" placeholder="请输入代码或名称">
+            <button class="btn btn-gray" data-bind="onSearchClick">查 询</button>
+        </div>
+
+        <div class="panel" data-type="1">
+            <div class="condition-area">
+                <ul class="btns-list" data-bind="onSubTabClick">
+                    <li  data-desc="1" class="active" data-value="1" data-page="1">全部</li>
+                    <li  data-desc="1" data-value="2" data-page="1">股票型</li>
+                    <li  data-desc="1" data-value="3" data-page="1">混合型</li>
+                    <li  data-desc="1" data-value="4" data-page="1">债券型</li>
+                    <li  data-desc="1" data-value="5" data-page="1">QDII</li>
+                    <li  data-desc="1" data-value="6" data-page="1">ETF</li>
+                    <li  data-desc="1" data-value="7" data-page="1">LOF</li>
+                </ul>
+            </div>
+
+            <ul class="info-list">
+                <li>目前已有<strong id="fund-update">24</strong>只基金更新净值</li>
+                <li>涨: <span class="red" id="fund-up"></span></li>
+                <li>平: <span class="blue" id="fund-draw"></span></li>
+                <li>跌: <span class="green" id="fund-down"></span></li>
+            </ul>
+
+            <table>
+                <colgroup>
+                    <col width="42">
+                    <col width="64">
+                    <col width="200">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th rowspan="2">序号</th>
+                    <th rowspan="2" data-order="0">基金代码</th>
+                    <th rowspan="2" data-order="1">基金简称</th>
+                    <th colspan="2" v-text="firstDate"></th>
+                    <th colspan="2" v-text="secondDate"></th>
+                    <th rowspan="2" data-order="9">日增长率</th>
+                    <th rowspan="2" data-order="10">增长值</th>
+                    <th rowspan="2" data-order="2">申赎状态</th>
+                </tr>
+                <tr class="sub-tbl-header">
+                    <th data-order="4">单位净值</th>
+                    <th data-order="5">累计净值</th>
+                    <th data-order="7">单位净值</th>
+                    <th data-order="8">累计净值</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+                    <td class="number">
+                        <a href="#" v-text="item['基金代码']" v-on="click: onFundClick($event, item)"></a>
+                    </td>
+                    <td class="align-left">
+                        <a href="#" v-on="click: onFundClick($event, item)" class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></a>
+                    </td>
+                    <td>
+                            <span class="number" v-class="num: item['单位净值'] != '-'"
+                                  v-text="item['单位净值']| fixed 4"></span>
+                    </td>
+                    <td>
+                            <span class="number" v-class="num: item['累计净值'] != '-'"
+                                  v-text="item['累计净值']| fixed 4"></span>
+                    </td>
+                    <td>
+                            <span class="number" v-class="num: item['前单位净值'] != '-'"
+                                  v-text="item['前单位净值']| fixed 4"></span>
+                    </td>
+                    <td>
+                            <span class="number" v-class="num: item['前累计净值'] != '-'"
+                                  v-text="item['前累计净值']| fixed 4"></span>
+                    </td>
+                    <td class="number" v-class="red: item['日增长率']>= 0, green: item['日增长率']< 0">
+                        <span v-class="num: item['日增长率'] != '-'" v-text="item['日增长率'] | fixed  %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['日增长值']>= 0, green: item['日增长值']< 0">
+                        <span v-class="num: item['日增长值'] != '-'" v-text="item['日增长值'] | fixed 4"></span>
+                    </td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['申赎状态']" title="{{item['申赎状态']}}"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="hide info">暂无相关数据</div>
+        </div>
+
+        <div class="panel hide" data-type="2">
+            <div class="condition-area"></div>
+            <table>
+                <colgroup>
+                    <col width="38">
+                    <col width="62">
+                    <col width="130">
+                    <col width="95">
+                    <col width="95">
+                    <col width="122">
+                    <col width="81">
+                    <col width="88">
+                    <col width="85">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th rowspan="2">序号</th>
+                    <th rowspan="2" data-order="0">基金代码</th>
+                    <th rowspan="2" data-order="1">基金简称</th>
+                    <th colspan="2" v-text="firstDate"></th>
+                    <th rowspan="2" data-order="6">
+                        <div v-text="secondDate"></div>
+                        <span>收盘价</span>
+                    </th>
+                    <th rowspan="2" data-order="7">折价率</th>
+                    <th rowspan="2" data-order="8">到期日</th>
+                    <th rowspan="2" data-order="9">剩余天数</th>
+                </tr>
+                <tr class="sub-tbl-header">
+                    <th data-order="3">单位净值</th>
+                    <th data-order="4">累计净值</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+
+                    <td class="number">
+                        <a href="#" v-text="item['基金代码']" v-on="click: onFundClick($event, item)"></a>
+                    </td>
+                    <td class="center">
+                        <a href="#" v-on="click: onFundClick($event, item)" class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></a>
+                    </td>
+
+                    <td class="number">
+                        <span v-class="num: item['单位净值'] != '-'" v-text="item['单位净值'] | fixed 4"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['累计净值'] != '-'" v-text="item['累计净值'] | fixed 4"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['收盘价格'] != '-'" v-text="item['收盘价格'] | fixed 4"></span>
+                    </td>
+                    <td class="number" v-class="red: item['折价率']>= 0, green:  item['折价率']< 0">
+                        <span v-class="num: item['折价率'] != '-'" v-text="item['折价率'] | fixed 2 %"></span>
+                    </td>
+                    <td class="number" v-text="item['到期日']"></td>
+                    <td class="number">
+                        <span v-class="num: item['到期剩余天数'] != '-'" v-text="item['到期剩余天数']"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="hide info">暂无相关数据</div>
+
+            <div class="note">注：由于封闭式基金净值不是每天披露，折价率仅作参考</div>
+        </div>
+
+        <div class="panel hide" data-type="3">
+            <div class="condition-area"></div>
+
+            <table>
+                <colgroup>
+                    <col width="42">
+                    <col width="75">
+                    <col width="150">
+                    <col width="90">
+                    <col width="90">
+                    <col width="90">
+                    <col width="90">
+                    <col width="103">
+                    <col width="82">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th rowspan="2">序号</th>
+                    <th rowspan="2" data-order="0">基金代码</th>
+                    <th rowspan="2" data-order="1">基金简称</th>
+                    <th colspan="2" v-text="firstDate"></th>
+                    <th colspan="2" v-text="secondDate"></th>
+                    <th rowspan="2" data-order="8">成立日期</th>
+                    <th rowspan="2" data-order="10">申赎状态</th>
+                </tr>
+                <tr class="sub-tbl-header">
+                    <th data-order="3">万份收益</th>
+                    <th data-order="4">7日年化</th>
+                    <th data-order="6">万份收益</th>
+                    <th data-order="7">7日年化</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+
+
+                    <td class="number">
+                        <a href="#" v-text="item['基金代码']" v-on="click: onFundClick($event, item)"></a>
+                    </td>
+                    <td class="align-left">
+                        <a href="#" v-on="click: onFundClick($event, item)" class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></a>
+                    </td>
+
+
+                    <td class="number">
+                        <span v-class="num: item['万份收益'] != '-'" v-text="item['万份收益'] | fixed 4"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['7日年化收益率'] != '-'" v-text="item['7日年化收益率'] | fixed 4 %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['前万份收益'] != '-'" v-text="item['万份收益'] | fixed 4"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['前7日年化收益率'] != '-'" v-text="item['前7日年化收益率'] | fixed 4 %"></span>
+                    </td>
+
+                    <td class="center number" v-text="item['成立日期']"></td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['申赎状态']" title="{{item['申赎状态']}}"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="hide info">暂无相关数据</div>
+        </div>
+
+        <div class="panel hide"  data-type="4">
+            <div class="condition-area"></div>
+            <table>
+                <colgroup>
+                    <col width="41">
+                    <col width="71">
+                    <col width="160">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="80">
+                    <col width="70">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th rowspan="2">序号</th>
+                    <th rowspan="2" data-order="0">基金代码</th>
+                    <th rowspan="2" data-order="1">基金简称</th>
+                    <th colspan="2" v-text="firstDate"></th>
+                    <th colspan="2" v-text="secondDate"></th>
+                    <th rowspan="2" data-order="11">封闭运作期</th>
+                    <th rowspan="2" data-order="8">成立日期</th>
+                    <th rowspan="2" data-order="9">申赎状态</th>
+                </tr>
+                <tr class="sub-tbl-header">
+                    <th data-order="3">万份收益</th>
+                    <th data-order="4">7日年化</th>
+                    <th data-order="6">万份收益</th>
+                    <th data-order="7">7日年化</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+
+                    <td class="number">
+                        <a href="#" v-text="item['基金代码']" v-on="click: onFundClick($event, item)"></a>
+                    </td>
+                    <td class="align-left">
+                        <a href="#" v-on="click: onFundClick($event, item)" class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></a>
+                    </td>
+
+                    <td class="number">
+                        <span v-class="num: item['万份收益'] != '-'" v-text="item['万份收益'] | fixed 4"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['7日年化收益'] != '-'" v-text="item['7日年化收益'] | fixed 4 %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['前万份收益'] != '-'" v-text="item['前万份收益'] | fixed 4"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['前7日年化收益'] != '-'" v-text="item['前7日年化收益'] | fixed 4 %"></span>
+                    </td>
+
+                    <td>
+                        <span class="num" v-text="item['运作周期']"></span>
+                    </td>
+
+                    <td class="number" v-text="item['成立日期']"></td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['申赎状态']" title="{{item['申赎状态']}}"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="hide info">暂无相关数据</div>
+        </div>
+
+        <div class="panel hide" data-type="5">
+            <div class="condition-area">
+                <ul class="btns-list" data-bind="onSubTabClick">
+                    <li class="active" data-value="1" data-page="1">母基金</li>
+                    <li data-value="2" data-page="1">分级A</li>
+                    <li data-value="3" data-page="1">分级B</li>
+                </ul>
+            </div>
+
+            <table data-item="1">
+                <colgroup>
+                    <col width="41">
+                    <col width="62">
+                    <col width="178">
+                    <col width="70">
+                    <col width="70">
+                    <col width="70">
+                    <col width="80">
+                    <col width="77">
+                    <col width="70">
+                    <col width="80">
+                    <col width="70">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th rowspan="2">序号</th>
+                    <th rowspan="2" data-order="0">基金代码</th>
+                    <th rowspan="2" data-order="1">基金简称</th>
+                    <th colspan="2" v-text="firstDate"></th>
+                    <th rowspan="2" data-order="11">日增长率</th>
+                    <th rowspan="2" data-order="5">上折母基需涨</th>
+                    <th rowspan="2" data-order="4">合并折溢价率</th>
+                    <th rowspan="2" data-order="6">跟踪指数</th>
+                    <th rowspan="2" data-order="7">跟踪指数代码</th>
+                    <th rowspan="2" data-order="9">申赎状态</th>
+                </tr>
+                <tr class="sub-tbl-header">
+                    <th data-order="3">单位净值</th>
+                    <th data-order="10">累计净值</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+
+                    <td class="number">
+                        <a href="#" v-text="item['基金代码']" v-on="click: onFundClick($event, item)"></a>
+                    </td>
+                    <td class="align-left">
+                        <a href="#" v-on="click: onFundClick($event, item)" class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></a>
+                    </td>
+
+                    <td class="number">
+                        <span v-class="num: item['单位净值'] != '-'" v-text="item['单位净值'] |fixed 4"></span>
+                    </td>
+                    <td class="number" v-text="item['累计净值'] |fixed 4"></td>
+                    <td class="number" v-class="red: item['日增长率']>= 0, green:  item['日增长率']< 0">
+                        <span v-class="num: item['日增长率'] != '-'" v-text="item['日增长率'] | fixed 2 %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['上折需涨'] != '-'" v-text="item['上折需涨'] | fixed 2 %"></span>
+                    </td>
+                    <td class="number" v-class="red: item['合并折溢价率']>= 0, green:  item['合并折溢价率']< 0">
+                        <span v-class="num: item['合并折溢价率'] != '-'" v-text="item['合并折溢价率'] | fixed 2 %"></span>
+                    </td>
+
+                    <td class="align-left">
+                        <span class="limit" v-text="item['跟踪指数']" title="{{item['跟踪指数']}}"></span>
+                    </td>
+                    <td class="number" v-text="item['跟踪指数代码']"></td>
+                    <td class="align-left">
+                        <span class="limit" v-text="item['申赎状态']" title="{{item['申赎状态']}}"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="hide" data-item="2">
+                <colgroup>
+                    <col width="41">
+                    <col width="66">
+                    <col width="204">
+                    <col width="80">
+                    <col width="74">
+                    <col width="74">
+                    <col width="74">
+                    <col width="76">
+                    <col width="74">
+                    <col width="74">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th rowspan="2">序号</th>
+                    <th rowspan="2" data-order="0">基金代码</th>
+                    <th rowspan="2" data-order="1">基金简称</th>
+                    <th colspan="2" v-text="firstDate"></th>
+                    <th rowspan="2" data-order="9">日增长率</th>
+                    <th rowspan="2" data-order="10">
+                        <div v-text="firstDate"></div>
+                        <span>收盘价</span>
+                    </th>
+                    <th rowspan="2" data-order="4">折溢价率</th>
+                    <th rowspan="2" data-order="5">隐含收益</th>
+                    <th rowspan="2" data-order="6">约定收益</th>
+                </tr>
+                <tr class="sub-tbl-header">
+                    <th data-order="3">单位净值</th>
+                    <th data-order="8">累计净值</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+
+
+                    <td class="number">
+                        <a href="#" v-text="item['基金代码']" v-on="click: onFundClick($event, item)"></a>
+                    </td>
+                    <td class="align-left">
+                        <a href="#" v-on="click: onFundClick($event, item)" class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></a>
+                    </td>
+
+                    <td class="number">
+                        <span v-class="num: item['单位净值'] != '-'" v-text="item['单位净值'] | fixed 4"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['累计净值'] != '-'" v-text="item['累计净值'] | fixed 4"></span>
+                    </td>
+
+                    <td class="number" v-class="red: item['日增长率']>= 0, green:  item['日增长率']< 0">
+                        <span v-class="num: item['日增长率'] != '-'" v-text="item['日增长率'] | fixed 2 %"></span>
+                    </td>
+
+                    <td class="number">
+                        <span v-class="num: item['收盘价'] != '-'" v-text="item['收盘价'] | fixed 3"></span>
+                    </td>
+                    <td class="number" v-class="red: item['折溢价率']>= 0, green:  item['折溢价率']< 0">
+                            <span v-class="num: item['折溢价率'] != '-'"
+                                  v-text="item['折溢价率'] | fixed 2 %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['隐含收益率'] != '-'" v-text="item['隐含收益率'] | fixed 2 %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['约定收益'] != '-'" v-text="item['约定收益'] | fixed 2 %"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="hide" data-item="3">
+                <colgroup>
+                    <col width="42">
+                    <col width="66">
+                    <col width="186">
+                    <col width="70">
+                    <col width="76">
+                    <col width="76">
+                    <col width="76">
+                    <col width="76">
+                    <col width="76">
+                    <col width="76">
+                </colgroup>
+                <thead data-bind="onTHeadClick">
+                <tr>
+                    <th rowspan="2">序号</th>
+                    <th rowspan="2" data-order="0">基金代码</th>
+                    <th rowspan="2" data-order="1">基金简称</th>
+                    <th colspan="2" v-text="firstDate"></th>
+                    <th rowspan="2" data-order="5">日增长率</th>
+                    <th rowspan="2" data-order="6">
+                        <div v-text="firstDate"></div>
+                        <span>收盘价</span>
+                    </th>
+                    <th rowspan="2" data-order="7">折溢价率</th>
+                    <th rowspan="2" data-order="8">下折母基需跌</th>
+                    <th rowspan="2" data-order="9">净值杠杆</th>
+                </tr>
+                <tr class="sub-tbl-header">
+                    <th data-order="4">单位净值</th>
+                    <th data-order="3">累计净值</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-repeat="item:items">
+                    <td class="number" v-text="item['num']"></td>
+
+
+                    <td class="number">
+                        <a href="#" v-text="item['基金代码']" v-on="click: onFundClick($event, item)"></a>
+                    </td>
+                    <td class="align-left">
+                        <a href="#" v-on="click: onFundClick($event, item)" class="limit" v-text="item['基金简称']" title="{{item['基金简称']}}"></a>
+                    </td>
+
+                    <td class="number" v-text="item['单位净值'] | fixed 4"></td>
+                    <td class="number" v-text="item['累计净值'] | fixed 4"></td>
+                    <td class="number" v-class="red: item['日增长率']>= 0, green:  item['日增长率']< 0">
+                        <span v-class="num: item['日增长率'] != '-'" v-text="item['日增长率'] | fixed %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['收盘价'] != '-'" v-text="item['收盘价'] | fixed 3"></span>
+                    </td>
+                    <td class="number" v-class="red: item['折溢价率']>= 0, green:  item['折溢价率']< 0">
+                        <span v-class="num: item['折溢价率'] != '-'" v-text="item['折溢价率'] | fixed 2 %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['下折母基需跌'] != '-'" v-text="item['下折母基需跌'] | fixed 2 %"></span>
+                    </td>
+                    <td class="number">
+                        <span v-class="num: item['净值杠杆'] != '-'" v-text="item['净值杠杆'] | fixed 2"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="hide info">暂无相关数据</div>
+        </div>
+
+
+
+
+        <div id="pagerParent">
+            <div class="pager" v-on="click:onClick" v-show="show">
+                <a v-attr="data-index:index-1">上一页</a>
+                <a v-class="active:index==1" v-text="1"></a>
+                <i v-if="count>size&&index>size/2+1">...</i>
+                <a v-class="active:index==$value" v-repeat="items" v-text="$value"></a>
+                <i v-if="count>size&&index<count-size/2">...</i>
+                <a v-class="active:index==count" v-if="count>1" v-text="count"></a>
+                <a v-attr="data-index:index+1">下一页</a>
+                <input v-attr="min:1,max:count" v-model="input" v-on="change:onChange" type="number"/>
+                <a v-attr="data-index:input">GO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cover hide" data-bind="onCoverClick"></div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

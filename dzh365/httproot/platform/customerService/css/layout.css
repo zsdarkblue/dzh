@@ -1,0 +1,41 @@
+.flex-row, .flex-column { display: -webkit-flex; -webkit-justify-content: center; }
+.flex-row { -webkit-flex-flow: row; }
+.flex-column { -webkit-flex-flow: column; }
+.flex-auto { -webkit-flex: auto; min-width: 0; min-height: 0; }
+.flex-none { -webkit-flex: none; }
+.flex-none-hide { display: none; }
+.flex-splitter { -webkit-flex: none; overflow: hidden; position: relative; background: #dadada; }
+.flex-splitter > i { display: block; position: absolute; cursor: pointer; }
+.flex-row > .flex-splitter { cursor: e-resize; }
+.flex-row > .flex-splitter > i { width: 9px; height: 180px; top: 50%; margin-top: -90px; background: url('../img/splitter_v.png') no-repeat 1px 0; }
+.flex-row > .flex-splitter > i:hover,.flex-row > .flex-splitter > i:active { background-position: -5px 0; }
+.flex-row > .flex-splitter-right { -webkit-transform: scaleX(-1); }
+.flex-row > .flex-splitter-hide > i { -webkit-transform: scaleX(-1); }
+.flex-column > .flex-splitter { cursor: n-resize; }
+.flex-column > .flex-splitter > i { width: 180px; height: 100%; left: 50%; margin-left: -90px; background: url('../img/splitter_h.png') no-repeat 0 1px; }
+.flex-column > .flex-splitter > i:hover,.flex-column > .flex-splitter > i:active{background-position: 0 -5px;}
+.flex-column > .flex-splitter-bottom { -webkit-transform: scaleY(-1); }
+.flex-column > .flex-splitter-hide > i { -webkit-transform: scaleY(-1); }
+.flex-row > .flex-splitter-hide, .flex-column > .flex-splitter-hide { cursor: inherit; }
+.flex-row > .flex-splitter { width: 9px; }
+.flex-column > .flex-splitter { height: 9px; }
+.flex-0 { -webkit-flex: 0; }
+.flex-1 { -webkit-flex: 1; }
+.flex-2 { -webkit-flex: 2; }
+.flex-3 { -webkit-flex: 3; }
+.flex-4 { -webkit-flex: 4; }
+.flex-5 { -webkit-flex: 5; }
+.flex-6 { -webkit-flex: 6; }
+.flex-7 { -webkit-flex: 7; }
+.flex-8 { -webkit-flex: 8; }
+.flex-9 { -webkit-flex: 9; }
+.flex-order-0 { -webkit-order: 0; }
+.flex-order-1 { -webkit-order: 1; }
+.flex-order-2 { -webkit-order: 2; }
+.flex-order-3 { -webkit-order: 3; }
+.flex-order-4 { -webkit-order: 4; }
+.flex-order-5 { -webkit-order: 5; }
+.flex-order-6 { -webkit-order: 6; }
+.flex-order-7 { -webkit-order: 7; }
+.flex-order-8 { -webkit-order: 8; }
+.flex-order-9 { -webkit-order: 9; }

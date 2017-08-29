@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Config>
+	<menu code="COMMAND" cmd="shellexe?'http://crm2.qq.com/page/portalpage/wpa.php?uin=800061519&amp;f=1&amp;ty=1&amp;aty=0&amp;a=&amp;from=5'" disp="在线客服" />
+	<menu code="COMMAND" cmd="shellexe?'http://help.gw.com.cn/ID_99999.html'" disp="常见问答"/>
+	<menu code="COMMAND" cmd="navigate?'http://i.gw.com.cn/UserCenter/page/account/pcIndex?source=11'" disp="个人中心"/>
+
+	<menu code="SEPARATOR"/>
+	<menu code="COMMAND"  cmd="CHROME?URL='http://pay.gw.com.cn/extbuy.jsp?appId=client&amp;op=renew'" disp="购买升级" />
+
+	<menu code="SEPARATOR"/>
+	<menu code="COMMAND" cmd="" disp="客服电话 021-20219997" />
+	
+
+</Config>

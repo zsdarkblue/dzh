@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col><value>index</value><width>37</width><name>序号</name></col><col><value>label</value><width>70</width><name>代码</name></col><col><value>name</value><width>204</width><name>名称</name></col><col fixed="1"><value>now</value><width>70</width><name>最新</name></col><col><value>undn</value><width>70</width><name>涨跌</name></col><col sorted="-2" subsorted="0"><value>updnratio</value><width>75</width><name>涨幅</name></col><col><value>lastclose</value><width>70</width><name>昨收</name></col><col><value>open</value><width>70</width><name>今开</name></col><col><value>high</value><width>70</width><name>最高</name></col><col><value>low</value><width>70</width><name>最低</name></col><col><value>allvalue</value><width>100</width><name>总市值</name></col><col><value>prop</value><width>70</width><name>市盈率</name></col><col><value>hilowratio</value><width>70</width><name>振幅</name></col><col><value>volratio</value><width>67</width><name>量比</name></col><col><value>wantratio</value><width>70</width><name>委比</name></col></column>
+</list>

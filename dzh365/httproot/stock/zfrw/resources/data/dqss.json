@@ -1,0 +1,8 @@
+{
+  "identifier":"id",
+  "label": "name",
+  "items":[
+   		{name:"北京",id:"110000"},
+        {name:"上海",id:"310000"}
+        ]
+}

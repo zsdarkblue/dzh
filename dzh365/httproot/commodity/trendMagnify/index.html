@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>趋势放大图</title>
+	<link rel="stylesheet" href="../../dijit/themes/black/document.css"/>
+	<script type="text/javascript">
+	//链接到此页面前，需要对传入的参数进行编码操作。比如xxx.html?params=values,其中values为所有参数经过编码后的值，例如
+	//values = encodeURIComponent("url=comm/cdb&desc=图例1,图例2,图例3&from=2012-01-21&unit=美元/吨&......")
+	// param = {"url":"comm/cdb","period":"y","from":"2007","to":"2012",
+	//"desc":"value1,value2,value3","id":"944095,944096,944097","unit":"美元/吨","pdesc":"日"};
+	//其中，参数period有三个值：y、m和d，分别代表年、月和日，控制日期选择框的选项内容 ;参数desc为图例名称以及表格显示列的名称 ;
+	//日期格式为"2012-01-01"
+	
+	  var pos,url,parastr,paratemp;  
+	  url = window.location.href;  
+	  pos = url.indexOf("=")  
+	  parastr = url.substring(pos+1);
+	  parastr = decodeURIComponent(parastr);
+	  var param = {};
+	  paratemp = parastr.split("&");
+	  for(var i = 0; i < paratemp.length; i++)
+	  {
+		  var mapValue = paratemp[i].split("=");
+		  param[mapValue[0]] = mapValue[1];
+	  }
+	 //var param = {"url":"comm/cdb","period":"y","from":"2007","to":"2012",
+	//			"desc":"value1,value2,value3","id":"944095,944096,944097","unit":"美元/吨","pdesc":"日"};
+	  
+		dojoConfig = {
+			async:true, 
+			parseOnLoad:false,
+			//paths:{'specialTopic':'../commodity/specialTopic'},
+			baseUrl:"../../",
+			requestProvider: "dojo/request/registry",
+			callback: function() {
+				require(['commodity/trendMagnify/src'
+				         ],
+				         function(main){
+							main();
+					});
+			}
+		}
+		dojopr();
+	</script>
+</head>
+<body class="claro">
+	<div data-dojo-type="dijit/layout/BorderContainer" id="border1" data-dojo-props="design:'headline', gutters:false, liveSplitters:false" style="height:100%">
+		<!-- 日期、单位等 -->
+		<div data-dojo-type="dijit/layout/ContentPane" region="top" style="height:25px;">
+			<div class="hbox dijitRegionalPane">
+				<div class="spacer">
+					<div class="hbox">
+						<div class="spacer">
+							<div class="hbox">
+								<span>范围</span>
+								<div id="dayMonth" style="display:none">
+									<div class="hbox">
+										<input id="dmFrom" name="dmFrom" type="text" data-dojo-type="dijit/form/DateTextBox" data-dojo-props="constraints:{datePattern:'yyyy-MM-dd'}">
+									  	<div>&nbsp;-&nbsp;</div>
+									  	<input id="dmTo" name="dmTo" type="text" data-dojo-type="dijit/form/DateTextBox" data-dojo-props="constraints:{datePattern:'yyyy-MM-dd'}">
+								    </div>
+								</div>
+								<div id="year" > 
+									<div class="hbox"> 
+										<select id="yFrom" data-dojo-type="dijit/form/Select" data-dojo-props="maxHeight:200" style="width:50px"></select> 
+										<div>&nbsp;-&nbsp;</div> 
+										<select id="yTo" data-dojo-type="dijit/form/Select" data-dojo-props="maxHeight:200" style="width:50px"></select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<!--button data-dojo-type="dijit/form/Button" id="exportGraph">导出图形</button-->
+							<div id="exportGraph"></div>
+						</div>
+					</div>
+				</div>
+				<div class="hbox" style="width:350px;">
+					<div class="spacer">
+						<button data-dojo-type="dijit/form/Button" id="exportTable">导出表格</button>
+					</div>
+					<div class="hbox">
+						<span id="unitDesc">单位&nbsp;<font color="orange" id="unit">元/吨</font></span>&nbsp;&nbsp;&nbsp;
+						<span>周期&nbsp;<font color="orange" id="period">日</font></span>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" region="center" >
+			<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false, liveSplitters:true">
+				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center',splitter:true"><div id="areaGraph" style="width:100%;height:100%">中左，面积图</div></div>
+				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'right',splitter:true" style="width:350px;"><div id="tableData">中右，表格数据</div></div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

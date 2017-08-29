@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datas ver="1.00">
+	<data id="100058" drvver="60561">
+		<dids num="1">
+			 <did id="100058" name="T_SZHKTInfo" des="深港通额度信息"/>
+		</dids>
+		<fields num="7">
+			<uint32 id="1" name="STKID" des="品种ID" unique="1" uniqueindex="1"/>
+			<dtime id="2" name="time" des="成交GMT时间"/>
+			<pfloat id="3" name="buyprice" des="买入价（汇率）"/>
+			<pfloat id="4" name="sellprice" des="卖出价（汇率）"/>
+			<pfloat id="5" name="midprice" des="中间价（汇率）"/>
+			<vfloat id="6" name="hkinitlimit" des="当日初始额度"/>
+			<vfloat id="7" name="hkcurlimit" des="当日剩余额度"/>
+		</fields>      
+		<cids num="3">
+			<cid ciid="1" num="7" dcid="3" bmt="prev" bmor="x2-x1" name="prevrel">
+				<f1 bmav="1" cbid="1"/>
+				<f2 bmav="2" cbid="2"/>
+				<f2msec bmav="2" cbid="3" />
+				<f2usec bmav="2" cbid="3" />
+				<f3 bmav="3" cbid="4"/>
+				<f3deci bmav="3" cbid="5"/>
+				<f4 bmt="now" bmav="3" cbid="4"/>
+				<f4deci bmt="now" bmav="3" cbid="5"/>
+				<f5 bmt="now" bmav="3" cbid="4"/>
+				<f5deci bmt="now" bmav="3" cbid="5"/>
+				<f6 bmav="6" cbid="4"/>
+				<f6deci bmav="6" cbid="5"/>
+				<f7 bmav="7" cbid="4"/>
+				<f7deci bmt="now" bmav="5" cbid="5"/>
+			</cid>
+			<cid ciid="2" num="7" dcid="3" bmt="last" bmor="x2-x1" name="lastrel">
+				<f1 bmt="prev" bmav="1" cbid="1"/>
+				<f2 bmav="2" cbid="2"/>
+				<f2msec bmav="2" cbid="3" />
+				<f2usec bmav="2" cbid="3" />
+				<f3 bmav="3" cbid="4"/>
+				<f3deci bmav="3" cbid="5"/>
+				<f4 bmt="now" bmav="3" cbid="4"/>
+				<f4deci bmt="now" bmav="3" cbid="5"/>
+				<f5 bmt="now" bmav="3" cbid="4"/>
+				<f5deci bmt="now" bmav="3" cbid="5"/>
+				<f6 bmav="6" cbid="4"/>
+				<f6deci bmav="6" cbid="5"/>
+				<f7 bmav="7" cbid="4"/>
+				<f7deci bmt="now" bmav="5" cbid="5"/>
+			</cid>
+			<cid ciid="3" num="7" dcid="3" bmt="now" bmor="x2-x1" name="nowrel">
+				<f1 cbid="1"/>
+				<f2 bmt="staticday" cbid="2"/>
+				<f2msec cbid="3" />
+				<f2usec cbid="3" />
+				<f3  cbid="4"/>
+				<f3deci bmt="val" bmav="2" cbid="5"/>
+				<f4 bmav="3" cbid="4"/>
+				<f4deci bmav="3" cbid="5"/>
+				<f5 bmav="3" cbid="4"/>
+				<f5deci bmav="3" cbid="5"/>
+				<f6 bmav="5" cbid="4"/>
+				<f6deci bmav="3" cbid="5"/>
+				<f7 bmav="6" cbid="4"/>
+				<f7deci bmav="3" cbid="5"/>
+			</cid>
+		</cids>
+		<cbits maxcbid="5">
+		 	 <cbit cbid="1" num="5" name="stkid">
+			 	<c1 cb="0x0"		cl="1"	dl="2"	code="b"	cd="2"	db="0"/>		<!--	0  + 0Bit = 0Bit-->
+			 	<c2 cb="0x2"		cl="2"	dl="8"	code="b"	cd="8"	db="2"/>		<!--	10 + 8Bit	= 8Bit+2	-->
+			 	<c3 cb="0x6"		cl="3"	dl="12"	code="b"	cd="12"	db="130"/>		<!--	110 +12Bit	= 12Bit	+128+2-->
+			 	<c4 cb="0xE"		cl="4"	dl="14"	code="b"	cd="14"	db="2178"/>		<!--	1110 +16Bit	= 16Bit+2048+128+2	-->
+			 	<c5 cb="0xF"		cl="4"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	11111 +64Bit	= 64Bit -->			 	
+			 </cbit>
+			 <cbit cbid="2" num="8" name="TimeSec">			 
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>			<!--	0   +8Bit	= 8Bit	-->
+			 	<c2 cb="0xE"		cl="4"	dl="8"	code="b"	cd="8"	db="0"/>			<!--	1110   +8Bit	= 8Bit	-->
+			 	<c3 cb="0x1E"		cl="5"	dl="12"	code="b"	cd="12"	db="128"/>		<!--	11110  +12Bit	= 12Bit+128	-->
+			 	<c4 cb="0x2"		cl="2"	dl="20"	code="b"	cd="20"	db="34944"/>	<!--	10 +20Bit	= 20Bit+32768+2048+128	-->
+			 	<c5 cb="0x6"		cl="3"	dl="16"	code="b"	cd="16"	db="2176"/>		<!--	110 +16Bit	= 16Bit+2048+128	-->
+			 	<c6 cb="0x3E"		cl="6"	dl="24"	code="b"	cd="24"	db="559232"/>	<!--	111110 +24Bit= 24Bit+524288+32768+2048+128	-->
+			 	<c7 cb="0x7E"		cl="7"	dl="45"	code="b"	cd="45"	db="8947840"/>	<!--	1111110 +24Bit= 24Bit+524288+32768+2048+128	-->
+			 	<c8 cb="0x7F"		cl="7"	dl="64"	code="Q"	cd="64"	db="0"/>      <!--	111111+32Bit= 32Bit+64Bit	 -->
+			 </cbit>
+			 <cbit cbid="3" num="3" name="TimePrec">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>		<!--	0		+0Bit  =0Bit 	-->
+			 	<c2 cb="0x2"		cl="2"	dl="11"	code="b"	cd="11"	db="0"/>		<!--	10	+10Bit	=10Bit	-->
+			 	<c3 cb="0x3"		cl="2"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	11	+64Bit	=64Bit	-->
+			 </cbit>
+			 <cbit cbid="4" num="7" name="psclean">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>			<!--	0				= 基准	-->
+			 	<c2 cb="0x2"		cl="2"	dl="4"	code="b"	cd="4"	db="0"/>	<!--	10	+4Bit		= 基准+4Bit	-->
+			 	<c3 cb="0x6"		cl="3"	dl="6"	code="b"	cd="6"	db="8"/>	<!--	110	+6Bit		= 基准+6Bit + 8	-->
+			 	<c4 cb="0xE"		cl="4"	dl="8"	code="b"	cd="8"	db="40"/>	<!--1110	+8Bit		= 基准+8Bit+32+8	-->
+			 	<c5 cb="0x1E"		cl="5"	dl="12"	code="b"	cd="12"	db="168"/>	<!--	11110	+12Bit		= 基准+12Bit+128+32+8	-->
+			 	<c6 cb="0x3E"		cl="6"	dl="32"	code="b"	cd="32"	db="2216"/>	<!--	11110	+32Bit		= 基准+32Bit +2048+128+32+8	-->
+			 	<c7 cb="0x3F"		cl="6"	dl="64"	code="Q"	cd="64"	db="0"/>			<!--	11111+32Bit		= 基准+32Bit	-->
+			 </cbit>
+			 <cbit cbid="5" num="4" name="PricePrec">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>		<!--	0				= 基准	-->
+			 	<c2 cb="0x2"		cl="2"	dl="5"	code="b"	cd="5"	db="0"/>		<!--	10	+5Bit		= 基准+5Bit	-->
+			 	<c3 cb="0x6"		cl="3"	dl="9"	code="b"	cd="9"	db="0"/>		<!--	110	+9Bit		= 基准+9Bit	-->
+			 	<c4 cb="0x7"		cl="3"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	111	+64Bit		= 基准+64Bit	-->
+			 </cbit>
+		</cbits>	
+	</data>
+</datas>
+ 

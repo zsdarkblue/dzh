@@ -1,0 +1,15 @@
+{
+  "identifier":"id",
+  "label": "name",
+  "items":[
+   		{name:"全部",id:"0"},
+   		{name:"买入",id:"11"},
+        {name:"增持",id:"12"},
+        {name:"中性",id:"13"},
+        {name:"减持",id:"14"},
+        {name:"卖出",id:"15"},
+   		{name:"多",id:"21"},
+        {name:"平",id:"22"},
+        {name:"空",id:"23"}
+        ]
+}

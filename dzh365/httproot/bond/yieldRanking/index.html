@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css"/>
+</head>
+<body class="flex-column loading">
+<header class="flex-none ">
+    <ul class="nav-tabs tabs-orange-red pull-left" data-selector=".nav-panes">
+        <li class="active">政府债券</li>
+        <li>公司债券</li>
+    </ul>
+</header>
+<div class="flex-auto flex-column nav-panes">
+    <div class="flex-1 flex-column active">
+    	<form class="flex-none" v-on="change: filtersChange, input: filtersChange">
+            <div class="form-group pull-left">
+                <label>剩余期限</label>
+                <input v-model="values.deadline0" type="text">&nbsp;-&nbsp; 
+                <input v-model="values.deadline1" type="text">
+                <label>收益率</label>
+                <input v-model="values.yield0" type="text">&nbsp;-&nbsp; 
+                <input v-model="values.yield1" type="text">
+                <label>金额(万)</label>
+                <input v-model="values.amount0" type="text">&nbsp;-&nbsp;
+                <input v-model="values.amount1" type="text">
+                <label>折算率</label>
+                <input v-model="values.convert0" type="text">&nbsp;-&nbsp;
+                <input v-model="values.convert1" type="text">
+                <label>市场</label>
+                <select v-model="conditions.market" options="options1"></select>
+                <label>去年买</label>
+                <select v-model="conditions.lastyear" options="options2"></select>
+                <label>前年买</label>
+                <select v-model="conditions.previousyear" options="options2"></select>
+            </div>
+        </form>
+        <div class="flex-auto grid"></div>
+        <div class="icon-loading"><span class="span-loading">Loading...</span></div>
+    </div>
+    <div class="flex-1 flex-column">
+    	<form class="flex-none" v-on="change: filtersChange, input: filtersChange">
+            <div class="form-group pull-left">
+                <label>债券评级</label>
+                <select v-model="conditions.Bond0" options="options3"></select>&nbsp;-&nbsp;
+                <select v-model="conditions.Bond1" options="options3"></select>
+                <label>剩余期限</label>
+                <input v-model="values.deadline0" type="text">&nbsp;-&nbsp;
+                <input v-model="values.deadline1" type="text">
+            	<label>收益率</label>
+                <input v-model="values.yield0" type="text">&nbsp;-&nbsp; 
+                <input v-model="values.yield1" type="text">
+                <label>去年买</label>
+                <select v-model="conditions.lastyear" options="options2"></select>
+                <label><input v-model="provisions" type="checkbox"><span>普通投资者可投</span></label>
+            </div>
+            <div class="form-group pull-left">
+            	<label>主体评级</label>
+                <select v-model="conditions.Subject0" options="options3"></select>&nbsp;-&nbsp;
+                <select v-model="conditions.Subject1" options="options3"></select>
+                <label>金额(万)&nbsp;</label>
+                <input v-model="values.amount0" type="text">&nbsp;-&nbsp;
+                <input v-model="values.amount1" type="text">
+                <label>折算率</label>
+                <input v-model="values.convert0" type="text">&nbsp;-&nbsp;
+                <input v-model="values.convert1" type="text">
+            	<label>前年买</label>
+                <select v-model="conditions.previousyear" options="options2"></select>
+                <label>市场</label>
+                <select v-model="conditions.market" options="options1"></select>
+                <label>担保方式</label>
+                <select v-model="conditions.assure" options="options0"></select>
+            </div>
+        </form>
+        <div class="flex-auto grid"></div>
+    </div>
+</div>
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

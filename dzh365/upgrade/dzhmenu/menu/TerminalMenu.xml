@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<Config>
+  <submenu name="终端模式">
+    <menu code="NOFIX" disp="原始大小" />
+    <menu code="SEPARATOR" />
+    <menu code="FIX480" disp="特大字符" />
+    <menu code="FIX640" disp="大字符" />
+    <menu code="FIX800" disp="中等字符" />
+    <menu code="FIX1024" disp="中小字符" />
+    <menu code="FIX1280" disp="小字符" />
+    <menu code="FIX1600" disp="特小字符" />
+  </submenu>
+  <menu code="WINCASCADE" disp="层叠(&amp;W)" />
+  <!--“层叠”快捷键由D改为W-->
+  <menu code="WINTILEHORZ" disp="水平平铺(&amp;T)" />
+  <menu code="WINTILEVERT" disp="垂直平铺(&amp;V)" />
+  <menu code="WINARRANGE" disp="排列图标(&amp;A)" />
+  <menu code="FLOATFRAME" disp="浮动窗口(&amp;F)" />
+  <menu code="SEPARATOR" />
+   <!--<menu code="MENUTOOLBAR" disp="菜单栏(&amp;B)" />
+ “菜单栏”快捷键由A改为B-->
+  <menu code="VIEWTOOLBAR" disp="工具栏(&amp;L)" />
+  <menu code="STATUSBAR" disp="滚动资讯(&amp;U)" />
+  <menu code="INFOCENTER" disp="消息中心(&amp;M)" />
+  <menu code="CROSS" disp="十字光标(&amp;G)" />
+  <menu code="AUTOPAGE" disp="自动换页(&amp;P)" />
+  <menu code="DRAWTOOL" disp="画线工具(&amp;D)" />
+  <menu code="SEPARATOR" />
+  <submenu name="公式管理">
+    <menu code="FUNCTION" disp="公式管理(&amp;F)" />
+    <menu code="AUTOIMP" disp="公式引入(&amp;I)" />
+    <menu code="EXPFUNC" disp="公式输出(&amp;E)" />
+    <menu code="PARAMTEST" disp="系统测试平台(&amp;A)" />
+    <menu code="OPENTEST" disp="打开测试文件(&amp;K)" />
+  </submenu>
+  <submenu name="数据管理">
+    <menu code="DATAMAN" disp="数据管理" />
+    <menu code="EXDATAMAN" disp="扩展数据管理(&amp;Z)" />
+    <menu code="SELFDATA" disp="自定义数据管理(&amp;M)" />
+    <menu code="FDLMAN" disp="文件下载管理器" />
+    <menu code="DATABROWSE" disp="数据浏览器(&amp;W)" />
+    <menu code="CUSTOMINDEX" disp="自定义指数(&amp;V)" />
+    <menu code="SYNCDATA" disp="下载数据" />
+  </submenu>
+  <submenu name="系统管理">
+    <menu code="SETORDER" disp="委托设置" />
+    <menu code="SETSELF" disp="自选股设置" />
+	<menu code="COMMAND" disp="自选股导入" cmd="STKTRANSPORT"/>
+    <menu code="PICTEVENT" disp="信息地雷(&amp;V)" />
+    <menu code="PAUSESSJP" disp="设置系统提示窗" />
+    <menu code="TRANSFER" disp="迁移工具(&amp;Q)" />
+    <!--menu code="BUPREST" disp="云同步与备份(&amp;B)"/ 功能无法实现，暂时删除20130315-->
+    <menu code="REPAIREXCEL" disp="Excel插件修复(&amp;U)" />
+    <menu code="NEWWINDOW" disp="新建窗口" />
+  </submenu>
+  <menu code="SEPARATOR" />
+  <menu code="SETRECEIVER" disp="接收系统(&amp;R)..." />
+  <menu code="DELRECV" disp="关闭接收系统(&amp;C)" />
+  <!--“关闭接收系统”快捷键由G改为C-->
+  <menu code="SEPARATOR" />
+  <menu code="OPTION" disp="选项(&amp;O)" />
+  <menu code="SEPARATOR" />
+  <menu code="SETRECEIVER" disp="行情连接" />
+</Config>

@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<NETCFG>
+	<SERVERLIST conntimeout="4" pkgtimeout="30" sendbuf="1048576" recvbuf="10485760" dbmaxsize="2G" urlmaxsize="2G" fileserverurl="http://rdfile.gw.com.cn" kvsize="52428800" log="0">
+		<SERVER ip="reader2.gw.com.cn" port="6070" />
+	</SERVERLIST>
+	<PUSHSERVERS>
+		<PUSHSERVER ip="reader2.gw.com.cn" port="6020" />
+	</PUSHSERVERS>
+</NETCFG>
+

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <title>大智慧-法律法规</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="../../dijit/themes/white/document.css"/>
+  <link rel="stylesheet" href="resources/dts.css"/>
+  <!--导入 自己定义的样式文件-->
+  <script type="text/javascript">
+  dojoConfig = {
+    async: true,
+    parseOnLoad: false,
+    paths: {
+      'dts': '../dts'
+    },
+    baseUrl: "../../dojo",
+    noscale: true,
+    //dojopr:false,
+    locale: 'zh-cn',
+    // >>excludeStart("Tag",1)
+    deps: [ "dijit/dijit-all", "dijit/dijit", "dojox/charting/Chart2D" ],
+    // >>excludeEnd("Tag")
+    callback: function ( ) {
+      require( [ 'dts/tradepolicy/src'], function ( main) {
+
+        main( );
+        var canvas_bd = document.getElementById("area_canvas");
+        var recourse = document.getElementById("recourse");
+        var begintime = document.getElementById("begin-time");
+        var htmlW = document.body.clientWidth;
+        var htmlH = document.body.clientHeight;
+        canvas_bd.style.width = htmlW*0.69+"px"; 
+        canvas_bd.style.height = htmlH*0.72-22 +"px";        
+        recourse.style.top = htmlH*0.72+"px"; 
+        begintime.style.top = htmlH*0.72-22+"px"; 
+    } );
+    }
+  }
+  </script>
+  <script src="../../dojo/dojo.js"></script>
+  <script type="text/javascript">
+    window.onresize = function ( ) {
+      var canvas_bd = document.getElementById("area_canvas");
+      var recourse = document.getElementById("recourse");
+      var begintime = document.getElementById("begin-time");
+      var htmlW = document.body.clientWidth;
+      var htmlH = document.body.clientHeight;
+      canvas_bd.style.width = htmlW*0.69+"px"; 
+      canvas_bd.style.height = htmlH*0.72-22 +"px";
+      recourse.style.top = htmlH*0.72+"px"; 
+      begintime.style.top = htmlH*0.72-22+"px"; 
+    }
+  </script>
+</head>
+<body onload="javascript:window.external.sendpagesize('710','500');">
+  <div id="contain"  style="height: 100%;">
+    <header id="myTopBar" ></header>
+    <section>
+      <nav id="myTab" ></nav>
+      <article>
+        <div class="btmcolor">
+          <div id="policy-title" class="title fn-left">
+          </div>
+          <div id="date-time" class="fn-right">
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="areabd">
+          <div id="area" >
+          </div>
+          <div id="area-title">沪深300走势(左轴)</div>
+          <div id="begin-time"></div>
+          <div id="recourse">数据来源:大智慧量化投资研究所</div>
+        </div>
+      </article>
+    </section>
+     <footer id="myFooter">
+        <input type="button" value="交易下单" onclick="javascript:location.href='SUBMIT';" />
+    </footer>
+  </div>
+</body>
+</html>

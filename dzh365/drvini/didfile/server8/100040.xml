@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datas ver="1.00">
+	<data id="100040" drvver="60561">
+		<dids num="1">
+			 <did id="100040" name="T_MMPInfo" des="买卖盘信息"/><!--注意买卖盘顺序-->
+		</dids>
+		<fields num="26">
+			<uint32 id="1" name="STKID" des="品种ID" unique="1" uniqueindex="1"/>
+			<dtime id="2" name="time" des="成交GMT时间"/>
+			<pfloat id="3" name="buyprice10" des="买盘档位价10"/>
+			<pfloat id="4" name="buyprice9" des="买盘档位价9"/>
+			<pfloat id="5" name="buyprice8" des="买盘档位价8"/>
+			<pfloat id="6" name="buyprice7" des="买盘档位价7"/>
+			<pfloat id="7" name="buyprice6" des="买盘档位价6"/>
+			<pfloat id="8" name="buyprice5" des="买盘档位价5"/>
+			<pfloat id="9" name="buyprice4" des="买盘档位价4"/>
+			<pfloat id="10" name="buyprice3" des="买盘档位价3"/>
+			<pfloat id="11" name="buyprice2" des="买盘档位价2"/>
+			<pfloat id="12" name="buyprice1" des="买盘档位价1"/>
+			<vfloat id="13" name="buyvolume" arraysize="10" des="买盘档位量"/>
+			<uint32 id="14" name="buyorder" arraysize="10" des="买盘档位笔数"/>
+			<pfloat id="15" name="sellprice1" des="卖盘档位价1"/>
+			<pfloat id="16" name="sellprice2" des="卖盘档位价2"/>
+			<pfloat id="17" name="sellprice3" des="卖盘档位价3"/>
+			<pfloat id="18" name="sellprice4" des="卖盘档位价4"/>
+			<pfloat id="19" name="sellprice5" des="卖盘档位价5"/>
+			<pfloat id="20" name="sellprice6" des="卖盘档位价6"/>
+			<pfloat id="21" name="sellprice7" des="卖盘档位价7"/>
+			<pfloat id="22" name="sellprice8" des="卖盘档位价8"/>
+			<pfloat id="23" name="sellprice9" des="卖盘档位价9"/>
+			<pfloat id="24" name="sellprice10" des="卖盘档位价10"/>
+			<vfloat id="25" name="sellvolume" arraysize="10" des="卖盘档位量"/>
+			<uint32 id="26" name="sellorder" arraysize="10" des="卖盘档位笔数"/>
+		</fields>      
+		<cids num="3">
+			<cid ciid="1" num="26" dcid="3" bmt="prev" bmor="x2-x1" name="prevrel">
+				<f1 bmav="1" cbid="1"/>
+				<f2 bmav="2" cbid="5"/>
+				<f2msec bmav="2" cbid="6" />
+				<f2usec bmav="2" cbid="6" />
+				<f3 bmav="3" cbid="7"/>
+				<f3deci bmav="3" cbid="8"/>
+				<f4 bmt="now" bmav="3" cbid="7"/>
+				<f4deci bmt="now" bmav="3" cbid="8"/>
+				<f5 bmt="now" bmav="4" cbid="7"/>
+				<f5deci bmt="now" bmav="3" cbid="8"/>
+				<f6 bmt="now" bmav="5" cbid="7"/>
+				<f6deci bmt="now" bmav="3" cbid="8"/>
+				<f7 bmt="now" bmav="6" cbid="7"/>
+				<f7deci bmt="now" bmav="3" cbid="8"/>
+				<f8 bmt="now" bmav="7" cbid="7"/>
+				<f8deci bmt="now" bmav="3" cbid="8"/>
+				<f9 bmt="now" bmav="8" cbid="7"/>
+				<f9deci bmt="now" bmav="3" cbid="8"/>
+				<f10 bmt="now" bmav="9" cbid="7"/>
+				<f10deci bmt="now" bmav="3" cbid="8"/>
+				<f11 bmt="now" bmav="10" cbid="7"/>
+				<f11deci bmt="now" bmav="3" cbid="8"/>
+				<f12 bmt="now" bmav="11" cbid="7"/>
+				<f12deci bmt="now" bmav="3" cbid="8"/>
+				<f13 bmt="val" bmav="0" cbid="2"/>
+				<f13deci bmav="13" cbid="3"/>
+				<f14 bmt="val" bmav="0" cbid="4"/>
+				<f15 bmt="now" bmav="12" cbid="7"/>
+				<f15deci bmt="now" bmav="3" cbid="8"/>
+				<f16 bmt="now" bmav="15" cbid="7"/>
+				<f16deci bmt="now" bmav="3" cbid="8"/>
+				<f17 bmt="now" bmav="16" cbid="7"/>
+				<f17deci bmt="now" bmav="3" cbid="8"/>
+				<f18 bmt="now" bmav="17" cbid="7"/>
+				<f18deci bmt="now" bmav="3" cbid="8"/>
+				<f19 bmt="now" bmav="18" cbid="7"/>
+				<f19deci bmt="now" bmav="3" cbid="8"/>
+				<f20 bmt="now" bmav="19" cbid="7"/>
+				<f20deci bmt="now" bmav="3" cbid="8"/>
+				<f21 bmt="now" bmav="20" cbid="7"/>
+				<f21deci bmt="now" bmav="3" cbid="8"/>
+				<f22 bmt="now" bmav="21" cbid="7"/>
+				<f22deci bmt="now" bmav="3" cbid="8"/>
+				<f23 bmt="now" bmav="22" cbid="7"/>
+				<f23deci bmt="now" bmav="3" cbid="8"/>
+				<f24 bmt="now" bmav="23" cbid="7"/>
+				<f24deci bmt="now" bmav="3" cbid="8"/>
+				<f25 bmt="val" bmav="0" cbid="2"/>
+				<f25deci bmav="25" cbid="3"/>
+				<f26 bmt="val" bmav="0" cbid="4"/>
+			</cid>
+			<cid ciid="2" num="26" dcid="3" bmt="last" bmor="x2-x1" name="lastrel">
+				<f1 bmt="prev" bmav="1" cbid="1"/>
+				<f2 bmav="2" cbid="5"/>
+				<f2msec bmav="2" cbid="6" />
+				<f2usec bmav="2" cbid="6" />
+				<f3 bmav="3" cbid="7"/>
+				<f3deci bmav="3" cbid="8"/>
+				<f4 bmt="now" bmav="3" cbid="7"/>
+				<f4deci bmt="now" bmav="3" cbid="8"/>
+				<f5 bmt="now" bmav="4" cbid="7"/>
+				<f5deci bmt="now" bmav="3" cbid="8"/>
+				<f6 bmt="now" bmav="5" cbid="7"/>
+				<f6deci bmt="now" bmav="3" cbid="8"/>
+				<f7 bmt="now" bmav="6" cbid="7"/>
+				<f7deci bmt="now" bmav="3" cbid="8"/>
+				<f8 bmt="now" bmav="7" cbid="7"/>
+				<f8deci bmt="now" bmav="3" cbid="8"/>
+				<f9 bmt="now" bmav="8" cbid="7"/>
+				<f9deci bmt="now" bmav="3" cbid="8"/>
+				<f10 bmt="now" bmav="9" cbid="7"/>
+				<f10deci bmt="now" bmav="3" cbid="8"/>
+				<f11 bmt="now" bmav="10" cbid="7"/>
+				<f11deci bmt="now" bmav="3" cbid="8"/>
+				<f12 bmt="now" bmav="11" cbid="7"/>
+				<f12deci bmt="now" bmav="3" cbid="8"/>
+				<f13 bmt="val" bmav="0" cbid="2"/>
+				<f13deci bmav="13" cbid="3"/>
+				<f14 bmt="val" bmav="0" cbid="4"/>
+				<f15 bmt="now" bmav="12" cbid="7"/>
+				<f15deci bmt="now" bmav="3" cbid="8"/>
+				<f16 bmt="now" bmav="15" cbid="7"/>
+				<f16deci bmt="now" bmav="3" cbid="8"/>
+				<f17 bmt="now" bmav="16" cbid="7"/>
+				<f17deci bmt="now" bmav="3" cbid="8"/>
+				<f18 bmt="now" bmav="17" cbid="7"/>
+				<f18deci bmt="now" bmav="3" cbid="8"/>
+				<f19 bmt="now" bmav="18" cbid="7"/>
+				<f19deci bmt="now" bmav="3" cbid="8"/>
+				<f20 bmt="now" bmav="19" cbid="7"/>
+				<f20deci bmt="now" bmav="3" cbid="8"/>
+				<f21 bmt="now" bmav="20" cbid="7"/>
+				<f21deci bmt="now" bmav="3" cbid="8"/>
+				<f22 bmt="now" bmav="21" cbid="7"/>
+				<f22deci bmt="now" bmav="3" cbid="8"/>
+				<f23 bmt="now" bmav="22" cbid="7"/>
+				<f23deci bmt="now" bmav="3" cbid="8"/>
+				<f24 bmt="now" bmav="23" cbid="7"/>
+				<f24deci bmt="now" bmav="3" cbid="8"/>
+				<f25 bmt="val" bmav="0" cbid="2"/>
+				<f25deci bmav="25" cbid="3"/>
+				<f26 bmt="val" bmav="0" cbid="4"/>
+			</cid>
+			<cid ciid="3" num="26" bmt="now" bmor="x2-x1" name="nowrel">
+				<f1 cbid="1"/>
+				<f2 bmt="staticday" cbid="5"/>
+				<f2msec cbid="6" />
+				<f2usec cbid="6" />
+				<f3  cbid="7"/>
+				<f3deci bmt="val" bmav="2" cbid="8"/>
+				<f4 bmav="3" cbid="7"/>
+				<f4deci bmav="3" cbid="8"/>
+				<f5 bmav="4" cbid="7"/>
+				<f5deci bmav="3" cbid="8"/>
+				<f6 bmav="5" cbid="7"/>
+				<f6deci bmav="3" cbid="8"/>
+				<f7 bmav="6" cbid="7"/>
+				<f7deci bmav="3" cbid="8"/>
+				<f8 bmav="7" cbid="7"/>
+				<f8deci bmav="3" cbid="8"/>
+				<f9 bmav="8" cbid="7"/>
+				<f9deci bmav="3" cbid="8"/>
+				<f10 bmav="9" cbid="7"/>
+				<f10deci bmav="3" cbid="8"/>
+				<f11 bmav="10" cbid="7"/>
+				<f11deci bmav="3" cbid="8"/>
+				<f12 bmav="11" cbid="7"/>
+				<f12deci bmav="3" cbid="8"/>
+				<f13 cbid="2"/>
+				<f13deci cbid="3"/>
+				<f14 cbid="4"/>
+				<f15 bmav="12" cbid="7"/>
+				<f15deci bmav="3" cbid="8"/>
+				<f16 bmav="15" cbid="7"/>
+				<f16deci bmav="3" cbid="8"/>
+				<f17 bmav="16" cbid="7"/>
+				<f17deci bmav="3" cbid="8"/>
+				<f18 bmav="17" cbid="7"/>
+				<f18deci bmav="3" cbid="8"/>
+				<f19 bmav="18" cbid="7"/>
+				<f19deci bmav="3" cbid="8"/>
+				<f20 bmav="19" cbid="7"/>
+				<f20deci bmav="3" cbid="8"/>
+				<f21 bmav="20" cbid="7"/>
+				<f21deci bmav="3" cbid="8"/>
+				<f22 bmav="21" cbid="7"/>
+				<f22deci bmav="3" cbid="8"/>
+				<f23 bmav="22" cbid="7"/>
+				<f23deci bmav="3" cbid="8"/>
+				<f24 bmav="23" cbid="7"/>
+				<f24deci bmav="3" cbid="8"/>
+				<f25 cbid="2"/>
+				<f25deci cbid="3"/>
+				<f26 cbid="4"/>
+			</cid>
+		</cids>
+		<cbits maxcbid="8">
+		 	 <cbit cbid="1" num="5" name="stkid">
+			 	<c1 cb="0x0"		cl="1"	dl="2"	code="b"	cd="2"	db="0"/>		<!--	0  + 0Bit = 0Bit-->
+			 	<c2 cb="0x2"		cl="2"	dl="8"	code="b"	cd="8"	db="2"/>		<!--	10 + 8Bit	= 8Bit+2	-->
+			 	<c3 cb="0x6"		cl="3"	dl="12"	code="b"	cd="12"	db="130"/>		<!--	110 +12Bit	= 12Bit	+128+2-->
+			 	<c4 cb="0xE"		cl="4"	dl="14"	code="b"	cd="14"	db="2178"/>		<!--	1110 +16Bit	= 16Bit+2048+128+2	-->
+			 	<c5 cb="0xF"		cl="4"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	11111 +64Bit	= 64Bit -->			 	
+			 </cbit>
+			 <cbit cbid="2" num="6" name="vol">
+			 	<c1 cb="0x1"		cl="2"	dl="6"	code="B"	cd="6"	db="0"/>		<!--	01  + 6Bit = 6Bit-->
+			 	<c2 cb="0x0"		cl="2"	dl="8"	code="B"	cd="8"	db="64"/>		<!--	00 + 8Bit	= 8Bit+64	-->
+			 	<c3 cb="0x6"		cl="3"	dl="12"	code="B"	cd="12"	db="320"/>		<!--	110 +12Bit	= 12Bit+256+64	-->
+			 	<c4 cb="0x2"		cl="2"	dl="16"	code="B"	cd="16"	db="4416"/>		<!--	10 +16Bit	= 16Bit+4096+256+64	-->
+			 	<c5 cb="0xE"		cl="4"	dl="24"	code="B"	cd="24"	db="69952"/>		<!--	1110 +24Bit	= 24Bit+65536+4096+256+64	-->
+			 	<c6 cb="0xF"		cl="4"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	1111 +64Bit	= 64Bit -->
+			 </cbit>
+			 <cbit cbid="3" num="4" name="volprec">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>		<!--	0				= 基准	-->
+			 	<c2 cb="0x2"		cl="2"	dl="3"	code="b"	cd="3"	db="0"/>		<!--	10	+3Bit		= 基准+3Bit	-->
+			 	<c3 cb="0x6"		cl="3"	dl="9"	code="b"	cd="9"	db="0"/>		<!--	110	+9Bit		= 基准+9Bit	-->
+			 	<c4 cb="0x7"		cl="3"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	111	+64Bit		= 基准+64Bit	-->
+			 </cbit>
+			 <cbit cbid="4" num="6" name="orders">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>		<!--	0 +24Bit	= 24Bit+65536+4096+256+64	-->
+			 	<c2 cb="0x6"		cl="3"	dl="6"	code="B"	cd="6"	db="0"/>		<!--	110  + 6Bit = 6Bit-->
+			 	<c3 cb="0x5"		cl="3"	dl="8"	code="B"	cd="8"	db="64"/>		<!--	101 + 8Bit	= 8Bit+64	-->
+			 	<c4 cb="0x4"		cl="3"	dl="12"	code="B"	cd="12"	db="320"/>		<!--100 +12Bit	= 12Bit+256+64	-->
+			 	<c5 cb="0xE"		cl="4"	dl="16"	code="B"	cd="16"	db="4416"/>		<!-- 1110 +16Bit	= 16Bit+4096+256+64	-->
+			 	<c6 cb="0xF"		cl="4"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	1111 +64Bit	= 64Bit -->
+			 </cbit>
+			 <cbit cbid="5" num="8" name="TimeSec">			 
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>			<!--	0   +8Bit	= 8Bit	-->
+			 	<c2 cb="0xE"		cl="4"	dl="8"	code="b"	cd="8"	db="0"/>			<!--	1110   +8Bit	= 8Bit	-->
+			 	<c3 cb="0x1E"		cl="5"	dl="12"	code="b"	cd="12"	db="128"/>		<!--	11110  +12Bit	= 12Bit+128	-->
+			 	<c4 cb="0x2"		cl="2"	dl="20"	code="b"	cd="20"	db="34944"/>	<!--	10 +20Bit	= 20Bit+32768+2048+128	-->
+			 	<c5 cb="0x6"		cl="3"	dl="16"	code="b"	cd="16"	db="2176"/>		<!--	110 +16Bit	= 16Bit+2048+128	-->
+			 	<c6 cb="0x3E"		cl="6"	dl="24"	code="b"	cd="24"	db="559232"/>	<!--	111110 +24Bit= 24Bit+524288+32768+2048+128	-->
+			 	<c7 cb="0x7E"		cl="7"	dl="45"	code="b"	cd="45"	db="8947840"/>	<!--	1111110 +24Bit= 24Bit+524288+32768+2048+128	-->
+			 	<c8 cb="0x7F"		cl="7"	dl="64"	code="Q"	cd="64"	db="0"/>      <!--	111111+32Bit= 32Bit+64Bit	 -->
+			 </cbit>
+			 <cbit cbid="6" num="3" name="TimePrec">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>		<!--	0		+0Bit  =0Bit 	-->
+			 	<c2 cb="0x2"		cl="2"	dl="11"	code="b"	cd="11"	db="0"/>		<!--	10	+10Bit	=10Bit	-->
+			 	<c3 cb="0x3"		cl="2"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	11	+64Bit	=64Bit	-->
+			 </cbit>
+			 <cbit cbid="7" num="7" name="psclean">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>			<!--	0				= 基准	-->
+			 	<c2 cb="0x2"		cl="2"	dl="4"	code="b"	cd="4"	db="0"/>	<!--	10	+4Bit		= 基准+4Bit	-->
+			 	<c3 cb="0x6"		cl="3"	dl="6"	code="b"	cd="6"	db="8"/>	<!--	110	+6Bit		= 基准+6Bit + 8	-->
+			 	<c4 cb="0xE"		cl="4"	dl="8"	code="b"	cd="8"	db="40"/>	<!--1110	+8Bit		= 基准+8Bit+32+8	-->
+			 	<c5 cb="0x1E"		cl="5"	dl="12"	code="b"	cd="12"	db="168"/>	<!--	11110	+12Bit		= 基准+12Bit+128+32+8	-->
+			 	<c6 cb="0x3E"		cl="6"	dl="32"	code="b"	cd="32"	db="2216"/>	<!--	11110	+32Bit		= 基准+32Bit +2048+128+32+8	-->
+			 	<c7 cb="0x3F"		cl="6"	dl="64"	code="Q"	cd="64"	db="0"/>			<!--	11111+32Bit		= 基准+32Bit	-->
+			 </cbit>
+			 <cbit cbid="8" num="4" name="PricePrec">
+			 	<c1 cb="0x0"		cl="1"	dl="0"	code="E"	cd="0"	db="0"/>		<!--	0				= 基准	-->
+			 	<c2 cb="0x2"		cl="2"	dl="5"	code="b"	cd="5"	db="0"/>		<!--	10	+5Bit		= 基准+5Bit	-->
+			 	<c3 cb="0x6"		cl="3"	dl="9"	code="b"	cd="9"	db="0"/>		<!--	110	+9Bit		= 基准+9Bit	-->
+			 	<c4 cb="0x7"		cl="3"	dl="64"	code="Q"	cd="64"	db="0"/>		<!--	111	+64Bit		= 基准+64Bit	-->
+			 </cbit>
+		</cbits>	
+	</data>
+</datas>
+ 

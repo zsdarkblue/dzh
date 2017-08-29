@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<title>人物舆情-人事任免</title>
+<link href="resources/style/base.css" rel="stylesheet" type="text/css" />
+<link href="resources/style/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="resources/style/globe.min.css"/>
+
+<script type="text/javascript">
+	function showPN(position_id,div_id){
+		var obj=document.getElementById(div_id); 
+		var padding=20; 
+		var posHeight = document.getElementById(position_id);
+		var outDivObj = document.getElementById('xin_wen_list_wrap');
+		var B = posHeight.offsetTop-outDivObj.scrollTop; 	
+		obj.style.top = (B+padding)+"px"; 
+		obj.style.visibility="visible";
+	}
+	
+	function hiddenPN(div_id){
+		document.getElementById(div_id).style.visibility="hidden";
+	}
+	var dojoConfig = {
+			async:true, 
+			parseOnLoad:false, 
+			baseUrl:'../../dojo',
+			noscale:true,	
+
+			dojopr :false,
+			deps:["dijit/dijit-all"],
+
+			callback: function() {
+				require(["news/rwyq/src"], function(main){ main(); });
+			}
+		};
+
+		delete dojoConfig.baseUrl;
+</script>
+<script type="text/javascript" src="../../dojo/dojo.js"></script>
+
+
+<script type="text/javascript" src="resources/js/jquery.js"></script>
+<script type="text/javascript" src="resources/js/websocket.js"></script>
+<script type="text/javascript" src="resources/js/lib/autocomplete/jquery.autocomplete.js"></script>
+
+<script  type="text/javascript" language="javascript">
+	$(document).ready(function(){
+	var _url='/gweb/fuzzySearch?core=solr_yuqing_person&q=flag:0&fields=p_category,p_name,p_code&orderFields=p_name&orderTypes=asc&start_num=0&row_num=10';
+    $("#search_key").autocomplete(_url, {
+			minChars: 1,
+			delay: 100,
+			cacheLength: 500,
+			max: 100,
+			width: 176,
+			scrollHeight: 300,
+			websocket: true,
+			websocketOption : "news",
+			matchCase: true,
+			matchContains: true,
+			callformatdelay:false,
+			ajaxfun:'getjsonstock',
+			websocketType: "jg",
+			
+			createUrlFun:function(str){
+				return '/gweb/fuzzySearch?core=solr_yuqing_person&q=(p_name:*'+str+'* OR p_jp:*'+str.toUpperCase()+'*) AND flag:0&fields=p_category,p_name,p_code&orderFields=p_name&orderTypes=asc&start_num=0&row_num=10';
+			},
+			formatItem: function(row, i, max, id) {
+				return "<span id=" + id + " >" + row[1] + "</span>";
+			}
+		}).result(function(event, row) {
+				var p_label = row[0];
+				var p_name = row[1];
+				var p_code = row[2];
+				var search_result = '';
+				$('#search_key').val(p_name);
+				if(p_label.split(" ").length>1){
+					var p_labelArray=  p_label.split(" ");
+					for(i in  p_labelArray){
+						search_result = "@"+p_labelArray[i]+"@"+p_name+"@"+p_code+"#" +search_result;
+					}
+					search_result = search_result.substring(0,search_result.length-1);
+				}else {
+					search_result = "@"+p_label+"@"+p_name+"@"+p_code;					
+				}
+				$('#search_value').val(search_result);
+		 });
+  });
+
+ </script>
+</head>
+
+<body>
+<div class="top_nav_listpage" >
+    <ul class="top_nav_bar_list">
+        <li><a href="##" class="select">人事任免</a></li>
+    </ul>
+	<ul class="top_nav_list">
+    	<li><a href="##" class="onthis" data-cate = "@00000003000W">全部</a></li>
+        <!-- <li><a href="##" data-cate = "@00000003000W#@000700690001">中央</a></li>
+        <li><a href="##" data-cate = "@00000003000W#@000700690002">北京 | 上海</a></li>
+        <li><a href="##" data-cate = "@00000003000W#@000700690004@000700690005@000700690006@000700690007@000700690008@000700690009@00070069000A@00070069000B@00070069000C@00070069000D@00070069000E@00070069000F@00070069000H">金融机构</a></li> -->
+	</ul>
+	
+
+  <div class="fn-right top_right">
+	<div id="rfresh_btn" class="fs1 img_mark3" aria-hidden="true" data-icon="&#xe006;"></div>
+    <!--input type="text" readonly="readonly" style="-webkit-user-select:none;" class="calformat" id="calendartext" value=""/>		 	
+ 	<div id="data_btn" class="fs1 img_mark1" aria-hidden="true" data-icon="&#xe009;"></div -->
+  </div>
+	<div class="search_bar">
+		<input type="text" id = "search_key" />
+		<input id = "search_btn" type="submit" value=""/>
+		<input id = "search_value" type="hidden"/>
+	</div>
+    <div class="clear"></div>
+</div>
+<div class="list_pages_box">
+    <div class="list_pages_con list_pages_con_left f_left" id="xin_wen_list_wrap" style="display:block;"></div>
+	
+    <div class="list_pages_con f_right list_pages_con_right" id="content" style="display:block;">
+    	<div id="detail-pane-wrap" class="list_text_box font_14 font_gray_3">
+       	  <h2 id="xin_wen_title">&nbsp;</h2>
+          <div id = "xin_wen_info_bottom">
+			<span id="xin_wen_info" class="f_left"></span>
+            <span >&nbsp;</span><span class="f_right font_gray" id="xin_wen_font"></span>
+
+          </div>
+          <div id="xin_wen_detail" class="text_con padding_t10">
+             </div>
+        </div>
+    </div>
+	
+    <div class="clear"></div>
+</div>
+<iframe name="news_iframe" style="display:none;"><!-- 用于a:visited --></iframe>
+</body>
+</html>

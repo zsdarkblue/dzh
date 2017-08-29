@@ -1,0 +1,436 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+		{id:'navigatesubscibe',name:'本地订阅',type:'level0'},
+		{id:'zxgyb',name:'自选股研报',type:'level0'},			
+		{id:'zxbg_zxbg',name:'最新报告',type:'level0',children:[
+																				{_reference:'A10001'},{_reference:'A10002'},{_reference:'A10003'},
+																				{_reference:'A10004'},{_reference:'A10005'},{_reference:'A10006'},
+																				{_reference:'A10007'},{_reference:'A10008'},{_reference:'A10009'},
+																				{_reference:'A10010'},{_reference:'A10011'},{_reference:'A10012'},
+																				{_reference:'A10013'},{_reference:'A10014'},{_reference:'A10015'},
+																				{_reference:'A10016'},{_reference:'A10017'},{_reference:'A10018'},
+																				{_reference:'A10019'}]},
+		{id:'A10001',name:'全部最新',type:'level1'},
+		{id:'A10002',name:'晨会纪要',type:'level1'},
+		{id:'A10003',name:'公司研究',type:'level1'},
+		{id:'A10004',name:'行业研究',type:'level1'},
+		{id:'A10005',name:'宏观研究',type:'level1'},
+		{id:'A10006',name:'策略研究',type:'level1'},
+		{id:'A10007',name:'融资融券',type:'level1'},
+		{id:'A10008',name:'金融工程',type:'level1'},
+		{id:'A10009',name:'投行研究',type:'level1'},
+		{id:'A10010',name:'固定收益',type:'level1'},
+		{id:'A10011',name:'基金研究',type:'level1'},
+		{id:'A10012',name:'理财产品',type:'level1'},
+		{id:'A10013',name:'金融衍生品',type:'level1'},
+		{id:'A10014',name:'商品期货',type:'level1'},
+		{id:'A10015',name:'港股研究',type:'level1'},
+		{id:'A10016',name:'英文报告',type:'level1'},
+		{id:'A10017',name:'投资参考',type:'level1'},
+		{id:'A10018',name:'投资组合',type:'level1'},
+		{id:'A10019',name:'预测评级',type:'level1'},
+		
+		
+		{id:'gsyj',name:'公司研究',type:'level0',children:[{_reference:'A21001'},{_reference:'gsyj_ejfl'},{_reference:'gsyj_pjtz'},
+														{_reference:'gsyj_pj'},{_reference:'gsyj_swhy'},{_reference:'gsyj_sc'},
+														{_reference:'gsyj_zs'},{_reference:'gsyj_dq'},{_reference:'gsyj_rzrqbd'}]},		
+		{id:'A21001',name:'全部',type:'level1'},
+		{id:'gsyj_ejfl',name:'二级分类',type:'level1',children:[{_reference:'A21002'},{_reference:'A21003'},{_reference:'A21004'},
+															{_reference:'A21005'},{_reference:'A21006'},{_reference:'A21007'}
+		]},
+		{id:'A21002',name:'业绩点评',type:'level2'},
+		{id:'A21003',name:'事件点评',type:'level2'},
+		{id:'A21004',name:'深度研究',type:'level2'},
+		{id:'A21005',name:'调研访谈',type:'level2'},
+		{id:'A21006',name:'新股研究',type:'level2'},
+		{id:'A21007',name:'动态研究',type:'level2'},
+		{id:'gsyj_pjtz',name:'评级调整',type:'level1',children:[{_reference:'A22001'},{_reference:'A22002'},{_reference:'A22003'},
+		{_reference:'A22004'}]},
+		{id:'A22001',name:'首次',type:'level2'},
+		{id:'A22002',name:'上调',type:'level2'},
+		{id:'A22003',name:'维持',type:'level2'},
+		{id:'A22004',name:'下调',type:'level2'},
+		{id:'gsyj_pj',name:'评级',type:'level1',children:[{_reference:'A23001'},{_reference:'A23002'},{_reference:'A23003'},
+		{_reference:'A23004'},{_reference:'A23005'}]},
+		{id:'A23001',name:'买入',type:'level2'},
+		{id:'A23002',name:'增持',type:'level2'},
+		{id:'A23003',name:'中性',type:'level2'},
+		{id:'A23004',name:'减持',type:'level2'},
+		{id:'A23005',name:'卖出',type:'level2'},
+		{id:'gsyj_sc',name:'市场',type:'level1',children:[{_reference:'A24001'},{_reference:'A24002'},{_reference:'A24003'},
+														{_reference:'A24004'}]},
+		{id:'A24001',name:'上证A股',type:'level2'},
+		{id:'A24002',name:'深证A股',type:'level2'},
+		{id:'A24003',name:'中小企业板',type:'level2'},
+		{id:'A24004',name:'创业板',type:'level2'},
+		{id:'gsyj_zs',name:'指数',type:'level1',children:[{_reference:'A25001'},{_reference:'A25002'},{_reference:'A25003'},
+														{_reference:'A25004'}]},
+		{id:'A25001',name:'沪深300',type:'level2'},
+		{id:'A25002',name:'上证50',type:'level2'},
+		{id:'A25003',name:'上证180',type:'level2'},
+		{id:'A25004',name:'深圳成分',type:'level2'},
+		{id:'gsyj_swhy',name:'申万行业',type:'level1',children:[{_reference:'A26001'},{_reference:'A26002'},
+															{_reference:'A26003'},{_reference:'A26004'},
+															{_reference:'A26005'},{_reference:'A26006'},
+															{_reference:'A26007'},{_reference:'A26008'},
+															{_reference:'A26009'},{_reference:'A26010'},
+															{_reference:'A26011'},{_reference:'A26012'},
+															{_reference:'A26013'},{_reference:'A26014'},
+															{_reference:'A26015'},{_reference:'A26016'},
+															{_reference:'A26017'},{_reference:'A26018'},
+															{_reference:'A26019'},{_reference:'A26020'},
+															{_reference:'A26021'},{_reference:'A26022'},
+															{_reference:'A26023'}]},
+		{id:'A26001',name:'农林牧渔',type:'level2'},
+		{id:'A26002',name:'采掘',type:'level2'},
+		{id:'A26003',name:'化工',type:'level2'},
+		{id:'A26004',name:'黑色金属',type:'level2'},
+		{id:'A26005',name:'有色金属',type:'level2'},
+		{id:'A26006',name:'建筑建材',type:'level2'},
+		{id:'A26007',name:'机械设备',type:'level2'},
+		{id:'A26008',name:'电子',type:'level2'},
+		{id:'A26009',name:'交运设备',type:'level2'},
+		{id:'A26010',name:'信息设备',type:'level2'},
+		{id:'A26011',name:'家用电器',type:'level2'},
+		{id:'A26012',name:'食品饮料',type:'level2'},
+		{id:'A26013',name:'纺织服装',type:'level2'},
+		{id:'A26014',name:'轻工制造',type:'level2'},
+		{id:'A26015',name:'医药生物',type:'level2'},
+		{id:'A26016',name:'公用事业',type:'level2'},
+		{id:'A26017',name:'交通运输',type:'level2'},
+		{id:'A26018',name:'房地产',type:'level2'},
+		{id:'A26019',name:'金融服务',type:'level2'},
+		{id:'A26020',name:'商业贸易',type:'level2'},
+		{id:'A26021',name:'餐饮旅游',type:'level2'},
+		{id:'A26022',name:'信息服务',type:'level2'},
+		{id:'A26023',name:'综合',type:'level2'},
+		{id:'gsyj_dq',name:'地区',type:'level1',children:[{_reference:'A27001'},{_reference:'A27002'},{_reference:'A27003'},
+														{_reference:'A27004'},{_reference:'A27005'},{_reference:'A27006'},
+														{_reference:'A27007'},{_reference:'A27008'},{_reference:'A27009'},
+														{_reference:'A27010'},{_reference:'A27011'},{_reference:'A27012'},
+														{_reference:'A27013'},{_reference:'A27014'},{_reference:'A27015'},
+														{_reference:'A27016'},{_reference:'A27017'},{_reference:'A27018'},
+														{_reference:'A27019'},{_reference:'A27020'},{_reference:'A27021'},
+														{_reference:'A27022'},{_reference:'A27023'},{_reference:'A27024'},
+														{_reference:'A27025'},{_reference:'A27026'},{_reference:'A27027'},
+														{_reference:'A27028'},{_reference:'A27029'},{_reference:'A27030'},
+														{_reference:'A27031'}]},
+		{id:'A27001',name:'安徽省',type:'level2'},
+		{id:'A27002',name:'北京市',type:'level2'},
+		{id:'A27003',name:'福建省',type:'level2'},
+		{id:'A27004',name:'甘肃省',type:'level2'},
+		{id:'A27005',name:'广东省',type:'level2'},
+		{id:'A27006',name:'广西壮族自治区',type:'level2'},
+		{id:'A27007',name:'贵州省',type:'level2'},
+		{id:'A27008',name:'海南省',type:'level2'},
+		{id:'A27009',name:'河北省',type:'level2'},
+		{id:'A27010',name:'河南省',type:'level2'},
+		{id:'A27011',name:'黑龙江省',type:'level2'},
+		{id:'A27012',name:'湖北省',type:'level2'},
+		{id:'A27013',name:'湖南省',type:'level2'},
+		{id:'A27014',name:'吉林省',type:'level2'},
+		{id:'A27015',name:'江苏省',type:'level2'},
+		{id:'A27016',name:'江西省',type:'level2'},
+		{id:'A27017',name:'辽宁省',type:'level2'},
+		{id:'A27018',name:'内蒙古自治区',type:'level2'},
+		{id:'A27019',name:'宁夏回族自治区',type:'level2'},
+		{id:'A27020',name:'青海省',type:'level2'},
+		{id:'A27021',name:'山东省',type:'level2'},
+		{id:'A27022',name:'山西省',type:'level2'},
+		{id:'A27023',name:'陕西省',type:'level2'},
+		{id:'A27024',name:'上海市',type:'level2'},
+		{id:'A27025',name:'四川省',type:'level2'},
+		{id:'A27026',name:'天津市',type:'level2'},
+		{id:'A27027',name:'西藏自治区',type:'level2'},
+		{id:'A27028',name:'新疆维吾尔自治区',type:'level2'},
+		{id:'A27029',name:'云南省',type:'level2'},
+		{id:'A27030',name:'浙江省',type:'level2'},
+		{id:'A27031',name:'重庆市',type:'level2'},
+		{id:'gsyj_rzrqbd',name:'融资融券标的',type:'level1',children:[{_reference:'A28001'},{_reference:'A28002'}]},
+		{id:'A28001',name:'两融标的',type:'level2'},
+		{id:'A28002',name:'转融券标的',type:'level2'},
+		
+		
+		{id:'dzhhyzb',name:'大智慧行业周报',type:'level0',children:[
+																				{_reference:'A30001'},{_reference:'A30002'},{_reference:'A30003'},
+																				{_reference:'A30004'},{_reference:'A30005'},{_reference:'A30006'},
+																				{_reference:'A30007'},{_reference:'A30008'},{_reference:'A30009'},
+																				{_reference:'A30010'},{_reference:'A30011'},{_reference:'A30012'},
+																				{_reference:'A30013'},{_reference:'A30014'},{_reference:'A30015'},
+																				{_reference:'A30016'},{_reference:'A30017'},{_reference:'A30018'},
+																				{_reference:'A30019'},{_reference:'A30020'},{_reference:'A30021'},
+																				{_reference:'A30022'},{_reference:'A30023'},{_reference:'A30024'},
+																				{_reference:'A30025'},{_reference:'A30026'},{_reference:'A30027'},
+																				{_reference:'A30028'},{_reference:'A30029'},{_reference:'A30030'},
+																				{_reference:'A30031'},{_reference:'A30032'}]},
+		{id:'A30001',name:'全部',type:'level1'},
+		{id:'A30002',name:'工程建筑',type:'level1'},
+		{id:'A30003',name:'电力',type:'level1'},
+		{id:'A30004',name:'计算机',type:'level1'},
+		{id:'A30005',name:'电子信息',type:'level1'},
+		{id:'A30006',name:'房地产',type:'level1'},
+		{id:'A30007',name:'纺织服装',type:'level1'},
+		{id:'A30008',name:'钢铁',type:'level1'},
+		{id:'A30009',name:'供水供气',type:'level1'},
+		{id:'A30010',name:'化工化纤',type:'level1'},
+		{id:'A30011',name:'电器',type:'level1'},
+		{id:'A30012',name:'交通设施',type:'level1'},
+		{id:'A30013',name:'银行类',type:'level1'},
+		{id:'A30014',name:'旅游酒店',type:'level1'},
+		{id:'A30015',name:'煤炭石油',type:'level1'},
+		{id:'A30016',name:'酿酒食品',type:'level1'},
+		{id:'A30017',name:'农林牧渔',type:'level1'},
+		{id:'A30018',name:'商业连锁',type:'level1'},
+		{id:'A30019',name:'建材',type:'level1'},
+		{id:'A30020',name:'其他行业',type:'level1'},
+		{id:'A30021',name:'交通工具',type:'level1'},
+		{id:'A30022',name:'机械',type:'level1'},
+		{id:'A30023',name:'医药',type:'level1'},
+		{id:'A30024',name:'外贸',type:'level1'},
+		{id:'A30025',name:'教育传媒',type:'level1'},
+		{id:'A30026',name:'仪电仪表',type:'level1'},
+		{id:'A30027',name:'有色金属',type:'level1'},
+		{id:'A30028',name:'造纸印刷',type:'level1'},
+		{id:'A30029',name:'券商',type:'level1'},
+		{id:'A30030',name:'通信',type:'level1'},
+		{id:'A30031',name:'运输物流',type:'level1'},
+		{id:'A30032',name:'保险',type:'level1'},
+		
+		
+		{id:'hyyj',name:'行业研究',type:'level0',children:[{_reference:'A41001'},{_reference:'hyyj_ejfl'},{_reference:'hyyj_pjtz'},{_reference:'hyyj_pj'},{_reference:'hyyj_swhy'},{_reference:'hyyj_cygn'}]},	
+		{id:'A41001',name:'全部',type:'level1'},
+		{id:'hyyj_ejfl',name:'二级分类',type:'level1',children:[{_reference:'A42001'},{_reference:'A42002'},{_reference:'A42003'},
+															{_reference:'A42004'},{_reference:'A42005'},{_reference:'A42006'}
+		]},
+		{id:'A42001',name:'行业资讯',type:'level2'},
+		{id:'A42002',name:'长期策略',type:'level2'},
+		{id:'A42003',name:'点评报告',type:'level2'},
+		{id:'A42004',name:'深度研究',type:'level2'},
+		{id:'A42005',name:'专题概念',type:'level2'},
+		{id:'A42006',name:'动态报告',type:'level2'},
+		{id:'hyyj_pjtz',name:'评级调整',type:'level1',children:[{_reference:'A43001'},{_reference:'A43002'},{_reference:'A43003'},
+		{_reference:'A43004'}]},
+		{id:'A43001',name:'首次',type:'level2'},
+		{id:'A43002',name:'上调',type:'level2'},
+		{id:'A43003',name:'维持',type:'level2'},
+		{id:'A43004',name:'下调',type:'level2'},
+		{id:'hyyj_pj',name:'评级',type:'level1',children:[{_reference:'A44001'},{_reference:'A44002'},{_reference:'A44003'}]},
+		{id:'A44001',name:'看涨',type:'level2'},
+		{id:'A44002',name:'看平',type:'level2'},
+		{id:'A44003',name:'看跌',type:'level2'},
+		{id:'hyyj_swhy',name:'申万行业',type:'level1',children:[{_reference:'A45001'},{_reference:'A45002'},
+															{_reference:'A45003'},{_reference:'A45004'},
+															{_reference:'A45005'},{_reference:'A45006'},
+															{_reference:'A45007'},{_reference:'A45008'},
+															{_reference:'A45009'},{_reference:'A45010'},
+															{_reference:'A45011'},{_reference:'A45012'},
+															{_reference:'A45013'},{_reference:'A45014'},
+															{_reference:'A45015'},{_reference:'A45016'},
+															{_reference:'A45017'},{_reference:'A45018'},
+															{_reference:'A45019'},{_reference:'A45020'},
+															{_reference:'A45021'},{_reference:'A45022'},
+															{_reference:'A45023'}]},
+		{id:'A45001',name:'农林牧渔',type:'level2'},
+		{id:'A45002',name:'采掘',type:'level2'},
+		{id:'A45003',name:'化工',type:'level2'},
+		{id:'A45004',name:'黑色金属',type:'level2'},
+		{id:'A45005',name:'有色金属',type:'level2'},
+		{id:'A45006',name:'建筑建材',type:'level2'},
+		{id:'A45007',name:'机械设备',type:'level2'},
+		{id:'A45008',name:'电子',type:'level2'},
+		{id:'A45009',name:'交运设备',type:'level2'},
+		{id:'A45010',name:'信息设备',type:'level2'},
+		{id:'A45011',name:'家用电器',type:'level2'},
+		{id:'A45012',name:'食品饮料',type:'level2'},
+		{id:'A45013',name:'纺织服装',type:'level2'},
+		{id:'A45014',name:'轻工制造',type:'level2'},
+		{id:'A45015',name:'医药生物',type:'level2'},
+		{id:'A45016',name:'公用事业',type:'level2'},
+		{id:'A45017',name:'交通运输',type:'level2'},
+		{id:'A45018',name:'房地产',type:'level2'},
+		{id:'A45019',name:'金融服务',type:'level2'},
+		{id:'A45020',name:'商业贸易',type:'level2'},
+		{id:'A45021',name:'餐饮旅游',type:'level2'},
+		{id:'A45022',name:'信息服务',type:'level2'},
+		{id:'A45023',name:'综合',type:'level2'},
+		
+		{id:'hyyj_cygn',name:'产业概念',type:'level1',children:[{_reference:'A46001'},{_reference:'A46002'},
+															{_reference:'A46003'},{_reference:'A46004'},
+															{_reference:'A46005'},{_reference:'A46006'},
+															{_reference:'A46007'},{_reference:'A46008'}
+															]},
+		{id:'A46001',name:'节能环保',type:'level2'},
+		{id:'A46002',name:'新一代信息技术',type:'level2'},
+		{id:'A46003',name:'生物',type:'level2'},
+		{id:'A46004',name:'高端装备制造',type:'level2'},
+		{id:'A46005',name:'新能源',type:'level2'},
+		{id:'A46006',name:'新材料',type:'level2'},
+		{id:'A46007',name:'新能源汽车',type:'level2'},
+		{id:'A46008',name:'水利建设',type:'level2'},
+		
+		
+		
+		{id:'hgyj',name:'宏观研究',type:'level0',children:[
+																				{_reference:'A50001'},{_reference:'A50002'},{_reference:'A50003'},
+																				{_reference:'A50004'},{_reference:'A50005'}
+																				]},
+		{id:'A50001',name:'全部',type:'level1'},
+		{id:'A50002',name:'宏观资讯',type:'level1'},
+		{id:'A50003',name:'宏观点评',type:'level1'},
+		{id:'A50004',name:'宏观预测',type:'level1'},
+		{id:'A50005',name:'专题报告',type:'level1'},
+		
+		
+		{id:'clyj',name:'策略研究',type:'level0',children:[
+																				{_reference:'A60001'},{_reference:'A60002'},{_reference:'A60003'},
+																				{_reference:'A60004'}
+																				]},
+		{id:'A60001',name:'全部',type:'level1'},
+		{id:'A60002',name:'短期策略',type:'level1'},
+		{id:'A60003',name:'深度策略',type:'level1'},
+		{id:'A60004',name:'专题策略',type:'level1'},
+		
+		
+		{id:'chjy',name:'晨会纪要',type:'level0',children:[
+																				{_reference:'A70001'},{_reference:'A70002'},{_reference:'A70003'}
+																				]},
+		{id:'A70001',name:'全部',type:'level1'},
+		{id:'A70002',name:'晨会纪要',type:'level1'},
+		{id:'A70003',name:'早间资讯',type:'level1'},
+		
+		
+		{id:'jrgc',name:'金融工程',type:'level0',children:[
+																				{_reference:'A80001'},{_reference:'A80002'},{_reference:'A80003'},
+																				{_reference:'A80004'}
+																				]},
+		{id:'A80001',name:'全部',type:'level1'},
+		{id:'A80002',name:'市场统计',type:'level1'},
+		{id:'A80003',name:'量化分析',type:'level1'},
+		{id:'A80004',name:'专题报告',type:'level1'},
+		
+		
+		{id:'A90001',name:'投行研究',type:'level0'},
+		
+		
+		{id:'gdsy',name:'固定收益',type:'level0',children:[
+																				{_reference:'B10001'},{_reference:'B10002'},{_reference:'B10003'},
+																				{_reference:'B10004'}
+																				]},
+		{id:'B10001',name:'全部',type:'level1'},
+		{id:'B10002',name:'债市资讯',type:'level1'},
+		{id:'B10003',name:'定价分析',type:'level1'},
+		{id:'B10004',name:'专题报告',type:'level1'},
+		
+		
+		{id:'jjyj',name:'基金研究',type:'level0',children:[
+																				{_reference:'B11001'},{_reference:'B11002'},{_reference:'B11003'},
+																				{_reference:'B11004'}
+																				]},
+		{id:'B11001',name:'全部',type:'level1'},
+		{id:'B11002',name:'基市资讯',type:'level1'},
+		{id:'B11003',name:'仓位研究',type:'level1'},
+		{id:'B11004',name:'专题报告',type:'level1'},
+				
+		
+		{id:'B12001',name:'理财产品',type:'level0'},
+		
+		
+		
+		{id:'jrysp',name:'金融衍生品',type:'level0',children:[
+																				{_reference:'B13001'},{_reference:'B13002'},{_reference:'B13003'},
+																				{_reference:'B13004'},{_reference:'B13005'}
+																				]},
+		{id:'B13001',name:'全部',type:'level1'},
+		{id:'B13002',name:'权证',type:'level1'},
+		{id:'B13003',name:'股指期货',type:'level1'},
+		{id:'B13004',name:'外汇',type:'level1'},
+		{id:'B13005',name:'金融期货',type:'level1'},
+		
+		
+		
+		{id:'spqh',name:'商品期货',type:'level0',children:[
+																				{_reference:'B14001'},{_reference:'B14002'},{_reference:'B14003'},
+																				{_reference:'B14004'},{_reference:'B14005'},{_reference:'B14006'},
+																				{_reference:'B14007'}
+																				]},
+		{id:'B14001',name:'全部',type:'level1'},
+		{id:'B14002',name:'农产品',type:'level1'},
+		{id:'B14003',name:'能源',type:'level1'},
+		{id:'B14004',name:'化工',type:'level1'},
+		{id:'B14005',name:'贵金属',type:'level1'},
+		{id:'B14006',name:'基本金属',type:'level1'},
+		{id:'B14007',name:'物流',type:'level1'},
+		
+		
+		{id:'ggyj',name:'港股研究',type:'level0',children:[
+																				{_reference:'B15001'},{_reference:'B15002'},{_reference:'B15003'},
+																				{_reference:'B15004'},{_reference:'B15005'}
+																				]},
+		{id:'B15001',name:'全部',type:'level1'},
+		{id:'B15002',name:'公司研究',type:'level1'},
+		{id:'B15003',name:'行业研究',type:'level1'},
+		{id:'B15004',name:'窝轮研究',type:'level1'},
+		{id:'B15005',name:'其他研究',type:'level1'},
+		
+		{id:'hgtyj',name:'沪港通研究',type:'level0',children:[
+																				{_reference:'GGT001'},{_reference:'HGT001'}
+																				]},
+		{id:'GGT001',name:'港股通研究',type:'level1'},
+		{id:'HGT001',name:'沪股通研究',type:'level1'},
+
+		
+		{id:'B16001',name:'海外市场',type:'level0'},
+		
+		
+		{id:'B17001',name:'英文报告',type:'level0'},
+		
+		
+		{id:'B18001',name:'预测评级',type:'level0'},
+		
+		
+		{id:'B19001',name:'投资参考',type:'level0'},
+		
+		
+		{id:'C20001',name:'投资组合',type:'level0'},
+		
+		
+		{id:'C21001',name:'外研机构',type:'level0'},
+		
+		
+		{id:'C22001',name:'国内银行',type:'level0'},
+		
+		
+		
+		{id:'mxjg',name:'明星机构',type:'level0',children:[
+																				{_reference:'C23001'},{_reference:'C23002'},{_reference:'C23003'},
+																				{_reference:'C23004'},{_reference:'C23005'},{_reference:'C23006'},
+																				{_reference:'C23007'},{_reference:'C23008'},{_reference:'C23009'},
+																				{_reference:'C23010'},{_reference:'C23011'},{_reference:'C23012'},
+																				{_reference:'C23013'}
+																				]},
+		{id:'C23001',name:'申银万国',type:'level1'},
+		{id:'C23002',name:'中信证券',type:'level1'},
+		{id:'C23003',name:'广发证券',type:'level1'},
+		{id:'C23004',name:'国泰君安',type:'level1'},
+		{id:'C23005',name:'招商证券',type:'level1'},
+		{id:'C23006',name:'国金证券',type:'level1'},
+		{id:'C23007',name:'银河证券',type:'level1'},
+		{id:'C23008',name:'中金公司',type:'level1'},
+		{id:'C23009',name:'长江证券',type:'level1'},
+		{id:'C23010',name:'国信证券',type:'level1'},
+		{id:'C23011',name:'海通证券',type:'level1'},
+		{id:'C23012',name:'兴业证券',type:'level1'},
+		{id:'C23013',name:'中信建投',type:'level1'},
+		
+		
+		{id:'mxfxs',name:'明星分析师',type:'level0',children:[
+																				{_reference:'C24001'},{_reference:'C24002'}
+																				]},
+		{id:'C24001',name:'新财富研究',type:'level1'},
+		{id:'C24002',name:'水晶球研究',type:'level1'}
+
+		
+		]
+}

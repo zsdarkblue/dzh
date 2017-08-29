@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col color="1000007" ><value>index</value><width>37</width><name>序号</name></col>
+		<col color="1000007"><value>label</value><width>70</width><name>代码</name></col>
+		<col color="1000007" ><value>name</value><width>90</width><name>名称</name></col>
+		<col fixed="1" sorted="-1" subsorted="0" color="1000007" ><value>now</value><width>65</width><name>最新</name></col>
+		<col><value>undn</value><width>70</width><name>涨跌</name></col>
+		<col color="1000007" ><value>updnratio</value><width>70</width><name>涨幅</name></col>
+		<col color="1000007" ><value>updnspeed</value><width>70</width><name>涨速</name></col>
+		<col><value>volume</value><width>70</width><name>总手</name></col><col color="1000007" ><value>exchange</value><width>77</width><name>换手率</name></col>
+		<col bkcolor="0">
+			<value>dpxy</value>
+			<width>650</width>
+			<name>所属主题</name>
+			<type>string</type>
+			<dpxyparam>service=script&amp;script=RequestTopics('#LABELS#');&amp;response_times=-1</dpxyparam>
+			<dpxyname>topic</dpxyname>
+		</col>
+	</column>
+</list>

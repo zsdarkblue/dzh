@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="gb2312"?>
+<list>
+  <column>
+  </column>
+  <script>
+	stocklist::DelAllStock();
+	sql:= 'select a.co,c2,c3,c3-c7,round((c3-c7)/c7*100,2),c5,c6,c4,c7,c8,c9,c10,c11 from ST21000_main a join (select co,max(c1) c1 from ST21000_main where c16=\'OS\' group by co) b on a.co=b.co and a.c1=b.c1 where a.c16=\'OS\' order by a.co desc';
+	table:=Data::GetTableSQL(sql);
+	stocklist::delallcol();
+
+	stocklist::addcol(1,序号,30);
+	stocklist::addCol(1,静态数据,85,代码,10,0);
+	stocklist::addCol(1,静态数据,150,名称,10,0);
+	stocklist::addCol(1,静态数据,85,最新,10,1);
+	stocklist::addCol(1,静态数据,85,涨跌,10,1);
+	stocklist::addCol(1,静态数据,85,涨幅,10,1);
+	stocklist::addCol(1,静态数据,85,最高,10,1);
+	stocklist::addCol(1,静态数据,85,最低,10,1);
+	stocklist::addCol(1,静态数据,85,开盘,10,1);
+	stocklist::addCol(1,静态数据,85,昨收,10,1);
+	stocklist::addCol(1,静态数据,85,成交量,10,1);
+	stocklist::addCol(1,静态数据,85,52周最高,10,1);
+	stocklist::addCol(1,静态数据,85,52周最低,10,1);
+	stocklist::addCol(1,静态数据,150,行业,10,0);
+	
+	stockList::SetStaticData(table,'0,1,2,3,4,5,6,7,8,9,10,11,12');
+	stockList::DelLineSeparator(代码);
+	stockList::DelLineSeparator(名称);
+	stockList::DelLineSeparator(最新);
+	stockList::DelLineSeparator(涨跌);
+	stockList::DelLineSeparator(涨幅);
+	stockList::DelLineSeparator(最高);
+	stockList::DelLineSeparator(最低);
+	stockList::DelLineSeparator(开盘);
+	stockList::DelLineSeparator(昨收);
+	stockList::DelLineSeparator(成交量);
+	stockList::DelLineSeparator(52周最高);
+	stockList::DelLineSeparator(52周最低);
+	stockList::DelLineSeparator(行业);
+	
+	stockList::DelColSeparator(代码);
+	stockList::DelColSeparator(名称);
+	stockList::DelColSeparator(最新);
+	stockList::DelColSeparator(涨跌);
+	stockList::DelColSeparator(涨幅);
+	stockList::DelColSeparator(最高);
+	stockList::DelColSeparator(最低);
+	stockList::DelColSeparator(开盘);
+	stockList::DelColSeparator(昨收);
+	stockList::DelColSeparator(成交量);
+	stockList::DelColSeparator(52周最高);
+	stockList::DelColSeparator(52周最低);
+	stockList::DelColSeparator(行业);
+	
+	stockList::SetColTxtColor(代码,32defe);
+	stockList::SetColTxtColor(名称,ffff30);
+	stockList::SetColTxtColor(最高,f38000);
+	stockList::SetColTxtColor(最低,f38000);
+	stockList::SetColTxtColor(开盘,f38000);
+	stockList::SetColTxtColor(昨收,f38000);
+	stockList::SetColTxtColor(成交量,f38000);
+	stockList::SetColTxtColor(52周最高,f38000);
+	stockList::SetColTxtColor(52周最低,f38000);
+	stockList::SetColTxtColor(行业,f38000);
+	stockList::SetColTxtColor(最高,f38000);
+	stockList::setcmpconst(涨跌, '0');
+	stockList::setcmpconst(涨幅, '0');
+	stockList::SetCmpCol(最新,昨收);
+  </script>
+</list>

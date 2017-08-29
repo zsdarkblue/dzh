@@ -1,0 +1,100 @@
+[
+	{
+		"name": "bondTerm",
+		"title_name":"债券期限",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"1年内","value":"1"},{"title":"1-3年","value":"2"},{"title":"3-5年","value":"3"},{"title":"5-7年","value":"4"},{"title":"7-10年","value":"5"},{"title":"10-15年","value":"6"},{"title":"15-20年","value":"7"},{"title":"20-30年","value":"8"},{"title":"30年以上","value":"9"}]
+	},
+	{
+		"name": "publishBeginDate",
+		"title_name" : "发行起始日",
+		"type": "oneSelectCustom",
+		"allValue": [{"title":"不限","value":"all"},{"title":"近一周","value":"1"},{"title":"近一月","value":"2"},{"title":"近1年","value":"3"},{"title":"未来1周","value":"4"},{"title":"未来1月","value":"5"},{"title":"未来1年","value":"6"},{"title":"自定义","value":"7"}]
+	},
+	{
+		"name": "publishEndDate",
+		"title_name" : "发行截止日",
+		"type": "oneSelectCustom",
+		"allValue": [{"title":"不限","value":"all"},{"title":"近一周","value":"1"},{"title":"近一月","value":"2"},{"title":"近1年","value":"3"},{"title":"未来1周","value":"4"},{"title":"未来1月","value":"5"},{"title":"未来1年","value":"6"},{"title":"自定义","value":"7"}]
+	},
+	{
+		"name": "interestBeginDate",
+		"title_name" : "起息日",
+		"type": "oneSelectCustom",
+		"allValue": [{"title":"不限","value":"all"},{"title":"近一周","value":"1"},{"title":"近一月","value":"2"},{"title":"近1年","value":"3"},{"title":"未来1周","value":"4"},{"title":"未来1月","value":"5"},{"title":"未来1年","value":"6"},{"title":"自定义","value":"7"}]
+	},
+	{
+		"name": "interestEndDate",
+		"title_name" : "到期日",
+		"type": "oneSelectCustom",
+		"allValue": [{"title":"不限","value":"all"},{"title":"近一周","value":"1"},{"title":"近一月","value":"2"},{"title":"近1年","value":"3"},{"title":"未来1周","value":"4"},{"title":"未来1月","value":"5"},{"title":"未来1年","value":"6"},{"title":"自定义","value":"7"}]
+	},
+	{
+		"name": "tenderDate",
+		"title_name" : "招标日",
+		"type": "oneSelectCustom",
+		"allValue": [{"title":"不限","value":"all"},{"title":"近一周","value":"1"},{"title":"近一月","value":"2"},{"title":"近1年","value":"3"},{"title":"未来1周","value":"4"},{"title":"未来1月","value":"5"},{"title":"未来1年","value":"6"},{"title":"自定义","value":"7"}]
+	},
+	{
+		"name": "listingDate",
+		"title_name" : "上市日",
+		"type": "oneSelectCustom",
+		"allValue": [{"title":"不限","value":"all"},{"title":"近一周","value":"1"},{"title":"近一月","value":"2"},{"title":"近1年","value":"3"},{"title":"未来1周","value":"4"},{"title":"未来1月","value":"5"},{"title":"未来1年","value":"6"},{"title":"自定义","value":"7"}]
+	},
+	{
+		"name": "payInterestWay",
+		"title_name":"付息方式",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"贴现","value":"1"},{"title":"零息","value":"0"},{"title":"每年1次","value":"3"},{"title":"每年2次","value":"4"},{"title":"每年3次","value":"7"},{"title":"每年4次","value":"5"},{"title":"每年12次","value":"6"},{"title":"到期一次性还本付息","value":"2"}]
+	},
+	{
+		"name": "ratingCompany",
+		"title_name":"评级公司",
+		"type": "selectCheckbox",
+		"allValue":[{"title":"全部","value":"all"},{"title":"中债资信评估有限责任公司","value":"a"},{"title":"中诚信证券评估有限公司","value":"b"},{"title":"鹏元资信评估有限公司","value":"c"},{"title":"中诚信国际信用评级有限责任公司","value":"d"},{"title":"标准普尔评估有限公司","value":"e"},{"title":"上海新世纪资信评估投资服务有限公司","value":"f"},{"title":"东方金诚国际信用评估有限公司","value":"g"},{"title":"大公国际资信评估有限公司","value":"h"},{"title":"穆迪投资者服务公司","value":"i"},{"title":"联合信用评级有限公司","value":"j"},{"title":"联合资信评估有限公司","value":"k"}]
+	},
+	{
+		"name": "industry",
+		"title_name":"行业",
+		"type": "industrySelect",
+		"allValue": ""
+	},
+	{
+		"name": "proId",
+		"title_name":"所属地区",
+		"type": "citySelect",
+		"allValue": ""
+	},
+	{
+		"name": "issueRate",
+		"title_name":"发行利率",
+		"type": "selectCheckbox",
+		"allValue": [{"title":"全部","value":"all"},{"title":"0至3%","value":"1"},{"title":"3至5%","value":"2"},{"title":"5至7%","value":"3"},{"title":"7至9%","value":"4"},{"title":"9%以上","value":"5"},{"title":"自定义","value":"custom"}]
+	},
+	{
+		"name": "currency",
+		"title_name":"币种",
+		"type": "radioButton",
+		"allValue": [{"title":"全部","value":"all"},{"title":"人民币","value":"1"},{"title":"美元","value":"2"}]
+	},
+	{
+		"name": "isCityBond",
+		"title_name":"是否城投",
+		"type": "radioButton",
+		"allValue": [{"title":"全部","value":"all"},{"title":"是","value":"1"},{"title":"否","value":"0"}]
+	},
+	{
+		"name": "issuerEconmicPro",
+		"title_name":"发行人经济性质",
+		"type": "button",
+		"allValue": [{"title":"全部","value":"all"},{"title":"国资委直属企业","value":"01"},{"title":"其他中央企业","value":"02"},{"title":"地方国有企业","value":"03"},{"title":"民营企业","value":"04"},{"title":"中外合资企业","value":"05"},{"title":"外商独资企业","value":"06"},{"title":"集体企业","value":"07"},{"title":"其他企业","value":"08"}]
+	},
+	{
+		"name": "isAdditional",
+		"title_name":"是否增发",
+		"type": "radioButton",
+		"allValue": [{"title":"全部","value":"all"},{"title":"首发","value":"0"},{"title":"增发","value":"1"}]
+	}
+	
+
+]

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<Config>
+  <menu code="AUTOUPDATE" disp="自动升级(&amp;U)" />
+  <menu code="BUY" disp="产品购买(&amp;B)" />
+  <menu code="CONTINUE" disp="用户续费(&amp;C)" />
+  <menu code="SEPARATOR" />
+  <menu code="HTQ" disp="技术支持网站(&amp;N)" />
+  <menu code="APPABOUT" disp="关于大智慧(&amp;A)..." />
+</Config>

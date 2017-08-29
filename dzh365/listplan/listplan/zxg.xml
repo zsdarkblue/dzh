@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<list>
+ <listxmls>
+ <syss>
+ 	<dellistxml>default.xml</dellistxml>
+	<dellistxml>extra.xml</dellistxml>
+	<dellistxml>finance2.xml</dellistxml>
+	<dellistxml>statistic.xml</dellistxml>
+	<dellistxml>indicator.xml</dellistxml>
+ <listxml showname="行情">自选股行情.xml</listxml>
+ <listxml showname="主题">主题投资.xml</listxml>
+ <listxml showname="财务">财务A股.xml</listxml>
+ <listxml showname="统计">统计A股.xml</listxml>
+ <listxml showname="指标">指标A股.xml</listxml>
+</syss>
+ </listxmls>
+</list>

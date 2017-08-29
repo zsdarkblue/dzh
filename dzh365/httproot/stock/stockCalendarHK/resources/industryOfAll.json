@@ -1,0 +1,7 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+			{name:"行业分类",id:""}
+			]
+}

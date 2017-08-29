@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preload>
+        <batch filter-if="dist/gw-app/dzhbrowser">	
+           
+	</batch>
+	<batch filter-elif="http://pcengine.gw.com.cn">
+		
+	</batch>
+	<batch filter-elif="(.)*">
+		<file path="httproot\dojopr.js" />
+		<file path="httproot\dojo\dojo.js" />
+		<file path="httproot\dijit\dijit-all.js" />
+		<file path="httproot\dojox\slickgrid\slickgrid.js" />
+		<file path="httproot\dojox\charting\Chart2D.js" />
+	</batch>
+</preload>

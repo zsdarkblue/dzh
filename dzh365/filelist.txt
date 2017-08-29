@@ -1,0 +1,26 @@
+自定义指标	\userdata\SELFN.DTA
+自定义组合条件	\userdata\SELF\*.CEP
+系统易捷键	\*.htk
+
+自定义工具栏按钮	\cfg\selfcomm.cfg
+工作区方案	\userdata\workspace
+*界面布局方案	\layout
+*界面指标方案	\userdata\IndiTemp
+常用栏指标	\userdata\FREQ.IND
+
+*自定义数据	\userdata\SelfData
+自定义股票池	\userdata\pool
+*星空图	\userdata\star
+*数据表文件	\userdata\TABLE
+*投资管理器	\userdata\SELF\*.inv
+*定位分析	\userdata\SpotAna\*.spt
+*F10数据采集	\userdata\F10*.*
+*系统测试平台结果	\userdata\TEST
+*相关性分析数据表	\userdata\Relate
+*模式匹配设计	\userdata\pattern
+自选股	\userdata\block\自选*.blk
+*参数指引	\userdata\PARAM
+*预测分布设计	\userdata\Posible
+*条件选股结果	\userdata\block\*.ebk
+*新闻收藏夹	\usrcfg.db
+预警	\userdata\self\ALERT.DAT

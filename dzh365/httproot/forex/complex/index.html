@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css"/>
+</head>
+<body class="flex-column loading">
+
+<div class="flex-1 flex-row">
+    <div class="flex-5 flex-column">
+        <div class="flex-none title">
+            <b>主要汇率</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-5 flex-column">
+        <div class="flex-none title">
+            <b>主要小币种</b>
+            <select style="display: none;" data-bind="onCurrencySelectChange" data-option>
+                <option value="0">主要小币种</option>
+                <option value="1">HKD</option>
+                <option value="2">KRW</option>
+                <option value="3">SGD</option>
+                <option value="4">INR</option>
+                <option value="5">RUB</option>
+                <option value="6">CZK</option>
+                <option value="7">ZAR</option>
+            </select>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-4 flex-column">
+        <div class="flex-none title">
+            <b>分时走势</b>
+        </div>
+        <iframe class="flex-auto" frameborder="0" allowtransparency="true" src="/platform/charts/index.html#IXUDI.index"></iframe>
+    </div>
+</div>
+<div class="flex-1 flex-row">
+    <div class="flex-5 flex-column">
+        <div class="flex-none title">
+            <b>人民币外汇即期</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-5 flex-column">
+        <div class="flex-none title">
+            <b>人民币远期</b>
+            <select data-bind="onForwardSelectChange" data-option>
+                <option value="4">美元</option>
+                <option value="5">欧元</option>
+                <option value="6">英镑</option>
+                <option value="7">日元</option>
+                <option value="8">港币</option>
+                <option value="9">加元</option>
+                <option value="10">澳元</option>
+            </select>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-4 flex-column">
+        <div class="flex-none title">
+            <ul class="nav-tabs tabs-blue-dark" data-selector=".nav-panes:eq(0)">
+                <li class="active">LIBOR</li>
+                <li>SHIBOR</li>
+                <li>HIBOR</li>
+            </ul>
+        </div>
+        <div class="flex-auto flex-column nav-panes">
+            <div class="flex-auto grid grid-s active"></div>
+            <div class="flex-auto grid grid-s"></div>
+            <div class="flex-auto grid grid-s"></div>
+        </div>
+    </div>
+</div>
+<div class="flex-1 flex-row">
+    <div class="flex-5 flex-column">
+        <div class="flex-none title">
+            <b>香港人民币期货</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-5 flex-column">
+        <div class="flex-none title">
+            <b>市场报道</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+    <div class="flex-4 flex-column">
+        <div class="flex-none title">
+            <b>相关市场</b>
+        </div>
+        <div class="flex-auto grid grid-s"></div>
+    </div>
+</div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

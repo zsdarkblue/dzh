@@ -1,0 +1,14 @@
+@charset "utf-8";
+html,body{height: 100%;}
+.w30{/*width: 30%;*/background: #000;}
+.ft-red{color:#e60012;font-weight: bold;}
+.bg-pink{background: #D97A5C;}
+.bg-blue{background: #2E7CBA;}
+.chart-items{padding: 5px;height: 50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.chart-hd{height: 7%;/*line-height: 26px;*/padding: 0 20px;font-size:14px;color: #fff;}
+.chart-bd{height: 92%;}
+.history-btn{float:right;background: url(../images/btn-bg.png) no-repeat 0 0;width:68px;height:19px;line-height:19px;color:#fbf7ab;padding-left: 10px;margin-top: 3px;font-size: 12px;}
+.bg-blue .history-btn{background-position: 0 -19px;}
+.chart-info{padding: 5px 10px;color:#787878;height: 12%;}
+.info-items{float: left;width: 50%;}
+.chart-main{border: 1px solid #2f2f2f;}

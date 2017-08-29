@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+	<title>大智慧-研究报告 c123</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../../dijit/themes/white_detail/document.css"/>
+	<link rel="stylesheet" href="./resources/custom.css"/>   
+	
+	<script type="text/javascript">
+		dojoConfig = {
+			async:true, parseOnLoad:false, 
+			requestProvider: "dojo/request/registry",
+			baseUrl:'../../dojo',
+//			paths:{'stock':'../stock'}, 
+			noscale:true,	
+			//_baseW:900,_baseH:550,
+			locale:'zh-cn', //放开测试国际化
+									callback: function() {
+				require(['stock/yjbg-112/src','stock/yjbg-112/resources/js/vue'],
+						function(main,vue){
+							window.vue = vue;
+							main();
+						}
+					);
+			}
+		}
+			//dojopr();
+    </script>
+</head>
+<body class="claro" >
+	<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height: 100%;">
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" id="topbar">
+			<div dojoType="dijit/layout/ContentPane" data-dojo-props="class:'flaotActionButtonx'" style="position: absolute;width: 300px; top:1px; overflow: hidden;" id="mybutton">
+				<div id="dy_btn" class="inlineBlock dycrDiv"><img src="resources/image/dy.png" class="dImg" /><span class="dSpan"> 订阅</span></div><span class="inlineBlock shuxian">|</span>
+				<div id="dc_btn" class="inlineBlock dycrDiv"><img src="resources/image/dc.png" class="dImg" /><span class="dSpan"> 导出</span></div><span class="inlineBlock shuxian">|</span>
+				<div id="refresh" class="inlineBlock dycrDiv"><img src="resources/image/sx.png" class="dImg" /><span class="dSpan"> 刷新 </span></div>
+				<div id="preloader"></div>
+			</div>
+			<!--  <div id="jgybBT"><span>机构研报</span><span id="jgybBTRR">[RR]</span></div>  -->
+		</div>
+		
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'leading', splitter:true,maxSize:350" style="width:160px;overflow: hidden;border: 1px solid #464646;" id="mainTreeContentPane">
+		
+				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='selected:true'>
+						<div data-dojo-type="dijit/layout/ContentPane"><!-- 这里加ContentPane防止树的展开影响上层的ContentPane-->		
+							<div id="mytreeDiv"></div>
+						</div>
+				</div>		
+		</div>	
+		
+		<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="region:'center', id:'contentBorder', liveSplitters:false, gutters:false, design:'headline'" id="mainTableBorderContainer">
+			<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top',id:'tjContentpane'" style="height:24px;overflow:hidden;">
+				<div class="Radio_all" data-details="bt">
+					<div class="iradio_square-blue checked hover tjChild" aria-checked="true" aria-disabled="false"></div>
+					<label for="polaris-radio-1" class="tjChild_label">标题</label>
+				</div>
+				<div class="Radio_all" data-details="jg">
+				<div class="iradio_square-blue hover tjChild" aria-checked="flase" aria-disabled="false">	
+					</div>
+					<label for="polaris-radio-2" class="tjChild_label">机构</label>
+				</div>
+				<div class="Radio_all" data-details="zz">
+					<div class="iradio_square-blue hover tjChild" aria-checked="flase" aria-disabled="false">
+					</div>
+					<label for="polaris-radio-3" class="tjChild_label">作者</label>
+				</div>
+				<div class="Radio_all" data-details="hy">
+					<div class="iradio_square-blue hover tjChild" aria-checked="flase" aria-disabled="false">
+					</div>
+					<label for="polaris-radio-4" class="tjChild_label">行业</label>
+				</div>
+				<div class="Radio_all" data-details="pj">
+					<div class="iradio_square-blue hover tjChild" aria-checked="flase" aria-disabled="false">
+					</div>
+					<label for="polaris-radio-5" class="tjChild_label">评级</label>
+				</div>
+				<div class="Radio_all" data-details="gp">
+					<div class="iradio_square-blue hover tjChild" aria-checked="flase" aria-disabled="false">	
+					</div>
+					<label for="polaris-radio-6" class="tjChild_label">股票</label>
+				</div>
+				<div id="RadioAllInputParent" class="InputParent"><div data-dojo-type="dijit/form/ComboBox" id="RadioAllInput" data-dojo-props="maxHeight:250,queryExpr:'*${0}*',labelAttr:'name',searchAttr:'mcpy',autoComplete:false" class="contentInput tjChild" ></div></div>
+  				<div id="KeyboardInputParent" class="InputParent ndisplay"><div data-dojo-type="stock/yjbg-112/view/KeyboardSpirit" id="KeyboardInput" data-dojo-props="maxHeight:250" class="contentInput tjChild" ></div></div>
+				<select id="tjsel" name="tjsel" class="tjChild">
+					<option value=1 selected=true>最近一个月</option>
+					<option value=2>最近三个月</option>
+					<option value=3>最近半年</option>
+					<option value=4>最近一年</option>
+				</select>
+				<button type="button" class="tjChild" id="topSearchBT">搜索</button>
+				<button type="button" class="tjChild" id="showHighSearch">高级搜索</button>
+				
+			    <!--高级搜索dialog begin-->
+
+			</div>
+			<div id="myContentPane" class="vbox" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+<!--  			<div id="mysearch" data-dojo-type="stock/yjbg-c/view/search" style="height:70px;display:none" ></div>  	
+				<div class="spacer" data-dojo-type="stock/yjbg-112/view/gridData" ></div>-->					 	
+					<div  id="mytabController" style="width:80%;" data-dojo-type="dijit/layout/ScrollingBtnController" data-dojo-props="containerId:'mytabContainer'"></div>				 
+					<div  class="spacer1" id="mytabContainer" data-dojo-type="dijit/layout/StackContainer" data-dojo-props="" >	
+						<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props='title:"最新报告"' data-dojo-props="liveSplitters:false" id="defaultContainer">
+							<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="width:100%;"  id="default_tab"></div>
+							<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'" style="width:100%;height:30px">
+								<div class="pagerParent">
+								<div class="pager" v-on="click:onClick">
+								    <a v-attr="data-index:index-1">上一页</a>
+								    <a v-class="active:index==1" v-text="1"></a>
+								    <i v-if="count>size&&index>size/2+1">...</i>
+								    <a v-class="active:index==$value" v-repeat="items" v-text="$value"></a>
+								    <i v-if="count>size&&index<count-size/2">...</i>
+								    <a v-class="active:index==count" v-if="count>1" v-text="count"></a>
+								    <a v-attr="data-index:index+1">下一页</a>
+								    <input v-attr="min:1,max:count" v-model="input" v-on="change:onChange" type="number">
+								    <a v-attr="data-index:input">GO</a>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="basicStandby" widgetid="basicStandby">
+						<div style="display: none; opacity: 0; z-index: -1000; position: absolute; cursor: default; background-image: none; width: 1280px; height: 909px; top: 0px; left: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; background-position: initial initial; background-repeat: initial initial;" dojoattachpoint="_underlayNode"></div>
+						<img src="../../dojox/widget/Standby/images/loading.gif" style="opacity: 0; display: none; z-index: -1000; position: absolute; top: 300px; left: 624px; cursor: wait;" dojoattachpoint="_imageNode" alt="Please Wait...">
+					</div>
+					 
+					<div dojoType="dijit/layout/ContentPane" data-dojo-props="class:'flaotActionButton'" style="position: absolute;width: 10px;  right:2px; top:1px; overflow: hidden;" id="mybuttonz">
+						<!--  
+						<div dojoType="dijit/form/Button" id="dy_btn" data-dojo-props="label:'订阅'"></div>
+						<div dojoType="dijit/form/Button" id="dc_btn" data-dojo-props="label:'导出excel',dialogId:'dialogDate'"></div>
+						<div dojoType="dijit/form/Button" data-dojo-props="label:'刷新'" id="refresh"></div>
+						-->
+					</div>
+
+				</div>
+				
+		</div>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,63 @@
+function cyzs()
+	this.ResetStocks();
+
+	if this.ColCount() == 0 
+		index = this.InsertQuotation(-1,'序号'); 
+		this.SetColumnAttributes(index,'',60,0,0);  
+		index = this.InsertQuotation(-1,'代码');
+		this.SetColumnAttributes(index,'',70,0,0); 
+		index = this.InsertQuotation(-1,'名称');
+		this.SetColumnAttributes(index,'',180,0,0); 
+		index = this.InsertQuotation(-1,'最新');
+		this.SetColumnAttributes(index,'',90,0,0);  
+		index = this.InsertQuotation(-1,'涨跌');
+		this.SetColumnAttributes(index,'',70,0,0); 
+		index = this.InsertQuotation(-1,'涨幅');
+		this.SetColumnAttributes(index,'',70,0,0);
+		index = this.InsertQuotation(-1,'今开');
+		this.SetColumnAttributes(index,'',90,0,0); 
+		index = this.InsertQuotation(-1,'昨收');
+		this.SetColumnAttributes(index,'',90,0,0); 
+		index = this.InsertQuotation(-1,'最高');
+		this.SetColumnAttributes(index,'',90,0,0); 
+		index = this.InsertQuotation(-1,'最低');
+		this.SetColumnAttributes(index,'',90,0,0); 
+	end
+	
+	{计算起始行号}
+	start = this.StockCount() + 1;
+	this.AddStringLine('A股指数');
+	table =['SH000001.index','SZ399001.index','SZ399005.index','SZ399006.index','ZI000300.index','SH000016.index','ZI000905.index'];
+	this.SetStocks(table(1,:),1);
+	
+	{计算起始行号}
+	this.AddStringLine('股指期货');
+	table =['SFIF0001.cmdty','SFIH0001.cmdty','SFIC0001.cmdty','SMCNY0.cmdty'];
+	this.SetStocks(table(1,:),1);	
+
+	{计算起始行号}
+	this.AddStringLine('亚太市场');
+	table =['HKHSI.index','IXN225.index','IXXIN9.index'];
+	this.SetStocks(table(1,:),1);	
+	
+	
+	{计算起始行号}
+	this.AddStringLine('美国市场');
+	table =['IXSPX.index','IXDJIA.index','IXNDX.index'];
+	this.SetStocks(table(1,:),1);	
+	
+	
+	{计算起始行号}
+	this.AddStringLine('欧洲市场');
+	table =['IXFTSE.index','IXSX5E.index','IXGDAXI.index','IXFCHI.index','IXAEX.index','IXIBEX.index','IXS30.index','IXRTS.index'];
+	this.SetStocks(table(1,:),1);	
+
+	
+	{计算起始行号}
+	this.AddStringLine('其它市场');
+	table =['IXUDI.index','FXXAUUSD.frx','NXXBZY0.cmdty'];
+	this.SetStocks(table(1,:),1);	
+	
+
+end
+

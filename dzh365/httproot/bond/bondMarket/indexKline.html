@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>行情综合分析</title>
+    <link rel="stylesheet" href="../../dijit/themes/black_details/document.css"/>
+    <link rel="stylesheet" href="resources/css/limitcss.css"/>
+    <link rel="stylesheet" href="resources/css/bondMarket.css"/>
+    <script type="text/javascript">
+        var now = new Date().getTime();
+        whetherShowData=true;
+        isKline=true;
+        userId = {userid:''};
+        permission = {permission:''};
+        bondShortName = {bondName:''};
+        if(window.external&&window.external.getDZHProperty){
+            userId.userid = window.external.getDZHProperty("userid");
+        }
+        jsoUrl = {jsoUrl:''};
+        subMarket = {marketType:window.location.search.split("&")[1].split("=")[1]};
+        bondCode = {bondCode:window.location.search.split("&")[0].split("=")[1]};
+        //设置页面跳转
+        goToUrl = {gotourl:'DZH://VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=分时走势&LABEL='+bondCode.bondCode};
+        reGoToUrl = {reGoToUrl:'DZH://VIEWSTOCK?DATATYPE=DAY&LAYOUT=Level2默认&PAGE=技术分析&LABEL='};
+        var now = new Date().getTime();
+        dojoConfig =  {
+            async:true, parseOnLoad:false,
+            baseUrl:'../../dojo',
+            //locale:'en',
+            //noscale:true,
+            deps:[
+                "dojox/customfig/customfig"
+            ],
+            callback: function() {
+                require(["bond/bondMarket/src"],function(main){
+                            main();
+                        }
+                );
+                //left.html里声明式使用dojo/data/ItemFileReadStore，在left.js里定义依赖，而不是在deps里
+            }
+        }
+                //dojopr();
+            </script>
+</head>
+<body class="claro">
+<div id="maskDiv"   style="position:absolute; z-index: 20;display: none;">
+    <div class="vbox" style="height: 100%">
+        <div class="spacer1"></div>
+        <div class="hbox">
+            <div class="spacer1"></div>
+            <div style="height: 50px;line-height: 50px;font-size: 24px;color: #A2A1A1">您还没有开通中债登权限</div>
+            <div class="spacer1"></div>
+        </div>
+        <div class="spacer1"></div>
+    </div>
+</div>
+<div id="main" style="height: 100%;">
+    <div class="hbox" id="main_details" style="height:100%; width:100%; min-width:850px; min-height:500px;border-left:red 1px solid">
+        <div class="vbox spacer" style="width:64%;height:100%;">
+            <div class="vbox spacer  pic_box"  style="height:60%; width:100%; padding-left:0;"  data-dojo-type="dijit/layout/ContentPane">
+                <div class="chart_title" style="height:24px">
+                    <div id="priceSelect" ></div>
+                    <div id="daySelect"></div>
+                    <div id="intervalSelect"></div>
+                    <div id="freeButton" ></div>
+                </div>
+
+                <div id="kline" class="bor_box_top spacer" >
+                </div>
+            </div>
+            <div class="spacer hbox pic_box" style="height:40%; width:100%">
+                <div id='bottomTab' class="spacer table_border_trl" style="height:100%; width:100%;">
+                </div>
+            </div>
+        </div>
+        <div class="vbox zqxq_right" style="width:410px;height:100%;">
+            <div class="vbox zqxq_sstitle"  style="height:410px; width:100%">
+                <div class="vbox spacer zqxq_ssbox"  style="height:383px; width:100%">
+                    <div class="chart_title buttun_line" style="height:24px;">
+                        <table cellpadding="0" cellspacing="0"   width="100%" id="analysis_Title">
+                        </table>
+                    </div>
+                    <div class="spacer vbox" style="height:134px">
+                        <div class="chart_title" >实时行情</div>
+                        <div  class="spacer" style="overflow:hidden">
+                            <table cellpadding="0" cellspacing="0"  class="data_table2" width="100%" id="hq_analysis">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="spacer vbox" style="height:80px;">
+                        <div class="chart_title" >衍生指标</div>
+                        <div  class="spacer" style="overflow:hidden">
+                            <table cellpadding="0" cellspacing="0" class="data_table2" width="100%" id="zb_analysis">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="spacer vbox" style="height:89px;">
+                        <div class="chart_title" >估值指标</div>
+                        <div class="spacer" style="overflow:hidden">
+                            <table cellpadding="0" cellspacing="0" class="data_table2" width="100%" id="gz_analysis">
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="spacer vbox" style="height:66px" >
+                        <div class="chart_title" >最优报价</div>
+                        <div  class="spacer" style="overflow:hidden">
+                            <table cellpadding="0" cellspacing="0" width="100%" class="data_table2" id="bj_analysis">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vbox spacer zqxq_bottom"  style="height:40%; width:100%">
+                <div class="chart_title" style="height: 20px">分时成交</div>
+                <div id="bottomTabR"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="resources/all.css"/>
+</head>
+<body class="flex-column loading">
+
+<header class="flex-none">
+    <dl>
+        <dt>标的证券: </dt>
+        <dd><a class="blue" data-bind="onSymbolBtnClick" v-text="name"></a></dd>
+        <dt>最新: </dt>
+        <dd v-class="red:change>0,white:!change,green:change<0," v-text="new"></dd>
+        <dt>涨跌: </dt>
+        <dd v-class="red:change>0,white:!change,green:change<0," v-text="change"></dd>
+        <dt>涨幅: </dt>
+        <dd v-class="red:change>0,white:!change,green:change<0," v-text="chg"></dd>
+        <dt>最高: </dt>
+        <dd v-class="red:high>lastclose,white:high==lastclose,green:high<lastclose" v-text="high"></dd>
+        <dt>最低: </dt>
+        <dd v-class="red:low>lastclose,white:low==lastclose,green:low<lastclose" v-text="low"></dd>
+        <dt>成交量: </dt>
+        <dd v-text="volume"></dd>
+    </dl>
+    <ul class="nav-tabs tabs-orange-red pull-left">
+        <li class="active">T型报价</li>
+        <li>认购</li>
+        <li>认沽</li>
+    </ul>
+    <form class="pull-right" v-on="change: filterChange, input: filterChange, focusout:resetFilters">
+        <div class="form-group">
+            <label>行权价对称中心</label>
+            <input v-model="price" type="text">
+            <label>期权数量</label>
+            <input v-model="amount" type="text">
+            <label>合约月份</label>
+            <select v-model="month" options="options"></select>
+        </div>
+    </form>
+</header>
+<div class="flex-auto grid"></div>
+
+<script src="../../jquery/amd/require.js" data-main="src"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+
+</body>
+</html>

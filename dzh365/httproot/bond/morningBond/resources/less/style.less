@@ -1,0 +1,171 @@
+@blue: #064A7B;
+@red: #CB000C; 
+@width-wrap: 800px;
+@url-base: '../img';
+@base-font-size: 14px;
+@margin-large: 130px;
+@width-sidebar:200px;
+@height-header:100px;
+.text-white{
+    color:#fff;
+}
+.text-songti{
+    font-family:"宋体";
+}
+.margin{
+    margin: 25px 10px 20px 10px;
+}
+.text-normal{
+    font-weight: normal;
+}
+.text-left{
+    text-align: left;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+
+h1,h2,h3,h4,h5,h6{
+    .text-normal;
+}
+.wrap{
+    width: @width-wrap;
+    margin: 0 auto 20px;
+    position: relative;
+}
+body{
+    font-size: @base-font-size;
+    position: relative;
+}
+.bar-inner{
+    .text-white;
+    .text-normal;
+    background: @blue;height:24px;line-height: 24px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    font-size: @base-font-size;
+    
+}
+
+#header{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    background: #fff;
+    z-index:2;
+    .wrap{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    height: @height-header;
+    .text-center;
+    h1{
+        font-size: 30px;
+        color:@blue;
+        font-weight: normal;
+    }
+}
+#content{
+    position: absolute;
+    top: @height-header;
+    left:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+}
+#nav{
+    position: absolute;
+    left:0;
+    top:0;
+    overflow-y: auto;
+    width: @width-sidebar;
+    // height: 100px;
+    overflow-y: auto;
+    .item{
+        margin-top: 5px;
+        font-size: 16px;
+        .title{
+            color:@red;
+            text-decoration: none;
+            &:hover{
+                color:#000;
+            }
+        }
+        .sub-nav{
+            margin-left: 20px;
+            .title{
+                color:@blue;
+                font-size: @base-font-size;
+                &:hover{
+                    color:#000;
+                }
+            }
+        }
+    }
+}
+#main{
+    margin-left: @width-sidebar + 20px;
+    .bar,.title{    // 修正点击左侧导航后锚点定位不准
+        padding-top: @height-header;
+        margin-top: -@height-header;
+    }
+    .content{
+        .text-songti;
+        .margin;
+        &:first-child{
+            margin-top:25px;
+        }
+        margin-top: 60px;
+        .title{
+            color:@red;
+        }
+        .inner-block{
+            table{
+                border-bottom:1px solid #000;
+                width: 100%;
+                margin:20px 0;
+                tbody{
+                    tr:nth-child(even){
+                        background: #EEECE1;
+                    }
+                }
+                tr{
+                    height:24px;line-height: 24px;
+                }
+                .info th{
+                    .text-normal;
+                }
+                .primary,.secondary{
+                    .text-white;
+                    border-bottom: 1px solid #000;
+                }
+                .primary{
+                    background: #8DB3E2;
+                    border-top:1px solid #000;
+                }
+                .secondary{
+                    background: #548DD4;
+                }
+                .text-left;
+                .text-left{
+                    .text-left;
+                }
+                td{
+                    .text-right;
+                }
+                th,td{
+                    padding-left:5px;
+                }
+            }
+            p{
+                color:@blue;
+                text-indent: 2em;
+                margin:20px 0;
+            }
+        }
+    }
+}

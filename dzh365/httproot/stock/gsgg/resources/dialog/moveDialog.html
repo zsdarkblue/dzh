@@ -1,0 +1,22 @@
+<div id="dialogMove">
+	<div class="dijitDialogPaneContentArea">
+		<div id="ABintro3" class="tc_text">
+		将公告移至
+		<div id="noticeList1" data-dojo-type="dijit/form/ComboBox" >
+			<option>新建公告</option>
+		</div>
+		<div id="newNoticeName1" 
+			data-dojo-type="dijit/form/TextBox"
+			data-dojo-props="placeHolder:'请输入新建公告名称',trim:true"
+			style="width: 100px"></div>
+		</div>
+		<div id="moveTime"></div>
+	</div>
+	<div class="dijitDialogPaneActionBar">
+		<div class="tc_btn">
+			<button id="ABdialog1button14" data-dojo-type="dijit/form/Button" data-dojo-props='type:"button",label:"确定"'></button>
+			<button id="ABdialog1button24" data-dojo-type="dijit/form/Button" data-dojo-props='type:"button",label:"取消", onClick:function(){ dijit.byId("dialogMove").onCancel(); }'></button>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<title>大智慧-研究报告版本号:1.5.02</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../../dijit/themes/white/document.css"/>
+	<link rel="stylesheet" href="./resources/custom.css"/>   <!--导入 自己定义的样式文件-->
+	<script type="text/javascript">
+		dojoConfig = {
+			async:true, parseOnLoad:false, 
+			requestProvider: "dojo/request/registry",
+		//	paths:{'stock':'../stock'}, 
+			baseUrl : "../../dojo",
+			noscale:true,
+			locale:'zh-cn',
+						callback: function() {
+				require(['stock/yjbg/src',"dojo/request", "dojo/request/script","dojo/on"],
+						function(main, request, script,on){
+							//request.register(/^http:\/\/10.15.107.157/, script);
+							main();
+							on(document.body, "click", function(evt){
+								dijit.byId("mytree").set("path",[]);
+							})
+						}
+					);
+			}
+		}
+		
+						//dojopr();
+				
+	</script>
+</head>
+<body class="claro" id="bodyId">
+	<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,gutters:false, design:'headline'" style="height: 100%;">
+ 		<div data-dojo-type="stock/yjbg/view/top" data-dojo-props="region:'top'"></div>
+		<div data-dojo-type="stock/yjbg/view/tree" data-dojo-props="region:'left', splitter:true,maxSize:350" style="width:160px;" ></div>	
+		<div id="myContentPane" class="vbox" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="height: 350px;">
+			<div id="mysearch" data-dojo-type="stock/yjbg/view/search" style="height:70px;display:none" ></div>
+			<div class="spacer" data-dojo-type="stock/yjbg/view/gridData" ></div>
+		 </div>
+	</div>
+</body>
+</html>

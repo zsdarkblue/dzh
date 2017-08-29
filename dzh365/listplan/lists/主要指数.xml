@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GB2312"?>
+<list>
+	<column>
+		<col><value>index</value><width>45</width><name>序号</name></col>
+<col><value>label</value><width>70</width><name>代码</name></col>
+<col sorted="-1" subsorted="0"><value>name</value><width>158</width><name>名称</name></col>
+<col fixed="1"><value>now</value><width>70</width><name>最新</name></col>
+<col><value>undn</value><width>85</width><name>涨跌</name></col>
+<col><value>updnratio</value><width>70</width><name>涨幅</name></col>
+<col><value>volume</value><width>80</width><name>总手</name></col>
+<col><value>nowvol</value><width>80</width><name>现手</name></col>
+<col><value>amount</value><width>80</width><name>总额</name></col>
+<col><value>lastclose</value><width>80</width><name>昨收</name></col>
+<col><value>open</value><width>80</width><name>今开</name></col>
+<col><value>high</value><width>80</width><name>最高</name></col>
+<col><value>low</value><width>80</width><name>最低</name></col>
+<col><value>buyprice</value><width>80</width><name>委买价</name></col>
+<col><value>sellprice</value><width>80</width><name>委卖价</name></col>
+<col><value>updnspeed</value><width>80</width><name>涨速</name></col>
+<col><value>hilowratio</value><width>80</width><name>振幅</name></col>
+<col><value>volratio</value><width>80</width><name>量比</name></col>
+<col><value>wantratio</value><width>80</width><name>委比</name></col>
+<col><value>wantdiff</value><width>80</width><name>委差</name></col>
+</column>
+	<script param="path">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</script></list>

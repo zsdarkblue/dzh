@@ -1,0 +1,6 @@
+<NETCFG ver="1.0">
+	<SERVERLIST conntimeout="4" pkgtimeout="300" sendbuf="1048576" recvbuf="10485760" dbmaxsize="2G" fileserverurl="http://rdfile.gw.com.cn">
+		<SERVER ip="reader123.gw.com.cn" port="6000" /> 
+	</SERVERLIST>
+</NETCFG>
+

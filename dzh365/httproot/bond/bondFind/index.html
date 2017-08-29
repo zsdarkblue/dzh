@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>债券查找c1.0.03</title>
+    <link rel="stylesheet" href="./resources/css/all.css"/>
+	<style>
+        .dialog_content{width: 100%;height: 100%;background: #dadada;padding-bottom: 10px}
+        .dialog_main{padding:3px 5px 0px 0px;overflow: hidden}
+        .add-dialog .dialog_form{background: #fff;border: #a0a9a8 1px solid;margin-left: 7px;}
+        .add-dialog .moreSelect{width: 190px;height: 390px;}
+        .add-dialog .dialog_form .title{background: #e2e2e2;border-bottom:#a0a9a8 solid 1px; box-shadow: inset 1px 1px 0px #fff;line-height: 26px;text-align: center;}
+        .add-dialog .moreSelect ul{padding-left: 1px; overflow:auto;display: block;overflow-x: hidden;}
+        .add-dialog  .moreSelect ul li{width: 170px;height: 24px;padding-left: 9px;line-height: 24px;cursor: pointer;}
+        .add-dialog  .moreSelect ul li.selected{background:#007fd8;color: #fff; }
+        .add-dialog  .moreSelect ul li.disable{color: #888; }
+        .add-dialog  .dialog_form_arrow{width:45px;padding: 170px 0 0 10px;}
+        .add-dialog  .dialog_form_arrow button{width: 40px;margin-top: 5px;}
+        .add-dialog  .dialog_form_ud{width:65px;padding: 70px 0 0 7px;}
+        .add-dialog  .dialog_form_ud button{width: 50px;margin-top: 25px;}
+        .add-dialog  .dialog_confirm{padding: 8px 62px 0 8px;clear: both;}
+
+		
+        .save-dialog .dialog_form{border: #5c5c5c 1px solid;margin-left: 7px;}
+        .save-dialog .saveProject{width: 350px;height: 230px;border: 0}
+        .save-dialog .saveProject #projectName{line-height: 24px;width: 348px;border: #5c5c5c 1px solid; padding-left: 2px;}
+        .save-dialog .saveProject #projectDetail{height: 155px;line-height: 24px;border: #5c5c5c 1px solid;width: 346px;resize: none;padding-left: 2px;}
+        .save-dialog .saveProject .projectTitle{background: #dadada;line-height: 22px;text-align: left;padding-left: 2px;}
+        .save-dialog .dialog_form_arrow button{width: 40px;margin-top: 5px;}
+        .save-dialog .dialog_form_ud button{width: 50px;margin-top: 5px;}
+        .save-dialog .dialog_confirm{padding: 8px 0 0 8px;clear: both;}
+    </style>
+</head>
+<body class="flex-column">
+
+<div class="flex-none">
+    <div class="bs_top">
+        <ul class="manage_menu">
+            <li><a id="myManage" href="javascript:void(0);"><i class="icon-issue"></i> 我的方案<i class="icon-dropdown"></i><i class="icon-vl"></i></a></li>
+            <li><a href="javascript:void(0);" id="savePlan"><i class="icon-save"></i> 保存方案<i class="icon-vl"></i></a></li>
+            <li><a href="javascript:void(0);" id="managePlan"><i class="icon-modify"></i> 方案管理<i class="icon-vl"></i></a></li>
+            <li><a id="xeceldaochu" href="javascript:void(0);"><i class="icon-xls"></i> 导出EXCEL</a></li>
+        </ul>
+        <div id="showPlanName" data-planid="djfa" class="rr manage_title">待建方案</div>
+    </div>
+</div>
+<div class="flex-none" style="height: 207px;padding-bottom: 1px;">
+	<!-- -->
+
+    <div class="bs_panel" id="panel-connection">
+    	<div id="allconditionParentDiv">
+	    	
+		        <div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>   
+		            <span class="title_name">存续状态：</span>
+					<span>
+			            <button type="button" data-name="survivalStatus" data-value="all" class="btn-flat radio">全部</button>
+			            <button type="button" data-name="survivalStatus" data-value="1" class="btn-flat radio btn-selected">未到期</button>
+			            <button type="button" data-name="survivalStatus" data-value="2" class="btn-flat radio">已到期</button>
+					</span>
+		            <span class="title_name inline_title_name">发行人名称：</span>
+					
+					<div class="wrap">
+						<input type="text" id="search_publisherName" class="text_content" value="请输入发行人名称或首字母拼音..." /><i id="search_select" class="fa fa-search"></i>
+			        </div>
+					
+					<li id="bondTypeLi" class="title_li" style="display: inline-block;"><span style="margin-right:13px;margin-left: 30px;">债券类型：</span></span><input id="bondTypeSel" type="text" readonly value="" style="width:120px;cursor: pointer;" /><i id="bondTypeSel_i" class=""></i>
+<!--						<a id="bondTypeBtn" href="#">选择</a>    -->
+					</li>
+		        </div>
+		
+<!--		        <div class="mg-l fl" data-value="publishBeginDate">
+		            <span class="icon-x grayBan"></span>
+		            <span class="title_name">发行起始日：</span>
+		                <select id="publishBeginDate" class="oneSelectCustom" data-name="publishBeginDate" name="select-val" data-option="" data-val="3">
+		                    <option value="all" title="1"  selected="selected">不限</option>
+		                    <option value="1" title="2">近一周</option>
+		                    <option value="2" title="3">近一月</option>
+		                    <option value="3" title="4">近1年</option>
+		                    <option value="4" title="5">未来1周</option>
+		                    <option value="5" title="6">未来1月</option>
+		                    <option value="6" title="7">未来1年</option>
+		                    <option value="custom" >自定义</option>
+		                </select>
+		            <div class="dateCustom">
+		                <input type="datetime" data-date-format="yyyy-mm-dd" id="publishBeginDateBegin" value=""><i class="fa fa-calendar"></i> &nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;
+		                <input type="datetime" data-date-format="yyyy-mm-dd" id="publishBeginDateEnd" value=""><i class="fa fa-calendar"></i>
+		            </div>
+					
+					
+		        </div> -->
+				
+				<div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>   
+		            <span class="title_name">债项评级：</span>
+					<span>
+			            <button type="button" data-name="bondRating" data-value="all" class="btn-flat btn-selected">全部</button>
+						<button type="button" data-name="bondRating" data-value="1" class="btn-flat">AAA</button>
+						<button type="button" data-name="bondRating" data-value="2" class="btn-flat">AA+</button>
+			            <button type="button" data-name="bondRating" data-value="3" class="btn-flat">AA</button>
+			            <button type="button" data-name="bondRating" data-value="4" class="btn-flat">AA-</button>
+			            <button type="button" data-name="bondRating" data-value="5" class="btn-flat">A+</button>
+						<button type="button" data-name="bondRating" data-value="6" class="btn-flat">A</button>
+						<button type="button" data-name="bondRating" data-value="7" class="btn-flat">A-1</button>
+						<button type="button" data-name="bondRating" data-value="8" class="btn-flat">A-2</button>
+						<button type="button" data-name="bondRating" data-value="others" class="btn-flat">其他</button>
+					</span>
+		        </div>
+				
+				<div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>   
+		            <span class="title_name">主体评级：</span>
+					<span>
+			            <button type="button" data-name="mainBodyRating" data-value="all" class="btn-flat btn-selected">全部</button>
+						<button type="button" data-name="mainBodyRating" data-value="1" class="btn-flat">AAA</button>
+						<button type="button" data-name="mainBodyRating" data-value="2" class="btn-flat">AA+</button>
+			            <button type="button" data-name="mainBodyRating" data-value="3" class="btn-flat">AA</button>
+			            <button type="button" data-name="mainBodyRating" data-value="4" class="btn-flat">AA-</button>
+			            <button type="button" data-name="mainBodyRating" data-value="5" class="btn-flat">A+</button>
+						<button type="button" data-name="mainBodyRating" data-value="6" class="btn-flat">A</button>
+						<button type="button" data-name="mainBodyRating" data-value="others" class="btn-flat">其他</button>
+					</span>
+		        </div>
+				
+				<div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>   
+		            <span class="title_name">担保方式：</span>
+					<span>
+			            <button type="button" data-name="guaranteeWay" data-value="all" class="btn-flat btn-selected">全部</button>
+						<button type="button" data-name="guaranteeWay" data-value="a1" class="btn-flat">第三方担保</button>
+						<button type="button" data-name="guaranteeWay" data-value="b1" class="btn-flat">抵押担保</button>
+			            <button type="button" data-name="guaranteeWay" data-value="c1" class="btn-flat">质押担保</button>
+			            <button type="button" data-name="guaranteeWay" data-value="d1" class="btn-flat">个人担保</button>
+						<button type="button" data-name="guaranteeWay" data-value="e1" class="btn-flat">无担保</button>
+						<button type="button" data-name="guaranteeWay" data-value="others" class="btn-flat">其他</button>
+					</span>
+		        </div>
+				
+				<div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>   
+		            <span class="title_name">剩余期限：</span>
+					<span>
+			            <button type="button" data-name="leftTerm" data-value="all" class="btn-flat btn-selected">全部</button>
+						<button type="button" data-name="leftTerm" data-value="1" class="btn-flat">1年内</button>
+						<button type="button" data-name="leftTerm" data-value="2" class="btn-flat">1-3年</button>
+			            <button type="button" data-name="leftTerm" data-value="3" class="btn-flat">3-5年</button>
+			            <button type="button" data-name="leftTerm" data-value="4" class="btn-flat">5-7年</button>
+						<button type="button" data-name="leftTerm" data-value="5" class="btn-flat">7-10年</button>
+						<button type="button" data-name="leftTerm" data-value="6" class="btn-flat">10-15年</button>
+						<button type="button" data-name="leftTerm" data-value="7" class="btn-flat">15-20年</button>
+						<button type="button" data-name="leftTerm" data-value="8" class="btn-flat">20-30年</button>
+						<button type="button" data-name="leftTerm" data-value="9" class="btn-flat">30年以上</button>
+					</span>
+		        </div>
+				
+				<div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>    
+		            <span class="title_name">上市市场：</span>
+					<span>
+		            	<button type="button" data-name="listMarket" data-value="all" class="btn-flat btn-selected">全部</button>
+			            <button type="button" data-name="listMarket" data-value="CNIBEX" class="btn-flat">银行间</button>
+			            <button type="button" data-name="listMarket" data-value="CNSESH" class="btn-flat">上交所</button>
+			            <button type="button" data-name="listMarket" data-value="CNSESZ" class="btn-flat">深交所</button>
+			            <button type="button" data-name="listMarket" data-value="CNETPF" class="btn-flat">固定收益平台</button>
+			            <button type="button" data-name="listMarket" data-value="CNSZCP" class="btn-flat">综合协议平台</button>
+			            <button type="button" data-name="listMarket" data-value="CNCONT" class="btn-flat">柜台</button>
+						<button type="button" data-name="listMarket" data-value="CNNCIM" class="btn-flat">未上市</button>
+						<button type="button" data-name="listMarket" data-value="others" class="btn-flat">其他</button>
+					</span>
+		        </div>
+								
+		        <div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>   
+		            <span class="title_name">计息方式：</span>
+					<span>
+			            <button type="button" data-name="interestAccrualWay" data-value="all" class="btn-flat btn-selected">全部</button>
+						<button type="button" data-name="interestAccrualWay" data-value="1" class="btn-flat">贴现</button>
+						<button type="button" data-name="interestAccrualWay" data-value="0" class="btn-flat">零息</button>
+			            <button type="button" data-name="interestAccrualWay" data-value="2" class="btn-flat">固息</button>
+			            <button type="button" data-name="interestAccrualWay" data-value="3" class="btn-flat">浮息</button>
+			            <button type="button" data-name="interestAccrualWay" data-value="4" class="btn-flat">递进</button>
+<!--						<button type="button" data-name="interestAccrualWay" data-value="others" class="btn-flat">其他</button>    -->
+					</span>
+		        </div>
+				
+				<div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>    
+		            <span class="title_name">赎回回售：</span>
+					<span>
+		            	<button type="button" data-name="bondRight" data-value="all" class="btn-flat btn-selected">全部</button>
+			            <button type="button" data-name="bondRight" data-value="0" class="btn-flat">不含权</button>
+			            <button type="button" data-name="bondRight" data-value="1" class="btn-flat">仅可回售</button>
+			            <button type="button" data-name="bondRight" data-value="2" class="btn-flat">仅可赎回</button>
+			            <button type="button" data-name="bondRight" data-value="3" class="btn-flat">既可回售又可赎回</button>
+					</span>
+					
+					<span class="title_name inline_title_name">估值收益率： </span>
+					<select id="valuationRate" class="SelectCheckbox" data-option="checkbox"  multiple="multiple">
+						<optgroup label="">
+							<option id="valuationRateall" value="all"selected>全部</option>
+							<option id="valuationRate1" value="1"selected>0至3%</option>
+							<option id="valuationRate2" value="2"selected>3至5%</option>
+							<option id="valuationRate3" value="3"selected>5至7%</option>
+							<option id="valuationRate4" value="4"selected>7至9%</option>
+							<option id="valuationRate5" value="5"selected>9%以上</option>
+						</optgroup><optgroup label="-">
+							<option id="valuationRatecustom"  value="custom">自定义</option>
+						</optgroup>
+					</select>
+					<div class="selectCheckBoxcustomParent" id="valuationRateCustomParent">
+						<input type="text" class="customNum" id="valuationRateBegin">% 至 <input type="text" class="customNum" id="valuationRateEnd">%
+					</div>
+					
+		        </div>
+				<!--
+		        <div class="mg-l fl">
+		            <span class="icon-x grayBan"></span>       
+		            <span class="title_name">债券期限：</span>
+					<span>
+			            <button type="button" data-name="bondTerm" data-value="all"class="btn-flat btn-selected">全部</button>
+			            <button type="button" data-name="bondTerm" data-value="1" class="btn-flat">1年以内</button>
+			            <button type="button" data-name="bondTerm" data-value="2" class="btn-flat">1-3年</button>
+			            <button type="button" data-name="bondTerm" data-value="3" class="btn-flat">3-5年</button>
+			            <button type="button" data-name="bondTerm" data-value="4" class="btn-flat">5-7年</button>
+			            <button type="button" data-name="bondTerm" data-value="5" class="btn-flat">7-10年</button>
+			            <button type="button" data-name="bondTerm" data-value="6" class="btn-flat">10-15年</button>
+			            <button type="button" data-name="bondTerm" data-value="7" class="btn-flat">15-20年</button>
+						<button type="button" data-name="bondTerm" data-value="8" class="btn-flat">20-30年</button>
+						<button type="button" data-name="bondTerm" data-value="9" class="btn-flat">30年以上</button>
+					</span>
+		        </div>
+		        -->
+			
+			<div id="conditionParentDiv">
+		
+			</div>
+		</div>
+		
+    </div>
+	<!-- -->
+</div>
+<div class="flex-splitter flex-order-1"><i></i></div>
+<div class="flex-auto flex-order-3">
+    <div id="mainGrid" class="grid"></div>
+</div>
+<div class="flex-none flex-order-0">
+    <div class="fl add-pos">
+		<button id="add-index" type="button" class="btn-button">
+			<i class="icon-plus"></i> 添加指标
+		</button>
+		<button id="clean-index" data-type="0"  type="button" class="btn-button">
+			<i class="icon-clean"></i> 清空指标
+		</button>
+	</div>
+</div>
+<div class="flex-none flex-order-2">
+    <div class="pages">
+        <div class="fr">
+        <span>共计<span id="bondSumNum" style="margin:0px"></span> 条记录</span>
+        <a href="javascript:;" id="fristPage" class="btn-normal">首页</a>
+        <a href="javascript:;" id="upPage" class="btn-normal">上一页</a>
+        <label>
+            <input id="nowPage" type="text"  value="1"/> <span style="margin:0px">/</span><span id="pageSumNum" style="margin:0 5px;width: 20px;display: inline-block;">10</span>
+        </label>
+        <a href="javascript:;" id="nextPage" class="btn-normal">下一页</a>
+        <a href="javascript:;" id="finalPage" class="btn-normal">尾页</a>
+    </div></div>
+</div>
+
+<div id="bondTypeMenuContent" class="menuContent" style="display:none; position: absolute;">
+	<ul id="bondTypeTree" class="ztree" style="margin-top:0; width:230px; heigth:300px;"></ul>
+</div>
+  
+<div class="dialog add-dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>添加指标</h3>
+        <i></i>
+    </div>
+    <div class="dialog-body">
+        <div class="dialog_content">
+			<div class="dialog_main">
+				<div class="dialog_form moreSelect fl">
+					<div class="title">所有指标</div>
+					<div style="width:190px;height:364px;overflow:auto;">
+						<ul id="allIndexUl" class="all">
+						</ul>
+					</div>
+				</div>
+				<div class="dialog_form_arrow fl">
+					<button id="leftIn" type="button" class="btn-button"> > </button>
+					<button id="rightOut" type="button" class="btn-button"> < </button>
+				</div>
+				<div class="dialog_form moreSelect fl">
+					<div class="title">已选指标</div>
+					<div style="width:190px;height:364px;overflow:auto;">
+						<ul id="selectedIndexUl" class="all_select">
+							<li class="disable" data-value="survivalStatus">存续状态</li>
+							<li class="disable" data-value="publisherName">发行人名称</li>  
+<!--							<li class="disable" data-value="publishBeginDate">发行起始日</li>  -->
+							<li class="disable" data-value="bondType">债券类型</li>
+							<li class="disable" data-value="bondRating">债项评级</li>
+							<li class="disable" data-value="mainBodyRating">主体评级</li>
+							<li class="disable" data-value="guaranteeWay">担保方式</li>
+							<li class="disable" data-value="leftTerm">剩余期限</li>
+							<li class="disable" data-value="listMarket">上市市场</li>
+							<li class="disable" data-value="interestAccrualWay">计息方式</li>
+							<li class="disable" data-value="bondRight">赎回回售</li>
+							<li class="disable" data-value="valuationRate">估值收益率</li>    
+<!--							<li class="disable" data-value="bondTerm">债券期限</li>     -->
+							
+						</ul>
+					</div>
+				</div>
+				<div class="dialog_form_ud fl">
+					<button id="moveup" type="button" class="btn-button">上 移</button>
+					<button id="movedown" type="button" class="btn-button">下 移</button>
+				</div>
+				<div class="dialog_confirm">
+					<span class="fl"><button id="restore" type="button" class="btn-button">恢复默认</button></span>
+					<span class="fr"><button id="close-dialog" type="button" class="btn-button">取 消</button></span>
+					<span class="fr"><button id="sure-dialog" type="button" class="btn-button">确 定</button></span>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="dialog save-dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>大智慧</h3>
+        <i></i>
+    </div>
+    <div class="dialog-body">
+        <div class="dialog_content">
+			<div class="dialog_main">
+				<div class="dialog_form saveProject fl">
+					<div class="projectTitle">方案名称(20字以内)</div>
+					<input id="projectName" type="text" placeholder="请输入方案名称" />
+					<div class="projectTitle">方案说明(200字以内)</div>
+					<textarea id="projectDetail" placeholder="请输入方案名称"></textarea>
+				</div>
+				<div class="dialog_confirm">
+					<span class="fr"><button id="cancelPlan" type="button" class="btn-button">取 消</button></span>
+					<span class="fr"><button id="confirmPlan" type="button" class="btn-button">确 定</button></span>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="dialog manage-dialog" draggable="true">
+    <div class="dialog-header">
+        <h3>大智慧</h3>
+        <i></i>
+    </div>
+    <div class="dialog-body">
+        <div class="dialog_content">
+			<div class="dialog_main">
+				<div class="dialog_form projectSelect fl">
+					<div style="width:140px;height:230px;overflow:auto;">
+						<ul id="manageUl" class="all">
+							<li data-planid="default1">铁道债</li>
+							<li data-planid="default2">交易所高收益债</li>
+<!--							<li data-planid="default3">方案三</li>   -->
+						</ul>
+					</div>
+				</div>
+				<div class="dialog_form projectDetail fl">
+					<div class="projectTitle">方案名称(20字以内)</div>
+					<input id="manageProjectName" type="text" placeholder="请输入方案名称">
+					<div class="projectTitle">方案说明(200字以内)</div>
+					<textarea id="manageProjectDetail" placeholder="请输入方案说明"></textarea>
+				</div>
+				<div class="dialog_confirm">
+					<span class="fl"><button id="deletePlan" type="button" class="btn-button">删除</button></span>
+					<span class="fl" style="margin-left: 10px;"><input type="checkbox"><span style="vertical-align: middle">设为默认</span></span>
+					<span class="fr"><button id="cancelUpdataPlan" type="button" class="btn-button">取 消</button></span>
+					<span class="fr"><button id="managesure" type="surreUpdataPlan" class="btn-button">确 定</button></span>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div id="myPlan">
+	<ul id="myPlanUl" class="all" style="">
+		<li data-planid="djfa" data-default="default">待建方案</li>
+		<li data-planid="default1" data-default="default">铁道债</li>
+		<li data-planid="default2" data-default="default">交易所高收益债</li>
+<!--		<li data-planid="default3" data-default="default">方案三</li>  -->
+		
+	</ul>
+</div>
+
+<div  class="dialog point-dialog" draggable="true">
+	<div class="dialog-header">
+        <h3>提示</h3>
+        <i></i>
+    </div>
+	 <div class="dialog-body">
+		<div class="dialog_content">
+			<div id="poinMainContentParent">
+				<div id="poinMainContent" class="dialog_main">
+					
+				</div>
+				<div id="poinContentLine">
+					<button id="poinContentSure">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<script data-main="src" src="../../jquery/amd/require.js"></script>
+<script src="../../jquery/amd/cfg.js"></script>
+</body>
+</html>

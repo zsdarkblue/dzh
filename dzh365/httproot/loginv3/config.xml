@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312"?>
+<loginv3 version="1">
+	
+	<config>
+		
+		<advertisement>
+			<remoteInfo url="http://ad.gw.com.cn/loginAdv/loginJson-F.jsonp" dataType="jsonp" jsonpCallback="jsonpCallback"/>
+		</advertisement>
+		
+	</config>
+	
+</loginv3>
